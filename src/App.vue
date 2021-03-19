@@ -22,7 +22,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   opacity: 0.75;
-  color: white;
+  color: #2c3e50;
   transition: color 0.25s ease-in-out;
   
   &:hover {
