@@ -2,15 +2,15 @@
     <footer>
 		<ul>
             <li>
-                <a href="https://goo.gl/maps/hMu13iR5NiM2"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                <a href="https://goo.gl/maps/hMu13iR5NiM2"><i class="fa fa-map-marker icon" aria-hidden="true"></i></a>
                 <p>Rua Diogo Cão nº 21 7000-872 Évora</p>
             </li>
             <li>
-                <a href="mailto:geral@aaue.pt"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="mailto:geral@aaue.pt"><i class="fa fa-envelope icon" aria-hidden="true"></i></a>
                 <p><router-link :to="{ name: 'Contactos' }">Contacta-nos!</router-link></p>
             </li>
             <li>
-                <a href="tel:+351266098003"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                <a href="tel:+351266098003"><i class="fa fa-phone icon" aria-hidden="true"></i></a>
                 <p>+ 351 266 09 80 03</p>
             </li>
             <div class="socials">
@@ -46,7 +46,7 @@ footer {
         margin-bottom: 25px;
         font-size: 32px;
         justify-content: space-around;
-        li{
+        li {
             display: flex;
             flex-direction: column;
             height: 35px;
@@ -54,6 +54,12 @@ footer {
             margin: 0 8px;
             border-radius: 15px;
             box-shadow: -2px -2px 3px rgba(255,255,255,0.05) , 2px 2px 3px rgba(0,0,0,0.2);
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
             & .fa-phone {
                 color:#89CFF0;
@@ -92,6 +98,9 @@ footer {
 
         .icons {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
     }
     p{
@@ -100,9 +109,7 @@ footer {
         color: rgba(255,255,255,0.6);
         color: #f5f5f5d2;
         margin-bottom: 10px;
-        a{
-            border-bottom: 1px solid white;
-        }
+
     }
     .moto {
             font-size: 16px;

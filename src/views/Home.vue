@@ -2,32 +2,40 @@
   <ScrollToTopButton v-if="!isAtTop"  @click="scrollToElement('body')"/>
   <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
   <Navbar v-if="!mobileMode" class="navbar" />
-  <section class="hero">
-    <div class="container">
-      <div class="textArea">
-        <h1>De estudantes para estudantes</h1>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, veniam! Fazemos cenas, faz-te socio</h2>
-        <button>Descobre as vantagens</button>
+  <div v-if="!activatedNavbar" class="pageContent">
+    <section class="hero">
+      <div class="heroContent">
+        <div class="textArea">
+          <h1 class="slogan">De estudantes para estudantes</h1>
+          <h2 class="heroText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, veniam! Fazemos cenas, faz-te socio</h2>
+          <div class="buttons">
+            <button class="vantagens">Descobre as vantagens</button>
+            <button class="socio">Faz-te Sócio!</button>
+          </div>
+        </div>
+        <img class="heroImage" src="@/assets/students.svg" alt="">
       </div>
-      <img src="@/assets/students.svg" alt="">
-    </div>
-  </section>
-  <section class="ourWork">
-    <div class="container">
-      <img src="@/assets/activism.jpeg" alt="">
-      <div class="text">
-        <h1>ativismo estudantil</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quis officiis praesentium iure quisquam recusandae inventore fuga quia sapiente libero?</p>
+    </section>
+    <section class="ourWork">
+      <div class="ativismo">
+        <img src="@/assets/activism.jpeg" alt="">
+        <div class="text">
+          <h1>ativismo estudantil</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quis officiis praesentium iure quisquam recusandae inventore fuga quia sapiente libero?</p>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="plataformas">
-    <p>ya plataformas</p>
-  </section>
-  <section class="noticias">
-    <h1>ya noticias e ques</h1>
-  </section>
-  <Footer />
+    </section>
+    <section class="recrutamento">
+      somos estudantes , tal como tu, que .....
+    </section>
+    <section class="plataformas">
+      <p>ya plataformas</p>
+    </section>
+    <section class="noticias">
+      <h1>ya noticias e ques</h1>
+    </section>
+    <Footer />
+  </div>
 </template>
 
 <script lang="ts">
@@ -73,6 +81,10 @@ export default defineComponent({
     },
     handleResize () {
       this.mobileMode = window.innerWidth <= 1015;
+
+      if(!this.mobileMode) {
+        this.activatedNavbar = false;
+      }
     },
   },
 });
@@ -80,9 +92,14 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
-$buttonColor: #e96656;
+$buttonColorTest: #e96656;
+$buttonColor: #d90504;
 
-.container {
+$AaueRed: #d90504;
+$AaueYellow: #f8d80c;
+
+
+.heroContent {
   height: 100vh;
   display: flex;
   justify-content: space-around;
@@ -90,10 +107,22 @@ $buttonColor: #e96656;
   border: 2px solid red;
 
   .textArea {
-    border: 2px solid yellow;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+
+    .slogan {
+      margin: 0px 25px;
+      text-transform: uppercase;
+    }
+    
+    .heroText {
+      margin: 0px 25px;
+    }
 
     button {
-      min-width: 130px;
+      max-width: 300px;
       position: relative;
       display: inline-block;
 
@@ -103,7 +132,7 @@ $buttonColor: #e96656;
       padding: 15px;
       margin: 30px 25px;
 
-      font-size: 100% + 40%;
+      font-size: 100% + 10%;
       font-weight: 600;
       border: none;
 
@@ -112,7 +141,7 @@ $buttonColor: #e96656;
 
       transition: 0.5s;
 
-      &:before {
+      &::before {
         position: absolute;
         content:"";
         border-top: 5px solid lighten($buttonColor, 5%);
@@ -129,18 +158,22 @@ $buttonColor: #e96656;
       }
 
       &:hover {
-        box-shadow: 7px 7px darken($buttonColor, 20%), -7px -7px lighten($buttonColor, 20%);
+        box-shadow: 7px 7px darken($buttonColor, 10%), -7px -7px lighten($buttonColor, 10%);
         cursor: pointer;
+
           &::before {
-          border: 0px ;
+          border: 0px;
         }
       }
     }
+    .socio:hover {
+      box-shadow: -7px 7px darken($buttonColor, 10%), 7px -7px lighten($buttonColor, 10%);
+      cursor: pointer;
+    }
   }
 
-  img {
+  .heroImage {
     width: 600px;
-    border: 2px solid green;
   }
 }
 
