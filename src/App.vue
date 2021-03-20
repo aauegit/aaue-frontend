@@ -35,4 +35,11 @@ nav, ul, li {
   list-style-type: none;
 }
 
+hr {
+  width: 100px;
+  background: red;
+  border: 1px solid red;
+  margin: 5px 0px;
+}
+
 </style>
