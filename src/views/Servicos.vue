@@ -3,6 +3,9 @@
     <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
     <Navbar v-if="!mobileMode" class="navbar" />
     <div v-if="!activatedNavbar" class="pageContent">
+      <section class="servicosHero">
+        <h1></h1>
+      </section>
         <section class="servicos">
             <div class="copiaki">
                 <img src="@/assets/servicos/copiaki.png" alt="">
@@ -99,11 +102,17 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
-
-
+.servicosHero {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-transform: uppercase;
+}
 .servicos {
     position: relative;
-    height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -116,7 +125,6 @@ export default defineComponent({
         align-items: center;
 
         img {
-            margin-top: 50px ;
             height: 150px;
         }
 
