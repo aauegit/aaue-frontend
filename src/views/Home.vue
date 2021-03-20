@@ -137,17 +137,17 @@ $AaueYellow: #f8d80c;
       border: none;
 
       color: white;
-      background-color: $buttonColor;
+      background-color: $buttonColorTest;
 
       transition: 0.5s;
 
       &::before {
         position: absolute;
         content:"";
-        border-top: 5px solid lighten($buttonColor, 5%);
-        border-left: 5px solid lighten($buttonColor, 5%);	
-        border-right: 5px solid darken($buttonColor, 5%);
-        border-bottom: 5px solid darken($buttonColor, 5%);
+        border-top: 5px solid lighten($buttonColorTest, 5%);
+        border-left: 5px solid lighten($buttonColorTest, 5%);	
+        border-right: 5px solid darken($buttonColorTest, 5%);
+        border-bottom: 5px solid darken($buttonColorTest, 5%);
 
         top: 0px;
         right: 0px;
@@ -158,7 +158,7 @@ $AaueYellow: #f8d80c;
       }
 
       &:hover {
-        box-shadow: 7px 7px darken($buttonColor, 10%), -7px -7px lighten($buttonColor, 10%);
+        box-shadow: 7px 7px darken($buttonColorTest, 10%), -7px -7px lighten($buttonColorTest, 10%);
         cursor: pointer;
 
           &::before {
@@ -167,7 +167,7 @@ $AaueYellow: #f8d80c;
       }
     }
     .socio:hover {
-      box-shadow: -7px 7px darken($buttonColor, 10%), 7px -7px lighten($buttonColor, 10%);
+      box-shadow: -7px 7px darken($buttonColorTest, 10%), 7px -7px lighten($buttonColorTest, 10%);
       cursor: pointer;
     }
   }
