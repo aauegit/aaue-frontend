@@ -80,7 +80,7 @@ body {
 	z-index: 10;
 	width: 100%;
 	opacity: 1;
-	color: #fff;
+	color: #000;
 	padding: 35px 100px 0;
     .navLinks {
         position: absolute;
@@ -100,6 +100,10 @@ body {
             letter-spacing: 5px;
             font-size: 20px;
             text-transform: uppercase;
+
+            a {
+                color: white;
+            }
         }
 	}
     
@@ -124,17 +128,19 @@ body {
             width: 35px;
             height: 3px;
             margin: 5px;
-            background-color: white;
+            background-color: black;
             transition: all 0.3s ease;
         }
          .toggle {
             .line1 {
+                background-color: white;
                 transform: rotate(-45deg) translate(-5px, 6px);
             }
             .line2 {
                 opacity: 0;
             }
             .line3 {
+                background-color: white;
                 transform: rotate(45deg) translate(-5px, -6px);
             }
             
