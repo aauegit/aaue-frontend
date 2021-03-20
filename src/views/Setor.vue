@@ -1,10 +1,16 @@
 <template>
     <div class="setor">
-        <div class="nomeDoSetor">
+        <!-- <div class="nomeDoSetor">
             <h1> Informática </h1>
         <hr>
-        </div>
+        </div> -->
         <div class="infoSetor">
+            <div class="textSetor">
+                <h1>Informática</h1>
+                <hr>
+                <p>O Setor de Informática é o setor responsável por servir os utilizadores do Website da Associação Académica da Universidade de Évora, através de um contínuo estudo e consequente melhoria das informações e conhecimentos do meio digital que aplicam na manutenção dos serviços informáticos da AAUE. Torna-se também uma mais-valia para os recursos humanos e para a própria Associação Académica ao inovarem nas suas formas de divulgação.</p>
+                <h2>Contacto: <span>informativa@aaue.pt</span></h2>
+            </div>
             <div class="coordenador">
                 <img src="@/assets/membros/informatica/franciscoRodrigues.jpg" alt="">
                 <a href="https://www.facebook.com/francisco.rodrigues.94651" target="_blank">Francisco Rodrigues</a>
@@ -17,11 +23,7 @@
                 <img src="@/assets/membros/informatica/tiagoCosta.jpg" alt="">
                 <a href="https://www.facebook.com/tiagoagcosta/" target="_blank">Tiago Costa</a>
             </div>
-            <div class="textSetor">
-                <h1>Descrição</h1>
-                <p>O Setor de Informática é o setor responsável por servir os utilizadores do Website da Associação Académica da Universidade de Évora, através de um contínuo estudo e consequente melhoria das informações e conhecimentos do meio digital que aplicam na manutenção dos serviços informáticos da AAUE. Torna-se também uma mais-valia para os recursos humanos e para a própria Associação Académica ao inovarem nas suas formas de divulgação.</p>
-                <h2>Contacto: <span>informativa@aaue.pt</span></h2>
-            </div>
+            
         </div>
     </div>
   
@@ -74,7 +76,8 @@ export default defineComponent({
         
 
         .textSetor {
-            margin-left: 30px;
+            text-align: justify;
+            margin-right: 110px;
 
             p {
                 margin: 30px 0 30px 0;
