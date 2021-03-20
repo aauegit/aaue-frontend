@@ -3,7 +3,7 @@
 </template>
 
 <style lang="scss">
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css");
+@import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

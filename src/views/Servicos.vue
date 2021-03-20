@@ -21,7 +21,7 @@
                     </ul>
                     <p class="horario"><span>Horário: </span>9:00 – 13:00  |  14:00 – 19:00 (fechado: Sábado e Domingo) </p>
                 </div>
-                <a href="https://www.facebook.com/copiakiue/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                <a href="https://www.facebook.com/copiakiue/" target="_blank"><i class="fab fa-facebook-square"></i></a>
             </div>
             <div class="vidaAcademica">
                 <img src="@/assets/servicos/vidaacademica.png" alt="">
@@ -38,8 +38,8 @@
                     <p class="horario"><span>Horário: </span>11:00 – 15:00  |  16:00 – 20:00 (fechado: Sábado e Domingo)</p>
                 </div>
                 <div class="links">
-                  <a href="hhttps://www.facebook.com/loja.v.academica/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                  <a href="https://loja.aaue.pt/" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                  <a href="hhttps://www.facebook.com/loja.v.academica/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                  <a href="https://loja.aaue.pt/" target="_blank"><i class="fab fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
                 
             </div>

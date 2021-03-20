@@ -13,7 +13,7 @@ import { defineComponent } from 'vue';
 import Navbar from '../components/Navbar.vue';
 import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
-import Setor from '../components/Setor.vue';
+import Setor from './Setor.vue';
 import Footer from '../components/Footer.vue';
 
 export default defineComponent({

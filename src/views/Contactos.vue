@@ -12,10 +12,10 @@
                 <h1>Visita-nos!</h1>
                 <img src="@/assets/activism.jpeg" alt="">
                 <ul>
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="https://goo.gl/maps/hMu13iR5NiM2">Rua Diogo Cão nº 21 7000-872 Évora</a></li>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:geral@aaue.pt">geral@aaue.pt</a></li>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+351266098003">+ 351 266 09 80 03</a></li>
-                    <li><i class="fa fa-fax" aria-hidden="true"></i><a href="tel:+351266781663">+ 351 266 78 16 63</a></li>
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a href="https://goo.gl/maps/hMu13iR5NiM2">Rua Diogo Cão nº 21 7000-872 Évora</a></li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:geral@aaue.pt">geral@aaue.pt</a></li>
+                    <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+351266098003">+ 351 266 09 80 03</a></li>
+                    <li><i class="fas fa-fax" aria-hidden="true"></i><a href="tel:+351266781663">+ 351 266 78 16 63</a></li>
                 </ul>
             </div>
             <div class="form">
@@ -143,7 +143,7 @@ export default defineComponent({
             .fa-phone {
                 color:#89CFF0;
             }
-            .fa-map-marker {
+            .fa-map-marker-alt {
                 color:#e96656;
             }
             .fa-envelope {

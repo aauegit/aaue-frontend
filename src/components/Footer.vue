@@ -2,22 +2,22 @@
     <footer>
 		<ul>
             <li>
-                <a href="https://goo.gl/maps/hMu13iR5NiM2"><i class="fa fa-map-marker icon" aria-hidden="true"></i></a>
+                <a href="https://goo.gl/maps/hMu13iR5NiM2"><i class="fas fa-map-marker-alt icon" aria-hidden="true"></i></a>
                 <p>Rua Diogo Cão nº 21 7000-872 Évora</p>
             </li>
             <li>
-                <a href="mailto:geral@aaue.pt"><i class="fa fa-envelope icon" aria-hidden="true"></i></a>
+                <a href="mailto:geral@aaue.pt"><i class="fas fa-envelope icon" aria-hidden="true"></i></a>
                 <p><router-link :to="{ name: 'Contactos' }">Contacta-nos!</router-link></p>
             </li>
             <li>
-                <a href="tel:+351266098003"><i class="fa fa-phone icon" aria-hidden="true"></i></a>
+                <a href="tel:+351266098003"><i class="fas fa-phone icon" aria-hidden="true"></i></a>
                 <p>+ 351 266 09 80 03</p>
             </li>
             <div class="socials">
                 <div class="icons">
-                    <li><a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a class="icon" id="instagram" href="https://www.instagram.com/aauevora/"><i class="fa fa-instagram"></i></a></li>
-			        <li><a class="icon" id="linkedin" href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-acad%C3%A9mica-da-universidade-de-%C3%A9vora/"><i class="fa fa-linkedin-square"></i></a></li>  
+                    <li><a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a class="icon" id="instagram" href="https://www.instagram.com/aauevora/"><i class="fab fa-instagram"></i></a></li>
+			        <li><a class="icon" id="linkedin" href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-acad%C3%A9mica-da-universidade-de-%C3%A9vora/"><i class="fab fa-linkedin-in"></i></a></li>  
                 </div>
                 <p class="moto">2021 ©</p>
 		        <p>Copyright AAUE</p>
@@ -64,7 +64,7 @@ footer {
             & .fa-phone {
                 color:#89CFF0;
             }
-            & .fa-map-marker {
+            & .fa-map-marker-alt {
                 color:#e96656;
             }
             & .fa-envelope {
