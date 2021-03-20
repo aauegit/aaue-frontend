@@ -32,16 +32,19 @@
                         <li>- Trajes Académicos</li>
                         <li>- Emblemas e Pins</li>
                         <li>- Brindes</li>
-                        <li>- Pijamas Cirúrgicos</li>
-                        <li>- Batas</li>
+                        <li>- Pijamas Cirúrgicos e Batas</li>
                         <li>- Vestuário diverso</li>
-                        <li>- Material Promocional</li>
                     </ul>
                     <p class="horario"><span>Horário: </span>11:00 – 15:00  |  16:00 – 20:00 (fechado: Sábado e Domingo)</p>
                 </div>
-                <a href="hhttps://www.facebook.com/loja.v.academica/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                <div class="links">
+                  <a href="hhttps://www.facebook.com/loja.v.academica/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                  <a href="https://loja.aaue.pt/" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                </div>
+                
             </div>
         </section>
+        <Footer />
     </div>
 </template>
 
@@ -112,6 +115,7 @@ export default defineComponent({
     text-transform: uppercase;
 }
 .servicos {
+  height: 80vh;
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -123,6 +127,7 @@ export default defineComponent({
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100%;
 
         img {
             height: 150px;
@@ -149,6 +154,12 @@ export default defineComponent({
 
         a {
             opacity: 1;
+        }
+
+
+        .fa-facebook-square {
+            font-size: 50px;
+            color: #3b5998;
             transition: transform 0.2s ease-in;
 
             &:hover {
@@ -156,8 +167,15 @@ export default defineComponent({
             }
         }
 
-        .fa-facebook-square {
+        .fa-shopping-cart {
             font-size: 50px;
+            color: #e96656;
+            margin-left: 75px;
+            transition: transform 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 }
