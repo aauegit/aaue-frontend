@@ -9,7 +9,7 @@
           </div>
       <ul>
         <li><router-link class="navLinks" to="/">Home</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Noticias</router-link></li>
+        <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Notícias</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Eventos' }">Eventos</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Associacao' }">Associação</router-link></li>

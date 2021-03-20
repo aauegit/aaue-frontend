@@ -61,7 +61,7 @@ export default defineComponent({
             imgURL: "activism.jpeg", 
             titulo: "AAUE condena Secretário de Estado por querer ficar bem na fotografia do Fim das Associações", 
             dataDePublicacao: "3 Março, 2021",
-            textPreview: "2020 marcou o início de um período de recessão económica onde as associações foram colocadas na corda bamba da sobrevivência. Agora, o executivo decide iludir estas estruturas, colocando em causa a sua capacidade de ação e os postos de trabalho. No passado dia 2 de março, a Secretaria de Estado da Juventude e do Desporto ",
+            textPreview: "2020 marcou o início de um período de recessão económica onde as associações foram colocadas na corda bamba da sobrevivência. Agora, o executivo decide iludir estas estruturas, colocando em causa a sua capacidade de ação e os postos de trabalho.",
         },
           {
             id: 1,
