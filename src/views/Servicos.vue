@@ -40,7 +40,6 @@
             </div>
         </section>
     </div>
-    <Footer />
 </template>
 
 <script lang="ts">
@@ -100,6 +99,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+
+
 .servicos {
     position: relative;
     height: 100vh;
@@ -107,7 +108,8 @@ export default defineComponent({
     justify-content: space-around;
     align-items: center;
 
-    div {
+    .vidaAcademica,
+    .copiaki {
         display: flex;
         flex-direction: column;
         justify-content: center;
