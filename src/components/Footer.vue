@@ -3,7 +3,7 @@
 		<ul>
             <div class="aaue">
                 <div>
-                   <img src="@/assets/aaueLogo.png" alt="">
+                   <img src="@/assets/aaueLogoBranco.png" alt="">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora molestiae quibusdam id, tempore temporibus eos commodi esse voluptates qui adipisci.</p> 
                 </div>
                 <ul class="pages">
@@ -33,9 +33,42 @@
             </div>
             <div class="socials">
                 <div class="icons">
-                    <li><a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora"><i class="fab fa-facebook-square"></i></a></li>
-                    <li><a class="icon" id="instagram" href="https://www.instagram.com/aauevora/"><i class="fab fa-instagram"></i></a></li>
-			        <li><a class="icon" id="linkedin" href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-acad%C3%A9mica-da-universidade-de-%C3%A9vora/"><i class="fab fa-linkedin-in"></i></a></li>  
+                    <li>
+                        <a class="icon" id="alojamento" href="https://alojamento.aaue.pt/" target="_blank">
+                            <i class="fas fa-home"></i>
+                            <p>Portal do Alojamento</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon" id="reitor" href="http://torneioreitor.aaue.pt/" target="_blank">
+                            <i class="fas fa-futbol"></i>
+                             <p>Torneio do Reitor</p> 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon" id="queima" href="http://queima.aaue.pt/" target="_blank">
+                            <i class="fas fa-glass-cheers"></i>
+                            <p>Queima das Fitas</p> 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora" target="_blank">
+                            <i class="fab fa-facebook-square"></i>
+                             <p>Facebook</p> 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon" id="instagram" href="https://www.instagram.com/aauevora/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                             <p>@aauevora</p> 
+                        </a>
+                    </li>
+			        <li>
+                        <a class="icon" id="linkedin" href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-acad%C3%A9mica-da-universidade-de-%C3%A9vora/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                            <p>LinkedIn</p> 
+                        </a>
+                    </li>  
                 </div>
                 <p class="moto">2021 ©</p>
 		        <p>Copyright AAUE</p>
@@ -149,16 +182,69 @@ footer {
     .socials {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         background-color: #171717;
         width: 25%;
 
         .icons {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            color: #f7f7f7;
+
+            .icon {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: white;
+                font-size: 20px;
+                margin: 5px 0 5px 0;
+
+                i {
+                    margin: 10px 10px 0 0;
+                    font-size: 30px;
+                }
+
+                p {
+                    color: white;
+                    margin: 10px 0 0 0;
+                    transition: color 0.2s ease-in;
+                }
+            }
+
+            #alojamento:hover,
+            #alojamento:hover p {
+                color: #d80b0b;
+            }
+
+            #reitor:hover,
+             #reitor:hover p {
+                color: #6db66d;
+            }
+
+            #queima:hover,
+            #queima:hover p {
+                color: #e7c137;
+            }
+
+            #instagram:hover,
+             #instagram:hover p {
+                color: #c13584;
+            }
+
+            #facebook:hover,
+            #facebook:hover p {
+                color: #3b5998;
+            }
+
+            #linkedin:hover,
+            #linkedin:hover p {
+                color: #2867B2;
+            }
+
         }
     }
+
     p{
         text-transform: uppercase;
         font-size: 14px;
