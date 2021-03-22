@@ -30,7 +30,6 @@ export default defineComponent({
         },
         textPreview: {
             type: String,
-            required: true,
         },
     }
 });
@@ -63,6 +62,7 @@ export default defineComponent({
     img {
         border-radius: 12px;
         width: 300px;
+        height: 200px;
         margin-right: 25px;
     }
 
