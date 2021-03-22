@@ -104,7 +104,6 @@ $AaueYellow: #f8d80c;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid red;
 
   .textArea {
     display: flex;
@@ -174,6 +173,28 @@ $AaueYellow: #f8d80c;
 
   .heroImage {
     width: 600px;
+  }
+}
+
+.ourWork {
+  padding: 20px;
+
+  .ativismo {
+    display: flex;
+
+    img {
+      margin-right: 30px;
+      width: 50%
+    
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        text-transform: uppercase;
+      }
+    }
   }
 }
 

@@ -67,7 +67,7 @@
                     <li>
                         <a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora" target="_blank">
                             <i class="fab fa-facebook-square"></i>
-                             <p>Facebook</p> 
+                             <p>@AAUEvora</p> 
                         </a>
                     </li>
                     <li>
