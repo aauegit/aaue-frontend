@@ -61,6 +61,7 @@ export default defineComponent({
     }
 
     img {
+        border-radius: 12px;
         width: 300px;
         margin-right: 25px;
     }
