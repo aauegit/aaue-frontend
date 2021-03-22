@@ -1,6 +1,6 @@
 <template>
     <footer>
-		<ul>
+		<ul class="ulContainer">
             <div class="aaue">
                 <div>
                    <img src="@/assets/aaueLogoBranco.png" alt="">
@@ -19,16 +19,23 @@
             <div class="contactInfo">
                 <h1>Contacta-nos!</h1>
                 <li>
-                    <a href="https://goo.gl/maps/hMu13iR5NiM2"><i class="fas fa-map-marker-alt icon" aria-hidden="true"></i></a>
+                    <a href="https://goo.gl/maps/hMu13iR5NiM2">
+                    <i class="fas fa-map-marker-alt icon" aria-hidden="true"></i>
                     <p>Rua Diogo Cão nº 21 <br> 7000-872 Évora</p>
+                    </a>
+                    
                 </li>
                 <li>
-                    <a href="mailto:geral@aaue.pt"><i class="fas fa-envelope icon" aria-hidden="true"></i></a>
-                    <p><router-link :to="{ name: 'Contactos' }">geral@aaue.pt</router-link></p>
+                    <a href="mailto:geral@aaue.pt">
+                        <i class="fas fa-envelope icon" aria-hidden="true"></i>
+                        <p>geral@aaue.pt</p>
+                    </a>
                 </li>
                 <li>
-                    <a href="tel:+351266098003"><i class="fas fa-phone icon" aria-hidden="true"></i></a>
-                    <p>+ 351 266 09 80 03</p>
+                    <a href="tel:+351266098003">
+                        <i class="fas fa-phone icon" aria-hidden="true"></i>
+                        <p>+ 351 266 09 80 03</p>
+                    </a>
                 </li>
             </div>
             <div class="socials">
@@ -70,8 +77,6 @@
                         </a>
                     </li>  
                 </div>
-                <p class="moto">2021 ©</p>
-		        <p>Copyright AAUE</p>
             </div>
 		</ul>
 		
@@ -88,15 +93,17 @@ export default defineComponent({
 <style lang="scss">
 
 $textColor: #f7f7f7;
+$backgroundColor: #171717;
 
 footer {
 	display: flex;
 	flex-direction: column;
-	color: #fff;
-	background-color: #272727;
-	padding: 60px 0;
+    justify-content: space-around;
+	color: $textColor;
+	background-color: $backgroundColor;
+	padding-top: 30px;
 
-    ul{
+    .ulContainer {
         display: flex;
         margin-bottom: 25px;
         font-size: 32px;
@@ -118,13 +125,15 @@ footer {
         }
 
         .contactInfo {
-            width: 25%;
+            width: 15%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-left: 30px;
 
             h1 {
                 color: $textColor;
+                opacity: 0.9;
                 font-size: 30px;
             }
 
@@ -136,14 +145,20 @@ footer {
                 margin: 10px 8px;
 
                 a {
-                    color: white;
-                    margin-right: 10px
+                    display: flex;
+                    align-items: center;
+                    color: $textColor;
+                    margin-right: 10px;
+
+                    i {
+                        margin-right: 10px;
+                    }
                 }
 
                 .icon {
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                   
                 }
 
                 .fa-phone {
@@ -183,20 +198,19 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: #171717;
-        width: 25%;
+        width: 30%;
 
         .icons {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            color: #f7f7f7;
+            color: $textColor;
 
             .icon {
                 display: flex;
                 align-items: center;
                 text-align: center;
-                color: white;
+                color: $textColor;
                 font-size: 20px;
                 margin: 5px 0 5px 0;
 
@@ -206,7 +220,8 @@ footer {
                 }
 
                 p {
-                    color: white;
+                    text-transform: uppercase;
+                    color: $textColor;
                     margin: 10px 0 0 0;
                     transition: color 0.2s ease-in;
                 }
@@ -246,16 +261,9 @@ footer {
     }
 
     p{
-        text-transform: uppercase;
-        font-size: 14px;
-        color: rgba(255,255,255,0.6);
-        color: #f5f5f5d2;
-        margin-bottom: 10px;
+        font-size: 16px;
 
     }
-    .moto {
-            font-size: 16px;
-        }
 }
 @media (max-width: 700px){
 	footer {
