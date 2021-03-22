@@ -43,12 +43,17 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     .logo {
-      
+
+      a {
+        opacity: 1;
+      }
+
       img {
-        width: 250px;
+
+        width: 200px;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 15px;
+        left: 40px;
       }
     }
 
@@ -58,7 +63,7 @@ export default defineComponent({
 
       li {
         padding: 10px;
-        font-size: 24px;
+        font-size: 22px;
 
         a {
           font-weight: bold;
