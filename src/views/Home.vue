@@ -26,13 +26,27 @@
       </div>
     </section>
     <section class="recrutamento">
-      somos estudantes , tal como tu, que .....
+      <div class="aboutUs">
+        <div class="text">
+          <h1>Mas quem é a AAUE?</h1>
+          <p>Somos estudantes, tal como tu, que  trabalham, lutam e dão a cara. A AAUE é quem tenta encontrar a melhor solução para a maioria dos estudantes</p>
+        </div>
+       <img src="@/assets/activism.jpeg" alt="">
+      </div>
     </section>
     <section class="plataformas">
-      <p>ya plataformas</p>
+      <p>Plataformas</p>
+      <p>De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:</p>
     </section>
     <section class="noticias">
-      <h1>ya noticias e ques</h1>
+      <div class="noticiasPreview">
+        <h1>Notícias</h1>
+        <h2>Últimas noticias da Associação Académica da Universidade de Évora. </h2>
+        <div class="carrossel">
+          <NoticiaCard v-for="noticia in noticias" :key="noticia.id" :imgURL="getImgURL(noticia.imgURL)" :titulo="noticia.titulo" :data="noticia.dataDePublicacao" :textPreview="noticia.textPreview"/>
+        </div>
+      </div>
+      
     </section>
     <Footer />
   </div>
@@ -43,6 +57,7 @@ import { defineComponent } from 'vue';
 import Navbar from '../components/Navbar.vue';
 import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
+import NoticiaCard from '../components/NoticiaCard.vue';
 import Footer from '../components/Footer.vue';
 
 export default defineComponent({
@@ -52,12 +67,47 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
+      noticias: [
+          {
+            id: 0,
+            category: "any",
+            imgURL: "activism.jpeg", 
+            titulo: "AAUE condena Secretário de Estado por querer ficar bem na fotografia do Fim das Associações", 
+            dataDePublicacao: "3 Março, 2021",
+            textPreview: "2020 marcou o início de um período de recessão económica onde as associações foram colocadas na corda bamba da sobrevivência. Agora, o executivo decide iludir estas estruturas, colocando em causa a sua capacidade de ação e os postos de trabalho.",
+        },
+          {
+            id: 1,
+            category: "any",
+            imgURL: "activism.jpeg", 
+            titulo: "Orçamento de Estado de 2021 – A Propina e a Tese", 
+            dataDePublicacao: "3 Março, 2021",
+            textPreview: "Ciente da sua missão e posição, a Associação Académica da Universidade de Évora vem clarificar o artigo 259º do Orçamento de Estado (OE). A lei nº. 75-B/2020, de 31 de dezembro de 2020, artigo 259º do OE 2021 refere: Prorrogação do prazo para entrega e apresentação de teses ou dissertações: É prorrogado, até ao final ",
+        },
+          {
+            id: 2,
+            category: "any",
+            imgURL: "activism.jpeg", 
+            titulo: "Plano de Recuperação e Resiliência", 
+            dataDePublicacao: "2 Março, 2021",
+            textPreview: "A Universidade de Évora e a Associação Académica da Universidade de Évora uniram-se na reflexão de preocupações, facultando contributos para a consulta pública do Plano de Recuperação e Resiliência. ",
+        },
+          {
+            id: 3,
+            category: "any",
+            imgURL: "activism.jpeg", 
+            titulo: "Resultado das Eleições para os Órgãos Sociais da AAUE para o mandato de 2021", 
+            dataDePublicacao: "18 Dezembro, 2020",
+            textPreview: "Caros Estudantes, A Comissão Eleitoral vem por este meio divulgar os resultados bem como a Ata de Eleição dos Órgãos Sociais da Associação Académica da Universidade de Évora para o mandato de 2021: Mesa da Assembleia Magna: Lista F Conselho Fiscal: Lista F Direção e Secções Autónomas: Lista F Saudações Académicas, Ana Lucas Presidente da ",
+        },
+      ],
     }
   },
   components: {
     Navbar,
     NavbarMobile,
     ScrollToTopButton,
+    NoticiaCard,
     Footer,
   },
   created() {
@@ -75,6 +125,9 @@ export default defineComponent({
       if (element) {
         element.scrollIntoView({behavior: 'smooth'});
       }
+    },
+    getImgURL(image: String) {
+        return require('../assets/' + image);
     },
     handleScroll () {
       window.pageYOffset >= 250 ? this.isAtTop = false : this.isAtTop = true;
@@ -98,6 +151,9 @@ $buttonColor: #d90504;
 $AaueRed: #d90504;
 $AaueYellow: #f8d80c;
 
+section {
+  padding: 20px;
+}
 
 .heroContent {
   height: 100vh;
@@ -178,6 +234,7 @@ $AaueYellow: #f8d80c;
 
 .ourWork {
   padding: 20px;
+  height: 100vh;
 
   .ativismo {
     display: flex;
@@ -197,5 +254,50 @@ $AaueYellow: #f8d80c;
     }
   }
 }
+
+.recrutamento {
+  padding: 20px;
+  height: 100vh;
+
+  .aboutUs {
+    display: flex;
+
+    img {
+      margin-left: 30px;
+      width: 50%
+    
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.noticias {
+
+  h1 {
+    font-size: 80px;
+  }
+
+  .noticiasPreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .carrossel {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+}
+
 
 </style>
