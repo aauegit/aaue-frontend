@@ -39,7 +39,7 @@ export default defineComponent({
 .plataformaCard {
     opacity: 1;
     margin: 30px 10px 10px 30px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 18px;
     display: flex;
     align-items: center;
