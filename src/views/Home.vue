@@ -35,8 +35,12 @@
       </div>
     </section>
     <section class="plataformas">
-      <p>Plataformas</p>
+      <h1>Plataformas</h1>
       <p>De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:</p>
+      <div class="plataformaCards">
+        <PlataformaCard link="https://alojamento.aaue.pt/" icon="fas fa-home" titulo="Portal do Alojamento" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
+         <PlataformaCard link="https://alojamento.aaue.pt/" icon="fas fa-futbol" titulo="Torneio do Reitor" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
+      </div>
     </section>
     <section class="noticias">
       <div class="noticiasPreview">
@@ -58,6 +62,7 @@ import Navbar from '../components/Navbar.vue';
 import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
 import NoticiaCard from '../components/NoticiaCard.vue';
+import PlataformaCard from '../components/PlataformaCard.vue';
 import Footer from '../components/Footer.vue';
 
 export default defineComponent({
@@ -108,6 +113,7 @@ export default defineComponent({
     NavbarMobile,
     ScrollToTopButton,
     NoticiaCard,
+    PlataformaCard,
     Footer,
   },
   created() {
@@ -276,6 +282,22 @@ section {
       }
     }
   }
+}
+
+.plataformas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 80px;
+  }
+
+  .plataformaCards {
+    display: flex;
+  }
+
 }
 
 .noticias {
