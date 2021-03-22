@@ -37,16 +37,16 @@
     <section class="plataformas">
       <h1>Plataformas</h1>
       <p>De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:</p>
-      <div class="plataformaCards">
-        <PlataformaCard link="https://alojamento.aaue.pt/" icon="fas fa-home" titulo="Portal do Alojamento" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
-         <PlataformaCard link="https://alojamento.aaue.pt/" icon="fas fa-futbol" titulo="Torneio do Reitor" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
+      <div class="plataformaCards"  >
+        <PlataformaCard  link="https://alojamento.aaue.pt/" icon="fas fa-home" titulo="Portal do Alojamento" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
+        <PlataformaCard link="https://alojamento.aaue.pt/" icon="fas fa-futbol" titulo="Torneio do Reitor" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
       </div>
     </section>
     <section class="noticias">
       <div class="noticiasPreview">
         <h1>Notícias</h1>
         <h2>Últimas noticias da Associação Académica da Universidade de Évora. </h2>
-        <div class="carrossel">
+        <div class="carrossel" @mousedown="mouseDown()"  @mouseup="mouseUp()" @mouseleave="mouseLeave()" @mousemove="mouseMove()">
           <NoticiaCard v-for="noticia in noticias" :key="noticia.id" :imgURL="getImgURL(noticia.imgURL)" :titulo="noticia.titulo" :data="noticia.dataDePublicacao" :textPreview="noticia.textPreview"/>
         </div>
       </div>
@@ -72,6 +72,9 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
+      mouseIsDown: false,
+      carouselStartX: undefined,
+      carouselScrollLeft: undefined,
       noticias: [
           {
             id: 0,
@@ -143,6 +146,22 @@ export default defineComponent({
 
       if(!this.mobileMode) {
         this.activatedNavbar = false;
+      }
+    },
+    mouseDown() {
+      this.mouseIsDown = true;
+    },
+    mouseLeave() {
+      this.mouseIsDown = false;
+    },
+    mouseUp() {
+      this.mouseIsDown = false;
+    },
+ 
+    mouseMove() { 
+     
+      if(!this.mouseIsDown) {
+        return;
       }
     },
   },
