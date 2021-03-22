@@ -2,11 +2,11 @@
     <footer>
 		<ul class="ulContainer">
             <div class="aaue">
-                <div>
-                   <img src="@/assets/aaueLogoBranco.png" alt="">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora molestiae quibusdam id, tempore temporibus eos commodi esse voluptates qui adipisci.</p> 
-                </div>
-                <ul class="pages">
+                <img src="@/assets/aaueLogoBranco.png" alt="">
+                <p>Cada um de vós é AAUE. Cada um de vós representa a AAUE. A AAUE é isto, estudantes que trabalham, lutam e dão a cara. A AAUE é quem tenta encontrar a melhor solução para a maioria dos estudantes</p> 
+            </div>
+            <div class="pages">
+                <ul class="ulPages">
                     <li><router-link class="navLinks" to="/">Home</router-link></li>
                     <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Notícias</router-link></li>
                     <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
@@ -35,6 +35,12 @@
                     <a href="tel:+351266098003">
                         <i class="fas fa-phone icon" aria-hidden="true"></i>
                         <p>+ 351 266 09 80 03</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+351266781663">
+                        <i class="fas fa-fax" aria-hidden="true"></i>
+                        <p>+ 351 266 78 16 63</p> 
                     </a>
                 </li>
             </div>
@@ -111,21 +117,35 @@ footer {
 
         .aaue {
             display: flex;
-            width: 40%;
+            flex-direction: column;
+            width: 20%;
 
-            .pages {
+            img {
+                margin-bottom: 30px;
+            }
+        }
+
+        .pages {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .ulPages {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
+
 
                 a {
                     color: $textColor;
                     font-size: 20px;
                 }
             }
+
+            
         }
 
         .contactInfo {
-            width: 15%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -170,19 +190,10 @@ footer {
                 .fa-envelope {
                     color:#90EE90;
                 }
-                &:hover {
-                    scale: 1.2;
-                    
-                    & #instagram {
-                        color: #c13584;
-                    }
-                    & #facebook {
-                        color: #3b5998;
-                    }
-                    & #linkedin {
-                        color: #2867B2;
-                    }
+                .fa-fax {
+                    color:#ffc0cb;
                 }
+
                 &:first-child{
                     margin-left: 0;	
                 }
@@ -198,7 +209,6 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 30%;
 
         .icons {
             display: flex;
@@ -244,7 +254,7 @@ footer {
 
             #instagram:hover,
              #instagram:hover p {
-                color: #c13584;
+                color: #8a3ab9;
             }
 
             #facebook:hover,
