@@ -37,12 +37,6 @@
                         <p>+ 351 266 09 80 03</p>
                     </a>
                 </li>
-                <li>
-                    <a href="tel:+351266781663">
-                        <i class="fas fa-fax" aria-hidden="true"></i>
-                        <p>+ 351 266 78 16 63</p> 
-                    </a>
-                </li>
             </div>
             <div class="socials">
                 <div class="icons">
@@ -60,7 +54,7 @@
                     </li>
                     <li>
                         <a class="icon" id="queima" href="http://queima.aaue.pt/" target="_blank">
-                            <i class="fas fa-glass-cheers"></i>
+                            <i class="fas fa-music"></i>
                             <p>Queima das Fitas</p> 
                         </a>
                     </li>

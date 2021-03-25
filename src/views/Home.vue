@@ -6,8 +6,8 @@
     <section class="hero">
       <div class="heroContent">
         <div class="textArea">
-          <h1 class="slogan">De estudantes para estudantes</h1>
-          <h2 class="heroText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, veniam! Fazemos cenas, faz-te socio</h2>
+          <h1 class="slogan">De estudantes, <br>para estudantes</h1>
+          <p class="heroText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius earum officiis deleniti dolores accusantium sed doloremque aperiam ipsum, quas veritatis perspiciatis quam tempore odit praesentium tempora rerum animi quis nobis.. Quos, veniam! Fazemos cenas, faz-te socio</p>
           <div class="buttons">
             <button class="vantagens">Descobre as vantagens</button>
             <button class="socio">Faz-te Sócio!</button>
@@ -20,7 +20,7 @@
       <div class="ativismo">
         <img src="@/assets/activism.jpeg" alt="">
         <div class="text">
-          <h1>ativismo estudantil</h1>
+          <h1>we do stuff</h1>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quis officiis praesentium iure quisquam recusandae inventore fuga quia sapiente libero?</p>
         </div>
       </div>
@@ -188,12 +188,15 @@ section {
 
   .textArea {
     display: flex;
+    width: 50%;
     justify-content: left;
     align-items: left;
     flex-direction: column;
 
     .slogan {
-      margin: 0px 25px;
+      font-size: 3.7vw;
+      margin: 10px 25px;
+      line-height: 70px;
       text-transform: uppercase;
     }
     
