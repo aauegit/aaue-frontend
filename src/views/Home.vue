@@ -30,6 +30,10 @@
         <div class="text">
           <h1>Mas quem é a AAUE?</h1>
           <p>Somos estudantes, tal como tu, que  trabalham, lutam e dão a cara. A AAUE é quem tenta encontrar a melhor solução para a maioria dos estudantes</p>
+          <p>Ao nível interno a AAUÉ tem assento no Senado Universitário, no Conselho de Acção Social, no Conselho de Avaliação, no Conselho Consultivo do Fundo de Acção Social da UÉ, no Gabinete para a Promoção do Sucesso Académico, no Conselho Desportivo da UÉ, no Conselho da Fundação Luís de Molina e na Assembleia de Representantes.</p>
+          <p>Ao nível externo a AAUÉ desempenha um papel político junto das outras associações congéneres, no Ministério da Educação e Ciência e está representada em órgãos estatais e regionais. Faz ainda parte do Fórum Académico para a Informação e Representação Externa (FAIRe) e na Federação Académica do Desporto Universitário (FADU), na qual é membro fundador.</p>
+          <p>A AAUÉ faz ainda parte do Conselho Municipal de Juventude, do Conselho Consultivo Regional do IPDJ e do Conselho Municipal de Educação.</p>
+          <p>Para além do trabalho político a AAUÉ promove actividades culturais e desportivas e presta aos seus membros, os estudantes, serviços variados, desde o lazer e a informação à formação extra-curricular.</p>
         </div>
        <img src="@/assets/activism.jpeg" alt="">
       </div>
