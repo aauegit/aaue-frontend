@@ -13,22 +13,33 @@
                 <img :src="getImgURL('rececao.jpg')" alt="">
                 <ul>
                     <h1>Afinal de contas é aqui que começam os melhores dias da TUA vida!</h1>
-                    <li>
-                        <i class="fas fa-caret-right"></i>
-                        <p>#1 - Cartaz</p>
+                    <li @click="showingCartaz = !showingCartaz" >
+                        <div class="text">
+                           <i class="fas fa-caret-right"></i>
+                            <p>#1 - Cartaz</p> 
+                        </div>
+                        <div>
+                            <img v-if="showingCartaz" :src="getImgURL('rececaoCartazCompleto.png')" alt="">
+                        </div>
+                        
                     </li>
                     <li>
-                        <i class="fas fa-caret-right"></i>
-                        <p>#2 - Bilhetes Gerais</p>
+                        <div class="text">
+                            <i class="fas fa-caret-right"></i>
+                            <p>#2 - Bilhetes Gerais</p>
+                        </div>
                     </li>
                     <li>
-                        <i class="fas fa-caret-right"></i>
-                        <p>#3 - Bilhetes Diários</p>
+                        <div class="text">
+                            <i class="fas fa-caret-right"></i>
+                            <p>#3 - Bilhetes Diários</p>
+                        </div>
+                        
                     </li>
                 </ul>
             </div>
         </div>
-
+        <Footer />
     </div>
   
 </template>
@@ -47,6 +58,7 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
+      showingCartaz: false,
     }
   },
   components: {
@@ -123,6 +135,7 @@ export default defineComponent({
         img {
             margin-right: 30px;
             width: 450px;
+            height: 250px;
         }
 
         h1 {
@@ -131,13 +144,26 @@ export default defineComponent({
 
         ul li {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 30px 0px;
+            
             cursor: pointer;
+            color: rgb(61, 181, 221);
             border-bottom: 1px solid #bebebe;
+
+            .text {
+                width: 100%;
+                padding: 30px 0px;
+                display: flex;
+            }
 
             i {
                 margin-right: 10px;
+            }
+
+            img {
+                position: relative;
+                height: auto;
             }
         }
     }

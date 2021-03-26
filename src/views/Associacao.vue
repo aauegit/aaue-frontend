@@ -161,11 +161,6 @@ export default defineComponent({
     text-align: left;
     min-width: 35%;
     font-size: 10px;
-
-    .rightColumn {
-      padding-left: 20px;
-      border-left: 1px solid #bebebe48;
-    }
     
     i {
       font-size: 30px;
@@ -185,7 +180,8 @@ export default defineComponent({
       align-items: center;
       font-size: 10px;
       color: #555;
-      padding: 10px;
+      padding: 0px 10px 20px 10px;
+      max-width: 65%;
 
 
       i {
