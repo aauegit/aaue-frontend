@@ -68,7 +68,7 @@ export default defineComponent({
     .infoSetor {
         display: flex;
         justify-content: center;
-        width: 80%;
+        width: 100%;
 
         hr {
             margin-bottom: 20px;
@@ -76,6 +76,8 @@ export default defineComponent({
 
         .coordenadores {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .coordenador {
             display: flex;

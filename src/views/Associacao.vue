@@ -23,6 +23,9 @@
         :coordenador3="coordenador3"
         :coordenador3Img="coordenador3Img"
         :fb3="fb3"
+        :coordenador4="coordenador4"
+        :coordenador4Img="coordenador4Img"
+        :fb4="fb4"
         :descricao="descricao"
         :contacto="contacto"
          />
@@ -52,7 +55,7 @@ export default defineComponent({
         {id: 2, nome: "Administração", icon: "fas fa-users-cog", coordenador1: "Joana Martins", fb1: "https://www.facebook.com/joana.martins.984", img1: 'administracao/joanamartins.webp', coordenador2: "Marganida Janota",  fb2: "https://www.facebook.com/margarida.janota.3", img2: 'administracao/margaridajanota.webp', coordenador3: "Maria Borges",  fb3: "https://www.facebook.com/mariamargarida.borges.7", img3: 'administracao/mariaborges.webp', descricao: "Este setor tem como responsabilidades a organização e gestão de todo o património móvel e imóvel da AAUE. Compromete-se com a organização e manutenção de estruturas que apoiam o bom funcionamento desta Associação Académica como é o caso do arquivo, do Cordovil e da Sala dos Núcleos. Ainda, coopera de forma próxima e permanente com a presidência e os restantes setores da AAUE.", contacto: "administracao@aaue.pt"},
         {id: 3, nome: "Apoio aos Núcleos", icon: "fas fa-ticket-alt", coordenador1: "André Antunes", fb1: "https://www.facebook.com/AFreitasAntunes", img1: 'apoioaosnucleos/andreantunes.webp', coordenador2: "Carminho Chichorro",  fb2: "https://www.facebook.com/carmo.sousachichorro", img2: 'apoioaosnucleos/carminhochichorro.webp', coordenador3: "Marisa Chuva",  fb3: "https://www.facebook.com/marisaapchuva", img3: 'apoioaosnucleos/marisachuva.webp', descricao: "Este setor visa articular a comunicação entre a AAUE, os núcleos de estudantes, as tunas, os grupos académicos e a Universidade de Évora. Assim, o seu principal objetivo é responder às necessidades dos núcleos assim como dos seus projetos, procurando ir ao encontro das necessidades e interesses específicos dos estudantes do curso ou cursos que representam. Finalmente, procura dar continuidade à atividades relacionadas com a formação de gestão de um núcleo para garantir assim o seu bom funcionamento, manutenção e inovação.", contacto: "a.nucleos@aaue.pt"},
         {id: 4, nome: "Apoio às Secções", icon: "fas fa-envelope-open-text"},
-        {id: 5, nome: "Cidadania, Sustentabilidade e Empreendedorismo", icon: "fas fa-school", coordenador1: "André Marreiros", fb1: "https://www.facebook.com/andre.marreiros.54", img1: 'cidadania/andremarreiros.webp', coordenador2: "Beatriz Conceição",  fb2: "https://www.facebook.com/profile.php?id=100039498361478", img2: 'cidadania/beatrizconceicao.webp', coordenador3: "Luís Carvalho",  fb3: "https://www.facebook.com/Lcarvalhof92", img3: 'cidadania/luiscarvalho.webp', descricao: "Nasceu de uma crescente necessidade de complementar a oferta local para garantir aos estudantes da Academia uma maior aptidão que facilita a sua entrada no mercado de trabalho, tanto por via profissional como via empreendedora. Tem o intuito de trabalhar em prol do desenvolvimento e aquisição de novas competências associadas às três referidas áreas ao nível local devido a estas se encontrarem pouco exploradas. ", contacto: "cidadania@aaue.pt????"},
+        {id: 5, nome: "Cidadania, Sustentabilidade \n e Empreendedorismo", icon: "fas fa-school", coordenador1: "André Marreiros", fb1: "https://www.facebook.com/andre.marreiros.54", img1: 'cidadania/andremarreiros.webp', coordenador2: "Beatriz Conceição",  fb2: "https://www.facebook.com/profile.php?id=100039498361478", img2: 'cidadania/beatrizconceicao.webp', coordenador3: "Luís Carvalho",  fb3: "https://www.facebook.com/Lcarvalhof92", img3: 'cidadania/luiscarvalho.webp', descricao: "Nasceu de uma crescente necessidade de complementar a oferta local para garantir aos estudantes da Academia uma maior aptidão que facilita a sua entrada no mercado de trabalho, tanto por via profissional como via empreendedora. Tem o intuito de trabalhar em prol do desenvolvimento e aquisição de novas competências associadas às três referidas áreas ao nível local devido a estas se encontrarem pouco exploradas. ", contacto: "cidadania@aaue.pt????"},
         {id: 6, nome: "Comunicação", icon: "fas fa-mail-bulk", coordenador1: "Carolina Tapada", fb1: "https://www.facebook.com/carolina.tapada", img1: 'comunicacao/carolinatapada.webp', coordenador2: "Catarina Costa", fb2: "https://www.facebook.com/profile.php?id=100002069906938",  img2: 'comunicacao/catarinacosta.webp', coordenador3: "Filipa Serrano", fb3: "https://www.facebook.com/profile.php?id=100011631603712",  img3: 'comunicacao/filipaserrano.webp', descricao: "A Comunicação desempenha um papel fundamental na ligação dos estudantes da Academia com a AAUE, primando pela partilha de toda a informação à Associação. Compromete-se a equipa a trabalhar em prol da sua organização e produtividade, estabelecendo ligações cruciais com os restantes setores por meio de facilitar o acesso à informação e interligação entre a AAUE, a Academia e a cidade de Évora, divulgando os acontecimentos relacionados com a AAUE e o Mundo.", contacto: "comunicacao@aaue.pt"},
         {id: 7, nome: "Cultural", icon: "fas fa-calendar-alt", coordenador1: "Diogo Ribeiro", fb1: "https://www.facebook.com/diogo.ribeiro.1422409", img1: 'cultural/diogoribeiro.webp', coordenador2: "Marco Conceição", fb2: "https://www.facebook.com/marco.sadaconceicao", img2: 'cultural/marcoconceicao.webp', coordenador3: "Pedro Sapinho", fb3: "https://www.facebook.com/pedro.sapinho.92", img3: 'cultural/pedrosapinho.webp', descricao: "O setor Cultural considera a cultura uma parte fundamental da identidade de um país, ainda mais na situação pandémica vigente. Assim, este setor procura o seu enriquecimento através da dinamização e realização de atividades dentro deste âmbito, naturalmente adaptadas à situação corrente. Ainda, pretende uma difusão da diversidade cultural abrangida pela Academia, de forma a criar uma ligação entre os estudantes e a comunidade. ", contacto: "cultural@aaue.pt"},
         {id: 8, nome: "Desporto", icon: "fas fa-futbol"},
@@ -70,7 +73,7 @@ export default defineComponent({
       membros: { 
 
         gape: 
-          {nomeDoSetor: "", coordenador1: "", fb1: "", coordenador2: "", fb2: "", descricao: "", contacto: ""}
+          {nomeDoSetor: "", coordenador1: "", fb1: "", img1: '', coordenador2: "", fb2: "", img2: '', descricao: "", contacto: ""}
         ,
       },
       nomeDoSetor: "",
@@ -123,7 +126,6 @@ export default defineComponent({
   },
    methods: {
     getImgURL(image: String) {
-      console.log(image);
       return require('../assets/membros/' + image);
     },
   
@@ -157,7 +159,7 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     text-align: left;
-    min-width: 45%;
+    min-width: 35%;
     font-size: 10px;
 
     .rightColumn {
