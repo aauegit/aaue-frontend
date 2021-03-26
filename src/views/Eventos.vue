@@ -4,13 +4,15 @@
     <Navbar v-if="!mobileMode" class="navbar" />
     <div v-if="!activatedNavbar" class="pageContent">
         <div class="eventos">
-            <router-link class="routerRececao" :to="{ name: 'Rececao' }" :style="{ 'background-image': 'url(' + imageRececao + ')' }" @mouseover="showRececao()" @mouseleave="revertRececao()"> 
+            <router-link class="routerRececao" :to="{ name: 'Rececao' }" > 
+                <div class="rececaoImg" :style="{ 'background-image': 'url(' + imageRececao + ')' }" @mouseover="showRececao()" @mouseleave="revertRececao()"></div>
                 <div class="rececao">
                     <h1>Receção ao Caloiro</h1>
                     <p>Por excelência, a Receção ao Caloiro é o ponto alto dos primeiros tempos de um estudante na Universidade de Évora e, em muitos casos, na sua nova cidade.</p>
                 </div>
             </router-link>
-             <router-link class="routerQueima" :to="{ name: 'Queima' }" :style="{ 'background-image': 'url(' + imageQueima + ')' }" @mouseover="showQueima()" @mouseleave="revertQueima()"> 
+             <router-link class="routerQueima" :to="{ name: 'Queima' }" >
+               <div class="queimaImg" :style="{ 'background-image': 'url(' + imageQueima + ')' }" @mouseover="showQueima()" @mouseleave="revertQueima()"></div> 
                 <div class="queima">
                     <h1>Queima das Fitas</h1>
                     <p>O culminar desta experiência acontece no dia Solene da Queima das Fitas, momento em que, mais do que a solenidade da hora da despedida, se celebra um ciclo cumprido!</p>
@@ -103,7 +105,6 @@ export default defineComponent({
         height: 85vh;
         margin-top: 15vh;
         width: 50%;
-        display: flex;
         justify-content: center;
         align-items: center;
         background-position: center;
@@ -111,55 +112,59 @@ export default defineComponent({
         color: white;
 
         .rececaoImg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-position: center;
-            background-size: cover;
-            background-color: #fff;
-            z-index: -1;
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #414a4f;
-                opacity: 0.75;
-            }
+          position: relative;
+          background-position: center;
+          background-size: cover;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+          filter: brightness(50%);
+          transition: all 0.2s ease-in;
         }
+
+      }
 
         .rececao {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
+          position: relative;
+          top: -60%;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
         }
-    }
 
     .routerQueima {
         opacity: 1;
         height: 85vh;
         margin-top: 15vh;
         width: 50%;
-        display: flex;
         justify-content: center;
         align-items: center;
-        background-position: center;
-        background-size: cover;
         color: white;
+        
+        
+        .queimaImg {
+          position: relative;
+          background-position: center;
+          background-size: cover;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+          filter: brightness(50%);
+          transition: all 0.2s ease-in;
+        }
 
         .queima {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
+          position: relative;
+          top: -60%;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
         }
     }
 

@@ -129,6 +129,10 @@ footer {
                 flex-direction: column;
                 justify-content: center;
 
+                li {
+                    padding-top: 5px;
+                }
+
 
                 a {
                     color: $textColor;
@@ -143,7 +147,6 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-left: 30px;
 
             h1 {
                 color: $textColor;
@@ -156,6 +159,7 @@ footer {
                 flex-direction: row;
                 align-items: center;
                 height: 35px;
+                padding-top: 40px;
                 margin: 10px 8px;
 
                 a {

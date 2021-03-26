@@ -198,7 +198,9 @@ export default defineComponent({
     }
 
     .sidebar {
-        margin-left: 20px;
+      height: 80vh;
+        padding-left: 20px;
+        border-left: 1px solid #bebebe57;
 
         .searchBar {
             padding: 10px;

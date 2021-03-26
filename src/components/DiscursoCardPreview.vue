@@ -5,7 +5,7 @@
             <h1 ><router-link to="/" class="title">{{ titulo }}</router-link></h1>
             <hr>
             <h2 class="publishedOn">Publicado a <span class="data">{{ data }}</span></h2>
-            <p class="textPreview"> {{textPreview }} <router-link to="/">{...}</router-link></p>
+            <p class="textPreview"> {{textPreview }} </p>
         </div>
     </router-link>
   
@@ -14,7 +14,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
-    name: 'NoticiasCardPreview',
+    name: 'DiscursoCardPreview',
     props: {
         imgURL: {
             type: String,
@@ -39,7 +39,6 @@ export default defineComponent({
 
 .cardPreview {
     display: flex;
-    justify-content: center;
     align-items: center;
     max-width: 900px;
     margin:0px 30px 30px 0px;
@@ -69,7 +68,7 @@ export default defineComponent({
 
     img {
         border-radius: 12px;
-        width: 300px;
+        width: 200px;
         height: 200px;
         margin-right: 25px;
         transition: all 0.2s ease-in;

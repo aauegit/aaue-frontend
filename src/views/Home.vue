@@ -221,16 +221,18 @@ section {
 
       font-size: 100% + 10%;
       font-weight: 600;
+      border-radius: 5px;
       border: none;
 
-      color: white;
-      background-color: $buttonColorTest;
+      color: $buttonColorTest;
+      background-color: white;
 
-      transition: 0.5s;
+      transition: all 0.5s;
 
       &::before {
         position: absolute;
         content:"";
+        border-radius: 5px;
         border-top: 5px solid lighten($buttonColorTest, 5%);
         border-left: 5px solid lighten($buttonColorTest, 5%);	
         border-right: 5px solid darken($buttonColorTest, 5%);
@@ -246,6 +248,8 @@ section {
 
       &:hover {
         box-shadow: 7px 7px darken($buttonColorTest, 10%), -7px -7px lighten($buttonColorTest, 10%);
+        background-color: $buttonColorTest;
+        color: #f7f7f7;
         cursor: pointer;
 
           &::before {
@@ -253,8 +257,14 @@ section {
         }
       }
     }
+    .socio {
+      background: #f7f7f7;
+      color: $buttonColorTest;
+    }
     .socio:hover {
-      box-shadow: -7px 7px darken($buttonColorTest, 10%), 7px -7px lighten($buttonColorTest, 10%);
+      box-shadow: 7px 7px darken($buttonColorTest, 10%), -7px -7px lighten($buttonColorTest, 10%);
+      background-color: $buttonColorTest;
+      color: #f7f7f7;
       cursor: pointer;
     }
   }

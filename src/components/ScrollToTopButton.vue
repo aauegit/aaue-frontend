@@ -20,7 +20,7 @@ export default defineComponent({
 	height: 50px;
 	border-radius: 50%;
 	color: white;
-	background: #6d1112;
+	background: #070707;
 	box-shadow: 0 0 10px rgba(0,0,0,0.25);
 	outline: none;
 	opacity: 1;

@@ -8,7 +8,7 @@
       </section>
       <section class="discurso">
           <div class="newsColumn" >
-              <NoticiasCardPreview v-for="discurso in discursos" :key="discurso.id" :imgURL="getImgURL(discurso.imgURL)" :titulo="discurso.titulo" :data="discurso.dataDePublicacao" :textPreview="discurso.textPreview"/>
+              <DiscursoCardPreview v-for="discurso in discursos" :key="discurso.id" :imgURL="getImgURL(discurso.imgURL)" :titulo="discurso.titulo" :data="discurso.dataDePublicacao" :textPreview="discurso.textPreview"/>
           </div>
           <div class="sidebar">
               <form role="search" method="get">
@@ -44,7 +44,7 @@ import { defineComponent } from 'vue';
 import Navbar from '../components/Navbar.vue';
 import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
-import NoticiasCardPreview from '../components/NoticiasCardPreview.vue';
+import DiscursoCardPreview from '../components/DiscursoCardPreview.vue';
 import Footer from '../components/Footer.vue';
 
 export default defineComponent({
@@ -110,7 +110,7 @@ export default defineComponent({
             imgURL: "aaue40anos.jpg", 
             titulo: "Discurso Mecenas", 
             dataDePublicacao: "5 Dezembro, 2018",
-            textPreview: "Reconhecendo a importância da relação dos estudantes universitários com a população local e considerando, simultaneamente, as especificidades demográficas da nossa região, surge em março 2019 o Projeto “De Mãos Dadas” desenvolvido pela Associação Académica da Universidade de Évora. Este projeto, assente na prática de voluntariado regular, com ações constantes em dois lares do Centro Social Paroquial ",
+            textPreview: "",
         },
           {
             id: 8,
@@ -118,7 +118,7 @@ export default defineComponent({
             imgURL: "aaue40anos.jpg", 
             titulo: "Discurso de boas vindas", 
             dataDePublicacao: "5 Dezembro, 2018",
-            textPreview: " Sempre tiveste curiosidade em saber como podemos ser criativos e escrever ao mesmo tempo?! A AAUE numa actividade inserida no mês da Juventude 2019, leva a cabo uma «Oficina de Escrita Criativa». Na próxima quarta-feira dia 27 de Março pelas 16h, na sala 115 do Colégio do Espírito Santo, com a Professora de Língua ",
+            textPreview: "",
         },
       ]
     }
@@ -127,7 +127,7 @@ export default defineComponent({
     Navbar,
     NavbarMobile,
     ScrollToTopButton,
-    NoticiasCardPreview,
+    DiscursoCardPreview,
     Footer,
   },
   created() {
@@ -183,7 +183,9 @@ export default defineComponent({
     }
 
     .sidebar {
-        margin-left: 20px;
+        height: 80vh;
+        padding-left: 20px;
+        border-left: 1px solid #bebebe57;
 
         .searchBar {
             padding: 10px;

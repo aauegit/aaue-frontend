@@ -3,10 +3,6 @@
     <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
     <Navbar v-if="!mobileMode" class="navbar" />
     <div v-if="!activatedNavbar" class="pageContent">
-        <section class="contactsHero">
-            <h1>Contactos</h1>
-            <h2>de estudantes para estudantes</h2>
-        </section>
         <section class="contacts">
             <div class="contactInfo">
                 <h1>Visita-nos!</h1>
@@ -100,23 +96,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
-.contactsHero {
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    text-transform: uppercase;
-
-    h2 {
-        margin-top: 30px;
-        font-size: 26px;
-    }
-}
-
 .contacts {
-    height: 70vh;
+    height: 100vh;
+    padding-top: 200px;
     display: flex;
     justify-content: space-around;
 
@@ -152,6 +134,7 @@ export default defineComponent({
     }
 
     .form {
+        width: 35%;
 
         form {
            display: flex;
@@ -166,21 +149,13 @@ export default defineComponent({
             input {
                 height: 40px;
                 padding-left: 5px;
-                border-radius: 5px;
+                border-radius: 0px;
                 border: none;
-                 box-shadow: 0px 0px 0px 0px #fff9,
-                0px 0px 0px 0px #fff9,
-                0px 0px 0px 0px #0001,
-                0px 0px 0px 0px #0001,
-                inset -7px -7px 20px 0px #fff9,
-                inset -4px -4px 5px 0px #fff9,
-                inset 7px 7px 20px 0px #0003,
-                inset 4px 4px 5px 0px #0001;
+                border-bottom: 1px solid #bebebe;
+                background-color: #f7f7f7;
             }
 
             .mensagem {
-                width: 400px;
-                height: 100px;
                 margin-bottom: 40px;
             }
 
