@@ -4,13 +4,13 @@
     <Navbar v-if="!mobileMode" class="navbar" />
     <div v-if="!activatedNavbar" class="pageContent">
         <div class="eventos">
-            <router-link class="routerRececao" to="/" :style="{ 'background-image': 'url(' + imageRececao + ')' }" @mouseover="showRececao()" @mouseleave="revertRececao()"> 
+            <router-link class="routerRececao" :to="{ name: 'Rececao' }" :style="{ 'background-image': 'url(' + imageRececao + ')' }" @mouseover="showRececao()" @mouseleave="revertRececao()"> 
                 <div class="rececao">
                     <h1>Receção ao Caloiro</h1>
                     <p>Por excelência, a Receção ao Caloiro é o ponto alto dos primeiros tempos de um estudante na Universidade de Évora e, em muitos casos, na sua nova cidade.</p>
                 </div>
             </router-link>
-             <router-link class="routerQueima" to="/" :style="{ 'background-image': 'url(' + imageQueima + ')' }" @mouseover="showQueima()" @mouseleave="revertQueima()"> 
+             <router-link class="routerQueima" :to="{ name: 'Queima' }" :style="{ 'background-image': 'url(' + imageQueima + ')' }" @mouseover="showQueima()" @mouseleave="revertQueima()"> 
                 <div class="queima">
                     <h1>Queima das Fitas</h1>
                     <p>O culminar desta experiência acontece no dia Solene da Queima das Fitas, momento em que, mais do que a solenidade da hora da despedida, se celebra um ciclo cumprido!</p>

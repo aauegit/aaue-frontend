@@ -4,7 +4,7 @@
   <Navbar v-if="!mobileMode" class="navbar" />
   <div v-if="!activatedNavbar" class="pageContent">
       <section class="noticiasHero">
-          <h1>Noticias</h1>
+          <h1>Notícias</h1>
       </section>
       <section class="noticias">
           <div class="newsColumn" >
