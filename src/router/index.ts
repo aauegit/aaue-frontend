@@ -52,6 +52,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Contactos',
     component: () => import(/* webpackChunkName: "Contactos" */ '../views/Contactos.vue')
   },
+  {
+    path: '/api',
+    name: 'Api',
+    component: () => import(/* webpackChunkName: "Api" */ '../views/Api.vue')
+  },
 ]
 
 const router = createRouter({
