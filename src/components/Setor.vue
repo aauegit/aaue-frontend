@@ -6,19 +6,19 @@
                 <hr>
                 <div class="coordenadores">
                     <div class="coordenador">
-                        <img :src="coordenador1Img" alt="">
+                        <img :src="coordenador1Img" alt="Coordenador" lazy="load" decode="async">
                         <a :href="fb1" target="_blank">{{ coordenador1 }}</a>
                     </div>
                     <div class="coordenador">
-                        <img :src="coordenador2Img" alt="">
+                        <img :src="coordenador2Img" alt="Coordenador" lazy="load" decode="async">
                         <a :href="fb2" target="_blank">{{ coordenador2 }}</a>
                     </div>
                     <div v-if="coordenador3" class="coordenador">
-                        <img :src="coordenador3Img" alt="">
+                        <img :src="coordenador3Img" alt="Coordenador" lazy="load" decode="async">
                         <a :href="fb3" target="_blank">{{ coordenador3 }}</a>
                     </div>
                     <div v-if="coordenador4" class="coordenador">
-                        <img :src="coordenador4Img" alt="">
+                        <img :src="coordenador4Img" alt="Coordenador" lazy="load" decode="async">
                         <a :href="fb4" target="_blank">{{ coordenador4 }}</a>
                     </div>
                 </div>

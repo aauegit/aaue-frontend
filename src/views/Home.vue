@@ -77,8 +77,6 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       mouseIsDown: false,
-      carouselStartX: undefined,
-      carouselScrollLeft: undefined,
       noticias: [
           {
             id: 0,
@@ -150,22 +148,6 @@ export default defineComponent({
 
       if(!this.mobileMode) {
         this.activatedNavbar = false;
-      }
-    },
-    mouseDown() {
-      this.mouseIsDown = true;
-    },
-    mouseLeave() {
-      this.mouseIsDown = false;
-    },
-    mouseUp() {
-      this.mouseIsDown = false;
-    },
- 
-    mouseMove() { 
-     
-      if(!this.mouseIsDown) {
-        return;
       }
     },
   },
