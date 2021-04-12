@@ -50,7 +50,7 @@ export default defineComponent({
       mobileMode: false,
       loggedIn: true,
       text: `
-# Titulo
+# Dia Nacional do Estudante
 ---
 
 #### Publicado a 12 de Abril
@@ -60,34 +60,34 @@ export default defineComponent({
 <br>
 <br>
 
-No Dia Nacional do Estudante o foco e atenção principal é para com os estudantes. O Dia Nacional do Estudante, apesar do seu cariz político, deve servir para um momento de reflexão, um momento de oportunidade e um momento de esperança. Nos últimos anos, a instrumentalização constante deste dia transformou-o em apenas mais um dia normal de reuniões políticas e bandeiras fantasma de promessas vazias.
+<p style="text-align: justify; line-height: 20px;">No Dia Nacional do Estudante o foco e atenção principal é para com os estudantes. O Dia Nacional do Estudante, apesar do seu cariz político, deve servir para um momento de reflexão, um momento de oportunidade e um momento de esperança. Nos últimos anos, a instrumentalização constante deste dia transformou-o em apenas mais um dia normal de reuniões políticas e bandeiras fantasma de promessas vazias.</p> 
 <br>
 
-Este ano o panorama não é muito diferente e, por consequência da pandemia, não será possível marcar o dia com um momento de união e reivindicação. Por consequência do próprio sistema, será apenas mais um dia de reuniões, debates e cortesias.
+<p style="text-align: justify; line-height: 20px;">Este ano o panorama não é muito diferente e, por consequência da pandemia, não será possível marcar o dia com um momento de união e reivindicação. Por consequência do próprio sistema, será apenas mais um dia de reuniões, debates e cortesias.</p> 
 <br>
 
-A Associação Académica da Universidade de Évora preparou, atempadamente, o Dia Nacional do Estudante com uma série de atividades e ações, tentando compensar o momento e contribuir significativamente para a formação académica e social dos estudantes da academia eborense. Por não se rever nos sistemas, artimanhas e geringonças do “parecer bem para existir e ser ouvido”, a AAUE não atenderá ao convite de algumas estruturas para a reunião com o Ministro da Ciência, Tecnologia e Ensino Superior, Prof. Dr. Manuel Heitor, que se realiza no Porto. 
+<p style="text-align: justify; line-height: 20px;">A Associação Académica da Universidade de Évora preparou, atempadamente, o Dia Nacional do Estudante com uma série de atividades e ações, tentando compensar o momento e contribuir significativamente para a formação académica e social dos estudantes da academia eborense. Por não se rever nos sistemas, artimanhas e geringonças do “parecer bem para existir e ser ouvido”, a AAUE não atenderá ao convite de algumas estruturas para a reunião com o Ministro da Ciência, Tecnologia e Ensino Superior, Prof. Dr. Manuel Heitor, que se realiza no Porto.</p>  
 <br>
 
-Acreditando que existem outros 364 dias e que o foco constante do Sr. Ministro é de facto o Ensino Superior, a AAUE coloca-se ao dispor do mesmo para as mais diversas reuniões e ocasiões ao longo ano. 
+<p style="text-align: justify; line-height: 20px;">Acreditando que existem outros 364 dias e que o foco constante do Sr. Ministro é de facto o Ensino Superior, a AAUE coloca-se ao dispor do mesmo para as mais diversas reuniões e ocasiões ao longo ano.</p>  
 <br>
 
-Ainda assim, a Associação Académica da Universidade de Évora deixa o presente manifesto em nota de imprensa, na esperança de que as preocupações sejam efetivamente preocupações e não apenas temas de conversa. 
+<p style="text-align: justify; line-height: 20px;">Ainda assim, a Associação Académica da Universidade de Évora deixa o presente manifesto em nota de imprensa, na esperança de que as preocupações sejam efetivamente preocupações e não apenas temas de conversa.</p>  
 <br>
 
-A pandemia veio, sem sombra de dúvida, provar que a formação, o ensino e a ciência estão na base de uma sociedade considerada evoluída e desenvolvida. No entanto, a pandemia veio também revelar as fragilidades de um sistema degradado, envelhecido, com métodos pedagógicos e de avaliação desajustados à realidade do século XXI. Apesar dos dados do Ministério da Ciência, Tecnologia e Ensino Superior revelarem um aumento na frequência do Ensino Superior, o último relatório Education at a Glance veio revelar uma diferença de 5 pontos percentuais entre Portugal e os países da OCDE, relativamente à inscrição numa instituição de ensino superior da população entre os 20 e os 24 anos. 
+<p style="text-align: justify; line-height: 20px;">A pandemia veio, sem sombra de dúvida, provar que a formação, o ensino e a ciência estão na base de uma sociedade considerada evoluída e desenvolvida. No entanto, a pandemia veio também revelar as fragilidades de um sistema degradado, envelhecido, com métodos pedagógicos e de avaliação desajustados à realidade do século XXI. Apesar dos dados do Ministério da Ciência, Tecnologia e Ensino Superior revelarem um aumento na frequência do Ensino Superior, o último relatório Education at a Glance veio revelar uma diferença de 5 pontos percentuais entre Portugal e os países da OCDE, relativamente à inscrição numa instituição de ensino superior da população entre os 20 e os 24 anos.</p>  
 <br>
 
-A pandemia colocou ainda, e já referida pela AAUE, uma instabilidade financeira nos agregados familiares que se poderá traduzir num aumento das taxas de abandono e desistência escolar. Da propina ao alojamento, do material escolar às taxas e emolumentos, da bolsa à incerteza, o estudante do ensino superior “sobrevive” com dificuldades constantes, e as fragilizações provocadas pela COVID-19 e consecutivos confinamentos acentuam as suas dificuldades. Estes estudantes enfrentam ainda uma agravante da sua saúde mental, já conhecida no meio e ignorada ano após ano, revelando-se agora o problema real. As incertezas, como as provocadas pelo artigo 259o do Orçamento de Estado, vêm ainda contribuir mais para a agravante destas situações crónicas. 
+<p style="text-align: justify; line-height: 20px;">A pandemia colocou ainda, e já referida pela AAUE, uma instabilidade financeira nos agregados familiares que se poderá traduzir num aumento das taxas de abandono e desistência escolar. Da propina ao alojamento, do material escolar às taxas e emolumentos, da bolsa à incerteza, o estudante do ensino superior “sobrevive” com dificuldades constantes, e as fragilizações provocadas pela COVID-19 e consecutivos confinamentos acentuam as suas dificuldades. Estes estudantes enfrentam ainda uma agravante da sua saúde mental, já conhecida no meio e ignorada ano após ano, revelando-se agora o problema real. As incertezas, como as provocadas pelo artigo 259o do Orçamento de Estado, vêm ainda contribuir mais para a agravante destas situações crónicas.</p>  
 <br>
 
-Urgem-se então medidas de diagnóstico, acompanhamento, identificação e resolução. A AAUE defende uma posição proativa e nunca reativa. É essencial a promoção do desenvolvimento pessoal e académico, hábitos saudáveis e de um ensino superior com metodologias enquadradas e adequadas. 
+<p style="text-align: justify; line-height: 20px;">Urgem-se então medidas de diagnóstico, acompanhamento, identificação e resolução. A AAUE defende uma posição proativa e nunca reativa. É essencial a promoção do desenvolvimento pessoal e académico, hábitos saudáveis e de um ensino superior com metodologias enquadradas e adequadas.</p>  
 <br>
 
-Hoje celebra-se mais um Dia Nacional do Estudante. Que o dia de hoje sirva para garantir o regresso à atividade letiva em segurança, traçar efetivamente as prioridades de quem regula o ensino superior e meios adjuntos, e definir de uma vez o papel essencial do estudante na sociedade, pois o estudante é o seu presente e o seu futuro. 
+<p style="text-align: justify; line-height: 20px;">Hoje celebra-se mais um Dia Nacional do Estudante. Que o dia de hoje sirva para garantir o regresso à atividade letiva em segurança, traçar efetivamente as prioridades de quem regula o ensino superior e meios adjuntos, e definir de uma vez o papel essencial do estudante na sociedade, pois o estudante é o seu presente e o seu futuro.</p>  
 <br>
 
-Por último, a Associação Académica da Universidade de Évora quer destacar a destreza e resiliência dos estudantes, não só aos da Universidade de Évora, mas de todo o país. A capacidade de assinalar o dia de hoje revela um espírito de insatisfação, necessário à evolução do sistema. A todos os estudantes, o nosso maior obrigado. 
+<p style="text-align: justify; line-height: 20px;">Por último, a Associação Académica da Universidade de Évora quer destacar a destreza e resiliência dos estudantes, não só aos da Universidade de Évora, mas de todo o país. A capacidade de assinalar o dia de hoje revela um espírito de insatisfação, necessário à evolução do sistema. A todos os estudantes, o nosso maior obrigado.</p>  
 <br>
 
 **Évora, 24 de março de 2021**
@@ -281,6 +281,8 @@ body {
             padding: 10px;
             background-color: white;
             border: 1px solid black;
+            overflow-X: hidden;
+            overflow-Y: auto;
 
 
         }
