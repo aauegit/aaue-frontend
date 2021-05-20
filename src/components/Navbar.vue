@@ -32,7 +32,7 @@ export default defineComponent({
 <style lang="scss">
 
 .header {
-  position: absolute;
+  position: relative;
 	z-index: 10;
 	width: 100%;
 	opacity: 1;

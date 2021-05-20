@@ -3,9 +3,6 @@
     <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
     <Navbar v-if="!mobileMode" class="navbar" />
     <div v-if="!activatedNavbar" class="pageContent">
-      <section class="servicosHero">
-        <h1></h1>
-      </section>
         <section class="servicos">
             <div class="copiaki">
                 <img src="@/assets/servicos/copiaki.png" alt="">
@@ -105,21 +102,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
-.servicosHero {
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    text-transform: uppercase;
-}
 .servicos {
-  height: 80vh;
-    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 50px;
 
     .vidaAcademica,
     .copiaki {
@@ -130,12 +117,14 @@ export default defineComponent({
         height: 100%;
 
         img {
-            height: 150px;
+          height: 150px;
+            width: 150px;
+            margin-bottom: 25px;
         }
 
         .serviceContent {
             align-items: normal;
-            margin: 25px 0 25px 0;
+            margin: 0px 0 25px 0;
 
             p,
             ul {
@@ -159,6 +148,7 @@ export default defineComponent({
 
         .fa-facebook-square {
             font-size: 50px;
+            margin-bottom: 25px;
             color: #3b5998;
             transition: transform 0.2s ease-in;
 
@@ -169,6 +159,7 @@ export default defineComponent({
 
         .fa-shopping-cart {
             font-size: 50px;
+            margin-bottom: 25px;
             color: #e96656;
             margin-left: 75px;
             transition: transform 0.2s ease-in;

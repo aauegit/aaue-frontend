@@ -95,7 +95,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 
 .eventos {
-    height: 100vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +103,7 @@ export default defineComponent({
     .routerRececao {
         opacity: 1;
         height: 85vh;
-        margin-top: 15vh;
+        margin-top: 7vh;
         width: 50%;
         justify-content: center;
         align-items: center;
@@ -138,7 +138,7 @@ export default defineComponent({
     .routerQueima {
         opacity: 1;
         height: 85vh;
-        margin-top: 15vh;
+        margin-top: 7vh;
         width: 50%;
         justify-content: center;
         align-items: center;

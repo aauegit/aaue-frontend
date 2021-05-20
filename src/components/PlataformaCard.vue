@@ -84,7 +84,7 @@ export default defineComponent({
         }
 
         .textPreview {
-            text-align: justify;
+            text-align: left;
             font-size: 16px;
         }
     }

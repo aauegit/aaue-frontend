@@ -4,14 +4,19 @@
 
 <style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background-color: #f7f7f7;
   
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -29,6 +34,10 @@ a {
   &:hover {
     opacity: 1;
   }
+}
+
+p {
+  hyphens: auto;
 }
 
 nav, ul, li {

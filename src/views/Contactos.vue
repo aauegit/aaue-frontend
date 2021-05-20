@@ -5,7 +5,7 @@
     <div v-if="!activatedNavbar" class="pageContent">
         <section class="contacts">
             <div class="contactInfo">
-                <h1>Visita-nos!</h1>
+                <h1>Tens alguma questão? Contacta-nos!</h1>
                 <img src="@/assets/activism.jpeg" alt="">
                 <ul>
                     <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a href="https://goo.gl/maps/hMu13iR5NiM2">Rua Diogo Cão nº 21 7000-872 Évora</a></li>
@@ -26,7 +26,7 @@
                     <input type="text" placeholder="Assunto" required>
                     <label for="">Mensagem
                     </label>
-                    <input class="mensagem" type="text" placeholder="Mensagem" required>
+                    <textarea class="mensagem" placeholder="Mensagem" required />
                     <div class="buttons">
                         <button>reCaptcha</button>
                         <button>Enviar</button>
@@ -98,14 +98,13 @@ export default defineComponent({
 
 .contacts {
     height: 100vh;
-    padding-top: 200px;
+    padding-top: 100px;
     display: flex;
     justify-content: space-around;
 
     .contactInfo {
 
         h1 {
-            text-transform: uppercase;
             margin-bottom: 20px;
         }
 
@@ -139,7 +138,7 @@ export default defineComponent({
         form {
            display: flex;
             flex-direction: column;
-            padding: 30px;
+            padding: 0px 30px 30px 30px;
 
             input,
             label {
@@ -156,6 +155,10 @@ export default defineComponent({
             }
 
             .mensagem {
+                padding: 5px;
+                background-color: #f7f7f7;
+                height: 200px;
+                resize: none;
                 margin-bottom: 40px;
             }
 

@@ -86,6 +86,7 @@ export default defineComponent({
 
             img {
             width: 270px;
+            margin-top: 10px;
             margin-bottom: 10px;
             margin-left: 5px;
             }

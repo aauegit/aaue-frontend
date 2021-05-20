@@ -59,6 +59,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="icon" id="twitter" href="https://twitter.com/AAUEvora" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                            <p>@AAUEvora</p>
+                        </a>
+                    </li>  
+                    <li>
                         <a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora" target="_blank">
                             <i class="fab fa-facebook-square"></i>
                              <p>@AAUEvora</p> 
@@ -73,9 +79,9 @@
 			        <li>
                         <a class="icon" id="linkedin" href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-acad%C3%A9mica-da-universidade-de-%C3%A9vora/" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
-                            <p>LinkedIn</p> 
+                            <p>@AAUE</p>
                         </a>
-                    </li>  
+                    </li>
                 </div>
             </div>
 		</ul>
@@ -264,6 +270,13 @@ footer {
             #linkedin:hover p {
                 color: #2867B2;
             }
+
+            #twitter:hover,
+            #twitter:hover p {
+                color: #1DA1F2;
+            }
+
+            
 
         }
     }

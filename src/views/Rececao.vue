@@ -14,8 +14,8 @@
                 <ul>
                     <h1>Afinal de contas é aqui que começam os melhores dias da TUA vida!</h1>
                     <li @click="showingCartaz = !showingCartaz" >
-                        <div class="text">
-                           <i class="fas fa-caret-right"></i>
+                        <div @click="showingCartaz = showingCartaz" class="text" :class="{activated: showingCartaz}">
+                           <i  class="fas fa-caret-right"></i>
                             <p>#1 - Cartaz</p> 
                         </div>
                         <div>
@@ -23,14 +23,14 @@
                         </div>
                         
                     </li>
-                    <li>
-                        <div class="text">
+                    <li @click="activated2 = !activated2">
+                        <div  class="text"  :class="{activated: activated2}">
                             <i class="fas fa-caret-right"></i>
                             <p>#2 - Bilhetes Gerais</p>
                         </div>
                     </li>
-                    <li>
-                        <div class="text">
+                    <li @click="activated3 = !activated3">
+                        <div  class="text" :class="{activated: activated3}">
                             <i class="fas fa-caret-right"></i>
                             <p>#3 - Bilhetes Diários</p>
                         </div>
@@ -59,6 +59,8 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       showingCartaz: false,
+      activated2: false,
+      activated3: false,
     }
   },
   components: {
@@ -105,8 +107,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    padding: 0px 5vw;
+    padding: 100px 5vw;
 
     .titulo {
         display: flex;
@@ -155,15 +156,24 @@ export default defineComponent({
                 width: 100%;
                 padding: 30px 0px;
                 display: flex;
+                align-items: center;
             }
 
             i {
                 margin-right: 10px;
+                transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
             }
 
             img {
                 position: relative;
                 height: auto;
+            }
+
+            .activated {
+
+                i {
+                    transform: rotateZ(90deg);
+                }
             }
         }
     }
