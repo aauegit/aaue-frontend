@@ -11,8 +11,41 @@
         <li><router-link class="navLinks" to="/">Home</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Notícias</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Eventos' }">Eventos</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Associacao' }">Associação</router-link></li>
+        <li class="dropdown" @mouseover="hoveredEventos = true" @mouseleave="hoveredEventos = false" >
+          <div class="text">
+            <a class="navLinks">Eventos</a>
+            <i class="fas fa-caret-down"></i>
+          </div>
+          <div class="subMenu" v-if="hoveredEventos">
+            <router-link :to="{ name: 'Rececao'}">Receção ao Caloiro</router-link>
+            <router-link :to="{ name: 'Queima'}">Queima das Fitas</router-link>
+          </div>
+        </li>
+        <li class="dropdown" @mouseover="hoveredAssociacao = true" @mouseleave="hoveredAssociacao = false" >
+          <div class="text">
+            <a class="navLinks">Associação</a>
+            <i class="fas fa-caret-down"></i>
+          </div>
+          <div class="subMenu" v-if="hoveredAssociacao">
+            <router-link :to="{ name: 'Presidencia'}">Presidência</router-link>
+            <router-link :to="{ name: 'Assembleia'}">Assembleia Magna</router-link>
+            <router-link :to="{ name: 'Fiscal'}">Conselho Fiscal</router-link>
+            <router-link :to="{ name: 'Setores'}">Setores</router-link>
+            <router-link :to="{ name: 'Autonomas'}">Secções Autónomas</router-link>
+          </div>
+        </li>
+        <li class="dropdown" @mouseover="hoveredPlataformas = true" @mouseleave="hoveredPlataformas = false" >
+          <div class="text">
+            <a class="navLinks">Plataformas</a>
+            <i class="fas fa-caret-down"></i>
+          </div>
+          <div class="subMenu" v-if="hoveredPlataformas">
+            <a href="https://alojamento.aaue.pt/" target="_blank" rel="noopener noreferrer">Portal do Alojamento</a>
+            <a href="https://torneioreitor.aaue.pt/" target="_blank" rel="noopener noreferrer">Torneio do Reitor</a>
+            <a href="https://queima.aaue.pt/" target="_blank" rel="noopener noreferrer">Queima das Fitas</a>
+            <a href="https://expoestudante.aaue.pt/#/" target="_blank" rel="noopener noreferrer">Expo'Estudante</a>
+          </div>
+        </li>
         <li><router-link class="navLinks" :to="{ name: 'Servicos' }">Serviços</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Contactos' }">Contactos</router-link></li>
       </ul>
@@ -26,6 +59,13 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'Navbar',
+  data() {
+    return { 
+      hoveredAssociacao: false,
+      hoveredEventos: false,
+      hoveredPlataformas: false,
+    }
+  }
 });
 </script>
 
@@ -75,6 +115,61 @@ export default defineComponent({
         }  
       }
     }
+  }
+
+  .dropdown .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      margin-left: 5px;
+      opacity: 0.75;
+      color: black;
+      transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+
+  .subMenu {
+    background: white !important;
+
+    a {
+      background: transparent;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      opacity: 0;
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &.router-link-exact-active {
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+
+  .dropdown:hover {
+
+    i {
+      transform: rotateZ(180deg);
+    }
+
+  .subMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0px 20px 20px 20px;
+    top: calc(100);
+    width: max-content;
+    border-radius: 0px 0px 16px 16px;
+
+    a {
+      padding: 20px 10px 0 0px;
+      margin-bottom: 10px;
+      color: black;
+      opacity: 1;
+    }
+  }
   }
 }
 </style>
