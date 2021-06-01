@@ -10,7 +10,7 @@
             </div>
             <p class="intro"> Por excelência, a <b>Receção ao Caloiro</b> é o ponto alto dos primeiros tempos de um estudante na Universidade de Évora e, em muitos casos, na sua nova cidade. A Receção ao Caloiro destaca-se não só pelo receber por parte da academia dos seus novos membros, mas também por ser mais um momento onde várias gerações académicas se voltam a reunir, recordando tempos e vivências de outrora. Não apenas conhecida pelas noites académicas, de concertos e folia no recinto, a Receção destaca-se também pela envolvência com o município, no plano cultural, mas também social e patrimonial, promovendo assim um primeiro contacto dos novos estudantes da nossa cidade, com a sua «nova casa» para os próximos anos.</p>
             <div class="cartaz">
-                <img :src="getImgURL('rececao.jpg')" alt="">
+                <img :src="getImgURL('rececao/rececao.jpg')" alt="">
                 <ul>
                     <h1>Afinal de contas é aqui que começam os melhores dias da TUA vida!</h1>
                     <li @click="showingCartaz = !showingCartaz" >
@@ -19,22 +19,27 @@
                             <p>#1 - Cartaz</p> 
                         </div>
                         <div>
-                            <img v-if="showingCartaz" :src="getImgURL('rececaoCartazCompleto.png')" alt="">
+                            <img v-if="showingCartaz" :src="getImgURL('rececao/rececaoCartazCompleto.png')" alt="">
                         </div>
                         
                     </li>
-                    <li @click="activated2 = !activated2">
+                    <li @click="showingGeral = !showingGeral">
                         <div  class="text"  :class="{activated: activated2}">
                             <i class="fas fa-caret-right"></i>
                             <p>#2 - Bilhetes Gerais</p>
                         </div>
+                        <div>
+                            <img v-if="showingGeral" :src="getImgURL('rececao/rececaoGeral.jpg')" alt="">
+                        </div>
                     </li>
-                    <li @click="activated3 = !activated3">
+                    <li @click="showingDiarios = !showingDiarios">
                         <div  class="text" :class="{activated: activated3}">
                             <i class="fas fa-caret-right"></i>
                             <p>#3 - Bilhetes Diários</p>
                         </div>
-                        
+                        <div>
+                            <img v-if="showingDiarios" :src="getImgURL('rececao/rececaoDiarios.jpg')" alt="">
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -59,6 +64,8 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       showingCartaz: false,
+      showingDiarios: false,
+      showingGeral: false,
       activated2: false,
       activated3: false,
     }
