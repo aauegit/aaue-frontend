@@ -15,21 +15,21 @@
             </div>
             <div class="form">
                 <form action="">
-                    <label for="">Nome
+                    <label for="">Nome <span>*</span>
                     </label>
                     <input type="text" placeholder="Nome" required>
-                    <label for="">Email
+                    <label for="">Email <span>*</span>
                     </label>
                      <input type="email" placeholder="Email" required>
-                    <label for="">Assunto
+                    <label for="">Assunto <span>*</span>
                     </label>
                     <input type="text" placeholder="Assunto" required>
-                    <label for="">Mensagem
+                    <label for="">Mensagem <span>*</span>
                     </label>
                     <textarea class="mensagem" placeholder="Mensagem" required />
                     <div class="buttons">
                         <button>reCaptcha</button>
-                        <button>Enviar</button>
+                        <button>Enviar Mensagem</button>
                     </div>
                     
                 </form>
@@ -96,11 +96,16 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+$specialColor: #155781;
+
 .contacts {
-    height: 100vh;
     padding-top: 100px;
+    padding-bottom: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #f7f8fc;
 
     .contactInfo {
 
@@ -133,30 +138,38 @@ export default defineComponent({
     }
 
     .form {
-        width: 35%;
 
         form {
-           display: flex;
+            display: flex;
             flex-direction: column;
-            padding: 0px 30px 30px 30px;
+            width: 500px;
+            padding: 30px;
+            margin-right: 50px;
+            background: white;
+            box-shadow:  5px 5px 10px #e7e7e7,
+             -5px -5px 10px #ffffff;
 
-            input,
             label {
-                margin-bottom: 10px;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $specialColor;
             }
 
             input {
                 height: 40px;
                 padding-left: 5px;
-                border-radius: 0px;
-                border: none;
-                border-bottom: 1px solid #bebebe;
-                background-color: #f7f7f7;
+                border: 1px solid #bebebe;
+                margin-bottom: 20px;
+            }
+
+            span {
+                color: #ff0000;
+                opacity: 0.5;
             }
 
             .mensagem {
                 padding: 5px;
-                background-color: #f7f7f7;
                 height: 200px;
                 resize: none;
                 margin-bottom: 40px;
@@ -167,18 +180,52 @@ export default defineComponent({
                 justify-content: space-between;
 
                 button {
-                    border: 1px solid #e96656;
-                    border-radius: 18px;
-                    padding: 20px 40px 20px 40px;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    transition: all 0.1s ease-in;
-                    
+                    max-width: 300px;
+                    position: relative;
+                    display: inline-block;
+
+                    text-align: center;
+                    text-transform: uppercase; 
+
+                    padding: 15px;
+                    margin: 30px 25px;
+
+                    font-size: 100% + 10%;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    border: none;
+
+                    color: $specialColor;
+                    background-color: white;
+
+                    transition: all 0.5s;
+
+                    &::before {
+                        position: absolute;
+                        content:"";
+                        border-radius: 5px;
+                        border-top: 5px solid lighten($specialColor, 5%);
+                        border-left: 5px solid lighten($specialColor, 5%);	
+                        border-right: 5px solid darken($specialColor, 5%);
+                        border-bottom: 5px solid darken($specialColor, 5%);
+
+                        top: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                        left: 0px;	
+
+                        transition: 0.5s;
+                    }
 
                     &:hover {
-                        color: white;
-                        background-color: #e96656;
+                        box-shadow: 7px 7px darken($specialColor, 10%), -7px -7px lighten($specialColor, 10%);
+                        background-color: $specialColor;
+                        color: #f7f7f7;
                         cursor: pointer;
+
+                        &::before {
+                        border: 0px;
+                        }
                     }
                 }
             }

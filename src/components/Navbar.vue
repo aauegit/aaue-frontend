@@ -106,7 +106,7 @@ export default defineComponent({
         font-size: 22px;
 
         a {
-          font-weight: bold;
+          font-weight: 400;
           color: #000000;
 
           &.router-link-exact-active {
