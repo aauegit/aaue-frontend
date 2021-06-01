@@ -13,7 +13,7 @@
         <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
         <li class="dropdown" @mouseover="hoveredEventos = true" @mouseleave="hoveredEventos = false" >
           <div class="text">
-            <a class="navLinks">Eventos</a>
+            <a class="navLinks dropdownName">Eventos</a>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredEventos">
@@ -23,7 +23,7 @@
         </li>
         <li class="dropdown" @mouseover="hoveredAssociacao = true" @mouseleave="hoveredAssociacao = false" >
           <div class="text">
-            <a class="navLinks">Associação</a>
+            <a class="navLinks dropdownName">Associação</a>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredAssociacao">
@@ -36,7 +36,7 @@
         </li>
         <li class="dropdown" @mouseover="hoveredPlataformas = true" @mouseleave="hoveredPlataformas = false" >
           <div class="text">
-            <a class="navLinks">Plataformas</a>
+            <a class="navLinks dropdownName">Plataformas</a>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredPlataformas">
@@ -149,27 +149,31 @@ export default defineComponent({
 
   .dropdown:hover {
 
+    .dropdownName {
+      cursor: auto;
+    }
+
     i {
       transform: rotateZ(180deg);
     }
 
-  .subMenu {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 0px 20px 20px 20px;
-    top: calc(100);
-    width: max-content;
-    border-radius: 0px 0px 16px 16px;
+    .subMenu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      padding: 0px 20px 20px 20px;
+      top: calc(100);
+      width: max-content;
+      border-radius: 16px 16px 16px 16px;
 
-    a {
-      padding: 20px 10px 0 0px;
-      margin-bottom: 10px;
-      color: black;
-      opacity: 1;
+      a {
+        padding: 20px 10px 0 0px;
+        margin-bottom: 10px;
+        color: black;
+        opacity: 1;
+      }
     }
-  }
   }
 }
 </style>

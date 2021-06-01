@@ -6,20 +6,20 @@
                 <hr>
                 <div class="coordenadores">
                     <div class="coordenador">
-                        <img :src="coordenador1Img" alt="Coordenador" lazy="load" decode="async">
-                        <a :href="fb1" target="_blank">{{ coordenador1 }}</a>
+                        <img :src="coordenador1Img" alt="Coordenador" decode="async">
+                        <a :href="fb1" target="_blank" rel="noopener noreferrer">{{ coordenador1 }} <i class="fab fa-facebook-square"></i></a>
                     </div>
                     <div class="coordenador">
-                        <img :src="coordenador2Img" alt="Coordenador" lazy="load" decode="async">
-                        <a :href="fb2" target="_blank">{{ coordenador2 }}</a>
+                        <img :src="coordenador2Img" alt="Coordenador" decode="async">
+                        <a :href="fb2" target="_blank" rel="noopener noreferrer">{{ coordenador2 }} <i class="fab fa-facebook-square"></i></a>
                     </div>
                     <div v-if="coordenador3" class="coordenador">
-                        <img :src="coordenador3Img" alt="Coordenador" lazy="load" decode="async">
-                        <a :href="fb3" target="_blank">{{ coordenador3 }}</a>
+                        <img :src="coordenador3Img" alt="Coordenador" decode="async">
+                        <a :href="fb3" target="_blank" rel="noopener noreferrer">{{ coordenador3 }} <i class="fab fa-facebook-square"></i></a>
                     </div>
                     <div v-if="coordenador4" class="coordenador">
-                        <img :src="coordenador4Img" alt="Coordenador" lazy="load" decode="async">
-                        <a :href="fb4" target="_blank">{{ coordenador4 }}</a>
+                        <img :src="coordenador4Img" alt="Coordenador" decode="async">
+                        <a :href="fb4" target="_blank" rel="noopener noreferrer">{{ coordenador4 }} <i class="fab fa-facebook-square"></i></a>
                     </div>
                 </div>
                 <p>{{ descricao }}</p>
@@ -57,6 +57,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+$specialColor: #155781;
+
 .setor {
     display: flex;
     flex-direction: column;
@@ -92,7 +94,8 @@ export default defineComponent({
             }
 
             a {
-                color: #e96656;
+                font-weight: bold;
+                color: $specialColor;
             }
         }
 

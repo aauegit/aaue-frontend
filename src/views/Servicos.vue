@@ -107,6 +107,7 @@ export default defineComponent({
     justify-content: space-around;
     align-items: center;
     margin-top: 50px;
+    padding-bottom: 100px;
 
     .vidaAcademica,
     .copiaki {

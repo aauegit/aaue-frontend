@@ -36,33 +36,31 @@ const routes: Array<RouteRecordRaw> = [
     path: '/associacao',
     name: 'Associacao',
     component: () => import(/* webpackChunkName: "Associacao" */ '../views/Associacao/Associacao.vue'),
-    children: [
-      {
-        path: '/setores',
-        name: 'Setores',
-        component: () => import(/* webpackChunkName: "Setores" */ '../views/Associacao/Setores.vue'),
-      },
-      {
-        path: '/secções-autónomas',
-        name: 'Autonomas',
-        component: () => import(/* webpackChunkName: "Autonomas" */ '../views/Associacao/Autonomas.vue'),
-      },
-      {
-        path: '/presidência',
-        name: 'Presidencia',
-        component: () => import(/* webpackChunkName: "Presidencia" */ '../views/Associacao/Presidencia.vue'),
-      },
-      {
-        path: '/fiscal',
-        name: 'Fiscal',
-        component: () => import(/* webpackChunkName: "Fiscal" */ '../views/Associacao/Fiscal.vue'),
-      },
-      {
-        path: '/assembleia-magna',
-        name: 'Assembleia',
-        component: () => import(/* webpackChunkName: "Assembleia" */ '../views/Associacao/Assembleia.vue'),
-      },
-    ]
+  },
+  {
+    path: '/setores',
+    name: 'Setores',
+    component: () => import(/* webpackChunkName: "Setores" */ '../views/Associacao/Setores.vue'),
+  },
+  {
+    path: '/seccoes-autonomas',
+    name: 'Autonomas',
+    component: () => import(/* webpackChunkName: "Autonomas" */ '../views/Associacao/Autonomas.vue'),
+  },
+  {
+    path: '/presidencia',
+    name: 'Presidencia',
+    component: () => import(/* webpackChunkName: "Presidencia" */ '../views/Associacao/Presidencia.vue'),
+  },
+  {
+     path: '/fiscal',
+    name: 'Fiscal',
+    component: () => import(/* webpackChunkName: "Fiscal" */ '../views/Associacao/Fiscal.vue'),
+  },
+  {
+    path: '/assembleia-magna',
+    name: 'Assembleia',
+    component: () => import(/* webpackChunkName: "Assembleia" */ '../views/Associacao/Assembleia.vue'),
   },
   {
     path: '/plataformas',

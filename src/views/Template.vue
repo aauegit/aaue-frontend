@@ -10,10 +10,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Navbar from '../components/Navbar.vue';
-import NavbarMobile from '../components/NavbarMobile.vue';
-import ScrollToTopButton from '../components/ScrollToTopButton.vue';
-import Footer from '../components/Footer.vue';
+import Navbar from '@/components/Navbar.vue';
+import NavbarMobile from '@/components/NavbarMobile.vue';
+import ScrollToTopButton from '@/components/ScrollToTopButton.vue';
+import Footer from '@/components/Footer.vue';
 
 export default defineComponent({
   name: 'Template',
@@ -41,7 +41,7 @@ export default defineComponent({
   },
    methods: {
     getImgURL(image: String) {
-        return require('../assets/' + image);
+        return require('@/assets/' + image);
     },
     scrollToElement(destination: string) {
       const element = document.querySelector(destination);

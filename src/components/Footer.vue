@@ -5,17 +5,6 @@
                 <img src="@/assets/aaueLogoBranco.png" alt="">
                 <p>Cada um de vós é AAUE. Cada um de vós representa a AAUE. A AAUE é isto, estudantes que trabalham, lutam e dão a cara. A AAUE é quem tenta encontrar a melhor solução para a maioria dos estudantes</p> 
             </div>
-            <div class="pages">
-                <ul class="ulPages">
-                    <li><router-link class="navLinks" to="/">Home</router-link></li>
-                    <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Notícias</router-link></li>
-                    <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
-                    <li><router-link class="navLinks" :to="{ name: 'Eventos' }">Eventos</router-link></li>
-                    <li><router-link class="navLinks" :to="{ name: 'Associacao' }">Associação</router-link></li>
-                    <li><router-link class="navLinks" :to="{ name: 'Servicos' }">Serviços</router-link></li>
-                    <li><router-link class="navLinks" :to="{ name: 'Contactos' }">Contactos</router-link></li>
-                </ul>
-            </div>
             <div class="contactInfo">
                 <h1>Contacta-nos!</h1>
                 <li>
@@ -123,30 +112,6 @@ footer {
             img {
                 margin-bottom: 30px;
             }
-        }
-
-        .pages {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .ulPages {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-                li {
-                    padding-top: 5px;
-                }
-
-
-                a {
-                    color: $textColor;
-                    font-size: 20px;
-                }
-            }
-
-            
         }
 
         .contactInfo {
