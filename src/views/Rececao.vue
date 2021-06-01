@@ -14,7 +14,7 @@
                 <ul>
                     <h1>Afinal de contas é aqui que começam os melhores dias da TUA vida!</h1>
                     <li @click="showingCartaz = !showingCartaz" >
-                        <div @click="showingCartaz = showingCartaz" class="text" :class="{activated: showingCartaz}">
+                        <div class="text" :class="{activated: showingCartaz}">
                            <i  class="fas fa-caret-right"></i>
                             <p>#1 - Cartaz</p> 
                         </div>
@@ -24,7 +24,7 @@
                         
                     </li>
                     <li @click="showingGeral = !showingGeral">
-                        <div  class="text"  :class="{activated: activated2}">
+                        <div  class="text"  :class="{activated: showingGeral}">
                             <i class="fas fa-caret-right"></i>
                             <p>#2 - Bilhetes Gerais</p>
                         </div>
@@ -33,7 +33,7 @@
                         </div>
                     </li>
                     <li @click="showingDiarios = !showingDiarios">
-                        <div  class="text" :class="{activated: activated3}">
+                        <div  class="text" :class="{activated: showingDiarios}">
                             <i class="fas fa-caret-right"></i>
                             <p>#3 - Bilhetes Diários</p>
                         </div>
@@ -144,6 +144,7 @@ export default defineComponent({
             margin-right: 30px;
             width: 450px;
             height: 250px;
+            margin-bottom: 50px;
         }
 
         h1 {
