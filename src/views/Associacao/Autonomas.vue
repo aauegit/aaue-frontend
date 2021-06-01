@@ -7,10 +7,16 @@
         <ul class="indice">
           <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"><span>SETORES</span></i> -->
           <div>
+            <h1>Secção Autónoma da Comunicação</h1>
             <li v-for="setor in SAComunicacao" :key="setor.id"><a @click="(nomeDoSetor = setor.nome) && (descricao = setor.descricao) && (contacto = setor.contacto) && (coordenador1 = setor.coordenador1) && (coordenador1Img = getImgURL(setor.img1)) && (fb1 = setor.fb1) && (coordenador2 = setor.coordenador2) && (coordenador2Img = getImgURL(setor.img2)) && (fb2 = setor.fb2) && (coordenador3 = setor.coordenador3) && (coordenador3Img = getImgURL(setor.img3)) && (fb3 = setor.fb3) && (coordenador4 = setor.coordenador4) && (coordenador4Img = getImgURL(setor.img4)) && (fb4 = setor.fb4)" >
               <i :class="setor.icon"></i>
               <p>{{ setor.nome }}</p>
             </a></li>
+            <h1>Secção Autónoma Desportiva</h1>
+            <li v-for="setor in SADesportiva" :key="setor.id"><a @click="(nomeDoSetor = setor.nome) && (descricao = setor.descricao) && (contacto = setor.contacto) && (coordenador1 = setor.coordenador1) && (coordenador1Img = getImgURL(setor.img1)) && (fb1 = setor.fb1) && (coordenador2 = setor.coordenador2) && (coordenador2Img = getImgURL(setor.img2)) && (fb2 = setor.fb2) && (coordenador3 = setor.coordenador3) && (coordenador3Img = getImgURL(setor.img3)) && (fb3 = setor.fb3) && (coordenador4 = setor.coordenador4) && (coordenador4Img = getImgURL(setor.img4)) && (fb4 = setor.fb4)" >
+              <i :class="setor.icon"></i>
+              <p>{{ setor.nome }}</p>
+              </a></li>
           </div>
         </ul>
         <Setor v-if="nomeDoSetor" :nomeDoSetor="nomeDoSetor"
@@ -56,6 +62,9 @@ export default defineComponent({
         {id: 3, nome: "Divulgação", icon: "fas fa-newspaper", coordenador1: "Bárbara Santos", fb1: "https://www.facebook.com/barbara.santos.7923", img1: 'SAComunicacao/divulgacao/barbarasantos.webp', coordenador2: "Joana Lachica", fb2: "https://www.facebook.com/joana.lachica", img2: 'SAComunicacao/divulgacao/joanalachica.webp', descricao: "A Divulgação executa uma das tarefas fundamentais na operacionalização da AAUE, sendo-lhe incumbida toda a publicação de conteúdo essencial, de modo, a inteirar toda a comunidade estudantil da atividade da AAUE. Numa visão geral desta equipa, o poder de interação, transparência e interajuda são palavras-chave para o sucesso e, por isso, terá o compromisso de usufruir das redes sociais - Facebook, Instagram e Twitter.", contacto: "divulgacao@aaue.pt"},
         {id: 4, nome: "Imagem", icon: "fas fa-images", coordenador1: "Ana Raquel Gouveia", fb1: "https://www.facebook.com/ana.raquel.900388", img1: 'SAComunicacao/imagem/anaraquelgouveia.webp', coordenador2: "Ana Sofia Ricardo", fb2: "https://www.facebook.com/ana.sofia.142892", img2: 'SAComunicacao/imagem/anasofiaricardo.webp', coordenador3: "Andreia Adoa", fb3: "https://www.facebook.com/andreiaadoa", img3: 'SAComunicacao/imagem/andreiaadoa.webp', coordenador4: "Sara Condeça", fb4: "https://www.facebook.com/sara.condeca.22", img4: "SAComunicacao/imagem/saracondeca.webp", descricao: "A Imagem é responsável pela identidade visual e gráfica da AAUE, assim como dos seus eventos e projetos. A correlação entre o design e a comunicação, passada através da imagem desempenha um papel fundamental na elaboração do conteúdo gráfico a disponibilizar pela AAUE, procurando garantir uma comunicação eficaz e apelativa entre a AAUE e a comunidade estudantil.", contacto: "imagem@aaue.pt"},
         {id: 5, nome: "GAPE", icon: "fas fa-user-shield", coordenador1: "Joana Nogueira", fb1: "https://www.facebook.com/joananogueira715", img1: 'SAComunicacao/gape/joananogueira.webp', coordenador2: "Patrícia Casanova", fb2: "https://www.facebook.com/tita.casanova2", img2: 'SAComunicacao/gape/patriciacasanova.webp', coordenador3: "", fb3: "", img3: "", coordenador4: "", fb4: "", img4: "", descricao: "O Gabinete de Apoio ao Estudante nasce da necessidade de resposta imediata, assertiva e de confiança a todas as questões dos estudantes. É função do GAPE apoiar e auxiliar os estudantes nesse sentido, através das redes sociais da AAUE.", contacto: "gape@aaue.pt"},
+      ],
+      SADesportiva: [
+        {id: 1, nome: "Desportiva", icon: "fas fa-futbol", coordenador1: "Eduardo Dias", fb1: "https://www.facebook.com/eduardo.dias.39982", img1: 'SADesporto/desportiva/eduardoDias.webp', coordenador2: "Inácia Nunes", fb2: "https://www.facebook.com/innacia", img2: 'SADesporto/desportiva/inaciaNunes.webp', coordenador3: "João Alcântara", fb3: "https://www.facebook.com/joao.alcantara.58", img3: "SADesporto/desportiva/joaoAlcantara.webp", coordenador4: "Sofia Jarreta", fb4: "https://www.facebook.com/sofia.jarretaa", img4: "SADesporto/desportiva/sofiaJarreta.webp", descricao: "O desporto é uma atividade de lazer e competição saudável, pela qual apela a boas práticas. Por estas razões, apresenta-se como desígnio da Secção Autónoma Desportiva que a Academia reúna todos os esforços em prol da promoção, da qualidade de vida e bem-estar, não só dos estudantes, como também dos habitantes da cidade de Évora. Considera-se fundamental promover momentos de atividade física, diversão, entretenimento e, ao mesmo tempo, o espírito de competição amigável entre os estudantes.", contacto: "desportiva@aaue.pt"},
       ],
       nomeDoSetor: "",
       coordenador1: "",
@@ -146,16 +155,10 @@ $specialColor: #155781;
     text-align: left;
     min-width: 35%;
     font-size: 10px;
-    
-    i {
-      font-size: 30px;
-    
-      span {
-        font-family: sans-serif;
-        margin-left: 10px;
-        letter-spacing: 5px;
-      }
 
+    h1 {
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
 
     li a {

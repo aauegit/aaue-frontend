@@ -13,11 +13,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "Noticias" */ '../views/Noticias.vue')
   },
   {
-    path: '/eventos',
-    name: 'Eventos',
-    component: () => import(/* webpackChunkName: "Eventos" */ '../views/Eventos.vue')
-  },
-  {
     path: '/discursos',
     name: 'Discursos',
     component: () => import(/* webpackChunkName: "Discursos" */ '../views/Discursos.vue')
@@ -31,11 +26,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/rececao-ao-caloiro',
     name: 'Rececao',
     component: () => import(/* webpackChunkName: "Discursos" */ '../views/Rececao.vue')
-  },
-  {
-    path: '/associacao',
-    name: 'Associacao',
-    component: () => import(/* webpackChunkName: "Associacao" */ '../views/Associacao/Associacao.vue'),
   },
   {
     path: '/setores',
@@ -61,11 +51,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/assembleia-magna',
     name: 'Assembleia',
     component: () => import(/* webpackChunkName: "Assembleia" */ '../views/Associacao/Assembleia.vue'),
-  },
-  {
-    path: '/plataformas',
-    name: 'Plataformas',
-    component: () => import(/* webpackChunkName: "Plataformas" */ '../views/Plataformas.vue')
   },
   {
     path: '/servicos',
