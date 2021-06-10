@@ -28,7 +28,7 @@
                             <i class="fas fa-caret-right"></i>
                             <p>#2 - Bilhetes Gerais</p>
                         </div>
-                        <div>
+                        <div class="photo">
                             <img v-if="showingGeral" :src="getImgURL('rececao/rececaoGeral.jpg')" alt="">
                         </div>
                     </li>
@@ -37,7 +37,7 @@
                             <i class="fas fa-caret-right"></i>
                             <p>#3 - Bilhetes Diários</p>
                         </div>
-                        <div>
+                        <div class="photo">
                             <img v-if="showingDiarios" :src="getImgURL('rececao/rececaoDiarios.jpg')" alt="">
                         </div>
                     </li>
@@ -179,10 +179,12 @@ export default defineComponent({
 
             .activated {
 
+
                 i {
                     transform: rotateZ(90deg);
                 }
             }
+
         }
     }
 }

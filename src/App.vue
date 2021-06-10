@@ -25,6 +25,17 @@ $specialColor: #155781;
 
 body {
   background-color: #f7f7f7;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f7f8fc;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $specialColor;
+    border-radius: 5px;
+  }
 }
 
 a {

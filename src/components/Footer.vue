@@ -3,7 +3,7 @@
 		<ul class="ulContainer">
             <div class="aaue">
                 <img src="@/assets/aaueLogoBranco.png" alt="">
-                <p>Cada um de vós é AAUE. Cada um de vós representa a AAUE. A AAUE é isto, estudantes que trabalham, lutam e dão a cara. A AAUE é quem tenta encontrar a melhor solução para a maioria dos estudantes</p> 
+                <p>A Associação Académica da Universidade de Évora é responsável por potenciar o teu envolvimento e desenvolvimento académicos.</p> 
             </div>
             <div class="contactInfo">
                 <h1>Contacta-nos!</h1>
@@ -47,12 +47,7 @@
                             <p>Queima das Fitas</p> 
                         </a>
                     </li>
-                    <li>
-                        <a class="icon" id="twitter" href="https://twitter.com/AAUEvora" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                            <p>@AAUEvora</p>
-                        </a>
-                    </li>  
+                    
                     <li>
                         <a class="icon" id="facebook" href="https://www.facebook.com/AAUEvora" target="_blank">
                             <i class="fab fa-facebook-square"></i>
@@ -65,6 +60,12 @@
                              <p>@aauevora</p> 
                         </a>
                     </li>
+                    <li>
+                        <a class="icon" id="twitter" href="https://twitter.com/AAUEvora" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                            <p>@AAUEvora</p>
+                        </a>
+                    </li>  
 			        <li>
                         <a class="icon" id="linkedin" href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-acad%C3%A9mica-da-universidade-de-%C3%A9vora/" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
@@ -110,6 +111,7 @@ footer {
             width: 20%;
 
             img {
+                width: 300px;
                 margin-bottom: 30px;
             }
         }
@@ -195,13 +197,14 @@ footer {
 
                 i {
                     margin: 10px 10px 0 0;
-                    font-size: 30px;
+                    font-size: 24px;
                 }
 
                 p {
                     text-transform: uppercase;
                     color: $textColor;
                     margin: 10px 0 0 0;
+                    font-size: 16px;
                     transition: color 0.2s ease-in;
                 }
             }

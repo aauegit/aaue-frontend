@@ -58,16 +58,6 @@ export default defineComponent({
         inset 0px 0px 0px 0px #0001;
     }
 
-    &:hover > img,
-    &:hover > .contentPreview {
-        transform: scale(1.01);
-
-        hr {
-            transform: scale(0.99);
-        }
-    }
-
-
 
     img {
         transition: all 0.3s cubic-bezier(.79,.21,.06,.81);

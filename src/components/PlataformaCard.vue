@@ -57,14 +57,6 @@ export default defineComponent({
         inset 0px 0px 0px 0px #0001;
     }
 
-    &:hover > .contentPreview {
-        transform: scale(1.01);
-
-        hr {
-            transform: scale(0.99);
-        }
-    }
-
     i {
         font-size: 40px;
         color: #d80b0b;

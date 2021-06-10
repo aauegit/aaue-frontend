@@ -191,6 +191,7 @@ export default defineComponent({
 .noticias {
     display: flex;
     justify-content: center;
+    padding-bottom: 100px;
 
     .newsColumn {
         display: flex;

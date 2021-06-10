@@ -93,7 +93,7 @@ export default defineComponent({
         width: 200px;
         position: absolute;
         top: 15px;
-        left: 40px;
+        left: 80px;
       }
     }
 

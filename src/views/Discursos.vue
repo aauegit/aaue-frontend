@@ -176,6 +176,7 @@ export default defineComponent({
 .discurso {
     display: flex;
     justify-content: center;
+    padding-bottom: 100px;
 
     .newsColumn {
         display: flex;

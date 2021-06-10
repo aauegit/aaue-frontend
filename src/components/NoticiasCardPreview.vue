@@ -57,14 +57,6 @@ export default defineComponent({
         inset 0px 0px 0px 0px #0001,
         inset 0px 0px 0px 0px #fff9,
         inset 0px 0px 0px 0px #0001;
-
-        & >.contentPreview {
-            transform: scale(1.003);
-        }
-
-        & >img {
-            transform: scale(1.003);
-        }
     }
 
     img {

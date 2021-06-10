@@ -115,7 +115,7 @@ $specialColor: #155781;
             }
 
             span {
-                font-weight: 100;
+                font-weight: 300;
             }
         }
         

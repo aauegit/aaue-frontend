@@ -6,11 +6,11 @@
     <section class="hero">
       <div class="heroContent">
         <div class="textArea">
-          <h1 class="slogan">De estudantes, <br>para estudantes</h1>
-          <p class="heroText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius earum officiis deleniti dolores accusantium sed doloremque aperiam ipsum, quas veritatis perspiciatis quam tempore odit praesentium tempora rerum animi quis nobis.. Quos, veniam! Fazemos cenas, faz-te socio</p>
+          <h1 class="slogan">De estudantes,<br>para estudantes</h1>
+          <p class="heroText"> A Associação Académica da Universidade de Évora é responsável por potenciar o teu envolvimento e desenvolvimento académicos. Podes contar com a AAUE para o teu desenvolvimento pessoal e profissional, contando com eventos culturais, desportivos, lúdicos, cívicos, sociais, pedagógicos e muitos outros.</p>
           <div class="buttons">
-            <button class="vantagens">Descobre as vantagens</button>
-            <button class="socio">Faz-te Sócio!</button>
+            <button class="vantagens"><router-link :to="{name: 'Protocolos' }">Descobre as vantagens</router-link></button>
+            <button class="socio"><router-link :to="{name: 'Contactos' }">Faz-te Sócio!</router-link></button>
           </div>
         </div>
         <svg class="heroImage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><g id="background">
@@ -19,22 +19,22 @@
       </div>
     </section>
     <section class="ourWork">
-      <div class="ativismo">
+      <div class="work">
         <img src="@/assets/activism.jpeg" alt="">
         <div class="text">
-          <h1>we do stuff</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quis officiis praesentium iure quisquam recusandae inventore fuga quia sapiente libero?</p>
+          <h1>O que é que fazemos?</h1>
+          <p>A AAUE está organizada em vários Órgãos, Secções e Setores, cada um com a sua área de intervenção e competências bem definidas. Fica a conhecer o nosso trabalho aqui!</p>
+          <div class="team" >
+            <EquipaCard @click="snapToElement('body')" v-for="membros in equipa" :key="membros.id" :destination="membros.destination" :icon="membros.icon" :name="membros.nome"/>
+          </div>
         </div>
       </div>
     </section>
     <section class="recrutamento">
       <div class="aboutUs">
         <div class="text">
-          <h1>Mas quem é a AAUE?</h1>
-          <p>Somos estudantes, tal como tu, que  trabalham, lutam e dão a cara. A AAUE é quem tenta encontrar a melhor solução para a maioria dos estudantes</p>
-          <p>Ao nível interno a AAUÉ tem assento no Senado Universitário, no Conselho de Acção Social, no Conselho de Avaliação, no Conselho Consultivo do Fundo de Acção Social da UÉ, no Gabinete para a Promoção do Sucesso Académico, no Conselho Desportivo da UÉ, no Conselho da Fundação Luís de Molina e na Assembleia de Representantes.</p>
-          <p>Ao nível externo a AAUÉ desempenha um papel político junto das outras associações congéneres, no Ministério da Educação e Ciência e está representada em órgãos estatais e regionais. Faz ainda parte do Fórum Académico para a Informação e Representação Externa (FAIRe) e na Federação Académica do Desporto Universitário (FADU), na qual é membro fundador.</p>
-          <p>A AAUÉ faz ainda parte do Conselho Municipal de Juventude, do Conselho Consultivo Regional do IPDJ e do Conselho Municipal de Educação.</p>
+          <h1>O que é a AAUE?</h1>
+          <p> A Associação Académica da Universidade de Évora é uma entidade responsável pela representação estudantil dos estudantes da Universidade de Évora a nível local e nacional. A AAUE faz parte de várias estruturas nacionais, aumentando a sua capacidade de ação e resposta, e tem ainda assentos em alguns Órgãos da Universidade de Évora, Conselhos Municipais e contribui de forma ativa para o rumo do Ensino Superior em Portugal.</p>
           <p>Para além do trabalho político a AAUÉ promove actividades culturais e desportivas e presta aos seus membros, os estudantes, serviços variados, desde o lazer e a informação à formação extra-curricular.</p>
         </div>
        <img src="@/assets/activism.jpeg" alt="">
@@ -44,8 +44,9 @@
       <h1>Plataformas</h1>
       <p>De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:</p>
       <div class="plataformaCards"  >
-        <PlataformaCard  link="https://alojamento.aaue.pt/" icon="fas fa-home" titulo="Portal do Alojamento" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
-        <PlataformaCard link="http://torneioreitor.aaue.pt/" icon="fas fa-futbol" titulo="Torneio do Reitor" text="De forma a ajudar os estudantes da Universidade de Évora, a AAUE disponibiliza as seguintes plataformas de interesse dos estudantes que podem ser acedidas através das ligações:" />
+        <PlataformaCard  link="https://alojamento.aaue.pt/" icon="fas fa-home" titulo="Portal do Alojamento" text="Aqui podes encontrar ofertas de alojamento dedicado a estudantes." />
+        <PlataformaCard link="http://torneioreitor.aaue.pt/" icon="fas fa-futbol" titulo="Torneio do Reitor" text="A AAUE é responsável pelo desporto, dinamizando atividades como torneios internos, ou potenciando a prática federada, através das competições da Federação Académica do Desporto Universitário." />
+        <PlataformaCard link="http://expoestudante.aaue.pt/" icon="fas fa-futbol" titulo="Expo Estudante" text="Queres participar num evento de futuro, programado a pensar apenas em ti e no teu sucesso? Descobre tudo!" />
       </div>
     </section>
     <section class="noticias">
@@ -75,6 +76,7 @@ import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
 import NoticiaCard from '../components/NoticiaCard.vue';
 import PlataformaCard from '../components/PlataformaCard.vue';
+import EquipaCard from '../components/EquipaCard.vue';
 import Footer from '../components/Footer.vue';
 
 export default defineComponent({
@@ -85,6 +87,13 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       mouseIsDown: false,
+      equipa: [
+        {id: 0, destination: "Presidencia", icon: "fas fa-globe", nome: "Presidência", },
+        {id: 1, destination: "Assembleia", icon: "fas fa-balance-scale", nome: "Assembleia Magna", },
+        {id: 2, destination: "Fiscal", icon: "fas fa-wallet", nome: "Conselho Fiscal", },
+        {id: 3, destination: "Setores", icon: "fas fa-network-wired", nome: "Setores", },
+        {id: 4, destination: "Autonomas", icon: "fas fa-money-check-alt", nome: "Secções Autónomas", },
+      ],
       noticiaIndex: 0,
       noticias: [
           {
@@ -128,6 +137,7 @@ export default defineComponent({
     ScrollToTopButton,
     NoticiaCard,
     PlataformaCard,
+    EquipaCard,
     Footer,
   },
   created() {
@@ -143,7 +153,13 @@ export default defineComponent({
     scrollToElement(destination: string) {
       const element = document.querySelector(destination);
       if (element) {
-        element.scrollIntoView({behavior: 'smooth'});
+        element.scrollIntoView({block: 'start'});
+      }
+    },
+    snapToElement(destination: string) {
+      const element = document.querySelector(destination);
+      if (element) {
+        element.scrollIntoView(true);
       }
     },
     getImgURL(image: String) {
@@ -172,7 +188,7 @@ $AaueRed: #d90504;
 $AaueYellow: #f8d80c;
 
 section {
-  padding: 20px;
+  padding: 20px 75px;
 }
 
 .heroContent {
@@ -187,16 +203,19 @@ section {
     justify-content: center;
     align-items: left;
     flex-direction: column;
+    padding-bottom: 125px;
 
     .slogan {
-      font-size: 3.7vw;
-      margin: 0px 25px 10px 25px;
-      line-height: 70px;
+      font-size: 80px;
+      font-weight: 500;
+      margin: 0px 25px 25px 0px;
       text-transform: uppercase;
     }
     
     .heroText {
-      margin: 0px 25px;
+      width: 30vw;
+      font-size: 18px;
+      margin: 0px 25px 25px 0px;
     }
 
     button {
@@ -208,7 +227,7 @@ section {
       text-transform: uppercase; 
 
       padding: 15px;
-      margin: 30px 25px;
+      margin: 30px 25px 0px 0px;
 
       font-size: 100% + 10%;
       font-weight: 600;
@@ -240,8 +259,13 @@ section {
       &:hover {
         box-shadow: 7px 7px darken($buttonColorTest, 10%), -7px -7px lighten($buttonColorTest, 10%);
         background-color: $buttonColorTest;
-        color: #f7f7f7;
+        
         cursor: pointer;
+
+        a {
+          opacity: 1;
+          color: #f7f7f7;
+        }
 
           &::before {
           border: 0px;
@@ -267,11 +291,17 @@ section {
 }
 
 .ourWork {
-  padding: 20px;
   height: 100vh;
 
-  .ativismo {
+  .work {
     display: flex;
+
+    .team {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 125px;
+    }
 
     img {
       margin-right: 30px;
@@ -284,13 +314,19 @@ section {
 
       h1 {
         text-transform: uppercase;
+        font-size: 60px;
+        font-weight: 400;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 18px;
       }
     }
   }
 }
 
 .recrutamento {
-  padding: 20px;
   height: 100vh;
 
   .aboutUs {
@@ -305,8 +341,15 @@ section {
       display: flex;
       flex-direction: column;
 
-      h1 {
+       h1 {
         text-transform: uppercase;
+        font-size: 60px;
+        font-weight: 400;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 18px;
       }
     }
   }
@@ -324,11 +367,15 @@ section {
 
   .plataformaCards {
     display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
 }
 
 .noticias {
+  padding: 100px 0 100px 0px;
 
   h1 {
     font-size: 80px;

@@ -34,7 +34,7 @@
         :fb4="fb4"
         :descricao="descricao"
         :contacto="contacto"
-         />
+         ></Setor>
       </div>
       <Footer />
   </div>
