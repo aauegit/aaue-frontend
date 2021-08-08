@@ -39,6 +39,7 @@ export default defineComponent({
 
 .cardPreview {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     max-width: 900px;
     margin:0px 30px 30px 0px;
@@ -56,14 +57,6 @@ export default defineComponent({
         inset 0px 0px 0px 0px #0001,
         inset 0px 0px 0px 0px #fff9,
         inset 0px 0px 0px 0px #0001;
-
-        & >.contentPreview {
-            transform: scale(1.003);
-        }
-
-        & >img {
-            transform: scale(1.003);
-        }
     }
 
     img {

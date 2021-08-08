@@ -36,7 +36,6 @@
                 </div>
                 <div class="links">
                   <a href="hhttps://www.facebook.com/loja.v.academica/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
-                  <a href="https://loja.aaue.pt/" target="_blank"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
                 
             </div>

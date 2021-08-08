@@ -39,7 +39,7 @@ export default defineComponent({
 
 .cardPreview {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     max-width: 900px;
     margin:0px 30px 30px 0px;

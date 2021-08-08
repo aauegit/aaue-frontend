@@ -6,8 +6,12 @@
     <section class="hero">
       <div class="heroContent">
         <div class="textArea">
-          <h1 class="slogan">De estudantes,<br>para estudantes</h1>
-          <p class="heroText"> A Associação Académica da Universidade de Évora é responsável por potenciar o teu envolvimento e desenvolvimento académicos. Podes contar com a AAUE para o teu desenvolvimento pessoal e profissional, contando com eventos culturais, desportivos, lúdicos, cívicos, sociais, pedagógicos e muitos outros.</p>
+          <transition name="fade" type="transition" mode="out-in" appear>
+            <h1 class="slogan">De estudantes,<br>para estudantes</h1>
+          </transition>
+          <transition name="fadeText" type="transition" mode="out-in" appear>
+            <p class="heroText"> A Associação Académica da Universidade de Évora é responsável por potenciar o teu envolvimento e desenvolvimento académicos. Podes contar com a AAUE para o teu desenvolvimento pessoal e profissional, contando com eventos culturais, desportivos, lúdicos, cívicos, sociais, pedagógicos e muitos outros.</p>
+          </transition>
           <div class="buttons">
             <button class="vantagens"><router-link :to="{name: 'Protocolos' }">Descobre as vantagens</router-link></button>
             <button class="socio"><router-link :to="{name: 'Contactos' }">Faz-te Sócio!</router-link></button>
@@ -184,6 +188,8 @@ export default defineComponent({
 $buttonColorTest: #155781;
 $buttonColor: #d90504;
 
+$easing: ease-in;
+
 $AaueRed: #d90504;
 $AaueYellow: #f8d80c;
 
@@ -204,12 +210,14 @@ section {
     align-items: left;
     flex-direction: column;
     padding-bottom: 125px;
+    overflow: none;
 
     .slogan {
-      font-size: 80px;
+      font-size: 4.5vw;
       font-weight: 500;
       margin: 0px 25px 25px 0px;
       text-transform: uppercase;
+      overflow: none;
     }
     
     .heroText {
@@ -425,6 +433,32 @@ section {
     }
   }
 
+}
+
+.fade-enter-from {
+  transform: translateY(20px);
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: all 0.3s $easing;
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transition: all 0.3s $easing;
+}
+
+.fadeText-enter-from {
+  transform: translateY(20px);
+  opacity: 0;
+}
+.fadeText-enter-active {
+  transition: all 0.5s $easing;
+}
+
+.fadeText-leave-to {
+  opacity: 0;
+  transition: all 0.5s $easing;
 }
 
 

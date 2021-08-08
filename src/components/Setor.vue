@@ -4,24 +4,30 @@
             <div class="textSetor">
                 <h1>{{ nomeDoSetor }}</h1>
                 <hr>
-                <div class="coordenadores">
-                    <div class="coordenador">
-                        <img :src="coordenador1Img" alt="Coordenador" decode="async">
-                        <a :href="fb1" target="_blank" rel="noopener noreferrer">{{ coordenador1 }} <i class="fab fa-facebook-square"></i></a>
-                    </div>
-                    <div class="coordenador">
-                        <img :src="coordenador2Img" alt="Coordenador" decode="async">
-                        <a :href="fb2" target="_blank" rel="noopener noreferrer">{{ coordenador2 }} <i class="fab fa-facebook-square"></i></a>
-                    </div>
-                    <div v-if="coordenador3" class="coordenador">
-                        <img :src="coordenador3Img" alt="Coordenador" decode="async">
-                        <a :href="fb3" target="_blank" rel="noopener noreferrer">{{ coordenador3 }} <i class="fab fa-facebook-square"></i></a>
-                    </div>
-                    <div v-if="coordenador4" class="coordenador">
-                        <img :src="coordenador4Img" alt="Coordenador" decode="async">
-                        <a :href="fb4" target="_blank" rel="noopener noreferrer">{{ coordenador4 }} <i class="fab fa-facebook-square"></i></a>
-                    </div>
-                </div>
+                <transition-group 
+                    class="coordenadores"
+                    appear          
+                    @before-enter="beforeEnter"
+                    @enter="enter" 
+                    tag="div" 
+                    >  
+                        <div class="coordenador" key="3">
+                            <img :src="coordenador1Img" alt="Coordenador" decode="async">
+                            <a :href="fb1" target="_blank" rel="noopener noreferrer">{{ coordenador1 }} <i class="fab fa-facebook-square"></i></a>
+                        </div>
+                        <div class="coordenador" key="4">
+                            <img :src="coordenador2Img" alt="Coordenador" decode="async">
+                            <a :href="fb2" target="_blank" rel="noopener noreferrer">{{ coordenador2 }} <i class="fab fa-facebook-square"></i></a>
+                        </div>
+                        <div v-if="coordenador3" class="coordenador" key="5">
+                            <img :src="coordenador3Img" alt="Coordenador" decode="async">
+                            <a :href="fb3" target="_blank" rel="noopener noreferrer">{{ coordenador3 }} <i class="fab fa-facebook-square"></i></a>
+                        </div>
+                        <div v-if="coordenador4" class="coordenador" key="6">
+                            <img :src="coordenador4Img" alt="Coordenador" decode="async">
+                            <a :href="fb4" target="_blank" rel="noopener noreferrer">{{ coordenador4 }} <i class="fab fa-facebook-square"></i></a>
+                        </div>
+                </transition-group>
                 <p>{{ descricao }}</p>
                 <h2>Contacto: <span>{{ contacto }}</span></h2>
             </div>
@@ -31,6 +37,7 @@
 </template>
 
 <script lang="ts">
+import { gsap } from "gsap";
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -51,7 +58,23 @@ export default defineComponent({
     fb4: String,
     descricao: String,
     contacto: String,
-  }
+  },
+  setup() {
+    const beforeEnter: any = (el: any) => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateX(-50px)';
+    }
+    const enter: any = (el: any, done: any) => {
+        gsap.to(el, {
+            opacity: 1,
+            x: 0,
+            duration: 0.2,
+            onComplete: done,
+            delay: el.dataset.index * 0.1,
+        });
+    }
+        return { beforeEnter, enter }
+  },
 });
 </script>
 

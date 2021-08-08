@@ -147,6 +147,7 @@ $specialColor: #155781;
 
 .setores {
   display: flex;
+  padding-bottom: 100px;
 
   .indice {
     margin: 75px 0 0 30px;
@@ -211,6 +212,7 @@ $specialColor: #155781;
 
 .setor {
   margin-top: 75px;
+  height: auto;
 }
 
 </style>
