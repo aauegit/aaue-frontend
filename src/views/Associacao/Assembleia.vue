@@ -57,7 +57,7 @@ export default defineComponent({
   },
    methods: {
     getImgURL(image: String) {
-        return require('@/assets/membros/magna/' + image);
+        return require('@/assets/membros/magna/' + image).default;
     },
     scrollToElement(destination: string) {
       const element = document.querySelector(destination);

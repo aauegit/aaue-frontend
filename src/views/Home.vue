@@ -167,7 +167,7 @@ export default defineComponent({
       }
     },
     getImgURL(image: String) {
-        return require('../assets/' + image);
+        return require('../assets/' + image).default;
     },
     handleScroll () {
       window.pageYOffset >= 250 ? this.isAtTop = false : this.isAtTop = true;

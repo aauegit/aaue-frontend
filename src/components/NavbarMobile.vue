@@ -33,8 +33,6 @@ export default defineComponent({
             {id: 0, routeName: "Home", routeText: "Home"},
             {id: 1, routeName: "Noticias", routeText: "Noticias"},
             {id: 2, routeName: "Discursos", routeText: "Discursos"},
-            {id: 3, routeName: "Eventos", routeText: "Eventos"},
-            {id: 4, routeName: "Associacao", routeText: "Associação"},
             {id: 5, routeName: "Servicos", routeText: "Serviços"},
             {id: 6, routeName: "Contactos", routeText: "Contactos"},
         ]

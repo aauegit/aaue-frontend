@@ -32,8 +32,8 @@ export default defineComponent({
       mobileMode: false,
       membros: [
         {id: 0, nome: "Mariana Sequeira", cargo: "Presidente", fb: "https://www.facebook.com/mariana.sequeira00", img: "marianaSequeira.webp"},
-        {id: 1, nome: "Ana Marta Figueiredo", cargo: "Vice-Presidente", fb: "https://www.facebook.com/marta.figueiredo.336717", img: "anaMartaFigueiredo.webp"},
-        {id: 2, nome: "José Gonçalves", cargo: "Secretário", fb: "https://www.facebook.com/jose.pedro.goncalves.4", img: "joseGoncalves.webp"},
+        {id: 1, nome: "Ana Marta Figueiredo", cargo: "Vice-Presidente", fb: "https://www.facebook.com/marta.figueiredo.336717", img: "anamartafigueiredo.webp"},
+        {id: 2, nome: "José Gonçalves", cargo: "Secretário", fb: "https://www.facebook.com/jose.pedro.goncalves.4", img: "josegoncalves.webp"},
         
       ]
     }
@@ -56,7 +56,7 @@ export default defineComponent({
   },
    methods: {
     getImgURL(image: String) {
-        return require('@/assets/membros/fiscal/' + image);
+        return require('@/assets/membros/fiscal/' + image).default;
     },
     scrollToElement(destination: string) {
       const element = document.querySelector(destination);

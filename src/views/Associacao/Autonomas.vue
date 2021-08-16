@@ -119,7 +119,7 @@ export default defineComponent({
   },
    methods: {
     getImgURL(image: String) {
-        return require('@/assets/membros/' + image);
+        return require('@/assets/membros/' + image).default;
     },
     scrollToElement(destination: string) {
       const element = document.querySelector(destination);
