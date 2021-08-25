@@ -26,7 +26,7 @@
       <div class="work">
         <img src="@/assets/activism.jpeg" alt="">
         <div class="text">
-          <h1>O que é que fazemos?</h1>
+          <h1>O que fazemos?</h1>
           <p>A AAUE está organizada em vários Órgãos, Secções e Setores, cada um com a sua área de intervenção e competências bem definidas. Fica a conhecer o nosso trabalho aqui!</p>
           <div class="team" >
             <EquipaCard @click="snapToElement('body')" v-for="membros in equipa" :key="membros.id" :destination="membros.destination" :icon="membros.icon" :name="membros.nome"/>
@@ -157,7 +157,7 @@ export default defineComponent({
     scrollToElement(destination: string) {
       const element = document.querySelector(destination);
       if (element) {
-        element.scrollIntoView({block: 'start'});
+        element.scrollIntoView({behavior: 'smooth'});
       }
     },
     snapToElement(destination: string) {

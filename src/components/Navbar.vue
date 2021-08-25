@@ -126,7 +126,7 @@ export default defineComponent({
       margin-left: 5px;
       opacity: 0.75;
       color: black;
-      transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
   }
 
@@ -150,7 +150,7 @@ export default defineComponent({
   .dropdown:hover {
 
     .dropdownName {
-      cursor: auto;
+      cursor: default;
     }
 
     i {

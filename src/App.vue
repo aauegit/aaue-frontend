@@ -14,7 +14,7 @@ $specialColor: #155781;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background-color: #f7f8fc;
-  
+  cursor: default;
 }
 
 * {
