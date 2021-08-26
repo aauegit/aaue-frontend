@@ -190,9 +190,6 @@ $buttonColor: #d90504;
 
 $easing: ease-in;
 
-$AaueRed: #d90504;
-$AaueYellow: #f8d80c;
-
 section {
   padding: 20px 75px;
 }
@@ -221,9 +218,9 @@ section {
     }
     
     .heroText {
-      width: 30vw;
+      width: 80%;
       font-size: 18px;
-      margin: 0px 25px 25px 0px;
+      margin: 0;
     }
 
     button {
@@ -237,7 +234,7 @@ section {
       padding: 15px;
       margin: 30px 25px 0px 0px;
 
-      font-size: 100% + 10%;
+      font-size: 18px;
       font-weight: 600;
       border-radius: 5px;
       border: none;
@@ -433,6 +430,22 @@ section {
     }
   }
 
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+
+}
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+
+}
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { 
+
+}
+ 
+@media all and (max-width: 480px) { 
+  
 }
 
 .fade-enter-from {

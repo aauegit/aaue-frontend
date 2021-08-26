@@ -75,7 +75,7 @@ export default defineComponent({
 	width: 100%;
 	opacity: 1;
 	color: #fff;
-	padding: 35px 100px 0;
+	padding: 35px 100px 0px 100px;
 
   #nav {
     display: flex;
@@ -172,6 +172,26 @@ export default defineComponent({
         opacity: 1;
       }
     }
+  }
+}
+
+@media all and (min-width: 2000px) {
+  .header #nav ul li {
+    font-size: 26px;
+  }
+}
+
+@media all and (min-width: 1000px) and (max-width: 1350px) { 
+
+  .header {
+    padding: 45px 20px 0px 20px;
+  }
+
+  .header #nav .logo img {
+    left: 20px;
+  }
+  .header #nav ul li {
+    font-size: 17px;
   }
 }
 </style>
