@@ -121,6 +121,7 @@ $specialColor: #155781;
             padding-right: 30px;
 
             h1 {
+                font-size: 30px;
                 margin-bottom: 20px;
             }
 
