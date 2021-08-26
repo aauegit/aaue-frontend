@@ -91,7 +91,7 @@ export default defineComponent({
         width: 200px;
         position: absolute;
         top: 15px;
-        left: 80px;
+        left: 75px;
       }
     }
 

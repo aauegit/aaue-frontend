@@ -18,16 +18,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "Discursos" */ '../views/Discursos.vue')
   },
   {
-    path: '/queima-das-fitas',
-    name: 'Queima',
-    component: () => import(/* webpackChunkName: "Discursos" */ '../views/Queima.vue')
-  },
-  {
-    path: '/rececao-ao-caloiro',
-    name: 'Rececao',
-    component: () => import(/* webpackChunkName: "Discursos" */ '../views/Rececao.vue')
-  },
-  {
     path: '/setores',
     name: 'Setores',
     component: () => import(/* webpackChunkName: "Setores" */ '../views/Associacao/Setores.vue'),

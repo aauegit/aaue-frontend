@@ -206,11 +206,11 @@ section {
     justify-content: center;
     align-items: left;
     flex-direction: column;
-    padding-bottom: 125px;
+    padding-bottom: 250px;
     overflow: none;
 
     .slogan {
-      font-size: 4.5vw;
+      font-size: 70px;
       font-weight: 500;
       margin: 0px 25px 25px 0px;
       text-transform: uppercase;
@@ -218,7 +218,7 @@ section {
     }
     
     .heroText {
-      width: 80%;
+      width: 60%;
       font-size: 18px;
       margin: 0;
     }
