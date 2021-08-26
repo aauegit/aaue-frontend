@@ -5,14 +5,25 @@
     <div v-if="!activatedNavbar" class="pageContent">
         <section class="contacts">
             <div class="contactForm">
+                <img src="@/assets/pomba.png" alt="">
                 <div class="contactInfo">
                     <h1>Tens alguma questão? Contacta-nos!</h1>
-                    <img src="@/assets/activism.jpeg" alt="">
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a href="https://goo.gl/maps/hMu13iR5NiM2">Rua Diogo Cão nº 21 7000-872 Évora</a></li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:geral@aaue.pt">geral@aaue.pt</a></li>
-                        <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+351266098003">+ 351 266 09 80 03</a></li>
-                    </ul>
+                    <div class="contactIcons">
+                        <ul>
+                            <a href="https://goo.gl/maps/hMu13iR5NiM2" >
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"><span>Morada</span></i>
+                                <li >Rua Diogo Cão nº 21 7000-872 Évora</li>
+                            </a>
+                            <a href="mailto:geral@aaue.pt" >
+                                <i class="fas fa-envelope" aria-hidden="true"><span>Email</span></i>
+                                <li >geral@aaue.pt</li>
+                            </a>
+                            <a href="tel:+351266098003" >
+                                <i class="fas fa-phone" aria-hidden="true"><span>Telefone</span></i>
+                                <li >+ 351 266 09 80 03</li>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
                 <form action="POST" @submit.prevent="sendFormData">
                     <label for="name">Nome <span>*</span></label>
@@ -106,6 +117,7 @@ $specialColor: #155781;
     background-color: #f7f8fc;
 
     .contactForm {
+        position: relative;
         display: flex;
         background: white;
         width: 80vw;
@@ -114,9 +126,16 @@ $specialColor: #155781;
         margin: 100px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 17%;
+            height: 500px;
+        }
+
 
         .contactInfo {
-            width: 60%;
+            width: 50%;
             border-right: 1px solid #bebebe;
             padding-right: 30px;
 
@@ -125,35 +144,36 @@ $specialColor: #155781;
                 margin-bottom: 20px;
             }
 
-            img {
-                width: 100%;
-                border-radius: 25px;
+            .contactIcons {
+                display: flex;
+                
+                ul a {
+                    font-size: 20px;
+                    font-family: 'Roboto', sans-serif;
+
+                    i {
+                        margin-right: 10px;
+                        color: $specialColor;
+
+                        span {
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 500;
+                            padding-left: 10px;
+                        }
+                    }
+
+                    li {
+                        margin-bottom: 30px;
+                    }
+                }
             }
 
-            ul li {
-                margin: 30px 0 30px 0;
-                font-size: 20px;
-
-                i {
-                    margin-right: 10px;
-                }
-
-                .fa-phone {
-                    color:#89CFF0;
-                }
-                .fa-map-marker-alt {
-                    color:#e96656;
-                }
-                .fa-envelope {
-                    color:#90EE90;
-                }
-            }
         }
 
         form {
             display: flex;
             flex-direction: column;
-            width: 40%;
+            width: 50%;
             padding: 30px 0 30px 30px;
 
             label {
@@ -187,8 +207,11 @@ $specialColor: #155781;
 
             .mensagem {
                 padding: 5px;
-                height: 100px;
+                height: 40px;
                 resize: none;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid #bebebe;
                 margin-bottom: 40px;
 
                 &::placeholder {
