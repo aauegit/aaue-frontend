@@ -24,7 +24,6 @@ $specialColor: #155781;
 }
 
 body {
-  background-color: #f7f7f7;
 
   &::-webkit-scrollbar {
     width: 0.5rem;
