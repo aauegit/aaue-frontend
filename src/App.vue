@@ -33,7 +33,7 @@ body {
     background-color: #f7f8fc;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $specialColor;
+    background-color: #333333;
     border-radius: 5px;
   }
 }
