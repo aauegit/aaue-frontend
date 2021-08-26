@@ -35,8 +35,8 @@
                     <label for="mensagem">Mensagem <span>*</span></label>
                     <textarea class="mensagem" placeholder="Mensagem" id="mensagem"  v-model="mensagem" required />
                     <div class="buttons">
-                        <button>reCaptcha</button>
-                        <button>Enviar </button>
+                        <Button buttonText="Enviar"/>
+                        <Button buttonText="Recaptcha" class="lastButton"/>
                     </div>
                 </form>
             </div>
@@ -50,6 +50,7 @@ import { defineComponent } from 'vue';
 import Navbar from '../components/Navbar.vue';
 import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
+import Button from '../components/Button.vue';
 import Footer from '../components/Footer.vue';
 
 export default defineComponent({
@@ -71,6 +72,7 @@ export default defineComponent({
     NavbarMobile,
     ScrollToTopButton,
     Footer,
+    Button,
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
@@ -224,59 +226,6 @@ $specialColor: #2c3e50;
 
             .buttons {
                 display: flex;
-
-                button {
-                    max-width: 300px;
-                    position: relative;
-                    display: inline-block;
-
-                    text-align: center;
-                    text-transform: uppercase; 
-
-                    padding: 15px 30px;
-
-                    font-size: 16px;
-                    font-weight: 600;
-                    border-radius: 5px;
-                    border: none;
-
-                    color: $specialColor;
-                    background-color: white;
-
-                    transition: all 0.5s;
-
-                    &:nth-child(1) {
-                        margin-right: 50px;
-                    }
-
-                    &::before {
-                        position: absolute;
-                        content:"";
-                        border-radius: 5px;
-                        border-top: 5px solid lighten($specialColor, 5%);
-                        border-left: 5px solid lighten($specialColor, 5%);	
-                        border-right: 5px solid darken($specialColor, 5%);
-                        border-bottom: 5px solid darken($specialColor, 5%);
-
-                        top: 0px;
-                        right: 0px;
-                        bottom: 0px;
-                        left: 0px;	
-
-                        transition: 0.5s;
-                    }
-
-                    &:hover {
-                        box-shadow: 7px 7px darken($specialColor, 10%), -7px -7px lighten($specialColor, 10%);
-                        background-color: $specialColor;
-                        color: #f7f7f7;
-                        cursor: pointer;
-
-                        &::before {
-                        border: 0px;
-                        }
-                    }
-                }
             }
         }
     }
