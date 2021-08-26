@@ -107,7 +107,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
-$specialColor: #155781;
+$specialColor: #2c3e50;
 
 .contacts {
     display: flex;
@@ -201,7 +201,6 @@ $specialColor: #155781;
             }
 
             span {
-                color: #ff0000;
                 opacity: 0.5;
             }
 
