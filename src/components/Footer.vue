@@ -125,6 +125,11 @@ footer {
             img {
                 width: 300px;
                 margin-bottom: 30px;
+                opacity: 0.9;            
+            }
+
+            p {
+                opacity: 0.9;
             }
         }
 
