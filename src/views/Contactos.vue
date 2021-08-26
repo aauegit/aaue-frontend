@@ -4,34 +4,29 @@
     <Navbar v-if="!mobileMode" class="navbar" />
     <div v-if="!activatedNavbar" class="pageContent">
         <section class="contacts">
-            <div class="contactInfo">
-                <h1>Tens alguma questão? Contacta-nos!</h1>
-                <img src="@/assets/activism.jpeg" alt="">
-                <ul>
-                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a href="https://goo.gl/maps/hMu13iR5NiM2">Rua Diogo Cão nº 21 7000-872 Évora</a></li>
-                    <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:geral@aaue.pt">geral@aaue.pt</a></li>
-                    <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+351266098003">+ 351 266 09 80 03</a></li>
-                </ul>
-            </div>
-            <div class="form">
-                <form action="">
-                    <label for="">Nome <span>*</span>
-                    </label>
-                    <input type="text" placeholder="Nome" required>
-                    <label for="">Email <span>*</span>
-                    </label>
-                     <input type="email" placeholder="Email" required>
-                    <label for="">Assunto <span>*</span>
-                    </label>
-                    <input type="text" placeholder="Assunto" required>
-                    <label for="">Mensagem <span>*</span>
-                    </label>
-                    <textarea class="mensagem" placeholder="Mensagem" required />
+            <div class="contactForm">
+                <div class="contactInfo">
+                    <h1>Tens alguma questão? Contacta-nos!</h1>
+                    <img src="@/assets/activism.jpeg" alt="">
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a href="https://goo.gl/maps/hMu13iR5NiM2">Rua Diogo Cão nº 21 7000-872 Évora</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:geral@aaue.pt">geral@aaue.pt</a></li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+351266098003">+ 351 266 09 80 03</a></li>
+                    </ul>
+                </div>
+                <form action="POST" @submit.prevent="sendFormData">
+                    <label for="name">Nome <span>*</span></label>
+                    <input type="text" placeholder="Nome" id="name" v-model="name" required>
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" placeholder="Email" id="email"  v-model="email" required>
+                    <label for="assunto">Assunto <span>*</span></label>
+                    <input type="text" placeholder="Assunto" id="assunto"  v-model="assunto" required>
+                    <label for="mensagem">Mensagem <span>*</span></label>
+                    <textarea class="mensagem" placeholder="Mensagem" id="mensagem"  v-model="mensagem" required />
                     <div class="buttons">
                         <button>reCaptcha</button>
-                        <button>Enviar Mensagem</button>
+                        <button>Enviar </button>
                     </div>
-                    
                 </form>
             </div>
         </section>
@@ -53,6 +48,11 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
+      name: "",
+      email: "",
+      assunto: "",
+      mensagem: "",
+
     }
   },
   components: {
@@ -99,55 +99,61 @@ export default defineComponent({
 $specialColor: #155781;
 
 .contacts {
-    padding-top: 100px;
-    padding-bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
     background-color: #f7f8fc;
 
-    .contactInfo {
+    .contactForm {
+        display: flex;
+        background: white;
+        width: 80vw;
+        padding: 50px;
+        border-radius: 50px;
+        margin: 100px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-        h1 {
-            margin-bottom: 20px;
+
+        .contactInfo {
+            width: 60%;
+            border-right: 1px solid #bebebe;
+            padding-right: 30px;
+
+            h1 {
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 25px;
+            }
+
+            ul li {
+                margin: 30px 0 30px 0;
+                font-size: 20px;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                .fa-phone {
+                    color:#89CFF0;
+                }
+                .fa-map-marker-alt {
+                    color:#e96656;
+                }
+                .fa-envelope {
+                    color:#90EE90;
+                }
+            }
         }
-
-        img {
-            height: 200px;
-        }
-
-        ul li {
-            margin: 30px 0 30px 0;
-            font-size: 20px;
-
-            i {
-                margin-right: 10px;
-            }
-
-            .fa-phone {
-                color:#89CFF0;
-            }
-            .fa-map-marker-alt {
-                color:#e96656;
-            }
-            .fa-envelope {
-                color:#90EE90;
-            }
-        }
-    }
-
-    .form {
 
         form {
             display: flex;
             flex-direction: column;
-            width: 500px;
-            padding: 30px;
-            margin-right: 50px;
-            background: white;
-            box-shadow:  5px 5px 10px #e7e7e7,
-             -5px -5px 10px #ffffff;
+            width: 40%;
+            padding: 30px 0 30px 30px;
 
             label {
                 margin-bottom: 5px;
@@ -159,8 +165,18 @@ $specialColor: #155781;
             input {
                 height: 40px;
                 padding-left: 5px;
-                border: 1px solid #bebebe;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid #bebebe;
                 margin-bottom: 20px;
+
+                &::placeholder {
+                    font-family: 'Roboto', sans-serif;;
+                }
+
+                &::-moz-placeholder {
+                    font-family: 'Roboto', sans-serif;;
+                }
             }
 
             span {
@@ -170,14 +186,21 @@ $specialColor: #155781;
 
             .mensagem {
                 padding: 5px;
-                height: 200px;
+                height: 100px;
                 resize: none;
                 margin-bottom: 40px;
+
+                &::placeholder {
+                    font-family: 'Roboto', sans-serif;;
+                }
+
+                &::-moz-placeholder {
+                    font-family: 'Roboto', sans-serif;;
+                }
             }
 
             .buttons {
                 display: flex;
-                justify-content: space-between;
 
                 button {
                     max-width: 300px;
@@ -187,10 +210,9 @@ $specialColor: #155781;
                     text-align: center;
                     text-transform: uppercase; 
 
-                    padding: 15px;
-                    margin: 30px 25px;
+                    padding: 15px 30px;
 
-                    font-size: 100% + 10%;
+                    font-size: 16px;
                     font-weight: 600;
                     border-radius: 5px;
                     border: none;
@@ -199,6 +221,10 @@ $specialColor: #155781;
                     background-color: white;
 
                     transition: all 0.5s;
+
+                    &:nth-child(1) {
+                        margin-right: 50px;
+                    }
 
                     &::before {
                         position: absolute;
@@ -230,7 +256,6 @@ $specialColor: #155781;
                 }
             }
         }
-       
     }
 }
 </style>

@@ -17,8 +17,8 @@
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredEventos">
-            <router-link :to="{ name: 'Rececao'}">Receção ao Caloiro</router-link>
-            <router-link :to="{ name: 'Queima'}">Queima das Fitas</router-link>
+             <a href="http://queima.aaue.pt/" target="_blank" rel="noopener noreferrer">Queima das Fitas</a>
+              <a href="https://expoestudante.aaue.pt/#/" target="_blank" rel="noopener noreferrer">Expo'Estudante</a>
           </div>
         </li>
         <li class="dropdown" @mouseover="hoveredAssociacao = true" @mouseleave="hoveredAssociacao = false" >
@@ -41,9 +41,7 @@
           </div>
           <div class="subMenu" v-if="hoveredPlataformas">
             <a href="https://alojamento.aaue.pt/" target="_blank" rel="noopener noreferrer">Portal do Alojamento</a>
-            <a href="https://torneioreitor.aaue.pt/" target="_blank" rel="noopener noreferrer">Torneio do Reitor</a>
-            <a href="https://queima.aaue.pt/" target="_blank" rel="noopener noreferrer">Queima das Fitas</a>
-            <a href="https://expoestudante.aaue.pt/#/" target="_blank" rel="noopener noreferrer">Expo'Estudante</a>
+            <a href="https://torneioreitor.aaue.pt/" target="_blank" rel="noopener noreferrer">Desporto</a>
           </div>
         </li>
         <li><router-link class="navLinks" :to="{ name: 'Servicos' }">Serviços</router-link></li>

@@ -20,7 +20,7 @@
                 </div>
                 <a href="https://www.facebook.com/copiakiue/" target="_blank"><i class="fab fa-facebook-square"></i></a>
             </div>
-            <div class="vidaAcademica">
+            <div class="vidaAcademica" v-if="aberto">
                 <img src="@/assets/servicos/vidaacademica.png" alt="">
                 <div class="serviceContent">
                     <p class="morada"><span>Morada: </span>Rua Diogo Cão, Nº 21, 7000-872 Évora</p>
@@ -58,6 +58,7 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
+      aberto: false,
     }
   },
   components: {
