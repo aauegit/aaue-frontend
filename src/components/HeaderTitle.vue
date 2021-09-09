@@ -1,0 +1,72 @@
+<template>
+    <div class="headerTitle" :style="{background: headerImage, height: height}">
+        <h1>{{ title }}</h1>
+        <p v-if="subtitle">{{ subtitle }}</p>
+        <p v-if="subtitle2">{{ subtitle2 }}</p>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            title: {
+                type: String,
+                required: true,
+            },
+            subtitle: {
+                type: String,
+                required: false,
+            },
+            subtitle2: {
+                type: String,
+                required: false,
+            },
+            height: {
+                type: String,
+                required: false,
+            },
+            image: {
+                type: String,
+                required: true,
+            },
+        },
+        computed: {
+            headerImage() {
+                return `url(${this.image}) no-repeat center center`
+            }
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+
+.headerTitle {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 12vh;
+    padding-bottom: 5vh;
+    padding-left: 75px;
+    color: white;
+    text-transform: uppercase;
+
+    h1 {
+        font-size: 100px;
+        border-radius: 2px;
+        margin-bottom: 20px;
+        border-bottom: 5px solid white;
+        width: 90%;
+    }
+
+    p {
+        margin: 0;
+        font-size: 30px;
+
+        &:nth-child(3) {
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+</style>
