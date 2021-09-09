@@ -8,7 +8,6 @@
               </router-link>
           </div>
       <ul>
-        <li><router-link class="navLinks" to="/">Home</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Notícias</router-link></li>
         <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
         <li class="dropdown" @mouseover="hoveredEventos = true" @mouseleave="hoveredEventos = false" >
@@ -71,11 +70,16 @@ export default defineComponent({
 
 .header {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 	z-index: 10;
 	width: 100%;
+  height: 15vh;
 	opacity: 1;
 	color: #fff;
-	padding: 35px 100px 0px 100px;
+	padding: 0vh 75px;
+  background-color: #f7f8fc;
 
   #nav {
     display: flex;

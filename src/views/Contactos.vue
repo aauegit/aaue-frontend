@@ -5,7 +5,6 @@
     <div v-if="!activatedNavbar" class="pageContent">
         <section class="contacts">
             <div class="contactForm">
-                <img src="@/assets/pomba.png" alt="">
                 <div class="contactInfo">
                     <h1>Tens alguma questão? Contacta-nos!</h1>
                     <div class="contactIcons">
@@ -128,14 +127,6 @@ $specialColor: #2c3e50;
         margin: 100px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-        img {
-            position: absolute;
-            bottom: 0;
-            left: 17%;
-            height: 500px;
-        }
-
-
         .contactInfo {
             width: 50%;
             border-right: 1px solid #bebebe;
@@ -207,7 +198,7 @@ $specialColor: #2c3e50;
             }
 
             .mensagem {
-                padding: 5px;
+                padding: 5px 5px 0 5px;
                 height: 40px;
                 resize: none;
                 border: 0;

@@ -136,7 +136,7 @@ footer {
         .contactInfo {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+
 
             .title {
                 color: $textColor;

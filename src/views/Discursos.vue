@@ -3,9 +3,7 @@
   <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
   <Navbar v-if="!mobileMode" class="navbar" />
   <div v-if="!activatedNavbar" class="pageContent">
-      <section class="discursoHero">
-          <h1>Discursos</h1>
-      </section>
+      <HeaderTitle title="Discursos" :image="getImgURL('discursos.jpg')"/>
       <section class="discurso">
           <div class="newsColumn" >
               <DiscursoCardPreview v-for="discurso in discursos" :key="discurso.id" :imgURL="getImgURL(discurso.imgURL)" :titulo="discurso.titulo" :data="discurso.dataDePublicacao" :textPreview="discurso.textPreview"/>
@@ -46,6 +44,7 @@ import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
 import DiscursoCardPreview from '../components/DiscursoCardPreview.vue';
 import Footer from '../components/Footer.vue';
+import HeaderTitle from '@/components/HeaderTitle.vue';
 
 export default defineComponent({
   name: 'Discursos',
@@ -129,6 +128,7 @@ export default defineComponent({
     ScrollToTopButton,
     DiscursoCardPreview,
     Footer,
+    HeaderTitle,
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
@@ -165,17 +165,10 @@ export default defineComponent({
 
 <style lang="scss">
 
-.discursoHero {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
-}
-
 .discurso {
     display: flex;
     justify-content: center;
+    padding-top: 50px;
     padding-bottom: 100px;
 
     .newsColumn {

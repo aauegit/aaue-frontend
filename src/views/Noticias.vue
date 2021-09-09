@@ -3,9 +3,7 @@
   <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
   <Navbar v-if="!mobileMode" class="navbar" />
   <div v-if="!activatedNavbar" class="pageContent">
-      <section class="noticiasHero">
-          <h1>Notícias</h1>
-      </section>
+      <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')"/>
       <section class="noticias">
           <div class="newsColumn" >
               <NoticiasCardPreview v-for="noticia in noticias" :key="noticia.id" :imgURL="getImgURL(noticia.imgURL)" :titulo="noticia.titulo" :data="noticia.dataDePublicacao" :textPreview="noticia.textPreview"/>
@@ -46,6 +44,8 @@ import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
 import NoticiasCardPreview from '../components/NoticiasCardPreview.vue';
 import Footer from '../components/Footer.vue';
+import HeaderTitle from '@/components/HeaderTitle.vue';
+
 
 export default defineComponent({
   name: 'Noticias',
@@ -144,6 +144,7 @@ export default defineComponent({
     ScrollToTopButton,
     NoticiasCardPreview,
     Footer,
+    HeaderTitle,
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
@@ -180,17 +181,10 @@ export default defineComponent({
 
 <style lang="scss">
 
-.noticiasHero {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
-}
-
 .noticias {
     display: flex;
     justify-content: center;
+    padding-top: 50px;
     padding-bottom: 100px;
 
     .newsColumn {
