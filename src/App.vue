@@ -4,12 +4,28 @@
 
 <style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 $specialColor: #155781;
 
+@font-face {
+  font-family: "Metropolis";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: local("Metropolis"),
+  url('@/assets/font/metropolis/Metropolis-Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: local("Metropolis"),
+  url('@/assets/font/metropolis/Metropolis-Bold.otf') format("opentype");
+}
+
 #app {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Metropolis', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

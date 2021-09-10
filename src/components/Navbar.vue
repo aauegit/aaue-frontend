@@ -88,6 +88,7 @@ export default defineComponent({
 
       a {
         opacity: 1;
+        font-family: 'Metropolis', sans-serif;
       }
 
       img {

@@ -220,7 +220,7 @@ section {
 
     .slogan {
       font-size: 70px;
-      font-weight: 500;
+      font-weight: bold;
       margin: 0px 25px 25px 0px;
       text-transform: uppercase;
       overflow: none;
@@ -241,6 +241,7 @@ section {
     border-radius: 25px;
     box-shadow: rgba(83, 83, 83, 0.35) 0px 5px 10px;
     text-transform: uppercase;
+    font-family: 'Metropolis', sans-serif;
     font-weight: bold;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
