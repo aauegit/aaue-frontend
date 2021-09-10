@@ -338,6 +338,8 @@ section {
 
 .noticias {
   padding: 100px 0 100px 0px;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     font-size: 80px;

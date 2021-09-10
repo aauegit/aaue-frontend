@@ -3,7 +3,7 @@
 		<ul class="ulContainer">
             <div class="aaue">
                 <img src="@/assets/aaueLogoBranco.png" alt="">
-                <p>A Associação Académica da Universidade de Évora é responsável por potenciar o teu envolvimento e desenvolvimento académicos.Podes contar com a AAUE para o teu desenvolvimento pessoal e profissional!</p> 
+                <p>A Associação Académica da Universidade de Évora é responsável por potenciar o teu envolvimento e desenvolvimento académicos. Podes contar com a AAUE para o teu desenvolvimento pessoal e profissional!</p> 
             </div>
             <div class="contactInfo">
                 <li class="title">Contacta-nos!</li>
@@ -31,12 +31,12 @@
                 <li class="title">Eventos</li>
                 <li>
                     <a class="icon" id="queima" href="http://queima.aaue.pt/" target="_blank">
-                        <i class="fas fa-music"></i>
+                        <QueimaIcon color="#FFFFFF" />
                         <p>Queima das Fitas</p> 
                     </a>
                 </li>
                 <li>
-                    <a class="icon" id="queima" href="http://queima.aaue.pt/" target="_blank">
+                    <a class="icon" id="expo" href="https://expoestudante.aaue.pt/" target="_blank">
                         <i class="fas fa-music"></i>
                         <p>ExpoEstudante</p> 
                     </a>
@@ -46,19 +46,19 @@
                 <li class="title">Plataformas</li>
                 <li>
                     <a class="icon" id="alojamento" href="https://alojamento.aaue.pt/" target="_blank">
-                        <i class="fas fa-home"></i>
+                        <AlojamentoIcon color="#FFFFFF" />
                         <p>Portal do Alojamento</p>
                     </a>
                 </li>
                 <li>
-                    <a class="icon" id="reitor" href="http://torneioreitor.aaue.pt/" target="_blank">
-                        <i class="fas fa-futbol"></i>
-                        <p>Desporto</p> 
+                    <a class="icon" id="uevorasports" href="http://torneioreitor.aaue.pt/" target="_blank">
+                        <UevoraSports color="#FFFFFF" color2="#FFFFFF"/>
+                        <p>UévoraSports</p> 
                     </a>
                 </li>
                 <li>
-                    <a class="icon" id="reitor" href="http://torneioreitor.aaue.pt/" target="_blank">
-                        <i class="fas fa-futbol"></i>
+                    <a class="icon" id="radio" href="http://torneioreitor.aaue.pt/" target="_blank">
+                        <RadioIcon color="#FFFFFF" color2="#000000"/>
                         <p>Rádio HECLEM</p> 
                     </a>
                 </li>
@@ -93,8 +93,19 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import QueimaIcon from '@/components/Icons/QueimaIcon.vue';
+import RadioIcon from '@/components/Icons/RadioIcon.vue';
+import UevoraSports from '@/components/Icons/UevoraSports.vue';
+import AlojamentoIcon from '@/components/Icons/AlojamentoIcon.vue';
+
 export default defineComponent({
   name: 'Footer',
+  components: {
+    QueimaIcon,
+    RadioIcon,
+    UevoraSports,
+    AlojamentoIcon,
+  },
 });
 </script>
 
@@ -200,15 +211,19 @@ footer {
         .icon {
             display: flex;
             align-items: center;
-            text-align: center;
             color: $textColor;
             font-size: 20px;
-            margin: 5px 0 5px 0;
+            margin: 5px 0 5px -10px;
 
             i {
                 margin: 10px 10px 0 0;
                 font-size: 24px;
 
+            }
+
+            svg {
+                margin: 0px 5px 0 0;
+                width: 50px;
             }
 
             p {
@@ -219,11 +234,33 @@ footer {
                 transition: color 0.2s ease-in;
             }
         }
+
+        #radio {
+            margin-left: -5px;
+
+            svg {
+                margin-bottom: 3px;
+            }
+        }
+        
+
+        #uevorasports {
+            margin: 5px 0 10px -8px;
+
+            svg {
+                margin-bottom: -12px;
+            }
+        }
+        
     }
 
     .socialMedia {
         display: flex;
         justify-content: center;
+
+        li {
+            border-radius: 50%;
+        }
 
         i {
             font-size: 20px;
@@ -237,6 +274,14 @@ footer {
             &:hover {
                 transform: translateY(-5px);
             }
+        }
+
+        #facebook i {
+            padding: 15px 19px;
+        }
+
+        #instagram i {
+            padding: 15px 16px;
         }
     }
 

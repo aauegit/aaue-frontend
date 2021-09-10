@@ -59,7 +59,7 @@ export default defineComponent({
 
     i {
         font-size: 40px;
-        color: #d80b0b;
+        color: #f7ce31;
     }
 
     .contentPreview {
