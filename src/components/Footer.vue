@@ -37,7 +37,7 @@
                 </li>
                 <li>
                     <a class="icon" id="expo" href="https://expoestudante.aaue.pt/" target="_blank">
-                        <i class="fas fa-music"></i>
+                        <ExpoIcon color="#FFFFFF"/>
                         <p>ExpoEstudante</p> 
                     </a>
                 </li>
@@ -97,6 +97,7 @@ import QueimaIcon from '@/components/Icons/QueimaIcon.vue';
 import RadioIcon from '@/components/Icons/RadioIcon.vue';
 import UevoraSports from '@/components/Icons/UevoraSports.vue';
 import AlojamentoIcon from '@/components/Icons/AlojamentoIcon.vue';
+import ExpoIcon from '@/components/Icons/ExpoIcon.vue';
 
 export default defineComponent({
   name: 'Footer',
@@ -105,6 +106,7 @@ export default defineComponent({
     RadioIcon,
     UevoraSports,
     AlojamentoIcon,
+    ExpoIcon
   },
 });
 </script>
@@ -251,6 +253,15 @@ footer {
                 margin-bottom: -12px;
             }
         }
+
+        #expo {
+            margin-left: -10px;
+
+            svg{
+                margin-bottom: -10px;
+            }
+        }
+        
         
     }
 
