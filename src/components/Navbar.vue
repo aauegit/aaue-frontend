@@ -31,6 +31,7 @@
             <router-link :to="{ name: 'Fiscal'}">Conselho Fiscal</router-link>
             <router-link :to="{ name: 'Setores'}">Setores</router-link>
             <router-link :to="{ name: 'Autonomas'}">Secções Autónomas</router-link>
+            <router-link :to="{ name: 'Sobre'}">Sobre nós</router-link>
           </div>
         </li>
         <li class="dropdown" @mouseover="hoveredPlataformas = true" @mouseleave="hoveredPlataformas = false" >

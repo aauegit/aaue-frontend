@@ -1,5 +1,5 @@
 <template>
-    <div class="headerTitle" :style="{background: headerImage, height: height}">
+    <div class="headerTitle" :style="{background: headerImage}">
         <h1>{{ title }}</h1>
         <p v-if="subtitle">{{ subtitle }}</p>
         <p v-if="subtitle2">{{ subtitle2 }}</p>
@@ -18,10 +18,6 @@
                 required: false,
             },
             subtitle2: {
-                type: String,
-                required: false,
-            },
-            height: {
                 type: String,
                 required: false,
             },

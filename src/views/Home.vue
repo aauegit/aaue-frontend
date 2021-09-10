@@ -35,8 +35,26 @@
       <div class="aboutUs">
         <div class="text">
           <h1>O que é a AAUE?</h1>
-          <p> A Associação Académica da Universidade de Évora é uma entidade responsável pela representação estudantil dos estudantes da Universidade de Évora a nível local e nacional. A AAUE faz parte de várias estruturas nacionais, aumentando a sua capacidade de ação e resposta, e tem ainda assentos em alguns Órgãos da Universidade de Évora, Conselhos Municipais e contribui de forma ativa para o rumo do Ensino Superior em Portugal.</p>
-          <p>Para além do trabalho político a AAUÉ promove actividades culturais e desportivas e presta aos seus membros, os estudantes, serviços variados, desde o lazer e a informação à formação extra-curricular.</p>
+          <p>
+            A Associação Académica da Universidade de Évora é uma organização sem fins
+            lucrativos, não governamental e de carácter estudantil, pautando-se pelos princípios
+            gerais básicos do movimento associativo: Democraticidade, Unicidade, Apartidarismo
+            e Arreligiosidade.
+          </p>
+          <p>
+            A 29 de Maio de 1978 é fundada com o nome de Associação de Estudantes do Instituto
+            Universitário de Évora a organização representativa dos estudantes da Academia
+            Eborense. Após a passagem de Instituto Universitário de Évora para Universidade de
+            Évora em 1980 a associação assume a denominação de Associação de Estudantes da
+            Universidade de Évora mantendo-se esta até 2010, altura em que passa a denominar-
+            se Associação Académica da Universidade de Évora (AAUE).
+          </p>
+          <p>
+            Atualmente, a Associação Académica da Universidade de Évora encontra-se organizada
+            em diversos grupos, passando a sua operacionalização pela Direção e Secções
+            Autónomas, sendo que a Direção é constituído por Setores/Secções, diversificados e
+            focados em áreas específicas de operacionalização e ação.
+          </p>
         </div>
        <img src="@/assets/activism.jpeg" alt="">
       </div>
