@@ -2,6 +2,16 @@
   <router-view/>
 </template>
 
+<script>
+export default {
+  components: {
+    Navbar,
+    MobileNavbar,
+    Footer
+  },
+}
+</script>
+
 <style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
 $specialColor: #155781;
