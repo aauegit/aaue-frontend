@@ -1,12 +1,21 @@
 <template>
+  <ScrollToTopButton />
+  <NavbarMobile  />
+  <Navbar />
   <router-view/>
+  <Footer />
 </template>
 
 <script>
+import ScrollToTopButton from '@/components/ScrollToTopButton.vue';
+import Navbar from '@/components/Navbar.vue';
+import NavbarMobile from '@/components/MobileNav.vue';
+import Footer from '@/components/Footer.vue';
 export default {
   components: {
+    ScrollToTopButton,
     Navbar,
-    MobileNavbar,
+    NavbarMobile,
     Footer
   },
 }
