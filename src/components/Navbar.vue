@@ -193,10 +193,11 @@ export default defineComponent({
 @media all and (min-width: 1000px) and (max-width: 1350px) { 
 
   .header {
-    padding: 45px 20px 0px 20px;
+    padding: 45px 20px 45px 20px;
   }
 
   .header #nav .logo img {
+    width: 120px;
     left: 20px;
   }
   .header #nav ul li {

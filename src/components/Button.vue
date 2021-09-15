@@ -22,39 +22,31 @@ $lightBlue: #A3CEF1;
 $easing: cubic-bezier(0.39, 1.61, 0.89, 1.22);
 $fastEasing: cubic-bezier(0.075, 0.82, 0.165, 1);
 
-.button {
-    position: relative;
-    display: inline-block;
-    color: $whiteBlue;
-    background-color: $darkBlue;
-    border: 1px solid $normalBlue;
-    outline: none;
-    padding: 15px 30px;
-    font-size: 1.125rem;
-    font-weight: 500;
-    text-align: center;
-    opacity: 1;
-    border-radius: 0.5rem;
+button {
+    padding: 15px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 25px;
+    box-shadow: rgba(83, 83, 83, 0.35) 0px 5px 10px;
+    text-transform: uppercase;
+    font-family: 'Metropolis', sans-serif;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.5s $fastEasing;
+    font-size: 16px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:nth-child(2) {
+      margin-left: 30px;
+    }
+
     &:hover {
-        transform: translateY(-5px) !important;
-        box-shadow: 0px 2px 10px 0px rgba($color: #000000, $alpha: 0.25);
+      transform: translateY(-5px);
     }
+
     a {
-        position: absolute;
-        width: 155px;
-        height: 60px;
-        right: 0;
-        bottom: 0;
+      opacity: 1;
     }
-}
-.lastButton {
-    margin-left: 30px;
-    color: $darkBlue;
-    background-color: $whiteBlue;
-    border: 1px solid $darkBlue;
-}
+  }
 @media (max-width: 450px) {
     .button {
         padding: 15px;

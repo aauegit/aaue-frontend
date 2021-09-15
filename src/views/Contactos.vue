@@ -6,7 +6,7 @@
         <section class="contacts">
             <div class="contactForm">
                 <div class="contactInfo">
-                    <h1>Tens alguma questão? Contacta-nos!</h1>
+                    <h1>Tens alguma questão?<br> Contacta-nos!</h1>
                     <div class="contactIcons">
                         <ul>
                             <a href="https://goo.gl/maps/hMu13iR5NiM2" >
@@ -34,7 +34,7 @@
                     <label for="mensagem">Mensagem <span>*</span></label>
                     <textarea class="mensagem" placeholder="Mensagem" id="mensagem"  v-model="mensagem" required />
                     <div class="buttons">
-                        <Button buttonText="Enviar"/>
+                        <Button buttonText="Enviar Mensagem"/>
                         <Button buttonText="Recaptcha" class="lastButton"/>
                     </div>
                 </form>
@@ -116,8 +116,8 @@ $specialColor: #2c3e50;
 
 .contacts {
     display: flex;
-    height: 100vh;
-    padding-top: 10vh;
+    min-height: 100vh;
+    padding-top: 5vh;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
@@ -225,6 +225,12 @@ $specialColor: #2c3e50;
                 display: flex;
             }
         }
+    }
+}
+
+@media (max-width: 1500px) {
+    .contacts .contactForm form {
+        padding-top: 0;
     }
 }
 </style>
