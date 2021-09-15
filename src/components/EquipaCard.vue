@@ -35,6 +35,7 @@ export default {
         inset 0px 0px 0px 0px #fff9,
         inset 0px 0px 0px 0px #0001;
     border-radius: 12px;
+    flex: 0 0 25%;;
     
     i {
         font-size: 30px;

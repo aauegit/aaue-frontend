@@ -66,7 +66,16 @@
 }
 
 @media (max-width: 1600px) {
-    
+    .headerTitle {
+
+        h1 {
+            font-size: 60px;
+        }
+
+        p {
+            font-size: 20px
+        }
+    }
 }
 
 </style>

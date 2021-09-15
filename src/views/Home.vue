@@ -21,10 +21,9 @@
     </section>
     <section class="ourWork">
       <div class="work">
-        <!-- <img src="@/assets/activism.jpeg" alt=""> -->
         <div class="text">
           <h1>O que fazemos?</h1>
-          <p>A AAUE está organizada em vários Órgãos, Secções e Setores, cada um com a sua área de intervenção e competências bem definidas. Fica a conhecer o nosso trabalho aqui!</p>
+          <p>A AAUE está organizada em vários Órgãos, Secções e Setores, cada um com a sua área de intervenção e competências bem definidas.<br> Fica a conhecer o nosso trabalho aqui!</p>
           <div class="team" >
             <EquipaCard @click="snapToElement('body')" v-for="membros in equipa" :key="membros.id" :destination="membros.destination" :icon="membros.icon" :name="membros.nome"/>
           </div>
@@ -289,13 +288,8 @@ section {
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 125px;
+      padding: 0 100px;
     }
-
-    /* img {
-      margin-right: 30px;
-      width: 50%
-    
-    } */
     .text {
       display: flex;
       flex-direction: column;
@@ -408,6 +402,25 @@ section {
     }
   }
 
+}
+
+@media (max-width: 1600px) {
+  .heroContent .textArea {
+
+    .slogan {
+      font-size: 60px;
+    }
+
+    .heroText {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 1450px) {
+  .ourWork .work .text h1 {
+    font-size: 45px;
+  }
 }
 
 @media all and (min-width: 1024px) and (max-width: 1280px) { 
