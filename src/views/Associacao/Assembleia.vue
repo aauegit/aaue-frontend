@@ -81,6 +81,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+.pageContent {
+  padding-top: 15vh;
+}
+
 .presidencia {
   display: flex;
   justify-content: center;

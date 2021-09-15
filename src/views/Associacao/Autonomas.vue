@@ -144,6 +144,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 
 $specialColor: #155781;
+.pageContent {
+  padding-top: 15vh;
+}
 
 .setores {
   display: flex;

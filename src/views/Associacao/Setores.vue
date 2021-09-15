@@ -126,6 +126,10 @@ export default defineComponent({
 
 $specialColor: #155781;
 
+.pageContent {
+  padding-top: 15vh;
+}
+
 .setores {
   display: flex;
 
