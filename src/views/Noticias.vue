@@ -181,10 +181,14 @@ export default defineComponent({
 
 <style lang="scss">
 
+.pageContent {
+  padding-top: 15vh;
+}
+
 .noticias {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 15vh;
     padding-bottom: 100px;
 
     .newsColumn {

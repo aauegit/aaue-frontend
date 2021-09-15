@@ -165,6 +165,10 @@ export default defineComponent({
 
 <style lang="scss">
 
+.pageContent {
+  padding-top: 15vh;
+}
+
 .discurso {
     display: flex;
     justify-content: center;

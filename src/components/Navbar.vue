@@ -70,7 +70,7 @@ export default defineComponent({
 <style lang="scss">
 
 .header {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: flex-end;
   align-items: center;

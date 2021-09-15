@@ -112,6 +112,8 @@ $specialColor: #2c3e50;
 
 .contacts {
     display: flex;
+    height: 100vh;
+    padding-top: 10vh;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;

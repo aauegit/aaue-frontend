@@ -106,7 +106,7 @@ export default defineComponent({
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 50px;
+    padding-top: 0vh;
     padding-bottom: 100px;
 
     .vidaAcademica,

@@ -25,7 +25,7 @@
           <h1>O que fazemos?</h1>
           <p>A AAUE está organizada em vários Órgãos, Secções e Setores, cada um com a sua área de intervenção e competências bem definidas.<br> Fica a conhecer o nosso trabalho aqui!</p>
           <div class="team" >
-            <EquipaCard @click="snapToElement('body')" v-for="membros in equipa" :key="membros.id" :destination="membros.destination" :icon="membros.icon" :name="membros.nome"/>
+            <EquipaCard @click="snapToElement('body')" v-for="membros in equipa" :key="membros.id" :destination="membros.destination" :icon="membros.icon" :name="membros.nome" :iconColor="membros.iconColor"/>
           </div>
         </div>
       </div>
@@ -113,11 +113,11 @@ export default defineComponent({
       mobileMode: false,
       mouseIsDown: false,
       equipa: [
-        {id: 0, destination: "Presidencia", icon: "fas fa-globe", nome: "Presidência", },
-        {id: 1, destination: "Assembleia", icon: "fas fa-balance-scale", nome: "Assembleia Magna", },
-        {id: 2, destination: "Fiscal", icon: "fas fa-wallet", nome: "Conselho Fiscal", },
-        {id: 3, destination: "Setores", icon: "fas fa-network-wired", nome: "Setores", },
-        {id: 4, destination: "Autonomas", icon: "fas fa-money-check-alt", nome: "Secções Autónomas", },
+        {id: 0, destination: "Presidencia", icon: "fas fa-globe", iconColor: '#F8D01C', nome: "Presidência", },
+        {id: 1, destination: "Assembleia", icon: "fas fa-balance-scale", iconColor: '#BAC0CB', nome: "Assembleia Magna", },
+        {id: 2, destination: "Fiscal", icon: "fas fa-wallet", iconColor: '#99F683', nome: "Conselho Fiscal", },
+        {id: 3, destination: "Setores", icon: "fas fa-network-wired", iconColor: '#FF7733', nome: "Setores", },
+        {id: 4, destination: "Autonomas", icon: "fas fa-money-check-alt", iconColor: '#549EFF', nome: "Secções Autónomas", },
       ],
       noticiaIndex: 0,
       noticias: [
@@ -217,11 +217,11 @@ section {
 .hero {
   background: url('@/assets/home.jpg') no-repeat center center;
   padding: 0px 75px;
-  height: 85vh;
+  height: 100vh;
 }
 
 .heroContent {
-  height: 85vh;
+  height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;

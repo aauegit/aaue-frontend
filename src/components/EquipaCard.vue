@@ -1,6 +1,6 @@
 <template>
     <router-link class="equipaCard" :to="{name: destination}">
-        <i :class="icon"></i>
+        <i :class="icon" :style="{color: iconColor}"></i>
         <p>{{ name }}</p>
     </router-link>
 </template>
@@ -11,7 +11,8 @@ export default {
     props: {
         destination: String,
         icon: String,
-        name: String
+        name: String,
+        iconColor: String,
     }
 }
 </script>
