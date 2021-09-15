@@ -118,7 +118,7 @@ export default defineComponent({
         height: 100%;
 
         img {
-            width: 150px;
+            width: 300px;
             margin-bottom: 25px;
         }
 

@@ -21,7 +21,7 @@
     </section>
     <section class="ourWork">
       <div class="work">
-        <img src="@/assets/activism.jpeg" alt="">
+        <!-- <img src="@/assets/activism.jpeg" alt=""> -->
         <div class="text">
           <h1>O que fazemos?</h1>
           <p>A AAUE está organizada em vários Órgãos, Secções e Setores, cada um com a sua área de intervenção e competências bem definidas. Fica a conhecer o nosso trabalho aqui!</p>
@@ -230,7 +230,7 @@ section {
 
   .textArea {
     display: flex;
-    width: 50%;
+    width: 100%;
     justify-content: center;
     align-items: left;
     flex-direction: column;
@@ -245,7 +245,7 @@ section {
     }
     
     .heroText {
-      width: 60%;
+      width: 45%;
       font-size: 18px;
       margin: 0;
     }
@@ -291,11 +291,11 @@ section {
       margin-top: 125px;
     }
 
-    img {
+    /* img {
       margin-right: 30px;
       width: 50%
     
-    }
+    } */
     .text {
       display: flex;
       flex-direction: column;

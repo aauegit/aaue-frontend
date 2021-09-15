@@ -65,4 +65,8 @@
     }
 }
 
+@media (max-width: 1600px) {
+    
+}
+
 </style>

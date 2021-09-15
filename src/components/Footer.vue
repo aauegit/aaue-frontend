@@ -181,14 +181,6 @@ footer {
                     }
                 }
 
-                &:nth-child(3) a {
-                    width: 105px;
-                }
-
-                &:nth-child(4) a {
-                    width: 140px;
-                }
-
                 .icon {
                     display: flex;
                     justify-content: center;
