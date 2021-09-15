@@ -102,6 +102,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+.pageContent {
+  padding-top: 0px;
+}
+
 .servicos {
     display: flex;
     justify-content: space-around;

@@ -62,8 +62,10 @@ export default defineComponent({
       hoveredAssociacao: false,
       hoveredEventos: false,
       hoveredPlataformas: false,
+      isAtTop: true,
+      headerPosition: 'relative',
     }
-  }
+  },
 });
 </script>
 
@@ -81,6 +83,7 @@ export default defineComponent({
 	color: #fff;
 	padding: 0vh 75px;
   background-color: #f7f8fc;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   #nav {
     display: flex;

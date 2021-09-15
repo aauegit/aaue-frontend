@@ -110,6 +110,10 @@ export default defineComponent({
 
 $specialColor: #2c3e50;
 
+.pageContent {
+  padding-top: 0px;
+}
+
 .contacts {
     display: flex;
     height: 100vh;
