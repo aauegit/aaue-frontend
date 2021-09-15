@@ -68,6 +68,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
+.sobre {
+    padding-top: 15vh;
+}
+
 .aboutText {
     padding: 75px;
 
