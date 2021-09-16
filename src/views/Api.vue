@@ -6,28 +6,54 @@
         <section class="login" v-if="!loggedIn">
                 <form >
                     <img src="@/assets/aaueLogo.png" alt="">
-                    <label>Username</label>
-                    <input type="text" placeholder="Username" required>
-                    <label>Password</label>
-                    <input type="password" placeholder="Password" required>
-                    <Button buttonText="Iniciar sessão" @click="loggedIn = true">Skip</Button>
+                    <label for="username">Username</label>
+                    <input type="text" v-model="username" name="username" placeholder="Username" required>
+                    <label for="password">Password</label>
+                    <input type="password" v-model="password" name="password" placeholder="Password" required>
+                    <Button buttonText="Iniciar sessão" @click="logIn">Iniciar sessão</Button>
                 </form>
-                <button @click="loggedIn = true">Skip</button>
         </section>
         <section class="postBlog" v-if="loggedIn">
             <h1>Criar nova publicação</h1>
-            <form action="POST">
-                <label for="titulo">Título</label>
-                <input type="text" id="titulo" v-model="titulo" required>
-                <label for="data">Data: {{ diaDeHoje }} de {{ mesDeHoje }}</label>
-                <label for="foto">Foto:</label>
-                <Dropzone @drop.prevent="drop" @change="selectedFile"/>
-                <span>Ficheiro: {{ dropzoneFile.name }}</span> 
-                <label for="paragrafo">Parágrafo</label>
-                <textarea type="text" id="paragrafo" v-model="paragrafo" required /> 
-                <label for="assinatura">Assinatura</label>
-                <input type="text" id="assinatura" v-model="assinatura" required> 
-            </form>
+            <div class="forms">
+                <form @submit.prevent>
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" v-model="titulo" placeholder="Episódio V: O Império Contra-Ataca" required>
+                    <label for="category">Categoria principal</label>
+                    <select name="category" id="category" v-model="category" required>
+                        <option value="Comunicados">Comunicados</option>
+                        <option value="Desporto">Desporto</option>
+                        <option value="Discursos">Discursos</option>
+                        <option value="Ensino">Ensino</option>
+                        <option value="Geral">Geral</option>
+                        <option value="Politica">Politica</option>
+                    </select>
+                    <label for="outrasCategorias">Outras Categorias:</label>
+                    <div class="outrasCategorias">
+                        <div class="catComunicados" v-if="category != 'Comunicados'">
+                            <input type="checkbox">
+                            <label for="catComunicados">Comunicados</label>
+                        </div>
+                    </div>
+                    <label for="data">Data: {{ diaDeHoje }} de {{ mesDeHoje }}</label>
+                    <label for="foto">Foto:</label>
+                    <Dropzone @drop.prevent="drop" @change="selectedFile"/>
+                    <span>Ficheiro: {{ dropzoneFile.name }}</span> 
+                    <label for="assinatura">Assinatura</label>
+                    <input type="text" id="assinatura" v-model="assinatura" placeholder="Mestre Yoda" required> 
+                    <Button buttonText="Publicar" @click="publishNews"/>
+                </form>
+                <form class="formDeParagrafos" >
+                    <div class="paragraph" v-for="index in numberOfParagraphs" :key="index">
+                        <div class="inputs">
+                            <label for="paragrafo">Parágrafo</label>
+                            <textarea type="text" id="paragrafo" v-model="paragrafo[index - 1]" placeholder="Há muito tempo, em uma galáxia muito, muito distante..." required /> 
+                        </div>
+                        <i class="fas fa-plus" @click="incrementNumberOfParagraphs"></i>
+                        <i class="fas fa-times" @click="decrementNumberOfParagraphs"></i>
+                    </div>
+                </form>
+            </div>
         </section>
 
     </div>
@@ -49,9 +75,12 @@ export default defineComponent({
       mobileMode: false,
       loggedIn: true,
       titulo: "",
-      paragrafo: "",    
+      category: "",
+      paragrafo: [],    
       assinatura: "",
       mesDeHoje: "",
+      numberOfParagraphs: 1,
+      authToken: "",
     }
   },
    setup() {
@@ -103,43 +132,80 @@ export default defineComponent({
     Dropzone
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleResize();
     this.mesDeHoje = this.getMes();
-    window.addEventListener('resize', this.handleResize);
-  },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.handleResize);
   },
    methods: {
     getImgURL(image) {
         return require('@/assets/' + image).default;
     },
-    scrollToElement(destination) {
-      const element = document.querySelector(destination);
-      if (element) {
-        element.scrollIntoView({behavior: 'smooth'});
-      }
+    logIn() {
+        fetch()
+        .then()
+        .catch(error)
+        .finally( () => this.loggedIn = true)
     },
-    handleScroll () {
-      window.pageYOffset >= 250 ? this.isAtTop = false : this.isAtTop = true;
-    },
-    handleResize () {
-      this.mobileMode = window.innerWidth <= 1015;
 
-      if(!this.mobileMode) {
-        this.activatedNavbar = false;
-      }
+    getCategoryColor(category) {
+        switch (category) {
+            case 'Comunicados':
+                return '#BAC0CB'
+            case 'Desporto':
+                return '#BA292C'
+            case 'Discursos':
+                return '#549EFF'
+            case 'Ensino':
+                return '#00BD9D'
+            case 'Geral':
+                return '#F8D01C'
+            case 'Politica':
+                return '#FF7733'
+            default:
+                return '000000';
+        }
     },
+
+    publishNews() {
+
+        const news = {
+            title: this.titulo,
+            category: this.category,
+            categoryColor: this.getCategoryColor(this.category),
+            date: `${this.diaDeHoje} de ${this.mesDeHoje}`,
+            paragraphs: this.paragrafo,
+            imageLink: "linkfixeya",
+            signature: this.assinatura,
+        }
+
+        console.log(news);
+    },
+
+    incrementNumberOfParagraphs() {
+        this.numberOfParagraphs++;
+    },
+
+    decrementNumberOfParagraphs() {
+
+        if(this.numberOfParagraphs <= 1) {
+            this.numberOfParagraphs = 1;
+        }
+
+        else {
+            this.numberOfParagraphs--;
+            this.paragrafo.pop();
+        }
+    }
   },
 });
 </script>
 
 <style lang="scss" scoped>
 
+.pageContent {
+    padding-top: 0;
+}
+
 section {
-    padding: 100px;
+    padding: 100px 100px 100px 100px;
 }
 
 .goBack {
@@ -191,6 +257,11 @@ section {
 
 .postBlog {
     min-height: 100vh;
+
+    .forms {
+        display: flex;
+        align-items: flex-start;
+    }
     
     h1 {
         font-size: 40px;
@@ -229,8 +300,55 @@ section {
             }
         }
 
+        select {
+            padding: 5px;
+        }
+
         span {
             margin-top: 10px;
+        }
+
+        &:nth-child(1) {
+            margin-right: 250px;
+        }
+        
+        #assinatura {
+            margin-bottom: 35px;
+        }
+    }
+
+
+
+    .formDeParagrafos {
+
+        .paragraph {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column; 
+        }
+
+        i {
+            font-size: 25px;
+            padding: 7px;
+            border-radius: 50%;
+            margin: 50px 10px 0 10px;
+            border: 1px solid black;
+            cursor: pointer;
+
+            &:nth-child(2) {
+                padding: 7px 9px;
+            }
+
+            &:nth-child(3) {
+                padding: 7px 11px;
+            }
         }
     }
 }
