@@ -73,7 +73,9 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
-      loggedIn: true,
+      loggedIn: false,
+      username: "",
+      password: "",
       titulo: "",
       category: "",
       paragrafo: [],    
@@ -139,9 +141,19 @@ export default defineComponent({
         return require('@/assets/' + image).default;
     },
     logIn() {
-        fetch()
-        .then()
-        .catch(error)
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify({ username: this.username, password: this.password})
+        };
+
+        fetch('https://blogposting-api.herokuapp.com/api/user/login', requestOptions)
+        .then((data) => {
+            console.log(response.headers);
+            console.log(data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
         .finally( () => this.loggedIn = true)
     },
 
@@ -166,6 +178,17 @@ export default defineComponent({
 
     publishNews() {
 
+        /* fetch('https://blogposting-api.herokuapp.com/api/user/login')
+        .then((currentNews) => {
+            console.log(response.headers)
+            this.currentNews = currentNews;
+        })
+        .catch((error) => {
+            this.errorMessage = error.message;
+            console.log(error);
+        })
+        .finally( () => this.loggedIn = true)
+ */
         const news = {
             title: this.titulo,
             category: this.category,
