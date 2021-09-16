@@ -6,8 +6,8 @@
         <section class="login" v-if="!loggedIn">
                 <form >
                     <img src="@/assets/aaueLogo.png" alt="">
-                    <label for="username">Username</label>
-                    <input type="text" v-model="username" name="username" placeholder="Username" required>
+                    <label for="email">Email</label>
+                    <input type="text" v-model="email" name="email" placeholder="email" required>
                     <label for="password">Password</label>
                     <input type="password" v-model="password" name="password" placeholder="Password" required>
                     <Button buttonText="Iniciar sessão" @click="logIn">Iniciar sessão</Button>
@@ -74,7 +74,7 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       loggedIn: false,
-      username: "",
+      email: "",
       password: "",
       titulo: "",
       category: "",
@@ -143,7 +143,7 @@ export default defineComponent({
     logIn() {
         const requestOptions = {
             method: 'POST',
-            body: JSON.stringify({ username: this.username, password: this.password})
+            body: JSON.stringify({email: this.email, password: this.password})
         };
 
         fetch('https://blogposting-api.herokuapp.com/api/user/login', requestOptions)
