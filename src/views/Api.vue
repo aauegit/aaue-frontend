@@ -4,7 +4,7 @@
             <Button buttonText="Home"/>
         </router-link>
         <section class="login" v-if="!loggedIn">
-                <form >
+                <form @submit.prevent>
                     <img src="@/assets/aaueLogo.png" alt="">
                     <label for="email">Email</label>
                     <input type="text" v-model="email" name="email" placeholder="email" required>
@@ -141,20 +141,34 @@ export default defineComponent({
         return require('@/assets/' + image).default;
     },
     logIn() {
+        const messageInfo = {
+            username: 'tiago',
+            email: this.email,
+            password: this.password,
+        }
+
         const requestOptions = {
             method: 'POST',
-            body: JSON.stringify({email: this.email, password: this.password})
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(messageInfo)
         };
 
+        console.log(messageInfo);
+
         fetch('https://blogposting-api.herokuapp.com/api/user/login', requestOptions)
-        .then((data) => {
-            console.log(response.headers);
-            console.log(data);
+        .then((response) => {
+            console.log(response);
+            console.log(response.headers.get('auth-token'));
+
+            if(response.ok) {
+                this.loggedIn = true
+            }
         })
         .catch((error) => {
             console.log(error);
         })
-        .finally( () => this.loggedIn = true)
     },
 
     getCategoryColor(category) {
