@@ -13,7 +13,7 @@
                     <Button buttonText="Iniciar sessão" @click="logIn">Iniciar sessão</Button>
                 </form>
         </section>
-        <div class="sidebar" v-if="loggedIn || !formSent">
+        <div class="sidebar" v-if="loggedIn && !formSent">
                 <ul>
                     <router-link to="/">
                         <i class="fas fa-home"></i>
@@ -34,11 +34,13 @@
                 </ul>
             
         </div>
-        <section class="postBlog" v-if="loggedIn || !formSent">
+        <section class="postBlog" v-if="loggedIn && !formSent">
             <h1>{{  headerText }}</h1>
-            <select name="selectNoticia" id="selectNoticia" v-model="selectedNoticia" v-if="headerText == 'Editar notícia' || headerText == 'Eliminar notícia' ">
-                <option v-for="noticia in noticias" :key="noticia.title">{{ noticia.title }}</option>
-            </select>
+            <div class="getNoticia">
+                <select name="selectnoticia" id="selectnoticia" v-model="selectedNoticia" v-if="headerText == 'Editar notícia' || headerText == 'Eliminar notícia' ">
+                    <option v-for="titulo in titulos" :key="titulo.id">{{ titulo.title }}</option>
+                </select>
+            </div>
             <div class="forms" v-if="headerText == 'Criar nova notícia' || selectedNoticia ">
                 <form @submit.prevent>
                     <label for="titulo">Título</label>
@@ -102,11 +104,16 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
-      loggedIn: true,
+      loggedIn: false,
       username: "",
       password: "",
       headerText: "Criar nova notícia",
       selectedNoticia: "",
+      currentNoticia: {
+          title: "",
+          id: "",
+      },
+      titulos: [],
       titulo: "",
       category: "",
       paragrafo: [],    
@@ -116,6 +123,7 @@ export default defineComponent({
       authToken: "",
       errorMessage: "",
       formSent: false,
+      noticiaId: "",
     }
   },
    setup() {
@@ -161,6 +169,20 @@ export default defineComponent({
         };
 
       return { dropzoneFile, drop, selectedFile, diaDeHoje, getMes };
+    },
+    watch: {
+        async selectedNoticia(newNoticia, oldNoticia) {
+
+            let noticiaID;
+
+            for (let index in this.titulos) {
+                if (this.titulos[index].title == newNoticia) {
+                    noticiaID = this.titulos[index].id;    
+                }
+            }
+
+            await this.getNoticiaInfo(noticiaID);
+        }
     },
   components: {
     Button,
@@ -232,7 +254,7 @@ export default defineComponent({
             title: this.titulo,
             category: this.category,
             categoryColor: this.getCategoryColor(this.category),
-            date: this.diaDeHoje + this.mesDeHoje,
+            date: this.dataDePublicacao,
             paragraphs: this.paragrafo,
             imageLink: "linkfixeya",
             signature: this.assinatura,
@@ -248,7 +270,7 @@ export default defineComponent({
             body: JSON.stringify(news)
             };
 
-            await fetch('https://blogposting-api.herokuapp.com/api/createBlogpost', requestOptions)
+            await fetch('https://blogposting-api.herokuapp.com/api/admin/createBlogpost', requestOptions)
             .then((data) => {
                 if(data.ok) {
                     this.formSent = true;
@@ -283,19 +305,19 @@ export default defineComponent({
 
     createNews() {
         this.headerText = "Criar nova notícia";
-        this.selectedNoticia = "";
+        this.currentNoticia = "";
         this.clearInfo();
     },
 
     async editNews() {
         this.headerText = "Editar notícia";
-        this.selectedNoticia = "";
+        this.currentNoticia = "";
         await this.getTitulosDasNoticias();
     },
 
     async deleteNews() {
         this.headerText = "Eliminar notícia";
-        this.selectedNoticia = "";
+        this.currentNoticia = "";
         await this.getTitulosDasNoticias();
     },
 
@@ -305,13 +327,11 @@ export default defineComponent({
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: {'token': authToken}
         };
 
-        fetch('https://blogposting-api.herokuapp.com/api/getAllBlogposts', requestOptions)
+        await fetch(`https://blogposting-api.herokuapp.com/api/getAllBlogpostTitles`, requestOptions)
         .then(async response => {
-            const data = await response.json();
-            console.log(data);
+            this.titulos = await response.json();
 
             // check for error response
             if (!response.ok) {
@@ -322,14 +342,45 @@ export default defineComponent({
         })
     },
 
+    async getNoticiaInfo(destination) {
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        const url = `https://blogposting-api.herokuapp.com/api/getBlogpost/${destination}`;
+
+
+        await fetch(url, requestOptions)
+        .then(async response => {
+            let data = await response.json();
+
+            // check for error response
+            if (!response.ok) {
+                // get error message from body or default to response status
+                const error = (data && data.message) || response.status;
+                return Promise.reject(error);
+            }
+
+            this.titulo = data.title;
+            this.category = data.category;
+            this.category = data.categoryColor;
+            this.dataDePublicacao = data.date;
+            this.paragrafo = data.paragraphs;
+            this.numberOfParagraphs = data.paragraphs.length;
+            this.assinatura = data.signature;
+        })
+    },
+
     clearInfo() {
-        this.titulo = ""
-        this.category = ""
-        this.category = ""
-        this.diaDeHoj = ""
-        this.mesDeHoje = ""
-        this.paragrafo = ""
-        this.assinatura = ""
+        this.titulo = "";
+        this.category = "";
+        this.category = "";
+        this.dataDePublicacao = "";
+        this.paragrafo = "";
+        this.assinatura = "";
     }
   },
 });
@@ -355,6 +406,7 @@ section {
 
 .login {
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -590,6 +642,20 @@ section {
                 letter-spacing: 1px;
             }
         }
+    }
+}
+
+.getNoticia {
+    display: flex;
+    margin-top: 25px;
+
+    select {
+        max-width: 400px;
+        height: 40px;
+    }
+
+    .disabled {
+        cursor: disabled;
     }
 }
 </style>
