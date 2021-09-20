@@ -19,15 +19,15 @@
                         <i class="fas fa-home"></i>
                         <span>Home</span>
                     </router-link>
-                    <li>
+                    <li @click="createNews">
                         <i class="fas fa-pen"></i>
                         <span>Criar notícia</span>
                     </li>
-                    <li>
+                    <li @click="editNews">
                         <i class="fas fa-edit"></i>
                         <span>Editar notícia</span>
                     </li>
-                    <li>
+                    <li @click="deleteNews">
                         <i class="fas fa-trash-alt"></i>
                         <span>Apagar notícia</span>
                     </li>
@@ -35,8 +35,11 @@
             
         </div>
         <section class="postBlog" v-if="loggedIn || !formSent">
-            <h1>Criar nova publicação</h1>
-            <div class="forms">
+            <h1>{{  headerText }}</h1>
+            <select name="selectNoticia" id="selectNoticia" v-model="selectedNoticia" v-if="headerText == 'Editar notícia' || headerText == 'Eliminar notícia' ">
+                <option v-for="noticia in noticias" :key="noticia.title">{{ noticia.title }}</option>
+            </select>
+            <div class="forms" v-if="headerText == 'Criar nova notícia' || selectedNoticia ">
                 <form @submit.prevent>
                     <label for="titulo">Título</label>
                     <input type="text" id="titulo" v-model="titulo" placeholder="Episódio V: O Império Contra-Ataca" required>
@@ -102,6 +105,8 @@ export default defineComponent({
       loggedIn: true,
       username: "",
       password: "",
+      headerText: "Criar nova notícia",
+      selectedNoticia: "",
       titulo: "",
       category: "",
       paragrafo: [],    
@@ -247,13 +252,7 @@ export default defineComponent({
             .then((data) => {
                 if(data.ok) {
                     this.formSent = true;
-                    this.titulo = ""
-                    this.category = ""
-                    this.category = ""
-                    this.diaDeHoj = ""
-                    this.mesDeHoje = ""
-                    this.paragrafo = ""
-                    this.assinatura = ""
+                    this.clearInfo();
                 }
             })
             .catch((error) => {
@@ -280,6 +279,57 @@ export default defineComponent({
             this.numberOfParagraphs--;
             this.paragrafo.pop();
         }
+    },
+
+    createNews() {
+        this.headerText = "Criar nova notícia";
+        this.selectedNoticia = "";
+        this.clearInfo();
+    },
+
+    async editNews() {
+        this.headerText = "Editar notícia";
+        this.selectedNoticia = "";
+        await this.getTitulosDasNoticias();
+    },
+
+    async deleteNews() {
+        this.headerText = "Eliminar notícia";
+        this.selectedNoticia = "";
+        await this.getTitulosDasNoticias();
+    },
+
+    async getTitulosDasNoticias() {
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: {'token': authToken}
+        };
+
+        fetch('https://blogposting-api.herokuapp.com/api/getAllBlogposts', requestOptions)
+        .then(async response => {
+            const data = await response.json();
+            console.log(data);
+
+            // check for error response
+            if (!response.ok) {
+                // get error message from body or default to response status
+                const error = (data && data.message) || response.status;
+                return Promise.reject(error);
+            }
+        })
+    },
+
+    clearInfo() {
+        this.titulo = ""
+        this.category = ""
+        this.category = ""
+        this.diaDeHoj = ""
+        this.mesDeHoje = ""
+        this.paragrafo = ""
+        this.assinatura = ""
     }
   },
 });
@@ -345,6 +395,8 @@ section {
 
 .postBlog {
     min-height: 100vh;
+    margin-left: 1.5rem;
+    padding-top: 1.5rem;
 
     .forms {
         display: flex;
@@ -492,7 +544,7 @@ section {
             }
 
             i {
-                font-size: 30px;
+                font-size: 25px;
             }
         }
 
@@ -503,7 +555,7 @@ section {
             border-bottom: 1px solid #5e5e5e;
             border-top: 1px solid #5e5e5e;
             cursor: pointer;
-            width: 85px;
+            width: 70px;
             transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 
@@ -516,7 +568,7 @@ section {
             }
 
             i {
-                font-size: 30px;
+                font-size: 25px;
             }
             
         }
@@ -531,6 +583,7 @@ section {
             span {
                 display: block;
                 width: 200px;
+                
             }
 
             &:hover span{
