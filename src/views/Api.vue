@@ -1,19 +1,40 @@
 <template>
     <div v-if="!activatedNavbar" class="pageContent">
-        <router-link to="/" class="goBack"> 
+        <router-link to="/" class="goBack" v-if="!loggedIn"> 
             <Button buttonText="Home"/>
         </router-link>
         <section class="login" v-if="!loggedIn">
                 <form @submit.prevent>
                     <img src="@/assets/aaueLogo.png" alt="">
-                    <label for="email">Email</label>
-                    <input type="text" v-model="email" name="email" placeholder="email" required>
+                    <label for="Username">Username</label>
+                    <input type="text" v-model="username" name="Username" placeholder="Username" required>
                     <label for="password">Password</label>
                     <input type="password" v-model="password" name="password" placeholder="Password" required>
                     <Button buttonText="Iniciar sessão" @click="logIn">Iniciar sessão</Button>
                 </form>
         </section>
-        <section class="postBlog" v-if="loggedIn">
+        <div class="sidebar" v-if="loggedIn || !formSent">
+                <ul>
+                    <router-link to="/">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </router-link>
+                    <li>
+                        <i class="fas fa-pen"></i>
+                        <span>Criar notícia</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-edit"></i>
+                        <span>Editar notícia</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <span>Apagar notícia</span>
+                    </li>
+                </ul>
+            
+        </div>
+        <section class="postBlog" v-if="loggedIn || !formSent">
             <h1>Criar nova publicação</h1>
             <div class="forms">
                 <form @submit.prevent>
@@ -55,6 +76,11 @@
                 </form>
             </div>
         </section>
+        <div class="postCreated" v-if="formSent">
+            <h1>Notícia criada com sucesso!</h1>
+            <i class="far fa-check-circle"></i>
+            <Button buttonText="Voltar" @click="formSent = false" />
+        </div>
 
     </div>
   
@@ -73,8 +99,8 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
-      loggedIn: false,
-      email: "",
+      loggedIn: true,
+      username: "",
       password: "",
       titulo: "",
       category: "",
@@ -83,6 +109,8 @@ export default defineComponent({
       mesDeHoje: "",
       numberOfParagraphs: 1,
       authToken: "",
+      errorMessage: "",
+      formSent: false,
     }
   },
    setup() {
@@ -140,10 +168,9 @@ export default defineComponent({
     getImgURL(image) {
         return require('@/assets/' + image).default;
     },
-    logIn() {
+    async logIn() {
         const messageInfo = {
-            username: 'tiago',
-            email: this.email,
+            username: this.username,
             password: this.password,
         }
 
@@ -155,20 +182,24 @@ export default defineComponent({
             body: JSON.stringify(messageInfo)
         };
 
-        console.log(messageInfo);
-
         fetch('https://blogposting-api.herokuapp.com/api/user/login', requestOptions)
-        .then((response) => {
-            console.log(response);
-            console.log(response.headers.get('auth-token'));
+        .then(async response => {
+            const data = await response.json();
 
-            if(response.ok) {
-                this.loggedIn = true
+            // check for error response
+            if (!response.ok) {
+                // get error message from body or default to response status
+                const error = (data && data.message) || response.status;
+                return Promise.reject(error);
             }
+
+            this.authToken = data.token;
+            this.loggedIn = true;
         })
-        .catch((error) => {
-            console.log(error);
-        })
+        .catch(error => {
+            this.errorMessage = error;
+            console.error('There was an error!', error);
+        });
     },
 
     getCategoryColor(category) {
@@ -190,28 +221,47 @@ export default defineComponent({
         }
     },
 
-    publishNews() {
+    async publishNews() {
 
-        /* fetch('https://blogposting-api.herokuapp.com/api/user/login')
-        .then((currentNews) => {
-            console.log(response.headers)
-            this.currentNews = currentNews;
-        })
-        .catch((error) => {
-            this.errorMessage = error.message;
-            console.log(error);
-        })
-        .finally( () => this.loggedIn = true)
- */
         const news = {
             title: this.titulo,
             category: this.category,
             categoryColor: this.getCategoryColor(this.category),
-            date: `${this.diaDeHoje} de ${this.mesDeHoje}`,
+            date: this.diaDeHoje + this.mesDeHoje,
             paragraphs: this.paragrafo,
             imageLink: "linkfixeya",
             signature: this.assinatura,
+            token: this.authToken,
         }
+
+        if(this.authToken) {
+            const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+             },
+            body: JSON.stringify(news)
+            };
+
+            await fetch('https://blogposting-api.herokuapp.com/api/createBlogpost', requestOptions)
+            .then((data) => {
+                if(data.ok) {
+                    this.formSent = true;
+                    this.titulo = ""
+                    this.category = ""
+                    this.category = ""
+                    this.diaDeHoj = ""
+                    this.mesDeHoje = ""
+                    this.paragrafo = ""
+                    this.assinatura = ""
+                }
+            })
+            .catch((error) => {
+                this.errorMessage = error.message;
+                console.log(error);
+            })
+        }
+
 
         console.log(news);
     },
@@ -239,6 +289,7 @@ export default defineComponent({
 
 .pageContent {
     padding-top: 0;
+    display: flex;
 }
 
 section {
@@ -390,4 +441,102 @@ section {
     }
 }
 
+.postCreated {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    left: 30%;
+    top: 25%;
+    background-color: #f1f0f0;
+    border-radius: 25px;
+    padding: 50px;
+    width: 40vw;
+    box-shadow: rgba(83, 83, 83, 0.35) 0px 5px 10px;
+
+
+    i {
+        margin: 35px 0;
+        font-size: 100px;
+        color:  #4BB543;
+    }
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    border-right: 1px solid black;
+    background-color: #0f0f0f;
+    top: 0;
+    left: 0;
+
+    ul {
+        color: white;
+
+        a {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            color: white;
+            border-bottom: 1px solid #5e5e5e;
+            border-top: 1px solid #5e5e5e;
+            transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+            span {
+                display: none;
+                font-size: 20px;
+                margin-left: 10px;
+            }
+
+            i {
+                font-size: 30px;
+            }
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #5e5e5e;
+            border-top: 1px solid #5e5e5e;
+            cursor: pointer;
+            width: 85px;
+            transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+            span {
+                display: none;
+                font-size: 20px;
+                transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                width: 0;
+                margin-left: 10px;
+            }
+
+            i {
+                font-size: 30px;
+            }
+            
+        }
+    }
+
+    &:hover {
+        
+        li,
+        a {
+            width: 300px;
+                    
+            span {
+                display: block;
+                width: 200px;
+            }
+
+            &:hover span{
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
 </style>
