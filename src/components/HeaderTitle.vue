@@ -78,4 +78,27 @@
     }
 }
 
+@media (max-width: 780px) {
+
+    .headerTitle {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (max-width: 500px) {
+
+    .headerTitle {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        h1 {
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
 </style>

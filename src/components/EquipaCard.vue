@@ -24,7 +24,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    min-width: 250px;
     height: 100px;
     margin: 10px;
     box-shadow: -7px -7px 20px 0px #fff9,
@@ -45,6 +45,23 @@ export default {
 
     p {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .equipaCard {
+        flex: 0 0 20%;
+        min-width: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .equipaCard {
+        flex: 0 0 10%;
+    }
+}
+@media (max-width: 550px) {
+    .equipaCard {
+        flex: 0 0 80%;
     }
 }
 

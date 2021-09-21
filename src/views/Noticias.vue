@@ -5,11 +5,16 @@
   <div v-if="!activatedNavbar" class="pageContent">
       <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')"/>
       <section class="noticias">
+        <form class="searchMobile" method="get" @submit.prevent v-if="mobileMode">
+              <i class="fas fa-search"></i>
+              <input class="searchBar" type="search" placeholder="Pesquisar ...">
+          </form>
           <div class="newsColumn" >
               <NoticiasCardPreview v-for="noticia in noticias" :key="noticia.id" :imgURL="getImgURL(noticia.imgURL)" :titulo="noticia.titulo" :data="noticia.dataDePublicacao" :textPreview="noticia.textPreview"/>
           </div>
-          <div class="sidebar">
-              <form role="search" method="get">
+          <div class="sidebar" v-if="!mobileMode">
+              <form class="search" method="get" @submit.prevent>
+                  <i class="fas fa-search"></i>
                   <input class="searchBar" type="search" placeholder="Pesquisar ...">
               </form>
               <h1>Artigos recentes</h1>
@@ -191,6 +196,30 @@ export default defineComponent({
     padding-top: 15vh;
     padding-bottom: 100px;
 
+    .searchMobile {
+      position: relative;
+      margin-bottom: 20px;
+
+      input {
+        width: 90%;
+        padding: 15px;
+        margin: 0 30px;
+        border-radius: 25px;
+      }
+
+      i {
+        background-color: black;
+        color: white;
+        padding: 17px 20px 17px 20px;
+        border-radius: 0px 25px 25px 0px;
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      }
+    }
+
     .newsColumn {
         display: flex;
         flex-direction: column;
@@ -200,9 +229,25 @@ export default defineComponent({
       height: 80vh;
         padding-left: 20px;
         border-left: 1px solid #bebebe57;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 17vh;
+
+        .search {
+          position: relative;
+
+          i {
+            position: absolute;
+            font-size: 20px;
+            top: 15%;
+            left: 10px;
+            opacity: 0.5;
+
+          }
+        }
 
         .searchBar {
-            padding: 10px;
+            padding: 10px 10px 10px 40px;
             margin-bottom: 30px;
         }
 
@@ -215,14 +260,30 @@ export default defineComponent({
 
         .artigos,
         .categorias{ 
+
+          list-style-type: disc outside none;
             
 
             li {
                 margin: 20px;
+
+                &::before {
+                  content: "\200B";
+                }
             }
-           
         }
     }
+}
+
+@media (max-width: 1016px) {
+  .noticias {
+    flex-direction: column;
+  }
+
+  .pageContent {
+    padding-top: 0vh;
+  }
+  
 }
 
 </style>

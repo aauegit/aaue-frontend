@@ -37,17 +37,15 @@ export default defineComponent({
 <style lang="scss" scoped>
 
 .plataformaCard {
+    position: relative;
     opacity: 1;
     margin: 30px 10px 10px 30px;
     padding: 30px;
     border-radius: 18px;
     display: flex;
-    align-items: center;
     flex-direction: column;
     transition:box-shadow 0.2s cubic-bezier(.79,.21,.06,.81);
-
-    &:hover {
-        box-shadow: -7px -7px 20px 0px #fff9,
+    box-shadow: -7px -7px 20px 0px #fff9,
         -4px -4px 5px 0px #fff9,
         7px 7px 20px 0px #0002,
         4px 4px 5px 0px #0001,
@@ -55,19 +53,23 @@ export default defineComponent({
         inset 0px 0px 0px 0px #0001,
         inset 0px 0px 0px 0px #fff9,
         inset 0px 0px 0px 0px #0001;
-    }
 
     i {
+        position: absolute;
+        top: -30px;
+        left: 20px;
+        padding: 10px;
+        border-radius: 50%;
         font-size: 40px;
         color: #f7ce31;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     }
 
     .contentPreview {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
+        margin-top: 10px;
+        max-width: 300px;
         transition: all 0.2s cubic-bezier(.79,.21,.06,.81);
 
         h1 {
@@ -81,4 +83,35 @@ export default defineComponent({
         }
     }
 }
+
+@media (max-width: 1250px) {
+  .plataformaCard {
+    flex: 0 0 40%;
+  }
+}
+
+@media (max-width: 805px) {
+  .plataformaCard {
+    
+    .contentPreview {
+        max-width: 250px;
+        width: 200px;
+        min-width: 200px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .plataformaCard {
+    margin: 50px 10px 10px 10px;
+    .contentPreview {
+        max-width: 70vw;
+        width: 70vw;
+        min-width: 200px;
+    }
+  }
+}
+
+
+
 </style>

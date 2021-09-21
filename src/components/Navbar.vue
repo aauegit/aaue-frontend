@@ -2,14 +2,14 @@
 
   <header class="header">
     <nav id="nav">
-      <div class="logo">
-              <router-link class="logoName" to="/">
+      <div class="logo" >
+              <router-link class="logoName" to="/" @click="snapToElement">
                   <img src="../assets/aaueLogo.png" alt="">
               </router-link>
           </div>
       <ul>
-        <li><router-link class="navLinks" :to="{ name: 'Noticias' }">Notícias</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Discursos' }">Discursos</router-link></li>
+        <li><router-link class="navLinks" :to="{ name: 'Noticias' }" @click="snapToElement">Notícias</router-link></li>
+        <li><router-link class="navLinks" :to="{ name: 'Discursos' }" @click="snapToElement">Discursos</router-link></li>
         <li class="dropdown" @mouseover="hoveredEventos = true" @mouseleave="hoveredEventos = false" >
           <div class="text">
             <a class="navLinks dropdownName">Eventos</a>
@@ -26,12 +26,12 @@
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredAssociacao">
-            <router-link :to="{ name: 'Presidencia'}">Presidência</router-link>
-            <router-link :to="{ name: 'Assembleia'}">Assembleia Magna</router-link>
-            <router-link :to="{ name: 'Fiscal'}">Conselho Fiscal</router-link>
-            <router-link :to="{ name: 'Setores'}">Setores</router-link>
-            <router-link :to="{ name: 'Autonomas'}">Secções Autónomas</router-link>
-            <router-link :to="{ name: 'Sobre'}">Sobre nós</router-link>
+            <router-link :to="{ name: 'Presidencia'}" @click="snapToElement">Presidência</router-link>
+            <router-link :to="{ name: 'Assembleia'}" @click="snapToElement">Assembleia Magna</router-link>
+            <router-link :to="{ name: 'Fiscal'}" @click="snapToElement">Conselho Fiscal</router-link>
+            <router-link :to="{ name: 'Setores'}" @click="snapToElement">Setores</router-link>
+            <router-link :to="{ name: 'Autonomas'}" @click="snapToElement">Secções Autónomas</router-link>
+            <router-link :to="{ name: 'Sobre'}" @click="snapToElement">Sobre nós</router-link>
           </div>
         </li>
         <li class="dropdown" @mouseover="hoveredPlataformas = true" @mouseleave="hoveredPlataformas = false" >
@@ -44,8 +44,8 @@
             <a href="https://torneioreitor.aaue.pt/" target="_blank" rel="noopener noreferrer">Desporto</a>
           </div>
         </li>
-        <li><router-link class="navLinks" :to="{ name: 'Servicos' }">Serviços</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Contactos' }">Contactos</router-link></li>
+        <li><router-link class="navLinks" :to="{ name: 'Servicos' }" @click="snapToElement">Serviços</router-link></li>
+        <li><router-link class="navLinks" :to="{ name: 'Contactos' }" @click="snapToElement">Contactos</router-link></li>
       </ul>
 	  </nav>
   </header>
@@ -66,6 +66,14 @@ export default defineComponent({
       headerPosition: 'relative',
     }
   },
+  methods: {
+    snapToElement() {
+      const element = document.querySelector('body');
+      if (element) {
+        element.scrollIntoView(true);
+      }
+    },
+  }
 });
 </script>
 

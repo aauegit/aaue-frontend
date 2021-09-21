@@ -81,8 +81,8 @@
           <a class="leftArrow"><i class="fas fa-chevron-left"></i></a>
           <div class="newsCards">
             <NoticiaCard :key="noticias[noticiaIndex].id" :imgURL="getImgURL(noticias[noticiaIndex].imgURL)" :titulo="noticias[noticiaIndex].titulo" :data="noticias[noticiaIndex].dataDePublicacao" :textPreview="noticias[noticiaIndex].textPreview"/>
-            <NoticiaCard :key="noticias[noticiaIndex + 1].id" :imgURL="getImgURL(noticias[noticiaIndex + 1].imgURL)" :titulo="noticias[noticiaIndex + 1].titulo" :data="noticias[noticiaIndex + 1].dataDePublicacao" :textPreview="noticias[noticiaIndex + 1].textPreview"/>
-            <NoticiaCard :key="noticias[noticiaIndex + 2].id" :imgURL="getImgURL(noticias[noticiaIndex + 2].imgURL)" :titulo="noticias[noticiaIndex + 2].titulo" :data="noticias[noticiaIndex + 2].dataDePublicacao" :textPreview="noticias[noticiaIndex + 2].textPreview"/>
+            <NoticiaCard v-if="!mobileMode" :key="noticias[noticiaIndex + 1].id" :imgURL="getImgURL(noticias[noticiaIndex + 1].imgURL)" :titulo="noticias[noticiaIndex + 1].titulo" :data="noticias[noticiaIndex + 1].dataDePublicacao" :textPreview="noticias[noticiaIndex + 1].textPreview"/>
+            <NoticiaCard v-if="isThirdNewsHidden" :key="noticias[noticiaIndex + 2].id" :imgURL="getImgURL(noticias[noticiaIndex + 2].imgURL)" :titulo="noticias[noticiaIndex + 2].titulo" :data="noticias[noticiaIndex + 2].dataDePublicacao" :textPreview="noticias[noticiaIndex + 2].textPreview"/>
           </div>
           <a class="rightArrow"><i class="fas fa-chevron-right"></i></a>
         </div>
@@ -112,6 +112,7 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       mouseIsDown: false,
+      isThirdNewsHidden: false,
       equipa: [
         {id: 0, destination: "Presidencia", icon: "fas fa-globe", iconColor: '#F8D01C', nome: "Presidência", },
         {id: 1, destination: "Assembleia", icon: "fas fa-balance-scale", iconColor: '#BAC0CB', nome: "Assembleia Magna", },
@@ -196,6 +197,7 @@ export default defineComponent({
     },
     handleResize () {
       this.mobileMode = window.innerWidth <= 1015;
+      this.isThirdNewsHidden = window.innerWidth >= 1350;
 
       if(!this.mobileMode) {
         this.activatedNavbar = false;
@@ -278,7 +280,7 @@ section {
 }
 
 .ourWork {
-  height: 100vh;
+  min-height: 100vh;
 
   .work {
     display: flex;
@@ -288,7 +290,7 @@ section {
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 125px;
-      padding: 0 100px;
+      padding: 0 0px;
     }
     .text {
       display: flex;
@@ -309,7 +311,7 @@ section {
 }
 
 .recrutamento {
-  height: 100vh;
+  min-height: 100vh;
 
   .aboutUs {
     display: flex;
@@ -338,7 +340,7 @@ section {
 }
 
 .plataformas {
-  padding: 75px 0;
+  padding: 0px 0;
 
   .plataformaCards {
     display: flex;
@@ -423,19 +425,89 @@ section {
   }
 }
 
-@media all and (min-width: 1024px) and (max-width: 1280px) { 
-
+@media (max-width: 1250px) {
+  .plataformas .plataformaCards {
+    flex-wrap: wrap;
+  }
 }
- 
-@media all and (min-width: 768px) and (max-width: 1024px) { 
 
-}
- 
-@media all and (min-width: 480px) and (max-width: 768px) { 
+@media (max-width: 1016px) {
+  .heroContent .textArea .heroText {
+    width: 80%;
+  }
 
+  .pageContent {
+    padding-top: 0vh;
+  }
 }
- 
-@media all and (max-width: 480px) { 
+
+@media (max-width: 790px) {
+  section,
+  .hero {
+    padding: 50px;
+  }
+
+  .heroContent .textArea .slogan {
+    font-size: 50px;
+  }
+
+  .plataformas {
+
+    .plataformaCards {
+      padding: 25px 0;
+    }
+  }
+  
+  
+}
+@media (max-width: 500px) {
+  section,
+  .hero {
+    padding: 20px;
+  }
+
+  .heroContent .textArea .slogan {
+    font-size: 40px;
+  }
+
+   .ourWork .work .text .team {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .heroContent .textArea .heroText {
+    width: 100%;
+  }
+}
+@media (max-width: 415px) {
+  section,
+  .hero {
+    padding: 20px;
+  }
+
+  .heroContent .textArea {
+
+    .slogan {
+      font-size: 40px;
+    }
+
+    .heroText {
+      font-size: 16px;
+    }
+  }
+
+  .heroContent .textArea .buttons {
+    flex-wrap: wrap;
+
+    button {
+      flex: 0 0 50%;
+
+      &:nth-child(2) {
+        margin-left: 0px;
+      }
+    }
+  }
   
 }
 
