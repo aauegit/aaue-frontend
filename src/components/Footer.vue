@@ -301,7 +301,42 @@ footer {
 }
 @media (max-width: 700px){
 	footer {
-		padding: 80px 15px;
+		padding: 80px 60px;
+
+        .ulContainer {
+            justify-content: center;
+            flex-direction: column;
+
+            .aaue {
+                width: 100%;
+            }
+
+            .contactInfo,
+            .socials,
+            .plataformas {
+                margin-top: 30px;
+            }
+        }
 	}
+}
+
+@media (max-width: 450px) {
+    footer {
+        padding: 50px 30px;
+
+        .ulContainer .aaue {
+            img {
+                width: 250px;
+            }
+        }
+
+        .socialMedia {
+            flex-wrap: wrap;
+
+            li {
+                flex: 0 0 30%;
+            }
+            }
+    }
 }
 </style>
