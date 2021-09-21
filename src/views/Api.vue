@@ -61,7 +61,7 @@
                             <label for="catComunicados">Comunicados</label>
                         </div>
                     </div>
-                    <label for="data">Data: {{ diaDeHoje }} de {{ mesDeHoje }}</label>
+                    <label for="data">Data: {{ diaDeHoje }} {{ mesDeHoje }}, {{  anoDeHoje }}</label>
                     <label for="foto">Foto:</label>
                     <Dropzone @drop.prevent="drop" @change="selectedFile"/>
                     <span>Ficheiro: {{ dropzoneFile.name }}</span> 
@@ -136,6 +136,7 @@ export default defineComponent({
       }
 
       const diaDeHoje = new Date().getDate();
+      const anoDeHoje = new Date().getFullYear();
       const getMes = () => {
         let month = new Date().getMonth() + 1; // O valor é incrementado por motivos de logica, visto que Janeiro = 0
           switch (month) {
@@ -168,7 +169,7 @@ export default defineComponent({
           }
         };
 
-      return { dropzoneFile, drop, selectedFile, diaDeHoje, getMes };
+      return { dropzoneFile, drop, selectedFile, diaDeHoje, getMes, anoDeHoje };
     },
     watch: {
         async selectedNoticia(newNoticia, oldNoticia) {
