@@ -23,7 +23,7 @@
                             <img :src="coordenador3Img" alt="Coordenador" decode="async">
                             <a :href="fb3" target="_blank" rel="noopener noreferrer">{{ coordenador3 }} <i class="fab fa-facebook-square"></i></a>
                         </div>
-                        <div v-if="coordenador4" class="coordenador" key="6">
+                        <div v-if="coordenador4 && nomeDoSetor != 'GAPE' && nomeDoSetor != 'Divulgação' " class="coordenador" key="6">
                             <img :src="coordenador4Img" alt="Coordenador" decode="async">
                             <a :href="fb4" target="_blank" rel="noopener noreferrer">{{ coordenador4 }} <i class="fab fa-facebook-square"></i></a>
                         </div>
