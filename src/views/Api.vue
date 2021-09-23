@@ -66,7 +66,7 @@
                     <Dropzone @drop.prevent="drop" @change="selectedFile"/>
                     <span>Ficheiro: {{ dropzoneFile.name }}</span> 
                     <label for="assinatura">Assinatura</label>
-                    <input type="text" id="assinatura" v-model="assinatura" placeholder="Mestre Yoda" required> 
+                    <input type="text" id="assinatura" v-model="assinatura" placeholder="Mestre Yoda"> 
                     <Button buttonText="Publicar" @click="publishNews"/>
                 </form>
                 <form class="formDeParagrafos" >
@@ -255,7 +255,7 @@ export default defineComponent({
             title: this.titulo,
             category: this.category,
             categoryColor: this.getCategoryColor(this.category),
-            date: this.dataDePublicacao,
+            date: "data",
             paragraphs: this.paragrafo,
             imageLink: "linkfixeya",
             signature: this.assinatura,
@@ -382,6 +382,7 @@ export default defineComponent({
         this.dataDePublicacao = "";
         this.paragrafo = "";
         this.assinatura = "";
+        this.numberOfParagraphs = 1;
     }
   },
 });
