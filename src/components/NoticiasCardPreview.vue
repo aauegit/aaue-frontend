@@ -41,10 +41,9 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 900px;
-    margin:0px 30px 30px 0px;
+    max-width: 80vw;
+    margin:0px 30px 50px 0px;
     border-radius: 18px;
-    padding: 36px;
     opacity: 1;
     transition: all 0.2s ease-in;
 
@@ -62,7 +61,7 @@ export default defineComponent({
     img {
         border-radius: 12px;
         width: 300px;
-        height: 200px;
+        height: 100%;
         margin-right: 25px;
         transition: all 0.2s ease-in;
     }
@@ -72,7 +71,7 @@ export default defineComponent({
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        height: 200px;
+        padding: 25px 25px 25px 0;
         transition: all 0.2s ease-in;
         
         .title {

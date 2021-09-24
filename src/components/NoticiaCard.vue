@@ -43,19 +43,20 @@ export default defineComponent({
     margin: 30px 10px 10px 30px;
     display: flex;
     flex-direction: column;
-    transition:box-shadow 0.3s cubic-bezier(.79,.21,.06,.81);
-    background-color: #1d1d1d;
+    height: 550px;
+    box-shadow: 5px 5px 20px rgb(160, 168, 189);
+
     img {
         transition: all 0.3s cubic-bezier(.79,.21,.06,.81);
-        max-width: 300px;
+        max-width: 350px;
     }
 
     .contentPreview {
         justify-content: center;
         align-items: center;
-        padding: 20px;
-        max-width: 300px;
-        color: #f7f8fc;
+        padding: 35px 25px;
+        max-width: 350px;
+        color: black;
         transition: all 0.3s cubic-bezier(.79,.21,.06,.81);
 
         h1 {

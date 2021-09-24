@@ -192,7 +192,7 @@ export default defineComponent({
 
 .noticias {
     display: flex;
-    justify-content: center;
+    padding: 75px;
     padding-top: 15vh;
     padding-bottom: 100px;
 

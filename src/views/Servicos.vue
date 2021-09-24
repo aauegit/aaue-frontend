@@ -123,12 +123,13 @@ export default defineComponent({
 
         img {
             width: 300px;
-            margin-bottom: 25px;
+            margin-bottom: 0px;
         }
 
         .serviceContent {
             align-items: normal;
             margin: 0px 0 25px 0;
+            padding: 25px;
 
             p,
             ul {
