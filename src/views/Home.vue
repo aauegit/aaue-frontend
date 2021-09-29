@@ -111,7 +111,6 @@ export default defineComponent({
       activatedNavbar: false,
       isAtTop: true,
       mobileMode: false,
-      mouseIsDown: false,
       isThirdNewsHidden: false,
       equipa: [
         {id: 0, destination: "Presidencia", icon: "fas fa-globe", iconColor: '#F8D01C', nome: "Presidência", },
@@ -287,10 +286,11 @@ section {
 
     .team {
       display: flex;
+      width: 91.5vw;
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 125px;
-      padding: 0 0px;
+      padding: 0px 0px;
     }
     .text {
       display: flex;

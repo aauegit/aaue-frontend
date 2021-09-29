@@ -60,9 +60,9 @@ export default defineComponent({
         left: 20px;
         padding: 10px;
         border-radius: 50%;
+        background-color: #f7f8fc;
         font-size: 40px;
         color: #f7ce31;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     }
 
     .contentPreview {

@@ -26,7 +26,7 @@ export default {
     align-items: center;
     min-width: 250px;
     height: 100px;
-    margin: 10px;
+    margin: 25px;
     box-shadow: -7px -7px 20px 0px #fff9,
         -4px -4px 5px 0px #fff9,
         7px 7px 20px 0px #0002,
@@ -54,12 +54,7 @@ export default {
         min-width: 200px;
     }
 }
-@media (max-width: 550px) {
-    .equipaCard {
-        flex: 0 0 10%;
-    }
-}
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .equipaCard {
         flex: 0 0 80%;
     }

@@ -1,6 +1,6 @@
 <template>
 
-  <header class="header">
+  <header class="header" :class="{isScrolled: !isAtTop}">
     <nav id="nav">
       <div class="logo" >
               <router-link class="logoName" to="/" @click="snapToElement">
@@ -66,7 +66,16 @@ export default defineComponent({
       headerPosition: 'relative',
     }
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   methods: {
+    handleScroll () {
+      window.pageYOffset >= 50 ? this.isAtTop = false : this.isAtTop = true;
+    },
     snapToElement() {
       const element = document.querySelector('body');
       if (element) {
@@ -92,6 +101,7 @@ export default defineComponent({
 	padding: 0vh 75px;
   background-color: #f7f8fc;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.164);
 
   #nav {
     display: flex;
@@ -107,8 +117,9 @@ export default defineComponent({
 
         width: 200px;
         position: absolute;
-        top: 15px;
+        top: 25px;
         left: 75px;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
     }
 
@@ -201,15 +212,27 @@ export default defineComponent({
 @media all and (min-width: 1000px) and (max-width: 1350px) { 
 
   .header {
-    padding: 45px 20px 45px 20px;
+    padding: 0px 20px 0px 20px;
+    height: 15vh;
   }
 
   .header #nav .logo img {
     width: 120px;
     left: 20px;
+    top: 40px;
   }
   .header #nav ul li {
     font-size: 17px;
+  }
+}
+
+.isScrolled {
+  height: 10vh;
+
+  #nav .logo img {
+    width: 120px;
+    left: 75px;
+    top: 20px;
   }
 }
 </style>
