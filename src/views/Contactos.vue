@@ -34,8 +34,13 @@
                     <label for="mensagem">Mensagem <span>*</span></label>
                     <textarea class="mensagem" placeholder="Mensagem" id="mensagem"  v-model="mensagem" required />
                     <div class="buttons">
-                        <Button buttonText="Enviar Mensagem"/>
-                        <Button buttonText="Recaptcha" class="lastButton"/>
+                        <Button
+                            buttonText="Enviar mensagem"
+                            class="g-recaptcha" 
+                            data-sitekey="reCAPTCHA_site_key" 
+                            data-callback='onSubmit' 
+                            data-action='submit'
+                        />
                     </div>
                 </form>
             </div>
@@ -45,7 +50,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent} from 'vue';
 import Navbar from '../components/Navbar.vue';
 import NavbarMobile from '../components/NavbarMobile.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
@@ -102,6 +107,8 @@ export default defineComponent({
         this.activatedNavbar = false;
       }
     },
+    async sendFormData() {
+    }
   },
 });
 </script>
