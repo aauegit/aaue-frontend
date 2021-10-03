@@ -7,7 +7,7 @@
   <Navbar v-if="!mobileMode" class="navbar" />
   <div v-if="!activatedNavbar" class="pageContent">
     <section class="contacts">
-      <div class="contactForm">
+      <div class="contactForm" v-if="!sendingEmail">
         <div class="contactInfo">
           <h1>
             Tens alguma questão?<br />
@@ -69,7 +69,7 @@
             v-model="mensagem"
             required
           />
-          <div class="buttons">
+          <div class="buttons" :class="{ isActive: isFormFilled }">
             <Button
               buttonText="Enviar mensagem"
               class="g-recaptcha"
@@ -80,13 +80,34 @@
           </div>
         </form>
       </div>
+      <div class="modal" v-else>
+        <img
+          v-if="!emailSent && !emailFailed"
+          src="@/assets/api/spinning-circle.gif"
+          alt=""
+        />
+        <div v-else-if="emailSent" class="sucess">
+          <h1>Mensagem enviada</h1>
+          <i class="far fa-check-circle sucessIcon"></i>
+          <Button buttonText="Voltar" @click="resetEmailSendingValues" />
+        </div>
+        <div v-else-if="emailFailed" class="failure">
+          <h1>Ocorreu um erro</h1>
+          <i class="fas fa-exclamation-circle errorIcon"></i>
+          <p>
+            Por favor volte a tentar mais tarde ou envie uma mensagem para
+            geral@aaue.pt
+          </p>
+          <Button buttonText="Voltar" @click="resetEmailSendingValues" />
+        </div>
+      </div>
     </section>
     <Footer />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, watch } from "vue";
 import Navbar from "../components/Navbar.vue";
 import NavbarMobile from "../components/NavbarMobile.vue";
 import ScrollToTopButton from "../components/ScrollToTopButton.vue";
@@ -101,10 +122,36 @@ export default defineComponent({
       isAtTop: true,
       mobileMode: false,
       emailSent: false,
+      emailFailed: false,
+      sendingEmail: false,
       name: "",
       email: "",
       assunto: "",
       mensagem: "",
+      isFormFilled: false,
+    };
+  },
+  setup() {
+    let name = ref("");
+    let email = ref("");
+    let assunto = ref("");
+    let mensagem = ref("");
+    let isFormFilled = ref(false);
+
+    watch([name, email, assunto, mensagem], () => {
+      if (name.value && email.value && assunto.value && mensagem.value) {
+        isFormFilled.value = true;
+      } else {
+        isFormFilled.value = false;
+      }
+    });
+
+    return {
+      isFormFilled: isFormFilled,
+      name: name,
+      email: email,
+      assunto: assunto,
+      mensagem: mensagem,
     };
   },
   components: {
@@ -146,6 +193,12 @@ export default defineComponent({
       }
     },
     async sendFormData() {
+      if (!this.isFormFilled) {
+        return;
+      }
+
+      this.sendingEmail = true;
+
       const formData = {
         sendTo: "informativa@aaue.pt",
         subject: this.assunto,
@@ -172,19 +225,25 @@ export default defineComponent({
         .then(async (data) => {
           if (data.ok) {
             this.emailSent = true;
-            this.clearInfo();
+            this.clearFormInfo();
           }
         })
         .catch((error) => {
+          this.emailFailed = true;
           console.log(error.message);
         });
     },
 
-    clearInfo() {
+    clearFormInfo() {
       this.name = "";
       this.email = "";
       this.assunto = "";
       this.mensagem = "";
+    },
+    resetEmailSendingValues() {
+      this.sendingEmail = false;
+      this.emailSent = false;
+      this.emailFailed = false;
     },
   },
 });
@@ -305,6 +364,70 @@ $specialColor: #2c3e50;
 
       .buttons {
         display: flex;
+
+        .button {
+          cursor: not-allowed;
+          opacity: 0.4;
+          border-radius: 0;
+          margin-left: 0;
+
+          &:hover {
+            transform: translateY(0px);
+          }
+        }
+      }
+
+      .isActive {
+        .button {
+          cursor: pointer;
+          opacity: 1;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+
+  .modal {
+    width: 500px;
+    min-height: 300px;
+    padding: 20px 50px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .sucess,
+    .failure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .errorIcon {
+        margin: 20px 0 0 0;
+        font-size: 100px;
+        color: #992c2c;
+      }
+
+      .sucessIcon {
+        margin: 35px 0;
+        font-size: 100px;
+        color: #4bb543;
+      }
+
+      p {
+        margin: 20px 0;
       }
     }
   }
