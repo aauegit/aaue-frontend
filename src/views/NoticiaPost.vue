@@ -1,8 +1,10 @@
 <template>
     <div>
-        <h1></h1>
+        <h1>{{ title }}</h1>
+        <h2>Publicado a {{ date }}</h2>
         <img src="" alt="">
         <p v-for="paragraph in paragraphs" :key="paragraph"></p>
+        <p>{{ signature }}</p>
 
     </div>
 </template>
@@ -13,7 +15,20 @@
             title: {
                 type: String,
             },
+            date: {
+                type: String,
+            },
+            imgUrl: {
+                type: String,
+            },
+            paragraphs: {
+                type: Array,
+            },
+            signature: {
+                type: String,
+            },
         },
+
     }
 </script>
 
