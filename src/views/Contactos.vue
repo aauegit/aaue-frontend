@@ -106,15 +106,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, watch } from "vue";
+<script>
+import { ref, watch } from "vue";
 import Navbar from "../components/Navbar.vue";
 import NavbarMobile from "../components/NavbarMobile.vue";
 import ScrollToTopButton from "../components/ScrollToTopButton.vue";
 import Button from "../components/Button.vue";
 import Footer from "../components/Footer.vue";
 
-export default defineComponent({
+export default {
   name: "Contactos",
   data() {
     return {
@@ -161,37 +161,7 @@ export default defineComponent({
     Footer,
     Button,
   },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-  },
-  unmounted() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleResize);
-  },
   methods: {
-    getImgURL(image: String) {
-      return require("../assets/" + image);
-    },
-    scrollToElement(destination: string) {
-      const element = document.querySelector(destination);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-    handleScroll() {
-      window.pageYOffset >= 250
-        ? (this.isAtTop = false)
-        : (this.isAtTop = true);
-    },
-    handleResize() {
-      this.mobileMode = window.innerWidth <= 1015;
-
-      if (!this.mobileMode) {
-        this.activatedNavbar = false;
-      }
-    },
     async sendFormData() {
       if (!this.isFormFilled) {
         return;
@@ -233,7 +203,6 @@ export default defineComponent({
           console.log(error.message);
         });
     },
-
     clearFormInfo() {
       this.name = "";
       this.email = "";
@@ -246,7 +215,7 @@ export default defineComponent({
       this.emailFailed = false;
     },
   },
-});
+};
 </script>
 
 <style lang="scss" scoped>

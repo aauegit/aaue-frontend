@@ -1,37 +1,76 @@
 <template>
-    <div>
-        <h1>{{ title }}</h1>
-        <h2>Publicado a {{ date }}</h2>
-        <img src="" alt="">
-        <p v-for="paragraph in paragraphs" :key="paragraph"></p>
-        <p>{{ signature }}</p>
-
-    </div>
+  <section class="noticia">
+    <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
+    <main class="noticiaPost">
+      <div class="noticiaText">
+        <h1>{{ noticia.title }}</h1>
+        <hr :style="{ borderColor: noticia.categoryColor }" />
+        <h2>Publicado a {{ noticia.date }}</h2>
+        <img v-if="imgURL == 'hehe'" :src="imgURL" alt="" />
+        <p v-for="paragraph in noticia.paragraphs" :key="paragraph">
+          {{ paragraph }}
+        </p>
+        <p v-if="noticia.signature" class="signature">
+          {{ noticia.signature }}
+        </p>
+      </div>
+      <Sidebar />
+    </main>
+  </section>
 </template>
 
 <script>
-    export default {
-        props: {
-            title: {
-                type: String,
-            },
-            date: {
-                type: String,
-            },
-            imgUrl: {
-                type: String,
-            },
-            paragraphs: {
-                type: Array,
-            },
-            signature: {
-                type: String,
-            },
-        },
-
-    }
+import HeaderTitle from "@/components/HeaderTitle.vue";
+import Sidebar from "@/components/Sidebar.vue";
+import { getImgURL } from "@/functions/globals.js";
+export default {
+  components: {
+    HeaderTitle,
+    Sidebar,
+  },
+  methods: {
+    getImgURL,
+  },
+  computed: {
+    noticia() {
+      return this.$store.getters.getCurrentNoticia;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.noticia {
+  padding-top: 15vh;
+}
 
+.noticiaPost {
+  min-height: 100vh;
+  padding: 75px;
+  display: flex;
+
+  .sidebar {
+    width: 30%;
+  }
+
+  .noticiaText {
+    padding-right: 50px;
+    border-right: 1px solid #bebebe57;
+    hr {
+      width: 200px;
+      border: 1px solid;
+      margin: 7px 0;
+    }
+
+    h2 {
+      font-size: 16px;
+      opacity: 0.6;
+    }
+
+    p {
+      max-width: 800px;
+      margin-top: 25px;
+    }
+  }
+}
 </style>

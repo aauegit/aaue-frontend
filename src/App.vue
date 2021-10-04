@@ -1,11 +1,45 @@
 <template>
-  <router-view/>
+  <ScrollToTopButton />
+  <NavbarMobile
+    v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)"
+    @click="activatedNavbar = !activatedNavbar"
+  />
+  <Navbar v-if="!mobileMode" class="navbar" />
+  <router-view />
+  <Footer />
 </template>
 
 <script>
-
+import Navbar from "@/components/Navbar.vue";
+import NavbarMobile from "@/components/NavbarMobile.vue";
+import ScrollToTopButton from "@/components/ScrollToTopButton.vue";
+import Footer from "@/components/Footer.vue";
 export default {
-}
+  components: {
+    Navbar,
+    NavbarMobile,
+    ScrollToTopButton,
+    Footer,
+  },
+  async created() {
+    await this.$store.dispatch("setAllNoticias");
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.mobileMode = window.innerWidth <= 1015;
+      this.isThirdNewsHidden = window.innerWidth >= 1350;
+
+      if (!this.mobileMode) {
+        this.activatedNavbar = false;
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -18,7 +52,7 @@ $specialColor: #155781;
   font-style: normal;
   font-display: swap;
   src: local("Metropolis"),
-  url('@/assets/font/metropolis/Metropolis-Regular.otf') format("opentype");
+    url("./assets/font/metropolis/Metropolis-Regular.otf") format("opentype");
 }
 
 @font-face {
@@ -27,11 +61,11 @@ $specialColor: #155781;
   font-style: normal;
   font-display: swap;
   src: local("Metropolis"),
-  url('@/assets/font/metropolis/Metropolis-Bold.otf') format("opentype");
+    url("./assets/font/metropolis/Metropolis-Bold.otf") format("opentype");
 }
 
 #app {
-  font-family: 'Metropolis', sans-serif;
+  font-family: "Metropolis", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -46,7 +80,6 @@ $specialColor: #155781;
 }
 
 body {
-
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
@@ -65,7 +98,7 @@ a {
   opacity: 0.75;
   color: #2c3e50;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  
+
   &:hover {
     opacity: 1;
   }
@@ -75,7 +108,9 @@ p {
   hyphens: auto;
 }
 
-nav, ul, li {
+nav,
+ul,
+li {
   list-style-type: none;
 }
 
@@ -85,5 +120,4 @@ hr {
   border: 1px solid $specialColor;
   margin: 5px 0px;
 }
-
 </style>

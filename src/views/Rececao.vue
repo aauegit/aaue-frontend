@@ -1,63 +1,88 @@
 <template>
-    <ScrollToTopButton v-if="!isAtTop"  @click="scrollToElement('body')"/>
-    <NavbarMobile v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)" @click="activatedNavbar = !activatedNavbar" />
-    <Navbar v-if="!mobileMode" class="navbar" />
-    <div v-if="!activatedNavbar" class="pageContent">
-        <div class="rececao">
-            <div class="titulo">
-                <i class="fas fa-rocket"></i>
-                <h1>A melhor receção ao caloiro está de volta!</h1>
+  <ScrollToTopButton v-if="!isAtTop" @click="scrollToElement('body')" />
+  <NavbarMobile
+    v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)"
+    @click="activatedNavbar = !activatedNavbar"
+  />
+  <Navbar v-if="!mobileMode" class="navbar" />
+  <div v-if="!activatedNavbar" class="pageContent">
+    <div class="rececao">
+      <div class="titulo">
+        <i class="fas fa-rocket"></i>
+        <h1>A melhor receção ao caloiro está de volta!</h1>
+      </div>
+      <p class="intro">
+        Por excelência, a <b>Receção ao Caloiro</b> é o ponto alto dos primeiros
+        tempos de um estudante na Universidade de Évora e, em muitos casos, na
+        sua nova cidade. A Receção ao Caloiro destaca-se não só pelo receber por
+        parte da academia dos seus novos membros, mas também por ser mais um
+        momento onde várias gerações académicas se voltam a reunir, recordando
+        tempos e vivências de outrora. Não apenas conhecida pelas noites
+        académicas, de concertos e folia no recinto, a Receção destaca-se também
+        pela envolvência com o município, no plano cultural, mas também social e
+        patrimonial, promovendo assim um primeiro contacto dos novos estudantes
+        da nossa cidade, com a sua «nova casa» para os próximos anos.
+      </p>
+      <div class="cartaz">
+        <img :src="getImgURL('rececao/rececao.jpg')" alt="" />
+        <ul>
+          <h1>
+            Afinal de contas é aqui que começam os melhores dias da TUA vida!
+          </h1>
+          <li @click="showingCartaz = !showingCartaz">
+            <div class="text" :class="{ activated: showingCartaz }">
+              <i class="fas fa-caret-right"></i>
+              <p>#1 - Cartaz</p>
             </div>
-            <p class="intro"> Por excelência, a <b>Receção ao Caloiro</b> é o ponto alto dos primeiros tempos de um estudante na Universidade de Évora e, em muitos casos, na sua nova cidade. A Receção ao Caloiro destaca-se não só pelo receber por parte da academia dos seus novos membros, mas também por ser mais um momento onde várias gerações académicas se voltam a reunir, recordando tempos e vivências de outrora. Não apenas conhecida pelas noites académicas, de concertos e folia no recinto, a Receção destaca-se também pela envolvência com o município, no plano cultural, mas também social e patrimonial, promovendo assim um primeiro contacto dos novos estudantes da nossa cidade, com a sua «nova casa» para os próximos anos.</p>
-            <div class="cartaz">
-                <img :src="getImgURL('rececao/rececao.jpg')" alt="">
-                <ul>
-                    <h1>Afinal de contas é aqui que começam os melhores dias da TUA vida!</h1>
-                    <li @click="showingCartaz = !showingCartaz" >
-                        <div class="text" :class="{activated: showingCartaz}">
-                           <i  class="fas fa-caret-right"></i>
-                            <p>#1 - Cartaz</p> 
-                        </div>
-                        <div>
-                            <img v-if="showingCartaz" :src="getImgURL('rececao/rececaoCartazCompleto.png')" alt="">
-                        </div>
-                        
-                    </li>
-                    <li @click="showingGeral = !showingGeral">
-                        <div  class="text"  :class="{activated: showingGeral}">
-                            <i class="fas fa-caret-right"></i>
-                            <p>#2 - Bilhetes Gerais</p>
-                        </div>
-                        <div class="photo">
-                            <img v-if="showingGeral" :src="getImgURL('rececao/rececaoGeral.jpg')" alt="">
-                        </div>
-                    </li>
-                    <li @click="showingDiarios = !showingDiarios">
-                        <div  class="text" :class="{activated: showingDiarios}">
-                            <i class="fas fa-caret-right"></i>
-                            <p>#3 - Bilhetes Diários</p>
-                        </div>
-                        <div class="photo">
-                            <img v-if="showingDiarios" :src="getImgURL('rececao/rececaoDiarios.jpg')" alt="">
-                        </div>
-                    </li>
-                </ul>
+            <div>
+              <img
+                v-if="showingCartaz"
+                :src="getImgURL('rececao/rececaoCartazCompleto.png')"
+                alt=""
+              />
             </div>
-        </div>
-        <Footer />
+          </li>
+          <li @click="showingGeral = !showingGeral">
+            <div class="text" :class="{ activated: showingGeral }">
+              <i class="fas fa-caret-right"></i>
+              <p>#2 - Bilhetes Gerais</p>
+            </div>
+            <div class="photo">
+              <img
+                v-if="showingGeral"
+                :src="getImgURL('rececao/rececaoGeral.jpg')"
+                alt=""
+              />
+            </div>
+          </li>
+          <li @click="showingDiarios = !showingDiarios">
+            <div class="text" :class="{ activated: showingDiarios }">
+              <i class="fas fa-caret-right"></i>
+              <p>#3 - Bilhetes Diários</p>
+            </div>
+            <div class="photo">
+              <img
+                v-if="showingDiarios"
+                :src="getImgURL('rececao/rececaoDiarios.jpg')"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  
+    <Footer />
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import Navbar from '../components/Navbar.vue';
-import NavbarMobile from '../components/NavbarMobile.vue';
-import ScrollToTopButton from '../components/ScrollToTopButton.vue';
-import Footer from '../components/Footer.vue';
+<script>
+import Navbar from "../components/Navbar.vue";
+import NavbarMobile from "../components/NavbarMobile.vue";
+import ScrollToTopButton from "../components/ScrollToTopButton.vue";
+import Footer from "../components/Footer.vue";
 
-export default defineComponent({
-  name: 'Rececao',
+export default {
+  name: "Rececao",
   data() {
     return {
       activatedNavbar: false,
@@ -68,7 +93,7 @@ export default defineComponent({
       showingGeral: false,
       activated2: false,
       activated3: false,
-    }
+    };
   },
   components: {
     Navbar,
@@ -77,115 +102,113 @@ export default defineComponent({
     Footer,
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
   },
   unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleResize);
   },
-   methods: {
-    getImgURL(image: String) {
-        return require('../assets/' + image).default;
+  methods: {
+    getImgURL(image) {
+      return require("../assets/" + image).default;
     },
-    scrollToElement(destination: string) {
+    scrollToElement(destination) {
       const element = document.querySelector(destination);
       if (element) {
-        element.scrollIntoView({behavior: 'smooth'});
+        element.scrollIntoView({ behavior: "smooth" });
       }
     },
-    handleScroll () {
-      window.pageYOffset >= 250 ? this.isAtTop = false : this.isAtTop = true;
+    handleScroll() {
+      window.pageYOffset >= 250
+        ? (this.isAtTop = false)
+        : (this.isAtTop = true);
     },
-    handleResize () {
+    handleResize() {
       this.mobileMode = window.innerWidth <= 1015;
 
-      if(!this.mobileMode) {
+      if (!this.mobileMode) {
         this.activatedNavbar = false;
       }
     },
   },
-});
+};
 </script>
 
 <style lang="scss" scoped>
 .rececao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 5vw;
+
+  .titulo {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 100px 5vw;
+    align-items: center;
+    width: 55%;
+    margin-bottom: 30px;
 
-    .titulo {
+    i {
+      font-size: 50px;
+      margin-right: 20px;
+    }
+  }
+
+  .intro {
+    text-indent: 30px;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+
+  .cartaz {
+    display: flex;
+
+    img {
+      margin-right: 30px;
+      width: 450px;
+      height: 250px;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 25px;
+    }
+
+    ul li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      cursor: pointer;
+      color: rgb(61, 181, 221);
+      border-bottom: 1px solid #bebebe;
+
+      .text {
+        width: 100%;
+        padding: 30px 0px;
         display: flex;
-        justify-content: center;
         align-items: center;
-        width: 55%;
-        margin-bottom: 30px;
+      }
 
+      i {
+        margin-right: 10px;
+        transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      img {
+        position: relative;
+        height: auto;
+      }
+
+      .activated {
         i {
-            font-size: 50px;
-            margin-right: 20px;
+          transform: rotateZ(90deg);
         }
-
+      }
     }
-
-    .intro {
-        text-indent: 30px;
-        font-size: 16px;
-        line-height: 25px;
-        margin-bottom: 20px;
-    }
-
-    .cartaz {
-        display: flex;
-
-        img {
-            margin-right: 30px;
-            width: 450px;
-            height: 250px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-size: 25px;
-        }
-
-        ul li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            cursor: pointer;
-            color: rgb(61, 181, 221);
-            border-bottom: 1px solid #bebebe;
-
-            .text {
-                width: 100%;
-                padding: 30px 0px;
-                display: flex;
-                align-items: center;
-            }
-
-            i {
-                margin-right: 10px;
-                transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-            }
-
-            img {
-                position: relative;
-                height: auto;
-            }
-
-            .activated {
-
-
-                i {
-                    transform: rotateZ(90deg);
-                }
-            }
-
-        }
-    }
+  }
 }
 </style>

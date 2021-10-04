@@ -1,104 +1,171 @@
 <template>
-
-  <header class="header" :class="{isScrolled: !isAtTop}">
+  <header class="header" :class="{ isScrolled: !isAtTop }">
     <nav id="nav">
-      <div class="logo" >
-              <router-link class="logoName" to="/" @click="snapToElement">
-                  <img src="../assets/aaueLogo.png" alt="">
-              </router-link>
-          </div>
+      <div class="logo">
+        <router-link class="logoName" to="/" @click="snapToElement">
+          <img src="../assets/aaueLogo.png" alt="" />
+        </router-link>
+      </div>
       <ul>
-        <li><router-link class="navLinks" :to="{ name: 'Noticias' }" @click="snapToElement">Notícias</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Discursos' }" @click="snapToElement">Discursos</router-link></li>
-        <li class="dropdown" @mouseover="hoveredEventos = true" @mouseleave="hoveredEventos = false" >
+        <li>
+          <router-link
+            class="navLinks"
+            :to="{ name: 'Noticias' }"
+            @click="snapToElement"
+            >Notícias</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            class="navLinks"
+            :to="{ name: 'Discursos' }"
+            @click="snapToElement"
+            >Discursos</router-link
+          >
+        </li>
+        <li
+          class="dropdown"
+          @mouseover="hoveredEventos = true"
+          @mouseleave="hoveredEventos = false"
+        >
           <div class="text">
             <a class="navLinks dropdownName">Eventos</a>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredEventos">
-             <a href="http://queima.aaue.pt/" target="_blank" rel="noopener noreferrer">Queima das Fitas</a>
-              <a href="https://expoestudante.aaue.pt/#/" target="_blank" rel="noopener noreferrer">Expo'Estudante</a>
+            <a
+              href="http://queima.aaue.pt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Queima das Fitas</a
+            >
+            <a
+              href="https://expoestudante.aaue.pt/#/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Expo'Estudante</a
+            >
           </div>
         </li>
-        <li class="dropdown" @mouseover="hoveredAssociacao = true" @mouseleave="hoveredAssociacao = false" >
+        <li
+          class="dropdown"
+          @mouseover="hoveredAssociacao = true"
+          @mouseleave="hoveredAssociacao = false"
+        >
           <div class="text">
             <a class="navLinks dropdownName">Associação</a>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredAssociacao">
-            <router-link :to="{ name: 'Presidencia'}" @click="snapToElement">Presidência</router-link>
-            <router-link :to="{ name: 'Assembleia'}" @click="snapToElement">Assembleia Magna</router-link>
-            <router-link :to="{ name: 'Fiscal'}" @click="snapToElement">Conselho Fiscal</router-link>
-            <router-link :to="{ name: 'Setores'}" @click="snapToElement">Setores</router-link>
-            <router-link :to="{ name: 'Autonomas'}" @click="snapToElement">Secções Autónomas</router-link>
-            <router-link :to="{ name: 'Sobre'}" @click="snapToElement">Sobre nós</router-link>
+            <router-link :to="{ name: 'Presidencia' }" @click="snapToElement"
+              >Presidência</router-link
+            >
+            <router-link :to="{ name: 'Assembleia' }" @click="snapToElement"
+              >Assembleia Magna</router-link
+            >
+            <router-link :to="{ name: 'Fiscal' }" @click="snapToElement"
+              >Conselho Fiscal</router-link
+            >
+            <router-link :to="{ name: 'Setores' }" @click="snapToElement"
+              >Setores</router-link
+            >
+            <router-link :to="{ name: 'Autonomas' }" @click="snapToElement"
+              >Secções Autónomas</router-link
+            >
+            <router-link :to="{ name: 'Sobre' }" @click="snapToElement"
+              >Sobre nós</router-link
+            >
           </div>
         </li>
-        <li class="dropdown" @mouseover="hoveredPlataformas = true" @mouseleave="hoveredPlataformas = false" >
+        <li
+          class="dropdown"
+          @mouseover="hoveredPlataformas = true"
+          @mouseleave="hoveredPlataformas = false"
+        >
           <div class="text">
             <a class="navLinks dropdownName">Plataformas</a>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredPlataformas">
-            <a href="https://alojamento.aaue.pt/" target="_blank" rel="noopener noreferrer">Portal do Alojamento</a>
-            <a href="https://torneioreitor.aaue.pt/" target="_blank" rel="noopener noreferrer">Desporto</a>
+            <a
+              href="https://alojamento.aaue.pt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Portal do Alojamento</a
+            >
+            <a
+              href="https://torneioreitor.aaue.pt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Desporto</a
+            >
           </div>
         </li>
-        <li><router-link class="navLinks" :to="{ name: 'Servicos' }" @click="snapToElement">Serviços</router-link></li>
-        <li><router-link class="navLinks" :to="{ name: 'Contactos' }" @click="snapToElement">Contactos</router-link></li>
+        <li>
+          <router-link
+            class="navLinks"
+            :to="{ name: 'Servicos' }"
+            @click="snapToElement"
+            >Serviços</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            class="navLinks"
+            :to="{ name: 'Contactos' }"
+            @click="snapToElement"
+            >Contactos</router-link
+          >
+        </li>
       </ul>
-	  </nav>
+    </nav>
   </header>
-    
-  
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({
-  name: 'Navbar',
+<script>
+export default {
+  name: "Navbar",
   data() {
-    return { 
+    return {
       hoveredAssociacao: false,
       hoveredEventos: false,
       hoveredPlataformas: false,
       isAtTop: true,
-      headerPosition: 'relative',
-    }
+      headerPosition: "relative",
+    };
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    handleScroll () {
-      window.pageYOffset >= 50 ? this.isAtTop = false : this.isAtTop = true;
+    handleScroll() {
+      window.pageYOffset >= 50 ? (this.isAtTop = false) : (this.isAtTop = true);
     },
     snapToElement() {
-      const element = document.querySelector('body');
+      const element = document.querySelector("body");
       if (element) {
         element.scrollIntoView(true);
       }
     },
-  }
-});
+  },
+};
 </script>
 
 <style lang="scss">
-
 .header {
   position: fixed;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-	z-index: 10;
-	width: 100%;
+  z-index: 10;
+  width: 100%;
   height: 15vh;
-	opacity: 1;
-	color: #fff;
-	padding: 0vh 75px;
+  opacity: 1;
+  color: #fff;
+  padding: 0vh 75px;
   background-color: #f7f8fc;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.164);
@@ -107,14 +174,12 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     .logo {
-
       a {
         opacity: 1;
-        font-family: 'Metropolis', sans-serif;
+        font-family: "Metropolis", sans-serif;
       }
 
       img {
-
         width: 200px;
         position: absolute;
         top: 25px;
@@ -138,12 +203,12 @@ export default defineComponent({
           &.router-link-exact-active {
             border-bottom: 1px solid black;
           }
-        }  
+        }
       }
     }
   }
 
-  .dropdown .text{
+  .dropdown .text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +239,6 @@ export default defineComponent({
   }
 
   .dropdown:hover {
-
     .dropdownName {
       cursor: default;
     }
@@ -209,8 +273,7 @@ export default defineComponent({
   }
 }
 
-@media all and (min-width: 1000px) and (max-width: 1350px) { 
-
+@media all and (min-width: 1000px) and (max-width: 1350px) {
   .header {
     padding: 0px 20px 0px 20px;
     height: 15vh;
