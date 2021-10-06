@@ -30,11 +30,17 @@ export default {
   },
   methods: {
     getImgURL,
+    async getCurrentNoticia() {},
   },
   computed: {
     noticia() {
       return this.$store.getters.getCurrentNoticia;
     },
+  },
+  async mounted() {
+    if (!this.noticia) {
+      await this.$store.dispatch("setAllNoticias");
+    }
   },
 };
 </script>

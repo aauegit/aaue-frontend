@@ -20,48 +20,13 @@
 
 <script>
 import MembroDirecao from "@/components/MembroDirecao.vue";
+import assembleiaMagna from "@/static/assembleiaMagna.json";
 
 export default {
   name: "Presidencia",
   data() {
     return {
-      membros: [
-        {
-          id: 0,
-          nome: "Miguel Lopes",
-          cargo: "Presidente",
-          fb: "https://www.facebook.com/miguel.lopes.1272",
-          img: "miguelLopes.webp",
-        },
-        {
-          id: 1,
-          nome: "Cristiana Tomaz",
-          cargo: "Vice-Presidente",
-          fb: "https://www.facebook.com/cristiana.tomaz.33",
-          img: "cristianaTomaz.webp",
-        },
-        {
-          id: 2,
-          nome: "António Lourenço",
-          cargo: "Secretário",
-          fb: "https://www.facebook.com/antonio.lourenco.5283",
-          img: "antonioLourenco.webp",
-        },
-        {
-          id: 3,
-          nome: "Gonçalo Passinhas",
-          cargo: "Secretário",
-          fb: "https://www.facebook.com/am.i.a.jerry",
-          img: "goncaloPassinhas.webp",
-        },
-        {
-          id: 4,
-          nome: "Joana Amaro",
-          cargo: "Secretária",
-          fb: "https://www.facebook.com/joana.amaro98",
-          img: "joanaAmaro.webp",
-        },
-      ],
+      membros: assembleiaMagna,
     };
   },
   components: {

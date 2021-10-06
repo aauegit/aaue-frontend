@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "nome": "Desportiva",
+    "icon": "fas fa-futbol",
+    "coordenador1": "Eduardo Dias",
+    "fb1": "https://www.facebook.com/eduardo.dias.39982",
+    "img1": "SADesporto/desportiva/eduardoDias.webp",
+    "coordenador2": "Inácia Nunes",
+    "fb2": "https://www.facebook.com/innacia",
+    "img2": "SADesporto/desportiva/inaciaNunes.webp",
+    "coordenador3": "João Alcântara",
+    "fb3": "https://www.facebook.com/joao.alcantara.58",
+    "img3": "SADesporto/desportiva/joaoAlcantara.webp",
+    "coordenador4": "Sofia Jarreta",
+    "fb4": "https://www.facebook.com/sofia.jarretaa",
+    "img4": "SADesporto/desportiva/sofiaJarreta.webp",
+    "descricao": "O desporto é uma atividade de lazer e competição saudável, pela qual apela a boas práticas. Por estas razões, apresenta-se como desígnio da Secção Autónoma Desportiva que a Academia reúna todos os esforços em prol da promoção, da qualidade de vida e bem-estar, não só dos estudantes, como também dos habitantes da cidade de Évora. Considera-se fundamental promover momentos de atividade física, diversão, entretenimento e, ao mesmo tempo, o espírito de competição amigável entre os estudantes.",
+    "contacto": "desportiva@aaue.pt"
+  }
+]
