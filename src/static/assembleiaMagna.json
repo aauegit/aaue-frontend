@@ -4,34 +4,34 @@
     "nome": "Miguel Lopes",
     "cargo": "Presidente",
     "fb": "https://www.facebook.com/miguel.lopes.1272",
-    "img": "miguelLopes.webp"
+    "img": "membros/magna/miguelLopes.webp"
   },
   {
     "id": 1,
     "nome": "Cristiana Tomaz",
     "cargo": "Vice-Presidente",
     "fb": "https://www.facebook.com/cristiana.tomaz.33",
-    "img": "cristianaTomaz.webp"
+    "img": "membros/magna/cristianaTomaz.webp"
   },
   {
     "id": 2,
     "nome": "António Lourenço",
     "cargo": "Secretário",
     "fb": "https://www.facebook.com/antonio.lourenco.5283",
-    "img": "antonioLourenco.webp"
+    "img": "membros/magna/antonioLourenco.webp"
   },
   {
     "id": 3,
     "nome": "Gonçalo Passinhas",
     "cargo": "Secretário",
     "fb": "https://www.facebook.com/am.i.a.jerry",
-    "img": "goncaloPassinhas.webp"
+    "img": "membros/magna/goncaloPassinhas.webp"
   },
   {
     "id": 4,
     "nome": "Joana Amaro",
     "cargo": "Secretária",
     "fb": "https://www.facebook.com/joana.amaro98",
-    "img": "joanaAmaro.webp"
+    "img": "membros/magna/joanaAmaro.webp"
   }
 ]

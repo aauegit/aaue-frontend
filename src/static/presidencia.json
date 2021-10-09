@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "nome": "Henrique Gil",
+    "cargo": "Presidente",
+    "fb": "https://www.facebook.com/henriquemsgil",
+    "img": "henriqueGil.webp"
+  },
+  {
+    "id": 1,
+    "nome": "Ana Ventinhas",
+    "cargo": "Vice-Presidente",
+    "fb": "https://www.facebook.com/ana.ventinhas",
+    "img": "anaVentinhas.webp"
+  },
+  {
+    "id": 2,
+    "nome": "Raquel Alexandre",
+    "cargo": "Vice-Presidente",
+    "fb": "https://www.facebook.com/raquel.alexandre.942",
+    "img": "raquelAlexandre.webp"
+  },
+  {
+    "id": 3,
+    "nome": "André Cruz",
+    "cargo": "Tesoureiro",
+    "fb": "https://www.facebook.com/andre.cruz.9279807",
+    "img": "andreCruz.webp"
+  }
+]

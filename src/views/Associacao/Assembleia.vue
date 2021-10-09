@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <div class="presidencia">
       <h1>Mesa da Assembleia Magna</h1>
       <hr />
@@ -20,53 +20,24 @@
 
 <script>
 import MembroDirecao from "@/components/MembroDirecao.vue";
+import { getImgURL } from "@/functions/globals.js";
 import assembleiaMagna from "@/static/assembleiaMagna.json";
 
 export default {
-  name: "Presidencia",
+  name: "Assembleia",
   data() {
     return {
-      membros: assembleiaMagna,
+      membros: [],
     };
   },
   components: {
-    Navbar,
-    NavbarMobile,
-    ScrollToTopButton,
     MembroDirecao,
-    Footer,
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-  },
-  unmounted() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleResize);
   },
   methods: {
-    getImgURL(image) {
-      return require("@/assets/membros/magna/" + image).default;
-    },
-    scrollToElement(destination) {
-      const element = document.querySelector(destination);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-    handleScroll() {
-      window.pageYOffset >= 250
-        ? (this.isAtTop = false)
-        : (this.isAtTop = true);
-    },
-    handleResize() {
-      this.mobileMode = window.innerWidth <= 1015;
-
-      if (!this.mobileMode) {
-        this.activatedNavbar = false;
-      }
-    },
+    getImgURL,
+  },
+  created() {
+    this.membros = assembleiaMagna;
   },
 };
 </script>

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "nome": "Mariana Sequeira",
+    "cargo": "Presidente",
+    "fb": "https://www.facebook.com/mariana.sequeira00",
+    "img": "membros/fiscal/marianaSequeira.webp"
+  },
+  {
+    "id": 1,
+    "nome": "Ana Marta Figueiredo",
+    "cargo": "Vice-Presidente",
+    "fb": "https://www.facebook.com/marta.figueiredo.336717",
+    "img": "membros/fiscal/anamartafigueiredo.webp"
+  },
+  {
+    "id": 2,
+    "nome": "José Gonçalves",
+    "cargo": "Secretário",
+    "fb": "https://www.facebook.com/jose.pedro.goncalves.4",
+    "img": "membros/fiscal/josegoncalves.webp"
+  }
+]

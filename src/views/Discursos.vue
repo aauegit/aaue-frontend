@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <HeaderTitle title="Discursos" :image="getImgURL('discursos.jpg')" />
     <section class="discurso">
       <div class="newsColumn">

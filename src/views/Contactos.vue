@@ -1,11 +1,5 @@
 <template>
-  <ScrollToTopButton v-if="!isAtTop" @click="scrollToElement('body')" />
-  <NavbarMobile
-    v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)"
-    @click="activatedNavbar = !activatedNavbar"
-  />
-  <Navbar v-if="!mobileMode" class="navbar" />
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <section class="contacts">
       <div class="contactForm" v-if="!sendingEmail">
         <div class="contactInfo">
@@ -102,25 +96,17 @@
         </div>
       </div>
     </section>
-    <Footer />
   </div>
 </template>
 
 <script>
 import { ref, watch } from "vue";
-import Navbar from "../components/Navbar.vue";
-import NavbarMobile from "../components/NavbarMobile.vue";
-import ScrollToTopButton from "../components/ScrollToTopButton.vue";
 import Button from "../components/Button.vue";
-import Footer from "../components/Footer.vue";
 
 export default {
   name: "Contactos",
   data() {
     return {
-      activatedNavbar: false,
-      isAtTop: true,
-      mobileMode: false,
       emailSent: false,
       emailFailed: false,
       sendingEmail: false,

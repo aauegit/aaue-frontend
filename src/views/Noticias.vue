@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
     <section class="noticias">
       <form class="searchMobile" method="get" @submit.prevent v-if="mobileMode">

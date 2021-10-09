@@ -64,14 +64,18 @@ export default {
       nomeDoSetor: "Informática",
       coordenador1: "Francisco Rodrigues",
       coordenador1Img: this.getImgURL(
-        "setores/informatica/franciscorodrigues.webp"
+        "membros/setores/informatica/franciscorodrigues.webp"
       ),
       fb1: "https://www.facebook.com/francisco.rodrigues.94651",
       coordenador2: "Ion Chirica",
-      coordenador2Img: this.getImgURL("setores/informatica/ionchirica.webp"),
+      coordenador2Img: this.getImgURL(
+        "membros/setores/informatica/ionchirica.webp"
+      ),
       fb2: "https://www.facebook.com/officialdayumdrops",
       coordenador3: "Tiago Costa",
-      coordenador3Img: this.getImgURL("setores/informatica/tiagocosta.webp"),
+      coordenador3Img: this.getImgURL(
+        "membros/setores/informatica/tiagocosta.webp"
+      ),
       fb3: "https://www.facebook.com/tiagoagcosta/",
       coordenador4: "",
       coordenador4Img: "",
@@ -81,7 +85,7 @@ export default {
       contacto: "informativa@aaue.pt",
     };
   },
-
+  created() {},
   components: {
     Setor,
   },

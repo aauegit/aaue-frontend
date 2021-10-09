@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <section class="servicos">
       <div class="copiaki">
         <img src="@/assets/servicos/copiaki.png" alt="" />

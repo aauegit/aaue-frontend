@@ -1,14 +1,7 @@
 <template>
-  <ScrollToTopButton v-if="!isAtTop" @click="scrollToElement('body')" />
-  <NavbarMobile
-    v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)"
-    @click="activatedNavbar = !activatedNavbar"
-  />
-  <Navbar v-if="!mobileMode" class="navbar" />
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <div class="setores">
       <ul class="indice">
-        <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"><span>SETORES</span></i> -->
         <div>
           <h1>Secção Autónoma da Comunicação</h1>
           <li v-for="setor in SAComunicacao" :key="setor.id">
@@ -81,15 +74,10 @@
         :contacto="contacto"
       ></Setor>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import NavbarMobile from "@/components/NavbarMobile.vue";
-import ScrollToTopButton from "@/components/ScrollToTopButton.vue";
-import Footer from "@/components/Footer.vue";
 import Setor from "@/components/Setor.vue";
 import autonomas from "@/static/autonomas.json";
 import sadesportiva from "@/static/sadesportiva.json";
@@ -98,9 +86,6 @@ export default {
   name: "Setores",
   data() {
     return {
-      activatedNavbar: false,
-      isAtTop: true,
-      mobileMode: false,
       SAComunicacao: autonomas,
       SADesportiva: sadesportiva,
       nomeDoSetor: "",
@@ -122,16 +107,7 @@ export default {
   },
 
   components: {
-    Navbar,
-    NavbarMobile,
-    ScrollToTopButton,
     Setor,
-    Footer,
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
   },
   beforeMount() {
     this.nomeDoSetor = this.SAComunicacao[0].nome;
@@ -152,32 +128,8 @@ export default {
     this.descricao = this.SAComunicacao[0].descricao;
     this.contacto = this.SAComunicacao[0].contacto;
   },
-  unmounted() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleResize);
-  },
   methods: {
-    getImgURL(image) {
-      return require("@/assets/membros/" + image).default;
-    },
-    scrollToElement(destination) {
-      const element = document.querySelector(destination);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-    handleScroll() {
-      window.pageYOffset >= 250
-        ? (this.isAtTop = false)
-        : (this.isAtTop = true);
-    },
-    handleResize() {
-      this.mobileMode = window.innerWidth <= 1015;
-
-      if (!this.mobileMode) {
-        this.activatedNavbar = false;
-      }
-    },
+    getImgURL,
   },
 };
 </script>

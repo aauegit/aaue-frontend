@@ -1,7 +1,7 @@
 <template>
   <ScrollToTopButton />
   <NavbarMobile
-    v-if="(mobileMode && isAtTop) || (activatedNavbar && mobileMode)"
+    v-if="mobileMode || (activatedNavbar && mobileMode)"
     @click="activatedNavbar = !activatedNavbar"
   />
   <Navbar v-if="!mobileMode" class="navbar" />
@@ -15,6 +15,12 @@ import NavbarMobile from "@/components/NavbarMobile.vue";
 import ScrollToTopButton from "@/components/ScrollToTopButton.vue";
 import Footer from "@/components/Footer.vue";
 export default {
+  data() {
+    return {
+      mobileMode: false,
+      activatedNavbar: false,
+    };
+  },
   components: {
     Navbar,
     NavbarMobile,
