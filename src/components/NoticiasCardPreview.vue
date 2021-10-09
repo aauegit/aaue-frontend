@@ -1,5 +1,9 @@
 <template>
-  <router-link :to="route" class="cardPreview">
+  <router-link
+    :to="route"
+    class="cardPreview"
+    @click="snapToElement('.headerTitle')"
+  >
     <img :src="imgURL" alt="" />
     <div class="contentPreview">
       <h1>
@@ -15,6 +19,7 @@
 </template>
 
 <script>
+import { snapToElement } from "@/functions/globals.js";
 export default {
   name: "NoticiasCardPreview",
   props: {
@@ -46,6 +51,9 @@ export default {
     route() {
       return `/noticias/${this.postID}`;
     },
+  },
+  methods: {
+    snapToElement,
   },
 };
 </script>

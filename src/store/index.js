@@ -1,7 +1,6 @@
 import { createStore } from "vuex";
 
 const URL = "https://blogposting-api.herokuapp.com/api/getAllBlogposts";
-const URL_NOTICIA = "https://blogposting-api.herokuapp.com/api/getBlogpostByID";
 const requestOptions = {
   method: "GET",
   headers: {
@@ -31,10 +30,13 @@ export default createStore({
       const allNews = await news.json();
       state.commit("setAllNoticias", allNews);
     },
-    async setCurrentNoticias(state, payload) {
-      const noticia = await fetch(URL_SINGLE, requestOptions);
+    async setCurrentNoticia(state, payload) {
+      const noticia = await fetch(
+        `https://blogposting-api.herokuapp.com/api/getBlogpost/${payload}`,
+        requestOptions
+      );
       const currentNoticia = await noticia.json();
-      state.commit("setCurrentNoticias", currentNoticia);
+      state.commit("setCurrentNoticia", currentNoticia);
     },
   },
   modules: {},

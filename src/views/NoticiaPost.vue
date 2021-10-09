@@ -6,7 +6,7 @@
         <h1>{{ noticia.title }}</h1>
         <hr :style="{ borderColor: noticia.categoryColor }" />
         <h2>Publicado a {{ noticia.date }}</h2>
-        <img v-if="imgURL == 'hehe'" :src="imgURL" alt="" />
+        <img src="@/assets/activism.jpeg" alt="" />
         <p v-for="paragraph in noticia.paragraphs" :key="paragraph">
           {{ paragraph }}
         </p>
@@ -20,10 +20,21 @@
 </template>
 
 <script>
+import { useRoute } from "vue-router";
 import HeaderTitle from "@/components/HeaderTitle.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import { getImgURL } from "@/functions/globals.js";
 export default {
+  data() {
+    return {
+      imgURL: "nothehe",
+    };
+  },
+  setup() {
+    const route = useRoute();
+
+    return { route };
+  },
   components: {
     HeaderTitle,
     Sidebar,
@@ -37,9 +48,10 @@ export default {
       return this.$store.getters.getCurrentNoticia;
     },
   },
-  async mounted() {
-    if (!this.noticia) {
-      await this.$store.dispatch("setAllNoticias");
+  async created() {
+    if (!this.noticia.hasOwnProperty("category")) {
+      console.log("working<");
+      await this.$store.dispatch("setCurrentNoticia", this.route.params.id);
     }
   },
 };
@@ -54,6 +66,7 @@ export default {
   min-height: 100vh;
   padding: 75px;
   display: flex;
+  justify-content: center;
 
   .sidebar {
     width: 30%;
@@ -62,6 +75,14 @@ export default {
   .noticiaText {
     padding-right: 50px;
     border-right: 1px solid #bebebe57;
+    max-width: 800px;
+
+    img {
+      max-width: 100%;
+      padding: 10px 0 20px 0;
+      border-bottom: 1px solid #bebebe57;
+    }
+
     hr {
       width: 200px;
       border: 1px solid;
@@ -74,8 +95,9 @@ export default {
     }
 
     p {
-      max-width: 800px;
+      max-width: 100%;
       margin-top: 25px;
+      hyphens: auto;
     }
   }
 }

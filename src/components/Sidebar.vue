@@ -8,7 +8,10 @@
     <hr />
     <ul class="artigos">
       <li v-for="noticia in noticias.slice(0, 5)" :key="noticia._id">
-        <router-link :to="getRoute(noticia._id)" @click="setNoticia(noticia)">
+        <router-link
+          :to="getRoute(noticia._id)"
+          @click="setNoticia(noticia) && snapToElement('.headerTitle')"
+        >
           {{ noticia.title }}
         </router-link>
       </li>

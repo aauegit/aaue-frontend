@@ -14,6 +14,7 @@
           placeholder="Username"
           required
         />
+        <span v-if="wrongUserError">O usuário não existe</span>
         <label for="password">Password</label>
         <input
           type="password"
@@ -22,9 +23,12 @@
           placeholder="Password"
           required
         />
-        <Button buttonText="Iniciar sessão" @click="logIn"
-          >Iniciar sessão
-        </Button>
+        <span v-if="wrongPasswordError">A password está errada</span>
+        <div class="buttons" :class="{ isActive: isLoginFormFilled }">
+          <Button class="button" buttonText="Iniciar sessão" @click="logIn"
+            >Iniciar sessão
+          </Button>
+        </div>
       </form>
     </section>
     <div class="sidebarAPI" v-if="loggedIn && !formSent">
@@ -101,7 +105,9 @@
             v-model="assinatura"
             placeholder="Mestre Yoda"
           />
-          <Button buttonText="Publicar" @click="publishNews" />
+          <div class="buttons" :class="{ isActive: isFormFilled }">
+            <Button buttonText="Publicar" @click="publishNews" />
+          </div>
         </form>
         <form class="formDeParagrafos">
           <div
@@ -130,7 +136,7 @@
     <div class="postCreated" v-if="formSent">
       <h1>Notícia criada com sucesso!</h1>
       <i class="far fa-check-circle"></i>
-      <Button buttonText="Voltar" @click="formSent = false" />
+      <Button class="button" buttonText="Voltar" @click="formSent = false" />
     </div>
   </div>
 </template>
@@ -138,15 +144,18 @@
 <script>
 import Button from "@/components/Button.vue";
 import Dropzone from "@/components/Dropzone.vue";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 export default {
   name: "Api",
   data() {
     return {
       loggedIn: false,
+      isLoginFormFilled: false,
       username: "",
       password: "",
+      wrongUserError: "",
+      wrongPasswordError: "",
       headerText: "Criar nova notícia",
       selectedNoticia: "",
       currentNoticia: {
@@ -157,6 +166,7 @@ export default {
       titulo: "",
       category: "",
       paragrafo: [],
+      isFormFilled: false,
       assinatura: "",
       mesDeHoje: "",
       numberOfParagraphs: 1,
@@ -209,7 +219,45 @@ export default {
       }
     };
 
-    return { dropzoneFile, drop, selectedFile, diaDeHoje, getMes, anoDeHoje };
+    let titulo = ref("");
+    let category = ref("");
+    let paragraphs = ref([]);
+    let isFormFilled = ref(false);
+
+    watch([titulo, category, paragraphs], () => {
+      if (titulo.value && category.value && paragraphs.value) {
+        isFormFilled.value = true;
+      } else {
+        isFormFilled.value = false;
+      }
+    });
+
+    let username = ref("");
+    let password = ref("");
+    let isLoginFormFilled = ref(false);
+
+    watch([username, password], () => {
+      if (username.value && password.value) {
+        isLoginFormFilled.value = true;
+      } else {
+        isLoginFormFilled.value = false;
+      }
+    });
+
+    return {
+      dropzoneFile,
+      drop,
+      selectedFile,
+      diaDeHoje,
+      getMes,
+      anoDeHoje,
+      isFormFilled: isFormFilled,
+      titulo: titulo,
+      category: category,
+      isLoginFormFilled: isLoginFormFilled,
+      username: username,
+      password: password,
+    };
   },
   watch: {
     async selectedNoticia(newNoticia, oldNoticia) {
@@ -233,6 +281,13 @@ export default {
   },
   methods: {
     async logIn() {
+      if (!this.isLoginFormFilled) {
+        return;
+      }
+
+      this.wrongUserError = false;
+      this.wrongPasswordError = false;
+
       const messageInfo = {
         username: this.username,
         password: this.password,
@@ -265,6 +320,15 @@ export default {
         })
         .catch((error) => {
           this.errorMessage = error;
+
+          if (this.errorMessage.includes("password")) {
+            this.wrongPasswordError = true;
+          }
+
+          if (this.errorMessage.includes("User")) {
+            this.wrongUserError = true;
+          }
+
           console.error("There was an error!", error);
         });
     },
@@ -474,6 +538,11 @@ section {
       background-color: #f7f8fc;
     }
 
+    span {
+      margin-top: 10px;
+      color: red;
+    }
+
     button {
       margin-top: 30px;
     }
@@ -599,13 +668,13 @@ section {
 }
 
 .sidebarAPI {
-  padding-top: 15vh;
   height: 100vh;
   position: fixed;
   border-right: 1px solid black;
   background-color: #0f0f0f;
   top: 0;
   left: 0;
+  z-index: 10;
 
   ul {
     color: white;
@@ -672,10 +741,6 @@ section {
   }
 }
 
-.isScrolled {
-  padding-top: 10vh;
-}
-
 .getNoticia {
   display: flex;
   margin-top: 25px;
@@ -686,7 +751,34 @@ section {
   }
 
   .disabled {
-    cursor: disabled;
+    cursor: not-allowed;
+  }
+}
+
+.buttons {
+  display: flex;
+
+  .button {
+    cursor: not-allowed;
+    opacity: 0.4;
+    border-radius: 0;
+    margin-left: 0;
+    width: 100%;
+
+    &:hover {
+      transform: translateY(0px);
+    }
+  }
+}
+
+.isActive {
+  .button {
+    cursor: pointer;
+    opacity: 1;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 }
 </style>
