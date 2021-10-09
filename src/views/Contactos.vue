@@ -141,10 +141,6 @@ export default {
     };
   },
   components: {
-    Navbar,
-    NavbarMobile,
-    ScrollToTopButton,
-    Footer,
     Button,
   },
   methods: {

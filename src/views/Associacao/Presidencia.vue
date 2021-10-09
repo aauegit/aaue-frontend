@@ -51,11 +51,15 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 50px 150px;
+  padding: 50px 75px;
 
-  h1,
+  h1 {
+    font-size: 45px;
+    margin-left: 5px;
+  }
+
   hr {
-    margin-left: 100px;
+    margin-left: 5px;
   }
 }
 
@@ -65,7 +69,7 @@ export default {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 50px 150px;
+  padding: 50px 0px;
 
   #membro {
     flex: 0 0 45%;

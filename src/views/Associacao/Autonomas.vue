@@ -81,6 +81,7 @@
 import Setor from "@/components/Setor.vue";
 import autonomas from "@/static/autonomas.json";
 import sadesportiva from "@/static/sadesportiva.json";
+import { getImgURL } from "@/functions/globals.js";
 
 export default {
   name: "Setores",
@@ -119,7 +120,7 @@ export default {
     this.fb2 = this.SAComunicacao[0].fb2;
     this.coordenador3 = "Inês Marcos";
     this.coordenador3Img = this.getImgURL(
-      "SAComunicacao/aauetv/inesmarcos.webp"
+      "membros/SAComunicacao/aauetv/inesmarcos.webp"
     );
     this.fb3 = "https://www.facebook.com/ines.marcos.18";
     this.coordenador4 = "";

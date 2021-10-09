@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import NavbarMobile from "@/components/NavbarMobile.vue";
+import Navbar from "@/components/navbars/Navbar.vue";
+import NavbarMobile from "@/components/navbars/NavbarMobile.vue";
 import ScrollToTopButton from "@/components/ScrollToTopButton.vue";
 import Footer from "@/components/Footer.vue";
 export default {

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <div class="setores">
       <ul class="indice">
         <div>

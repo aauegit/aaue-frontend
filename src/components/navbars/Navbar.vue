@@ -2,8 +2,8 @@
   <header class="header" :class="{ isScrolled: !isAtTop }">
     <nav id="nav">
       <div class="logo">
-        <router-link class="logoName" to="/" @click="snapToElement">
-          <img src="../assets/aaueLogo.png" alt="" />
+        <router-link class="logoName" to="/" @click="snapToElement('body')">
+          <img src="@/assets/aaueLogo.png" alt="" />
         </router-link>
       </div>
       <ul>
@@ -11,7 +11,7 @@
           <router-link
             class="navLinks"
             :to="{ name: 'Noticias' }"
-            @click="snapToElement"
+            @click="snapToElement('body')"
             >Notícias</router-link
           >
         </li>
@@ -19,7 +19,7 @@
           <router-link
             class="navLinks"
             :to="{ name: 'Discursos' }"
-            @click="snapToElement"
+            @click="snapToElement('body')"
             >Discursos</router-link
           >
         </li>
@@ -57,22 +57,30 @@
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredAssociacao">
-            <router-link :to="{ name: 'Presidencia' }" @click="snapToElement"
+            <router-link
+              :to="{ name: 'Presidencia' }"
+              @click="snapToElement('body')"
               >Presidência</router-link
             >
-            <router-link :to="{ name: 'Assembleia' }" @click="snapToElement"
+            <router-link
+              :to="{ name: 'Assembleia' }"
+              @click="snapToElement('body')"
               >Assembleia Magna</router-link
             >
-            <router-link :to="{ name: 'Fiscal' }" @click="snapToElement"
+            <router-link :to="{ name: 'Fiscal' }" @click="snapToElement('body')"
               >Conselho Fiscal</router-link
             >
-            <router-link :to="{ name: 'Setores' }" @click="snapToElement"
+            <router-link
+              :to="{ name: 'Setores' }"
+              @click="snapToElement('body')"
               >Setores</router-link
             >
-            <router-link :to="{ name: 'Autonomas' }" @click="snapToElement"
+            <router-link
+              :to="{ name: 'Autonomas' }"
+              @click="snapToElement('body')"
               >Secções Autónomas</router-link
             >
-            <router-link :to="{ name: 'Sobre' }" @click="snapToElement"
+            <router-link :to="{ name: 'Sobre' }" @click="snapToElement('body')"
               >Sobre nós</router-link
             >
           </div>
@@ -94,7 +102,7 @@
               >Portal do Alojamento</a
             >
             <a
-              href="https://torneioreitor.aaue.pt/"
+              href="http://torneioreitor.aaue.pt/"
               target="_blank"
               rel="noopener noreferrer"
               >Desporto</a
@@ -105,7 +113,7 @@
           <router-link
             class="navLinks"
             :to="{ name: 'Servicos' }"
-            @click="snapToElement"
+            @click="snapToElement('body')"
             >Serviços</router-link
           >
         </li>
@@ -113,7 +121,7 @@
           <router-link
             class="navLinks"
             :to="{ name: 'Contactos' }"
-            @click="snapToElement"
+            @click="snapToElement('body')"
             >Contactos</router-link
           >
         </li>
@@ -123,6 +131,7 @@
 </template>
 
 <script>
+import { snapToElement } from "@/functions/globals.js";
 export default {
   name: "Navbar",
   data() {
@@ -134,6 +143,7 @@ export default {
       headerPosition: "relative",
     };
   },
+  emits: ["isAtTop"],
   created() {
     window.addEventListener("scroll", this.handleScroll);
   },
@@ -142,14 +152,9 @@ export default {
   },
   methods: {
     handleScroll() {
-      window.pageYOffset >= 50 ? (this.isAtTop = false) : (this.isAtTop = true);
+      window.pageYOffset >= 20 ? (this.isAtTop = false) : (this.isAtTop = true);
     },
-    snapToElement() {
-      const element = document.querySelector("body");
-      if (element) {
-        element.scrollIntoView(true);
-      }
-    },
+    snapToElement,
   },
 };
 </script>
@@ -217,7 +222,7 @@ export default {
       margin-left: 5px;
       opacity: 0.75;
       color: black;
-      transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
   }
 
@@ -244,7 +249,7 @@ export default {
     }
 
     i {
-      transform: rotateZ(180deg);
+      transform: rotateX(180deg);
     }
 
     .subMenu {

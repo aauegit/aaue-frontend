@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!activatedNavbar" class="pageContent">
+  <div class="pageContent">
     <router-link to="/" class="goBack" v-if="!loggedIn">
       <Button buttonText="Home" />
     </router-link>
@@ -29,10 +29,6 @@
     </section>
     <div class="sidebarAPI" v-if="loggedIn && !formSent">
       <ul>
-        <router-link to="/">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-        </router-link>
         <li @click="createNews">
           <i class="fas fa-pen"></i>
           <span>Criar notícia</span>
@@ -85,15 +81,15 @@
             <option value="Geral">Geral</option>
             <option value="Politica">Politica</option>
           </select>
-          <label for="outrasCategorias">Outras Categorias:</label>
+          <!-- <label for="outrasCategorias">Outras Categorias:</label>
           <div class="outrasCategorias">
             <div class="catComunicados" v-if="category != 'Comunicados'">
               <input type="checkbox" />
               <label for="catComunicados">Comunicados</label>
             </div>
-          </div>
+          </div> -->
           <label for="data"
-            >Data: {{ diaDeHoje }} {{ mesDeHoje }}, {{ anoDeHoje }}</label
+            >Data: {{ diaDeHoje }} de {{ mesDeHoje }}, {{ anoDeHoje }}</label
           >
           <label for="foto">Foto:</label>
           <Dropzone @drop.prevent="drop" @change="selectedFile" />
@@ -114,7 +110,7 @@
             :key="index"
           >
             <div class="inputs">
-              <label for="paragrafo">Parágrafo</label>
+              <label for="paragrafo">{{ index }}º Parágrafo</label>
               <textarea
                 type="text"
                 id="paragrafo"
@@ -123,6 +119,8 @@
                 required
               />
             </div>
+          </div>
+          <div class="buttonsParagraphs">
             <i class="fas fa-plus" @click="incrementNumberOfParagraphs"></i>
             <i class="fas fa-times" @click="decrementNumberOfParagraphs"></i>
           </div>
@@ -291,6 +289,10 @@ export default {
     },
 
     async publishNews() {
+      if (!isFormFilled) {
+        return;
+      }
+
       const news = {
         title: this.titulo,
         category: this.category,
@@ -326,8 +328,6 @@ export default {
             console.log(error);
           });
       }
-
-      console.log(news);
     },
 
     incrementNumberOfParagraphs() {
@@ -429,7 +429,7 @@ export default {
 
 <style lang="scss" scoped>
 .pageContent {
-  padding-top: 0;
+  padding-top: 0vh;
   display: flex;
 }
 
@@ -481,9 +481,9 @@ section {
 }
 
 .postBlog {
+  padding-top: 17vh;
   min-height: 100vh;
   margin-left: 1.5rem;
-  padding-top: 1.5rem;
 
   .forms {
     display: flex;
@@ -556,20 +556,22 @@ section {
       flex-direction: column;
     }
 
-    i {
-      font-size: 25px;
-      padding: 7px;
-      border-radius: 50%;
-      margin: 50px 10px 0 10px;
-      border: 1px solid black;
-      cursor: pointer;
+    .buttonsParagraphs {
+      i {
+        font-size: 25px;
+        padding: 7px;
+        border-radius: 50%;
+        margin: 10px;
+        border: 1px solid black;
+        cursor: pointer;
 
-      &:nth-child(2) {
-        padding: 7px 9px;
-      }
+        &:nth-child(1) {
+          padding: 7px 9px;
+        }
 
-      &:nth-child(3) {
-        padding: 7px 11px;
+        &:nth-child(2) {
+          padding: 7px 11px;
+        }
       }
     }
   }
@@ -597,6 +599,7 @@ section {
 }
 
 .sidebarAPI {
+  padding-top: 15vh;
   height: 100vh;
   position: fixed;
   border-right: 1px solid black;
@@ -667,6 +670,10 @@ section {
       }
     }
   }
+}
+
+.isScrolled {
+  padding-top: 10vh;
 }
 
 .getNoticia {
