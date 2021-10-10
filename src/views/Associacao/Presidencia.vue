@@ -54,7 +54,7 @@ export default {
   padding: 50px 75px;
 
   h1 {
-    font-size: 45px;
+    font-size: 30px;
     margin-left: 5px;
   }
 

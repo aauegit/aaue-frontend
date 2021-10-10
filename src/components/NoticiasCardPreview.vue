@@ -61,7 +61,7 @@ export default {
 <style lang="scss">
 .cardPreview {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   max-width: 80vw;
   margin: 0px 30px 50px 0px;
@@ -78,10 +78,12 @@ export default {
 
   img {
     border-radius: 12px;
-    width: 300px;
-    height: 100%;
+    /* width: 300px; */
+    height: 150px;
     margin-right: 25px;
     transition: all 0.2s ease-in;
+    float: left;
+    shape-outside: border-box;
   }
 
   .contentPreview {
@@ -113,6 +115,10 @@ export default {
 
     a {
       color: black;
+    }
+
+    p {
+      text-align: justify;
     }
   }
 }

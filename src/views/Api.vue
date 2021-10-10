@@ -353,7 +353,7 @@ export default {
     },
 
     async publishNews() {
-      if (!isFormFilled) {
+      if (!this.isFormFilled) {
         return;
       }
 
@@ -483,7 +483,7 @@ export default {
       this.category = "";
       this.category = "";
       this.dataDePublicacao = "";
-      this.paragrafo = "";
+      this.paragrafo = [];
       this.assinatura = "";
       this.numberOfParagraphs = 1;
     },
@@ -494,6 +494,7 @@ export default {
 <style lang="scss" scoped>
 .pageContent {
   padding-top: 0vh;
+  min-height: 100vh;
   display: flex;
 }
 
