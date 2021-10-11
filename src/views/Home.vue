@@ -124,27 +124,15 @@
           <a class="leftArrow"><i class="fas fa-chevron-left"></i></a>
           <div class="newsCards">
             <NoticiaCard
-              :key="noticias[noticiaIndex].id"
-              :imgURL="getImgURL(noticias[noticiaIndex].imgURL)"
-              :titulo="noticias[noticiaIndex].titulo"
-              :data="noticias[noticiaIndex].dataDePublicacao"
-              :textPreview="noticias[noticiaIndex].textPreview"
-            />
-            <NoticiaCard
-              v-if="!mobileMode"
-              :key="noticias[noticiaIndex + 1].id"
-              :imgURL="getImgURL(noticias[noticiaIndex + 1].imgURL)"
-              :titulo="noticias[noticiaIndex + 1].titulo"
-              :data="noticias[noticiaIndex + 1].dataDePublicacao"
-              :textPreview="noticias[noticiaIndex + 1].textPreview"
-            />
-            <NoticiaCard
-              v-if="isThirdNewsHidden"
-              :key="noticias[noticiaIndex + 2].id"
-              :imgURL="getImgURL(noticias[noticiaIndex + 2].imgURL)"
-              :titulo="noticias[noticiaIndex + 2].titulo"
-              :data="noticias[noticiaIndex + 2].dataDePublicacao"
-              :textPreview="noticias[noticiaIndex + 2].textPreview"
+              v-for="noticia in noticias.slice(0, 3)"
+              :key="noticia._id"
+              :postID="noticia._id"
+              :categoryColor="noticia.categoryColor"
+              :imgURL="getImgURL('activism.jpeg')"
+              :titulo="noticia.title"
+              :data="noticia.date"
+              :textPreview="noticia.paragraphs[0]"
+              @click="setNoticia(noticia)"
             />
           </div>
           <a class="rightArrow"><i class="fas fa-chevron-right"></i></a>
@@ -205,47 +193,6 @@ export default {
           nome: "Secções Autónomas",
         },
       ],
-      noticiaIndex: 0,
-      noticias: [
-        {
-          id: 0,
-          category: "any",
-          imgURL: "activism.jpeg",
-          titulo:
-            "AAUE condena Secretário de Estado por querer ficar bem na fotografia do Fim das Associações",
-          dataDePublicacao: "3 Março, 2021",
-          textPreview:
-            "2020 marcou o início de um período de recessão económica onde as associações foram colocadas na corda bamba da sobrevivência. Agora, o executivo decide iludir estas estruturas, colocando em causa a sua capacidade de ação e os postos de trabalho.",
-        },
-        {
-          id: 1,
-          category: "any",
-          imgURL: "activism.jpeg",
-          titulo: "Orçamento de Estado de 2021 – A Propina e a Tese",
-          dataDePublicacao: "3 Março, 2021",
-          textPreview:
-            "Ciente da sua missão e posição, a Associação Académica da Universidade de Évora vem clarificar o artigo 259º do Orçamento de Estado (OE). A lei nº. 75-B/2020, de 31 de dezembro de 2020, artigo 259º do OE 2021 refere: Prorrogação do prazo para entrega e apresentação de teses ou dissertações: É prorrogado, até ao final ",
-        },
-        {
-          id: 2,
-          category: "any",
-          imgURL: "activism.jpeg",
-          titulo: "Plano de Recuperação e Resiliência",
-          dataDePublicacao: "2 Março, 2021",
-          textPreview:
-            "A Universidade de Évora e a Associação Académica da Universidade de Évora uniram-se na reflexão de preocupações, facultando contributos para a consulta pública do Plano de Recuperação e Resiliência. ",
-        },
-        {
-          id: 3,
-          category: "any",
-          imgURL: "activism.jpeg",
-          titulo:
-            "Resultado das Eleições para os Órgãos Sociais da AAUE para o mandato de 2021",
-          dataDePublicacao: "18 Dezembro, 2020",
-          textPreview:
-            "Caros Estudantes, A Comissão Eleitoral vem por este meio divulgar os resultados bem como a Ata de Eleição dos Órgãos Sociais da Associação Académica da Universidade de Évora para o mandato de 2021: Mesa da Assembleia Magna: Lista F Conselho Fiscal: Lista F Direção e Secções Autónomas: Lista F Saudações Académicas, Ana Lucas Presidente da ",
-        },
-      ],
     };
   },
   components: {
@@ -254,8 +201,16 @@ export default {
     EquipaCard,
     HeaderTitle,
   },
+  computed: {
+    noticias() {
+      return this.$store.getters.getAllNoticias;
+    },
+  },
   methods: {
     getImgURL,
+    setNoticia(noticia) {
+      this.$store.commit("setCurrentNoticia", noticia);
+    },
   },
 };
 </script>

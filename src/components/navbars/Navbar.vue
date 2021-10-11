@@ -286,7 +286,7 @@ export default {
 
   .header #nav .logo img {
     width: 120px;
-    left: 20px;
+    left: 75px;
     top: 40px;
   }
   .header #nav ul li {
