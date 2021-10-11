@@ -87,7 +87,6 @@ export default {
 
   img {
     border-radius: 12px;
-    /* width: 300px; */
     height: 150px;
     margin-right: 25px;
     transition: all 0.2s ease-in;
@@ -100,7 +99,7 @@ export default {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 25px 25px 25px 0;
+    padding: 25px 0px 25px 0;
     transition: all 0.2s ease-in;
 
     .title {
@@ -124,6 +123,25 @@ export default {
 
     a {
       color: black;
+    }
+  }
+}
+
+@media (max-width: 1016px) {
+  .cardPreview {
+    max-width: 95vw;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .cardPreview {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
     }
   }
 }

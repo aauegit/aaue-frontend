@@ -98,4 +98,10 @@ export default {
     }
   }
 }
+
+@media (max-width: 1016px) {
+  .sidebar .artigos li {
+    max-width: 600px;
+  }
+}
 </style>

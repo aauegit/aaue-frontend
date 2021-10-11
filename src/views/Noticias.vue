@@ -101,6 +101,11 @@ export default {
 @media (max-width: 1016px) {
   .noticias {
     flex-direction: column;
+    padding: 75px 47px;
+
+    .newsColumn {
+      border-right: none;
+    }
   }
 
   .pageContent {
