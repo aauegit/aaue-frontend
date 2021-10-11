@@ -13,7 +13,7 @@
       <h2 class="publishedOn">
         Publicado a <span class="data">{{ data }}</span>
       </h2>
-      <p class="textPreview">{{ textPreview }} <span>{...}</span></p>
+      <p class="textPreviewNoticia">{{ textPreview }}</p>
     </div>
   </router-link>
 </template>
@@ -51,6 +51,15 @@ export default {
     route() {
       return `/noticias/${this.postID}`;
     },
+  },
+  mounted() {
+    const textElements = document.querySelectorAll(".textPreviewNoticia");
+
+    for (let element of textElements) {
+      const LIMIT = 300;
+      const dotsOrEmpty = element.innerText.length > LIMIT ? "..." : "";
+      element.innerText = element.innerText.substring(0, LIMIT) + dotsOrEmpty;
+    }
   },
   methods: {
     snapToElement,
@@ -115,10 +124,6 @@ export default {
 
     a {
       color: black;
-    }
-
-    p {
-      text-align: justify;
     }
   }
 }

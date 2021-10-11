@@ -50,7 +50,6 @@ export default {
   },
   async created() {
     if (!this.noticia.hasOwnProperty("category")) {
-      console.log("working<");
       await this.$store.dispatch("setCurrentNoticia", this.route.params.id);
     }
   },

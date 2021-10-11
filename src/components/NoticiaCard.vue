@@ -1,9 +1,5 @@
 <template>
-  <router-link
-    :to="route"
-    class="noticiaCard"
-    @click="snapToElement('.headerTitle')"
-  >
+  <router-link :to="route" class="noticiaCard" @click="snapToElement('body')">
     <img :src="imgURL" alt="" />
     <div class="contentPreview">
       <h2 class="publishedOn">

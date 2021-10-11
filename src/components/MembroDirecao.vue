@@ -25,16 +25,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
     7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9,
     inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
     inset 0px 0px 0px 0px #0001;
-  max-width: 350px;
+  max-width: 280px;
   border-radius: 25px;
-
   margin: 20px;
-  padding: 25px;
+  padding: 0 25px 25px 25px;
 
   h1 {
     margin-top: 20px;
@@ -48,8 +48,8 @@ export default {
   }
 
   img {
-    width: 250px;
-    border-radius: 12.5px;
+    max-width: 280px;
+    border-radius: 12px 12px 0 0;
   }
 
   a {

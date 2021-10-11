@@ -55,6 +55,7 @@
     </section>
     <section class="recrutamento">
       <div class="aboutUs">
+        <img src="@/assets/aaue.png" alt="" />
         <div class="text">
           <h1>O que é a AAUE?</h1>
           <p>
@@ -81,8 +82,13 @@
             Direção é constituído por Setores/Secções, diversificados e focados
             em áreas específicas de operacionalização e ação.
           </p>
+          <router-link
+            class="descobreMais"
+            :to="{ name: 'Sobre' }"
+            @click="snapToElement('body')"
+            >Descobre mais <i class="fas fa-arrow-right"></i>
+          </router-link>
         </div>
-        <img src="@/assets/activism.jpeg" alt="" />
       </div>
     </section>
     <section class="plataformas">
@@ -124,7 +130,7 @@
           <a class="leftArrow"><i class="fas fa-chevron-left"></i></a>
           <div class="newsCards">
             <NoticiaCard
-              v-for="noticia in noticias.slice(0, 3)"
+              v-for="noticia in noticias.slice(initialIndex, finalIndex)"
               :key="noticia._id"
               :postID="noticia._id"
               :categoryColor="noticia.categoryColor"
@@ -135,7 +141,9 @@
               @click="setNoticia(noticia)"
             />
           </div>
-          <a class="rightArrow"><i class="fas fa-chevron-right"></i></a>
+          <a class="rightArrow" @click="incrementIndexes"
+            ><i class="fas fa-chevron-right"></i
+          ></a>
         </div>
       </div>
     </section>
@@ -147,15 +155,14 @@ import NoticiaCard from "../components/NoticiaCard.vue";
 import PlataformaCard from "../components/PlataformaCard.vue";
 import EquipaCard from "../components/EquipaCard.vue";
 import HeaderTitle from "@/components/HeaderTitle.vue";
-import { getImgURL } from "@/functions/globals.js";
+import { getImgURL, snapToElement } from "@/functions/globals.js";
 
 export default {
   name: "Home",
   data() {
     return {
-      activatedNavbar: false,
-      mobileMode: false,
-      isThirdNewsHidden: false,
+      initialIndex: 0,
+      finalIndex: 3,
       equipa: [
         {
           id: 0,
@@ -208,8 +215,20 @@ export default {
   },
   methods: {
     getImgURL,
+    snapToElement,
     setNoticia(noticia) {
       this.$store.commit("setCurrentNoticia", noticia);
+    },
+    incrementIndexes() {
+      this.initialIndex += 3;
+      this.finalIndex += 3;
+
+      //Falta mostrar as ultimas noticias
+
+      if (this.finalIndex >= this.noticias.length) {
+        this.finalIndex = 3;
+        this.initialIndex = 0;
+      }
     },
   },
 };
@@ -325,7 +344,7 @@ section {
 
     img {
       margin-left: 30px;
-      width: 50%;
+      height: 400px;
     }
     .text {
       display: flex;
@@ -340,6 +359,31 @@ section {
 
       p {
         font-size: 18px;
+        margin: 10px 0px;
+      }
+
+      a {
+        margin-top: 25px;
+        width: 220px;
+        padding: 15px;
+        border: 0;
+        outline: 0;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: rgba(83, 83, 83, 0.35) 0px 5px 10px;
+        text-transform: uppercase;
+        font-family: "Metropolis", sans-serif;
+        font-weight: bold;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        i {
+          margin-right: 5px;
+          transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        &:hover i {
+          transform: translateX(5px);
+        }
       }
     }
   }
