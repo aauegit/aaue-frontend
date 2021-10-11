@@ -5,74 +5,21 @@
         <div>
           <h1>Secção Autónoma da Comunicação</h1>
           <li v-for="setor in SAComunicacao" :key="setor.id">
-            <a
-              @click="
-                (nomeDoSetor = setor.nome) &&
-                  (descricao = setor.descricao) &&
-                  (contacto = setor.contacto) &&
-                  (coordenador1 = setor.coordenador1) &&
-                  (coordenador1Img = getImgURL(setor.img1)) &&
-                  (fb1 = setor.fb1) &&
-                  (coordenador2 = setor.coordenador2) &&
-                  (coordenador2Img = getImgURL(setor.img2)) &&
-                  (fb2 = setor.fb2) &&
-                  (coordenador3 = setor.coordenador3) &&
-                  (coordenador3Img = getImgURL(setor.img3)) &&
-                  (fb3 = setor.fb3) &&
-                  (coordenador4 = setor.coordenador4) &&
-                  (coordenador4Img = getImgURL(setor.img4)) &&
-                  (fb4 = setor.fb4)
-              "
-            >
+            <a @click="currentSetor = setor">
               <i :class="setor.icon"></i>
               <p>{{ setor.nome }}</p>
             </a>
           </li>
           <h1>Secção Autónoma Desportiva</h1>
-          <li v-for="setor in SADesportiva" :key="setor.id">
-            <a
-              @click="
-                (nomeDoSetor = setor.nome) &&
-                  (descricao = setor.descricao) &&
-                  (contacto = setor.contacto) &&
-                  (coordenador1 = setor.coordenador1) &&
-                  (coordenador1Img = getImgURL(setor.img1)) &&
-                  (fb1 = setor.fb1) &&
-                  (coordenador2 = setor.coordenador2) &&
-                  (coordenador2Img = getImgURL(setor.img2)) &&
-                  (fb2 = setor.fb2) &&
-                  (coordenador3 = setor.coordenador3) &&
-                  (coordenador3Img = getImgURL(setor.img3)) &&
-                  (fb3 = setor.fb3) &&
-                  (coordenador4 = setor.coordenador4) &&
-                  (coordenador4Img = getImgURL(setor.img4)) &&
-                  (fb4 = setor.fb4)
-              "
-            >
-              <i :class="setor.icon"></i>
-              <p>{{ setor.nome }}</p>
+          <li v-for="setorSAD in SADesportiva" :key="setorSAD.id">
+            <a @click="currentSetor = setorSAD">
+              <i :class="setorSAD.icon"></i>
+              <p>{{ setorSAD.nome }}</p>
             </a>
           </li>
         </div>
       </ul>
-      <Setor
-        v-if="nomeDoSetor"
-        :nomeDoSetor="nomeDoSetor"
-        :coordenador1="coordenador1"
-        :coordenador1Img="coordenador1Img"
-        :fb1="fb1"
-        :coordenador2="coordenador2"
-        :coordenador2Img="coordenador2Img"
-        :fb2="fb2"
-        :coordenador3="coordenador3"
-        :coordenador3Img="coordenador3Img"
-        :fb3="fb3"
-        :coordenador4="coordenador4"
-        :coordenador4Img="coordenador4Img"
-        :fb4="fb4"
-        :descricao="descricao"
-        :contacto="contacto"
-      ></Setor>
+      <Setor v-if="currentSetor" :setor="currentSetor"></Setor>
     </div>
   </div>
 </template>
@@ -89,45 +36,12 @@ export default {
     return {
       SAComunicacao: autonomas,
       SADesportiva: sadesportiva,
-      nomeDoSetor: "",
-      coordenador1: "",
-      coordenador1Img: "",
-      fb1: "",
-      coordenador2: "",
-      coordenador2Img: "",
-      fb2: "",
-      coordenador4: "",
-      coordenador4Img: "",
-      fb4: "",
-      descricao: "",
-      contacto: "",
-      coordenador3: "",
-      coordenador3Img: "",
-      fb3: "",
+      currentSetor: {},
     };
   },
 
   components: {
     Setor,
-  },
-  beforeMount() {
-    this.nomeDoSetor = this.SAComunicacao[0].nome;
-    this.coordenador1 = this.SAComunicacao[0].coordenador1;
-    this.coordenador1Img = this.getImgURL(this.SAComunicacao[0].img1);
-    this.fb1 = this.SAComunicacao[0].fb1;
-    this.coordenador2 = this.SAComunicacao[0].coordenador2;
-    this.coordenador2Img = this.getImgURL(this.SAComunicacao[0].img2);
-    this.fb2 = this.SAComunicacao[0].fb2;
-    this.coordenador3 = "Inês Marcos";
-    this.coordenador3Img = this.getImgURL(
-      "membros/SAComunicacao/aauetv/inesmarcos.webp"
-    );
-    this.fb3 = "https://www.facebook.com/ines.marcos.18";
-    this.coordenador4 = "";
-    this.coordenador4Img = "";
-    this.fb4 = "";
-    this.descricao = this.SAComunicacao[0].descricao;
-    this.contacto = this.SAComunicacao[0].contacto;
   },
   methods: {
     getImgURL,

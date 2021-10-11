@@ -2,7 +2,7 @@
   <div class="setor">
     <div class="infoSetor">
       <div class="textSetor">
-        <h1>{{ nomeDoSetor }}</h1>
+        <h1>{{ setor.nome }}</h1>
         <hr />
         <transition-group
           class="coordenadores"
@@ -11,7 +11,15 @@
           @enter="enter"
           tag="div"
         >
-          <div class="coordenador" key="3">
+          <setorImageCard
+            v-for="(coordenador, index) in setor.coordenadores"
+            :key="coordenador.nome"
+            :data-index="index"
+            :coordenadorImg="getImgURL(coordenador.img)"
+            :fb="coordenador.fb"
+            :coordenadorNome="coordenador.nome"
+          />
+          <!--   <div class="coordenador" key="3">
             <img :src="coordenador1Img" alt="Coordenador" decode="async" />
             <a :href="fb1" target="_blank" rel="noopener noreferrer"
               >{{ coordenador1 }} <i class="fab fa-facebook-square"></i
@@ -42,11 +50,11 @@
             <a :href="fb4" target="_blank" rel="noopener noreferrer"
               >{{ coordenador4 }} <i class="fab fa-facebook-square"></i
             ></a>
-          </div>
+          </div> -->
         </transition-group>
-        <p>{{ descricao }}</p>
+        <p>{{ setor.descricao }}</p>
         <h2>
-          Contacto: <span>{{ contacto }}</span>
+          Contacto: <span>{{ setor.contacto }}</span>
         </h2>
       </div>
     </div>
@@ -54,26 +62,14 @@
 </template>
 
 <script>
+import setorImageCard from "@/components/setorImageCard";
 import { gsap } from "gsap";
+import { getImgURL } from "@/functions/globals.js";
 
 export default {
   name: "Setor",
   props: {
-    nomeDoSetor: String,
-    coordenador1: String,
-    coordenador1Img: String,
-    fb1: String,
-    coordenador2: String,
-    coordenador2Img: String,
-    fb2: String,
-    coordenador3: String,
-    coordenador3Img: String,
-    fb3: String,
-    coordenador4: String,
-    coordenador4Img: String,
-    fb4: String,
-    descricao: String,
-    contacto: String,
+    setor: Object,
   },
   setup() {
     const beforeEnter = (el) => {
@@ -84,12 +80,18 @@ export default {
       gsap.to(el, {
         opacity: 1,
         x: 0,
-        duration: 0.2,
+        duration: 0.5,
         onComplete: done,
         delay: el.dataset.index * 0.1,
       });
     };
     return { beforeEnter, enter };
+  },
+  components: {
+    setorImageCard,
+  },
+  methods: {
+    getImgURL,
   },
 };
 </script>
@@ -117,23 +119,6 @@ $specialColor: #155781;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-    }
-    .coordenador {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      img {
-        width: 270px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 5px;
-      }
-
-      a {
-        font-weight: bold;
-        color: $specialColor;
-      }
     }
 
     .textSetor {

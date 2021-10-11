@@ -30,7 +30,7 @@
         >
           <div class="text">
             <a class="navLinks dropdownName">Eventos</a>
-            <i class="fas fa-caret-down"></i>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredEventos">
             <a
@@ -54,7 +54,7 @@
         >
           <div class="text">
             <a class="navLinks dropdownName">Associação</a>
-            <i class="fas fa-caret-down"></i>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredAssociacao">
             <router-link
@@ -92,7 +92,7 @@
         >
           <div class="text">
             <a class="navLinks dropdownName">Plataformas</a>
-            <i class="fas fa-caret-down"></i>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredPlataformas">
             <a
@@ -219,6 +219,7 @@ export default {
     align-items: center;
 
     i {
+      font-size: 16px;
       margin-left: 5px;
       opacity: 0.75;
       color: black;

@@ -3,18 +3,28 @@
     "id": 1,
     "nome": "Desportiva",
     "icon": "fas fa-futbol",
-    "coordenador1": "Eduardo Dias",
-    "fb1": "https://www.facebook.com/eduardo.dias.39982",
-    "img1": "membros/SADesporto/desportiva/eduardoDias.webp",
-    "coordenador2": "Inácia Nunes",
-    "fb2": "https://www.facebook.com/innacia",
-    "img2": "membros/SADesporto/desportiva/inaciaNunes.webp",
-    "coordenador3": "João Alcântara",
-    "fb3": "https://www.facebook.com/joao.alcantara.58",
-    "img3": "membros/SADesporto/desportiva/joaoAlcantara.webp",
-    "coordenador4": "Sofia Jarreta",
-    "fb4": "https://www.facebook.com/sofia.jarretaa",
-    "img4": "membros/SADesporto/desportiva/sofiaJarreta.webp",
+    "coordenadores": [
+      {
+        "nome": "Eduardo Dias",
+        "fb": "https://www.facebook.com/eduardo.dias.39982",
+        "img": "membros/SADesporto/desportiva/eduardoDias.webp"
+      },
+      {
+        "nome": "Inácia Nunes",
+        "fb": "https://www.facebook.com/innacia",
+        "img": "membros/SADesporto/desportiva/inaciaNunes.webp"
+      },
+      {
+        "nome": "João Alcântara",
+        "fb": "https://www.facebook.com/joao.alcantara.58",
+        "img": "membros/SADesporto/desportiva/joaoAlcantara.webp"
+      },
+      {
+        "nome": "Sofia Jarreta",
+        "fb": "https://www.facebook.com/sofia.jarretaa",
+        "img": "membros/SADesporto/desportiva/sofiaJarreta.webp"
+      }
+    ],
     "descricao": "O desporto é uma atividade de lazer e competição saudável, pela qual apela a boas práticas. Por estas razões, apresenta-se como desígnio da Secção Autónoma Desportiva que a Academia reúna todos os esforços em prol da promoção, da qualidade de vida e bem-estar, não só dos estudantes, como também dos habitantes da cidade de Évora. Considera-se fundamental promover momentos de atividade física, diversão, entretenimento e, ao mesmo tempo, o espírito de competição amigável entre os estudantes.",
     "contacto": "desportiva@aaue.pt"
   }

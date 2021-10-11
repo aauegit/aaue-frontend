@@ -4,49 +4,14 @@
       <ul class="indice">
         <div>
           <li v-for="setor in setores" :key="setor.id">
-            <a
-              @click="
-                (nomeDoSetor = setor.nome) &&
-                  (descricao = setor.descricao) &&
-                  (contacto = setor.contacto) &&
-                  (coordenador1 = setor.coordenador1) &&
-                  (coordenador1Img = getImgURL(setor.img1)) &&
-                  (fb1 = setor.fb1) &&
-                  (coordenador2 = setor.coordenador2) &&
-                  (coordenador2Img = getImgURL(setor.img2)) &&
-                  (fb2 = setor.fb2) &&
-                  (coordenador3 = setor.coordenador3) &&
-                  (coordenador3Img = getImgURL(setor.img3)) &&
-                  (fb3 = setor.fb3) &&
-                  (coordenador4 = setor.coordenador4) &&
-                  (coordenador4Img = getImgURL(setor.img4)) &&
-                  (fb4 = setor.fb4)
-              "
-            >
+            <a @click="currentSetor = setor">
               <i :class="setor.icon"></i>
               <p>{{ setor.nome }}</p>
             </a>
           </li>
         </div>
       </ul>
-      <Setor
-        v-if="nomeDoSetor"
-        :nomeDoSetor="nomeDoSetor"
-        :coordenador1="coordenador1"
-        :coordenador1Img="coordenador1Img"
-        :fb1="fb1"
-        :coordenador2="coordenador2"
-        :coordenador2Img="coordenador2Img"
-        :fb2="fb2"
-        :coordenador3="coordenador3"
-        :coordenador3Img="coordenador3Img"
-        :fb3="fb3"
-        :coordenador4="coordenador4"
-        :coordenador4Img="coordenador4Img"
-        :fb4="fb4"
-        :descricao="descricao"
-        :contacto="contacto"
-      />
+      <Setor v-if="nomeDoSetor" :setor="currentSetor" />
     </div>
   </div>
 </template>
@@ -61,6 +26,7 @@ export default {
   data() {
     return {
       setores: setores,
+      currentSetor: {},
       nomeDoSetor: "Informática",
       coordenador1: "Francisco Rodrigues",
       coordenador1Img: this.getImgURL(
