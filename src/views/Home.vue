@@ -106,7 +106,7 @@
           text="A AAUE é responsável pelo desporto, dinamizando atividades como torneios internos, ou potenciando a prática federada, através das competições da Federação Académica do Desporto Universitário."
         />
         <PlataformaCard
-          link="http://expoestudante.aaue.pt/"
+          link="https://expoestudante.aaue.pt/"
           icon="fas fa-futbol"
           titulo="Expo Estudante"
           text="Queres participar num evento de futuro, programado a pensar apenas em ti e no teu sucesso? Descobre tudo!"
