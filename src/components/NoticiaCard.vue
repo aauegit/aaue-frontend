@@ -119,7 +119,7 @@ export default {
 
     .verMais {
       position: absolute;
-      opacity: 0.8;
+      opacity: 1;
       display: flex;
       bottom: 30px;
       right: 25px;

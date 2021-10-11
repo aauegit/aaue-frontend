@@ -78,7 +78,6 @@ export default {
 }
 
 .reitorCard:hover {
-  border: 2px solid #f7ce31;
   i {
     display: block;
     animation-duration: 4s;
@@ -100,6 +99,10 @@ export default {
 @media (max-width: 1250px) {
   .plataformaCard {
     flex: 0 0 40%;
+
+    .contentPreview {
+      max-width: 500px;
+    }
   }
 }
 
