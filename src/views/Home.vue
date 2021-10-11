@@ -82,12 +82,14 @@
             Direção é constituído por Setores/Secções, diversificados e focados
             em áreas específicas de operacionalização e ação.
           </p>
-          <router-link
-            class="descobreMais"
-            :to="{ name: 'Sobre' }"
-            @click="snapToElement('body')"
-            >Descobre mais <i class="fas fa-arrow-right"></i>
-          </router-link>
+          <div class="aboutButton">
+            <router-link
+              class="descobreMais"
+              :to="{ name: 'Sobre' }"
+              @click="snapToElement('body')"
+              >Descobre mais <i class="fas fa-arrow-right"></i>
+            </router-link>
+          </div>
         </div>
       </div>
     </section>
@@ -106,6 +108,7 @@
           text="Aqui podes encontrar ofertas de alojamento dedicado a estudantes."
         />
         <PlataformaCard
+          class="reitorCard"
           link="http://torneioreitor.aaue.pt/"
           icon="fas fa-futbol"
           titulo="Torneio do Reitor"
@@ -127,7 +130,9 @@
       />
       <div class="noticiasPreview">
         <div class="carrossel">
-          <a class="leftArrow"><i class="fas fa-chevron-left"></i></a>
+          <a class="leftArrow" @click="decrementIndexes"
+            ><i class="fas fa-chevron-left"></i
+          ></a>
           <div class="newsCards">
             <NoticiaCard
               v-for="noticia in noticias.slice(initialIndex, finalIndex)"
@@ -229,6 +234,17 @@ export default {
         this.finalIndex = 3;
         this.initialIndex = 0;
       }
+    },
+    decrementIndexes() {
+      // Falta mostrar as primeiras noticias após 1 volta
+
+      if (this.initialIndex - 2 <= 0) {
+        this.finalIndex = this.noticias.length - 1;
+        this.initialIndex = this.noticias.length - 4;
+      }
+
+      this.initialIndex -= 3;
+      this.finalIndex -= 3;
     },
   },
 };
@@ -343,7 +359,6 @@ section {
     display: flex;
 
     img {
-      margin-left: 30px;
       height: 400px;
     }
     .text {
@@ -360,6 +375,12 @@ section {
       p {
         font-size: 18px;
         margin: 10px 0px;
+      }
+
+      .aboutButton {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
       }
 
       a {

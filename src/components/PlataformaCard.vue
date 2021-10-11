@@ -77,6 +77,26 @@ export default {
   }
 }
 
+.reitorCard:hover {
+  border: 2px solid #f7ce31;
+  i {
+    display: block;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-name: rotate;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 1250px) {
   .plataformaCard {
     flex: 0 0 40%;
