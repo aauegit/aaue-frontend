@@ -65,11 +65,11 @@
         </ul>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
+import { getImgURL } from "@/functions/globals.js";
 export default {
   name: "Rececao",
   data() {
@@ -83,14 +83,15 @@ export default {
   },
   components: {},
   methods: {
-    getImgURL(image) {
-      return require("../assets/" + image).default;
-    },
+    getImgURL,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.pageContent {
+  padding-top: 15vh;
+}
 .rececao {
   display: flex;
   flex-direction: column;

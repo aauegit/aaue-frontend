@@ -33,17 +33,21 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredEventos">
-            <a
-              href="http://queima.aaue.pt/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Queima das Fitas</a
+            <router-link :to="{ name: 'Rececao' }"
+              >Receção ao Caloiro</router-link
             >
             <a
               href="https://expoestudante.aaue.pt/#/"
               target="_blank"
               rel="noopener noreferrer"
               >Expo'Estudante</a
+            >
+            <a
+              href="http://queima.aaue.pt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Queima das Fitas</a
+            >
             >
           </div>
         </li>
