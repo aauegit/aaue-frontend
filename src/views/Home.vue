@@ -1,158 +1,152 @@
 <template>
-  <div class="pageContent">
-    <section class="hero">
-      <div class="heroContent">
-        <div class="textArea">
-          <transition name="fade" type="transition" mode="out-in" appear>
-            <h1 class="slogan">De estudantes,<br />para estudantes</h1>
-          </transition>
-          <transition name="fadeText" type="transition" mode="out-in" appear>
-            <p class="heroText">
-              A Associação Académica da Universidade de Évora é responsável por
-              potenciar o teu envolvimento e desenvolvimento académicos. Podes
-              contar com a AAUE para o teu desenvolvimento pessoal e
-              profissional, contando com eventos culturais, desportivos,
-              lúdicos, cívicos, sociais, pedagógicos e muitos outros.
-            </p>
-          </transition>
-          <div class="buttons">
-            <button class="vantagens">
-              <router-link :to="{ name: 'Protocolos' }"
-                >Descobre as vantagens</router-link
-              >
-            </button>
-            <button class="socio">
-              <router-link :to="{ name: 'Contactos' }"
-                >Faz-te Sócio!</router-link
-              >
-            </button>
-          </div>
+  <section class="hero">
+    <div class="heroContent">
+      <div class="textArea">
+        <transition name="fade" type="transition" mode="out-in" appear>
+          <h1 class="slogan">De estudantes,<br />para estudantes</h1>
+        </transition>
+        <transition name="fadeText" type="transition" mode="out-in" appear>
+          <p class="heroText">
+            A Associação Académica da Universidade de Évora é responsável por
+            potenciar o teu envolvimento e desenvolvimento académicos. Podes
+            contar com a AAUE para o teu desenvolvimento pessoal e profissional,
+            contando com eventos culturais, desportivos, lúdicos, cívicos,
+            sociais, pedagógicos e muitos outros.
+          </p>
+        </transition>
+        <div class="buttons">
+          <button class="vantagens">
+            <router-link :to="{ name: 'Protocolos' }"
+              >Descobre as vantagens</router-link
+            >
+          </button>
+          <button class="socio">
+            <router-link :to="{ name: 'Contactos' }">Faz-te Sócio!</router-link>
+          </button>
         </div>
       </div>
-    </section>
-    <section class="ourWork">
-      <div class="work">
-        <div class="text">
-          <h1>O que fazemos?</h1>
-          <p>
-            A AAUE está organizada em vários Órgãos, Secções e Setores, cada um
-            com a sua área de intervenção e competências bem definidas.<br />
-            Fica a conhecer o nosso trabalho aqui!
-          </p>
-          <div class="team">
-            <EquipaCard
-              @click="snapToElement('body')"
-              v-for="membros in equipa"
-              :key="membros.id"
-              :destination="membros.destination"
-              :icon="membros.icon"
-              :name="membros.nome"
-              :iconColor="membros.iconColor"
-            />
-          </div>
+    </div>
+  </section>
+  <section class="ourWork">
+    <div class="work">
+      <div class="text">
+        <h1>O que fazemos?</h1>
+        <p>
+          A AAUE está organizada em vários Órgãos, Secções e Setores, cada um
+          com a sua área de intervenção e competências bem definidas.<br />
+          Fica a conhecer o nosso trabalho aqui!
+        </p>
+        <div class="team">
+          <EquipaCard
+            @click="snapToElement('body')"
+            v-for="membros in equipa"
+            :key="membros.id"
+            :destination="membros.destination"
+            :icon="membros.icon"
+            :name="membros.nome"
+            :iconColor="membros.iconColor"
+          />
         </div>
       </div>
-    </section>
-    <section class="recrutamento">
-      <div class="aboutUs">
-        <img src="@/assets/aaue.png" alt="" />
-        <div class="text">
-          <h1>O que é a AAUE?</h1>
-          <p>
-            A Associação Académica da Universidade de Évora é uma organização
-            sem fins lucrativos, não governamental e de carácter estudantil,
-            pautando-se pelos princípios gerais básicos do movimento
-            associativo: Democraticidade, Unicidade, Apartidarismo e
-            Arreligiosidade.
-          </p>
-          <p>
-            A 29 de Maio de 1978 é fundada com o nome de Associação de
-            Estudantes do Instituto Universitário de Évora a organização
-            representativa dos estudantes da Academia Eborense. Após a passagem
-            de Instituto Universitário de Évora para Universidade de Évora em
-            1980 a associação assume a denominação de Associação de Estudantes
-            da Universidade de Évora mantendo-se esta até 2010, altura em que
-            passa a denominar- se Associação Académica da Universidade de Évora
-            (AAUE).
-          </p>
-          <p>
-            Atualmente, a Associação Académica da Universidade de Évora
-            encontra-se organizada em diversos grupos, passando a sua
-            operacionalização pela Direção e Secções Autónomas, sendo que a
-            Direção é constituído por Setores/Secções, diversificados e focados
-            em áreas específicas de operacionalização e ação.
-          </p>
-          <div class="aboutButton">
-            <router-link
-              class="descobreMais"
-              :to="{ name: 'Sobre' }"
-              @click="snapToElement('body')"
-              >Descobre mais <i class="fas fa-arrow-right"></i>
-            </router-link>
-          </div>
+    </div>
+  </section>
+  <section class="recrutamento">
+    <div class="aboutUs">
+      <img src="@/assets/aaue.png" alt="" />
+      <div class="text">
+        <h1>O que é a AAUE?</h1>
+        <p>
+          A Associação Académica da Universidade de Évora é uma organização sem
+          fins lucrativos, não governamental e de carácter estudantil,
+          pautando-se pelos princípios gerais básicos do movimento associativo:
+          Democraticidade, Unicidade, Apartidarismo e Arreligiosidade.
+        </p>
+        <p>
+          A 29 de Maio de 1978 é fundada com o nome de Associação de Estudantes
+          do Instituto Universitário de Évora a organização representativa dos
+          estudantes da Academia Eborense. Após a passagem de Instituto
+          Universitário de Évora para Universidade de Évora em 1980 a associação
+          assume a denominação de Associação de Estudantes da Universidade de
+          Évora mantendo-se esta até 2010, altura em que passa a denominar- se
+          Associação Académica da Universidade de Évora (AAUE).
+        </p>
+        <p>
+          Atualmente, a Associação Académica da Universidade de Évora
+          encontra-se organizada em diversos grupos, passando a sua
+          operacionalização pela Direção e Secções Autónomas, sendo que a
+          Direção é constituído por Setores/Secções, diversificados e focados em
+          áreas específicas de operacionalização e ação.
+        </p>
+        <div class="aboutButton">
+          <router-link
+            class="descobreMais"
+            :to="{ name: 'Sobre' }"
+            @click="snapToElement('body')"
+            >Descobre mais <i class="fas fa-arrow-right"></i>
+          </router-link>
         </div>
       </div>
-    </section>
-    <section class="plataformas">
-      <HeaderTitle
-        title="Plataformas"
-        subtitle="De forma a ajudar os estudante da Universidade de Évora,"
-        subtitle2="A AAUE disponiliza as seguintes plataformas de interesse:"
-        :image="getImgURL('plataformas.jpg')"
+    </div>
+  </section>
+  <section class="plataformas">
+    <HeaderTitle
+      title="Plataformas"
+      subtitle="De forma a ajudar os estudante da Universidade de Évora,"
+      subtitle2="A AAUE disponiliza as seguintes plataformas de interesse:"
+      :image="getImgURL('plataformas.jpg')"
+    />
+    <div class="plataformaCards">
+      <PlataformaCard
+        link="https://alojamento.aaue.pt/"
+        icon="fas fa-home"
+        titulo="Portal do Alojamento"
+        text="Aqui podes encontrar ofertas de alojamento dedicado a estudantes."
       />
-      <div class="plataformaCards">
-        <PlataformaCard
-          link="https://alojamento.aaue.pt/"
-          icon="fas fa-home"
-          titulo="Portal do Alojamento"
-          text="Aqui podes encontrar ofertas de alojamento dedicado a estudantes."
-        />
-        <PlataformaCard
-          class="reitorCard"
-          link="http://torneioreitor.aaue.pt/"
-          icon="fas fa-futbol"
-          titulo="Torneio do Reitor"
-          text="A AAUE é responsável pelo desporto, dinamizando atividades como torneios internos, ou potenciando a prática federada, através das competições da Federação Académica do Desporto Universitário."
-        />
-        <PlataformaCard
-          link="https://expoestudante.aaue.pt/"
-          icon="fas fa-futbol"
-          titulo="Expo Estudante"
-          text="Queres participar num evento de futuro, programado a pensar apenas em ti e no teu sucesso? Descobre tudo!"
-        />
-      </div>
-    </section>
-    <section class="noticias">
-      <HeaderTitle
-        title="Notícias"
-        subtitle="As últimas notícias da Associação Académica da Universidade de Évora"
-        :image="getImgURL('noticias.jpg')"
+      <PlataformaCard
+        class="reitorCard"
+        link="http://torneioreitor.aaue.pt/"
+        icon="fas fa-futbol"
+        titulo="Torneio do Reitor"
+        text="A AAUE é responsável pelo desporto, dinamizando atividades como torneios internos, ou potenciando a prática federada, através das competições da Federação Académica do Desporto Universitário."
       />
-      <div class="noticiasPreview">
-        <div class="carrossel">
-          <a class="leftArrow" @click="decrementIndexes"
-            ><i class="fas fa-chevron-left"></i
-          ></a>
-          <div class="newsCards">
-            <NoticiaCard
-              v-for="noticia in noticias.slice(initialIndex, finalIndex)"
-              :key="noticia._id"
-              :postID="noticia._id"
-              :categoryColor="noticia.categoryColor"
-              :imgURL="getImgURL('activism.jpeg')"
-              :titulo="noticia.title"
-              :data="noticia.date"
-              :textPreview="noticia.paragraphs[0]"
-              @click="setNoticia(noticia)"
-            />
-          </div>
-          <a class="rightArrow" @click="incrementIndexes"
-            ><i class="fas fa-chevron-right"></i
-          ></a>
+      <PlataformaCard
+        link="https://expoestudante.aaue.pt/"
+        icon="fas fa-futbol"
+        titulo="Expo Estudante"
+        text="Queres participar num evento de futuro, programado a pensar apenas em ti e no teu sucesso? Descobre tudo!"
+      />
+    </div>
+  </section>
+  <section class="noticias">
+    <HeaderTitle
+      title="Notícias"
+      subtitle="As últimas notícias da Associação Académica da Universidade de Évora"
+      :image="getImgURL('noticias.jpg')"
+    />
+    <div class="noticiasPreview">
+      <div class="carrossel">
+        <a class="leftArrow" @click="decrementIndexes"
+          ><i class="fas fa-chevron-left"></i
+        ></a>
+        <div class="newsCards">
+          <NoticiaCard
+            v-for="noticia in noticias.slice(initialIndex, finalIndex)"
+            :key="noticia._id"
+            :postID="noticia._id"
+            :categoryColor="noticia.categoryColor"
+            :imgURL="getImgURL('activism.jpeg')"
+            :titulo="noticia.title"
+            :data="noticia.date"
+            :textPreview="noticia.paragraphs[0]"
+            @click="setNoticia(noticia)"
+          />
         </div>
+        <a class="rightArrow" @click="incrementIndexes"
+          ><i class="fas fa-chevron-right"></i
+        ></a>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -265,7 +259,7 @@ section {
 }
 
 .heroContent {
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;

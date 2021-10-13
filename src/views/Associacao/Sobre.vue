@@ -69,10 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sobre {
-  padding-top: 15vh;
-}
-
 .mainContent {
   display: flex;
   justify-content: flex-start;

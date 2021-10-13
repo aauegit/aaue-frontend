@@ -5,7 +5,9 @@
     @click="activatedNavbar = !activatedNavbar"
   />
   <Navbar v-if="!mobileMode" class="navbar" />
-  <router-view />
+  <div class="pageContent">
+    <router-view />
+  </div>
   <Footer />
 </template>
 
@@ -125,5 +127,9 @@ hr {
   background: $specialColor;
   border: 1px solid $specialColor;
   margin: 5px 0px;
+}
+
+.pageContent {
+  padding-top: 15vh;
 }
 </style>

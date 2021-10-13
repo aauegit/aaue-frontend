@@ -1,102 +1,100 @@
 <template>
-  <div class="pageContent">
-    <section class="contacts">
-      <div class="contactForm" v-if="!sendingEmail">
-        <div class="contactInfo">
-          <h1>
-            Tens alguma questão?<br />
-            Contacta-nos!
-          </h1>
-          <div class="contactIcons">
-            <ul>
-              <a href="https://goo.gl/maps/hMu13iR5NiM2">
-                <i class="fas fa-map-marker-alt" aria-hidden="true"
-                  ><span>Morada</span></i
-                >
-                <li>Rua Diogo Cão nº 21 7000-872 Évora</li>
-              </a>
-              <a href="mailto:geral@aaue.pt">
-                <i class="fas fa-envelope" aria-hidden="true"
-                  ><span>Email</span></i
-                >
-                <li>geral@aaue.pt</li>
-              </a>
-              <a href="tel:+351266098003">
-                <i class="fas fa-phone" aria-hidden="true"
-                  ><span>Telefone</span></i
-                >
-                <li>+ 351 266 09 80 03</li>
-              </a>
-            </ul>
-          </div>
+  <section class="contacts">
+    <div class="contactForm" v-if="!sendingEmail">
+      <div class="contactInfo">
+        <h1>
+          Tens alguma questão?<br />
+          Contacta-nos!
+        </h1>
+        <div class="contactIcons">
+          <ul>
+            <a href="https://goo.gl/maps/hMu13iR5NiM2">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"
+                ><span>Morada</span></i
+              >
+              <li>Rua Diogo Cão nº 21 7000-872 Évora</li>
+            </a>
+            <a href="mailto:geral@aaue.pt">
+              <i class="fas fa-envelope" aria-hidden="true"
+                ><span>Email</span></i
+              >
+              <li>geral@aaue.pt</li>
+            </a>
+            <a href="tel:+351266098003">
+              <i class="fas fa-phone" aria-hidden="true"
+                ><span>Telefone</span></i
+              >
+              <li>+ 351 266 09 80 03</li>
+            </a>
+          </ul>
         </div>
-        <form action="POST" @submit.prevent="sendFormData">
-          <label for="name">Nome <span>*</span></label>
-          <input
-            type="text"
-            placeholder="Nome"
-            id="name"
-            v-model="name"
-            required
-          />
-          <label for="email">Email <span>*</span></label>
-          <input
-            type="email"
-            placeholder="Email"
-            id="email"
-            v-model="email"
-            required
-          />
-          <label for="assunto">Assunto <span>*</span></label>
-          <input
-            type="text"
-            placeholder="Assunto"
-            id="assunto"
-            v-model="assunto"
-            required
-          />
-          <label for="mensagem">Mensagem <span>*</span></label>
-          <textarea
-            class="mensagem"
-            placeholder="Mensagem"
-            id="mensagem"
-            v-model="mensagem"
-            required
-          />
-          <div class="buttons" :class="{ isActive: isFormFilled }">
-            <Button
-              buttonText="Enviar mensagem"
-              class="g-recaptcha"
-              data-sitekey="6LcQvp4cAAAAAGNx5TXt5zWBQ1lHd_mhHyit-Plq"
-              data-callback="onSubmit"
-              data-action="submit"
-            />
-          </div>
-        </form>
       </div>
-      <div class="modal" v-else>
-        <img
-          v-if="!emailSent && !emailFailed"
-          src="@/assets/api/spinning-circle.gif"
-          alt=""
+      <form action="POST" @submit.prevent="sendFormData">
+        <label for="name">Nome <span>*</span></label>
+        <input
+          type="text"
+          placeholder="Nome"
+          id="name"
+          v-model="name"
+          required
         />
-        <div v-else-if="emailSent" class="sucess">
-          <h1>Mensagem enviada</h1>
-          <i class="far fa-check-circle sucessIcon"></i>
-          <Button buttonText="Voltar" @click="resetEmailSendingValues" />
+        <label for="email">Email <span>*</span></label>
+        <input
+          type="email"
+          placeholder="Email"
+          id="email"
+          v-model="email"
+          required
+        />
+        <label for="assunto">Assunto <span>*</span></label>
+        <input
+          type="text"
+          placeholder="Assunto"
+          id="assunto"
+          v-model="assunto"
+          required
+        />
+        <label for="mensagem">Mensagem <span>*</span></label>
+        <textarea
+          class="mensagem"
+          placeholder="Mensagem"
+          id="mensagem"
+          v-model="mensagem"
+          required
+        />
+        <div class="buttons" :class="{ isActive: isFormFilled }">
+          <Button
+            buttonText="Enviar mensagem"
+            class="g-recaptcha"
+            data-sitekey="6LcQvp4cAAAAAGNx5TXt5zWBQ1lHd_mhHyit-Plq"
+            data-callback="onSubmit"
+            data-action="submit"
+          />
         </div>
-        <div v-else-if="emailFailed" class="failure">
-          <h1>Ocorreu um erro</h1>
-          <i class="fas fa-exclamation-circle errorIcon"></i>
-          <p>
-            Por favor volte a tentar mais tarde ou envie uma mensagem para
-            geral@aaue.pt
-          </p>
-          <Button buttonText="Voltar" @click="resetEmailSendingValues" />
-        </div>
+      </form>
+    </div>
+    <div class="modal" v-else>
+      <img
+        v-if="!emailSent && !emailFailed"
+        src="@/assets/api/spinning-circle.gif"
+        alt=""
+      />
+      <div v-else-if="emailSent" class="sucess">
+        <h1>Mensagem enviada</h1>
+        <i class="far fa-check-circle sucessIcon"></i>
+        <Button buttonText="Voltar" @click="resetEmailSendingValues" />
       </div>
-    </section>
-  </div>
+      <div v-else-if="emailFailed" class="failure">
+        <h1>Ocorreu um erro</h1>
+        <i class="fas fa-exclamation-circle errorIcon"></i>
+        <p>
+          Por favor volte a tentar mais tarde ou envie uma mensagem para
+          geral@aaue.pt
+        </p>
+        <Button buttonText="Voltar" @click="resetEmailSendingValues" />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -203,14 +201,9 @@ export default {
 <style lang="scss" scoped>
 $specialColor: #2c3e50;
 
-.pageContent {
-  padding-top: 0px;
-}
-
 .contacts {
   display: flex;
-  min-height: 100vh;
-  padding-top: 5vh;
+  min-height: 75vh;
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;

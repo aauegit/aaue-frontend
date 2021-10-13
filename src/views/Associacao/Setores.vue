@@ -26,32 +26,9 @@ export default {
   data() {
     return {
       setores: setores,
-      currentSetor: {},
-      nomeDoSetor: "Informática",
-      coordenador1: "Francisco Rodrigues",
-      coordenador1Img: this.getImgURL(
-        "membros/setores/informatica/franciscorodrigues.webp"
-      ),
-      fb1: "https://www.facebook.com/francisco.rodrigues.94651",
-      coordenador2: "Ion Chirica",
-      coordenador2Img: this.getImgURL(
-        "membros/setores/informatica/ionchirica.webp"
-      ),
-      fb2: "https://www.facebook.com/officialdayumdrops",
-      coordenador3: "Tiago Costa",
-      coordenador3Img: this.getImgURL(
-        "membros/setores/informatica/tiagocosta.webp"
-      ),
-      fb3: "https://www.facebook.com/tiagoagcosta/",
-      coordenador4: "",
-      coordenador4Img: "",
-      fb4: "",
-      descricao:
-        "O Setor de Informática tem como objetivo o bom funcionamento na gestão de informação e no domínio do conteúdo em formato digital, de forma a facilitar as tarefas dos recursos humanos, proporcionando-se assim formas de trabalho mais eficientes. Cabe ao setor o papel de administração e manutenção do website da AAUE, que pode ser visitado por todos os utilizadores que pretendam tirar proveito dos serviços do mesmo, facilitando o acesso a toda a informação disponibilizada.",
-      contacto: "informativa@aaue.pt",
+      currentSetor: setores[0],
     };
   },
-  created() {},
   components: {
     Setor,
   },
@@ -63,11 +40,6 @@ export default {
 
 <style lang="scss" scoped>
 $specialColor: #155781;
-
-.pageContent {
-  padding-top: 15vh;
-}
-
 .setores {
   display: flex;
 

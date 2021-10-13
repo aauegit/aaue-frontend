@@ -1,70 +1,79 @@
 <template>
-  <div class="pageContent">
-    <div class="rececao">
-      <div class="titulo">
-        <i class="fas fa-rocket"></i>
-        <h1>A melhor receção ao caloiro está de volta!</h1>
-      </div>
-      <p class="intro">
-        Por excelência, a <b>Receção ao Caloiro</b> é o ponto alto dos primeiros
-        tempos de um estudante na Universidade de Évora e, em muitos casos, na
-        sua nova cidade. A Receção ao Caloiro destaca-se não só pelo receber por
-        parte da academia dos seus novos membros, mas também por ser mais um
-        momento onde várias gerações académicas se voltam a reunir, recordando
-        tempos e vivências de outrora. Não apenas conhecida pelas noites
-        académicas, de concertos e folia no recinto, a Receção destaca-se também
-        pela envolvência com o município, no plano cultural, mas também social e
-        patrimonial, promovendo assim um primeiro contacto dos novos estudantes
-        da nossa cidade, com a sua «nova casa» para os próximos anos.
-      </p>
-      <div class="cartaz">
-        <img :src="getImgURL('rececao/rececao.jpg')" alt="" />
-        <ul>
-          <h1>
-            Afinal de contas é aqui que começam os melhores dias da TUA vida!
-          </h1>
-          <li @click="showingCartaz = !showingCartaz">
-            <div class="text" :class="{ activated: showingCartaz }">
-              <i class="fas fa-caret-right"></i>
-              <p>#1 - Cartaz</p>
-            </div>
-            <div>
-              <img
-                v-if="showingCartaz"
-                :src="getImgURL('rececao/rececaoCartazCompleto.png')"
-                alt=""
-              />
-            </div>
-          </li>
-          <li @click="showingGeral = !showingGeral">
-            <div class="text" :class="{ activated: showingGeral }">
-              <i class="fas fa-caret-right"></i>
-              <p>#2 - Bilhetes Gerais</p>
-            </div>
-            <div class="photo">
-              <img
-                v-if="showingGeral"
-                :src="getImgURL('rececao/rececaoGeral.jpg')"
-                alt=""
-              />
-            </div>
-          </li>
-          <li @click="showingDiarios = !showingDiarios">
-            <div class="text" :class="{ activated: showingDiarios }">
-              <i class="fas fa-caret-right"></i>
-              <p>#3 - Bilhetes Diários</p>
-            </div>
-            <div class="photo">
-              <img
-                v-if="showingDiarios"
-                :src="getImgURL('rececao/rececaoDiarios.jpg')"
-                alt=""
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="rececao">
+    <div class="titulo">
+      <i class="fas fa-rocket"></i>
+      <h1>A melhor receção ao caloiro está de volta!</h1>
     </div>
+    <p class="intro">
+      Por excelência, a <b>Receção ao Caloiro</b> é o ponto alto dos primeiros
+      tempos de um estudante na Universidade de Évora e, em muitos casos, na sua
+      nova cidade. A Receção ao Caloiro destaca-se não só pelo receber por parte
+      da academia dos seus novos membros, mas também por ser mais um momento
+      onde várias gerações académicas se voltam a reunir, recordando tempos e
+      vivências de outrora. Não apenas conhecida pelas noites académicas, de
+      concertos e folia no recinto, a Receção destaca-se também pela envolvência
+      com o município, no plano cultural, mas também social e patrimonial,
+      promovendo assim um primeiro contacto dos novos estudantes da nossa
+      cidade, com a sua «nova casa» para os próximos anos.
+    </p>
+    <div class="cartaz">
+      <img :src="getImgURL('rececao/rececao.jpg')" alt="" />
+      <ul>
+        <h1>
+          Afinal de contas é aqui que começam os melhores dias da TUA vida!
+        </h1>
+        <li @click="showingCartaz = !showingCartaz">
+          <div class="text" :class="{ activated: showingCartaz }">
+            <i class="fas fa-caret-right"></i>
+            <p>#1 - Cartaz</p>
+          </div>
+          <div>
+            <img
+              v-if="showingCartaz"
+              :src="getImgURL('rececao/rececaoCartazCompleto.png')"
+              alt=""
+            />
+          </div>
+        </li>
+        <li @click="showingGeral = !showingGeral">
+          <div class="text" :class="{ activated: showingGeral }">
+            <i class="fas fa-caret-right"></i>
+            <p>#2 - Bilhetes Gerais</p>
+          </div>
+          <div class="photo">
+            <img
+              v-if="showingGeral"
+              :src="getImgURL('rececao/rececaoGeral.jpg')"
+              alt=""
+            />
+          </div>
+        </li>
+        <li @click="showingDiarios = !showingDiarios">
+          <div class="text" :class="{ activated: showingDiarios }">
+            <i class="fas fa-caret-right"></i>
+            <p>#3 - Bilhetes Diários</p>
+          </div>
+          <div class="photo">
+            <img
+              v-if="showingDiarios"
+              :src="getImgURL('rececao/rececaoDiarios.jpg')"
+              alt=""
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="countdown">
+      <p>countdown aqui</p>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3119.290940041163!2d-7.9043528!3d38.5731475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19e4dd79fbd2ad%3A0x6a31af5facc62c1b!2sUniversity%20of%20%C3%89vora!5e0!3m2!1sen!2spt!4v1634073082265!5m2!1sen!2spt"
+      width="1200"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
   </div>
 </template>
 
@@ -89,9 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pageContent {
-  padding-top: 15vh;
-}
 .rececao {
   display: flex;
   flex-direction: column;

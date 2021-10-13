@@ -1,19 +1,17 @@
 <template>
-  <div class="pageContent">
-    <div class="presidencia">
-      <h1>Conselho Fiscal</h1>
-      <hr />
-      <div class="membros">
-        <MembroDirecao
-          id="membro"
-          v-for="membro in membros"
-          :key="membro.id"
-          :img="getImgURL(membro.img)"
-          :nome="membro.nome"
-          :cargo="membro.cargo"
-          :fb="membro.fb"
-        />
-      </div>
+  <div class="presidencia">
+    <h1>Conselho Fiscal</h1>
+    <hr />
+    <div class="membros">
+      <MembroDirecao
+        id="membro"
+        v-for="membro in membros"
+        :key="membro.id"
+        :img="getImgURL(membro.img)"
+        :nome="membro.nome"
+        :cargo="membro.cargo"
+        :fb="membro.fb"
+      />
     </div>
   </div>
 </template>
@@ -27,14 +25,11 @@ export default {
   name: "Fiscal",
   data() {
     return {
-      membros: [],
+      membros: fiscal,
     };
   },
   components: {
     MembroDirecao,
-  },
-  created() {
-    this.membros = fiscal;
   },
   methods: {
     getImgURL,
@@ -43,10 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pageContent {
-  padding-top: 15vh;
-}
-
 .presidencia {
   display: flex;
   justify-content: center;

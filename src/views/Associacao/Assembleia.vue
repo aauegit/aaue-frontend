@@ -1,19 +1,17 @@
 <template>
-  <div class="pageContent">
-    <div class="presidencia">
-      <h1>Mesa da Assembleia Magna</h1>
-      <hr />
-      <div class="membros">
-        <MembroDirecao
-          id="membro"
-          v-for="membro in membros"
-          :key="membro.id"
-          :img="getImgURL(membro.img)"
-          :nome="membro.nome"
-          :cargo="membro.cargo"
-          :fb="membro.fb"
-        />
-      </div>
+  <div class="presidencia">
+    <h1>Mesa da Assembleia Magna</h1>
+    <hr />
+    <div class="membros">
+      <MembroDirecao
+        id="membro"
+        v-for="membro in membros"
+        :key="membro.id"
+        :img="getImgURL(membro.img)"
+        :nome="membro.nome"
+        :cargo="membro.cargo"
+        :fb="membro.fb"
+      />
     </div>
   </div>
 </template>
@@ -27,7 +25,7 @@ export default {
   name: "Assembleia",
   data() {
     return {
-      membros: [],
+      membros: assembleiaMagna,
     };
   },
   components: {
@@ -36,17 +34,10 @@ export default {
   methods: {
     getImgURL,
   },
-  created() {
-    this.membros = assembleiaMagna;
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-.pageContent {
-  padding-top: 15vh;
-}
-
 .presidencia {
   display: flex;
   justify-content: center;

@@ -36,7 +36,7 @@ export default {
     return {
       SAComunicacao: autonomas,
       SADesportiva: sadesportiva,
-      currentSetor: {},
+      currentSetor: autonomas[0],
     };
   },
 
@@ -51,10 +51,6 @@ export default {
 
 <style lang="scss" scoped>
 $specialColor: #155781;
-.pageContent {
-  padding-top: 15vh;
-}
-
 .setores {
   display: flex;
   padding-bottom: 100px;

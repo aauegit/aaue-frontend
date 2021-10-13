@@ -41,7 +41,6 @@ export default {
   },
   methods: {
     getImgURL,
-    async getCurrentNoticia() {},
   },
   computed: {
     noticia() {
@@ -57,10 +56,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.noticia {
-  padding-top: 15vh;
-}
-
 .noticiaPost {
   min-height: 100vh;
   padding: 75px;

@@ -19,38 +19,6 @@
             :fb="coordenador.fb"
             :coordenadorNome="coordenador.nome"
           />
-          <!--   <div class="coordenador" key="3">
-            <img :src="coordenador1Img" alt="Coordenador" decode="async" />
-            <a :href="fb1" target="_blank" rel="noopener noreferrer"
-              >{{ coordenador1 }} <i class="fab fa-facebook-square"></i
-            ></a>
-          </div>
-          <div class="coordenador" key="4">
-            <img :src="coordenador2Img" alt="Coordenador" decode="async" />
-            <a :href="fb2" target="_blank" rel="noopener noreferrer"
-              >{{ coordenador2 }} <i class="fab fa-facebook-square"></i
-            ></a>
-          </div>
-          <div v-if="coordenador3" class="coordenador" key="5">
-            <img :src="coordenador3Img" alt="Coordenador" decode="async" />
-            <a :href="fb3" target="_blank" rel="noopener noreferrer"
-              >{{ coordenador3 }} <i class="fab fa-facebook-square"></i
-            ></a>
-          </div>
-          <div
-            v-if="
-              coordenador4 &&
-                nomeDoSetor != 'GAPE' &&
-                nomeDoSetor != 'Divulgação'
-            "
-            class="coordenador"
-            key="6"
-          >
-            <img :src="coordenador4Img" alt="Coordenador" decode="async" />
-            <a :href="fb4" target="_blank" rel="noopener noreferrer"
-              >{{ coordenador4 }} <i class="fab fa-facebook-square"></i
-            ></a>
-          </div> -->
         </transition-group>
         <p>{{ setor.descricao }}</p>
         <h2>

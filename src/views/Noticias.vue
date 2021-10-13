@@ -1,27 +1,21 @@
 <template>
-  <div class="pageContent">
-    <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
-    <section class="noticias">
-      <form class="searchMobile" method="get" @submit.prevent v-if="mobileMode">
-        <i class="fas fa-search"></i>
-        <input class="searchBar" type="search" placeholder="Pesquisar ..." />
-      </form>
-      <div class="newsColumn">
-        <NoticiasCardPreview
-          v-for="noticia in noticias"
-          :key="noticia._id"
-          :postID="noticia._id"
-          :imgURL="getImgURL('activism.jpeg')"
-          :titulo="noticia.title"
-          :data="noticia.date"
-          :categoryColor="noticia.categoryColor"
-          :textPreview="noticia.paragraphs[0]"
-          @click="setNoticia(noticia)"
-        />
-      </div>
-      <Sidebar v-if="!mobileMode" />
-    </section>
-  </div>
+  <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
+  <section class="noticias">
+    <div class="newsColumn">
+      <NoticiasCardPreview
+        v-for="noticia in noticias"
+        :key="noticia._id"
+        :postID="noticia._id"
+        :imgURL="getImgURL('activism.jpeg')"
+        :titulo="noticia.title"
+        :data="noticia.date"
+        :categoryColor="noticia.categoryColor"
+        :textPreview="noticia.paragraphs[0]"
+        @click="setNoticia(noticia)"
+      />
+    </div>
+    <Sidebar v-if="!mobileMode" />
+  </section>
 </template>
 
 <script>
@@ -35,7 +29,6 @@ export default {
   data() {
     return {
       activatedNavbar: false,
-      mobileMode: false,
     };
   },
   components: {
@@ -58,10 +51,6 @@ export default {
 </script>
 
 <style lang="scss">
-.pageContent {
-  padding-top: 15vh;
-}
-
 .noticias {
   display: flex;
   padding: 75px;

@@ -1,8 +1,5 @@
 <template>
   <div class="pageContent">
-    <router-link to="/" class="goBack" v-if="!loggedIn">
-      <Button buttonText="Home" />
-    </router-link>
     <section class="login" v-if="!loggedIn">
       <form @submit.prevent>
         <img src="@/assets/aaueLogo.png" alt="" />

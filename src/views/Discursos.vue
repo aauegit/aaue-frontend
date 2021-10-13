@@ -1,20 +1,18 @@
 <template>
-  <div class="pageContent">
-    <HeaderTitle title="Discursos" :image="getImgURL('discursos.jpg')" />
-    <section class="discurso">
-      <div class="newsColumn">
-        <DiscursoCardPreview
-          v-for="discurso in discursos"
-          :key="discurso.id"
-          :imgURL="getImgURL(discurso.imgURL)"
-          :titulo="discurso.titulo"
-          :data="discurso.dataDePublicacao"
-          :textPreview="discurso.textPreview"
-        />
-      </div>
-      <Sidebar />
-    </section>
-  </div>
+  <HeaderTitle title="Discursos" :image="getImgURL('discursos.jpg')" />
+  <section class="discurso">
+    <div class="newsColumn">
+      <DiscursoCardPreview
+        v-for="discurso in discursos"
+        :key="discurso.id"
+        :imgURL="getImgURL(discurso.imgURL)"
+        :titulo="discurso.titulo"
+        :data="discurso.dataDePublicacao"
+        :textPreview="discurso.textPreview"
+      />
+    </div>
+    <Sidebar />
+  </section>
 </template>
 
 <script>
@@ -108,10 +106,6 @@ export default {
 </script>
 
 <style lang="scss">
-.pageContent {
-  padding-top: 15vh;
-}
-
 .discurso {
   display: flex;
   justify-content: center;
