@@ -71,7 +71,7 @@ $specialColor: #155781;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 150px;
 
   .infoSetor {

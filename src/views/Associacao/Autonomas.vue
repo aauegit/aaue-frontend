@@ -1,26 +1,24 @@
 <template>
-  <div class="pageContent">
-    <div class="setores">
-      <ul class="indice">
-        <div>
-          <h1>Secção Autónoma da Comunicação</h1>
-          <li v-for="setor in SAComunicacao" :key="setor.id">
-            <a @click="currentSetor = setor">
-              <i :class="setor.icon"></i>
-              <p>{{ setor.nome }}</p>
-            </a>
-          </li>
-          <h1>Secção Autónoma Desportiva</h1>
-          <li v-for="setorSAD in SADesportiva" :key="setorSAD.id">
-            <a @click="currentSetor = setorSAD">
-              <i :class="setorSAD.icon"></i>
-              <p>{{ setorSAD.nome }}</p>
-            </a>
-          </li>
-        </div>
-      </ul>
-      <Setor v-if="currentSetor" :setor="currentSetor"></Setor>
-    </div>
+  <div class="setores">
+    <ul class="indice">
+      <div>
+        <h1>Secção Autónoma da Comunicação</h1>
+        <li v-for="setor in SAComunicacao" :key="setor.id">
+          <a @click="currentSetor = setor">
+            <i :class="setor.icon"></i>
+            <p>{{ setor.nome }}</p>
+          </a>
+        </li>
+        <h1>Secção Autónoma Desportiva</h1>
+        <li v-for="setorSAD in SADesportiva" :key="setorSAD.id">
+          <a @click="currentSetor = setorSAD">
+            <i :class="setorSAD.icon"></i>
+            <p>{{ setorSAD.nome }}</p>
+          </a>
+        </li>
+      </div>
+    </ul>
+    <Setor v-if="currentSetor" :setor="currentSetor"></Setor>
   </div>
 </template>
 

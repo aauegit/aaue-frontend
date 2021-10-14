@@ -79,6 +79,7 @@ export default {
   img {
     transition: all 0.3s cubic-bezier(0.79, 0.21, 0.06, 0.81);
     width: 350px;
+    height: 200px;
     border-radius: 12px 12px 0 0;
   }
 

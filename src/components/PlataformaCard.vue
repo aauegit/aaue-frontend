@@ -1,6 +1,7 @@
 <template>
   <a :href="link" target="_blank" class="plataformaCard">
-    <i :class="icon" alt=""></i>
+    <i v-if="icon" :class="icon" alt=""></i>
+    <img v-if="image" :src="image" alt="" />
     <div class="contentPreview">
       <h1 class="title">{{ titulo }}</h1>
       <p class="textPreview">{{ text }}</p>
@@ -18,7 +19,9 @@ export default {
     },
     icon: {
       type: String,
-      required: true,
+    },
+    image: {
+      type: String,
     },
     titulo: {
       type: String,
@@ -55,7 +58,7 @@ export default {
     border-radius: 50%;
     background-color: #f7f8fc;
     font-size: 40px;
-    color: #f7ce31;
+    color: #1b1b1b;
   }
 
   .contentPreview {

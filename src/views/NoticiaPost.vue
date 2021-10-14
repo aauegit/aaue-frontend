@@ -6,12 +6,12 @@
         <h1>{{ noticia.title }}</h1>
         <hr :style="{ borderColor: noticia.categoryColor }" />
         <h2>Publicado a {{ noticia.date }}</h2>
-        <img src="@/assets/activism.jpeg" alt="" />
+        <img :src="getImgURL(`noticias/${noticia.imageLink}`)" alt="" />
         <p v-for="paragraph in noticia.paragraphs" :key="paragraph">
           {{ paragraph }}
         </p>
         <p v-if="noticia.signature" class="signature">
-          {{ noticia.signature }}
+          <b>{{ noticia.signature }}</b>
         </p>
       </div>
       <Sidebar />
@@ -72,7 +72,7 @@ export default {
     max-width: 800px;
 
     img {
-      max-width: 100%;
+      width: 100%;
       padding: 10px 0 20px 0;
       border-bottom: 1px solid #bebebe57;
     }

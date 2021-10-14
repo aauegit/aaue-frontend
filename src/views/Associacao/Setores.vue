@@ -1,18 +1,16 @@
 <template>
-  <div class="pageContent">
-    <div class="setores">
-      <ul class="indice">
-        <div>
-          <li v-for="setor in setores" :key="setor.id">
-            <a @click="currentSetor = setor">
-              <i :class="setor.icon"></i>
-              <p>{{ setor.nome }}</p>
-            </a>
-          </li>
-        </div>
-      </ul>
-      <Setor v-if="nomeDoSetor" :setor="currentSetor" />
-    </div>
+  <div class="setores">
+    <ul class="indice">
+      <div>
+        <li v-for="setor in setores" :key="setor.id">
+          <a @click="currentSetor = setor">
+            <i :class="setor.icon"></i>
+            <p>{{ setor.nome }}</p>
+          </a>
+        </li>
+      </div>
+    </ul>
+    <Setor v-if="currentSetor" :setor="currentSetor" />
   </div>
 </template>
 

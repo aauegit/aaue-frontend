@@ -6,7 +6,7 @@
         v-for="noticia in noticias"
         :key="noticia._id"
         :postID="noticia._id"
-        :imgURL="getImgURL('activism.jpeg')"
+        :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
         :titulo="noticia.title"
         :data="noticia.date"
         :categoryColor="noticia.categoryColor"
@@ -14,7 +14,7 @@
         @click="setNoticia(noticia)"
       />
     </div>
-    <Sidebar v-if="!mobileMode" />
+    <Sidebar />
   </section>
 </template>
 

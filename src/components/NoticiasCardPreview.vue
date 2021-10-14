@@ -88,6 +88,7 @@ export default {
   img {
     border-radius: 12px;
     height: 150px;
+    width: 250px;
     margin-right: 25px;
     transition: all 0.2s ease-in;
     float: left;

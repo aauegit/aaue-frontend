@@ -134,7 +134,7 @@
             :key="noticia._id"
             :postID="noticia._id"
             :categoryColor="noticia.categoryColor"
-            :imgURL="getImgURL('activism.jpeg')"
+            :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
             :titulo="noticia.title"
             :data="noticia.date"
             :textPreview="noticia.paragraphs[0]"

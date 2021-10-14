@@ -68,11 +68,10 @@
     </div>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3119.290940041163!2d-7.9043528!3d38.5731475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19e4dd79fbd2ad%3A0x6a31af5facc62c1b!2sUniversity%20of%20%C3%89vora!5e0!3m2!1sen!2spt!4v1634073082265!5m2!1sen!2spt"
-      width="1200"
-      height="450"
       style="border:0;"
       allowfullscreen=""
       loading="lazy"
+      class="googleMaps"
     ></iframe>
   </div>
 </template>
@@ -170,6 +169,11 @@ export default {
         }
       }
     }
+  }
+
+  .googleMaps {
+    width: 80vw;
+    height: 300px;
   }
 }
 </style>
