@@ -382,4 +382,27 @@ $specialColor: #2c3e50;
     padding-top: 0;
   }
 }
+
+@media (max-width: 600px) {
+  .contacts .contactForm {
+    flex-direction: column;
+    width: 90vw;
+    margin: 100px 0;
+    padding: 50px 30px;
+
+    .contactInfo {
+      border-right: none;
+      width: 100%;
+    }
+
+    form {
+      padding-left: 0;
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>

@@ -128,10 +128,18 @@
         <a class="leftArrow" @click="decrementIndexes"
           ><i class="fas fa-chevron-left"></i
         ></a>
-        <div class="newsCards">
+        <transition-group
+          @before-enter="beforeEnter"
+          @enter="enter"
+          @leave="leave"
+          :css="false"
+          tag="div"
+          class="newsCards"
+        >
           <NoticiaCard
-            v-for="noticia in noticias.slice(initialIndex, finalIndex)"
+            v-for="(noticia, index) in noticias.slice(initialIndex, finalIndex)"
             :key="noticia._id"
+            :data-index="index"
             :postID="noticia._id"
             :categoryColor="noticia.categoryColor"
             :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
@@ -140,7 +148,7 @@
             :textPreview="noticia.paragraphs[0]"
             @click="setNoticia(noticia)"
           />
-        </div>
+        </transition-group>
         <a class="rightArrow" @click="incrementIndexes"
           ><i class="fas fa-chevron-right"></i
         ></a>
@@ -155,9 +163,33 @@ import PlataformaCard from "../components/PlataformaCard.vue";
 import EquipaCard from "../components/EquipaCard.vue";
 import HeaderTitle from "@/components/HeaderTitle.vue";
 import { getImgURL, snapToElement } from "@/functions/globals.js";
+import gsap from "gsap";
 
 export default {
   name: "Home",
+  setup() {
+    const beforeEnter = (el) => {
+      el.style.transform = "translateX(-1800px)";
+    };
+    const leave = (el, done) => {
+      gsap.to(el, {
+        x: 2000,
+        duration: 2,
+        onComplete: done,
+        delay: 1,
+      });
+    };
+    const enter = (el, done) => {
+      gsap.to(el, {
+        x: 0,
+        duration: 2,
+        onComplete: done,
+        delay: 1,
+        /* delay: el.dataset.index * 1, */
+      });
+    };
+    return { beforeEnter, enter, leave };
+  },
   data() {
     return {
       initialIndex: 0,
@@ -439,6 +471,9 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 2px solid red;
+        width: 1200px;
+        overflow: hidden;
       }
 
       .leftArrow,
