@@ -1,6 +1,7 @@
 <template>
   <button class="button">
     {{ buttonText }}
+    <slot></slot>
     <a v-if="link" :href="link" rel="noreferrer nooppener" target="_blank"></a>
   </button>
 </template>

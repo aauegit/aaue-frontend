@@ -4,22 +4,23 @@
       <div class="textSetor">
         <h1>{{ setor.nome }}</h1>
         <hr />
-        <transition-group
+        <!-- <transition-group
           class="coordenadores"
           appear
           @before-enter="beforeEnter"
           @enter="enter"
           tag="div"
-        >
+        ></transition-group -->
+        <div class="coordenadores">
           <setorImageCard
             v-for="(coordenador, index) in setor.coordenadores"
             :key="coordenador.nome"
-            :data-index="index"
+            :data-index="5 + index"
             :coordenadorImg="getImgURL(coordenador.img)"
             :fb="coordenador.fb"
             :coordenadorNome="coordenador.nome"
           />
-        </transition-group>
+        </div>
         <p>{{ setor.descricao }}</p>
         <h2>
           Contacto: <span>{{ setor.contacto }}</span>
@@ -42,15 +43,15 @@ export default {
   setup() {
     const beforeEnter = (el) => {
       el.style.opacity = 0;
-      el.style.transform = "translateX(-50px)";
+      el.style.transform = "translateX(-700px)";
     };
     const enter = (el, done) => {
       gsap.to(el, {
         opacity: 1,
         x: 0,
-        duration: 0.5,
+        duration: 0.7,
         onComplete: done,
-        delay: el.dataset.index * 0.1,
+        delay: el.dataset.index * 0.3,
       });
     };
     return { beforeEnter, enter };
@@ -79,6 +80,10 @@ $specialColor: #155781;
     justify-content: center;
     width: 100%;
 
+    h1 {
+      opacity: 1;
+    }
+
     hr {
       margin-bottom: 20px;
     }
@@ -90,7 +95,7 @@ $specialColor: #155781;
     }
 
     .textSetor {
-      text-align: justify;
+      text-align: left;
       margin-right: 110px;
 
       p {

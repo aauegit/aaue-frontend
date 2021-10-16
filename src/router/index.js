@@ -76,6 +76,14 @@ const routes = [
       import(/* webpackChunkName: "Sobre" */ "../views/Associacao/Sobre.vue"),
   },
   {
+    path: "/estatutos",
+    name: "Estatutos",
+    component: () =>
+      import(
+        /* webpackChunkName: "Estatutos" */ "../views/Associacao/Estatutos.vue"
+      ),
+  },
+  {
     path: "/protocolos-e-parcerias",
     name: "Protocolos",
     component: () =>

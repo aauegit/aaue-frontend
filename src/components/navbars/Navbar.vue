@@ -87,6 +87,11 @@
             <router-link :to="{ name: 'Sobre' }" @click="snapToElement('body')"
               >Sobre nós</router-link
             >
+            <router-link
+              :to="{ name: 'Estatutos' }"
+              @click="snapToElement('body')"
+              >Estatutos</router-link
+            >
           </div>
         </li>
         <li

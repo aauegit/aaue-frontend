@@ -3,7 +3,7 @@
     <ul class="indice">
       <div>
         <li v-for="setor in setores" :key="setor.id">
-          <a @click="currentSetor = setor">
+          <a @click="(currentSetor = setor) && scrollToElement('.setor')">
             <i :class="setor.icon"></i>
             <p>{{ setor.nome }}</p>
           </a>
@@ -32,6 +32,12 @@ export default {
   },
   methods: {
     getImgURL,
+    scrollToElement(destination) {
+      const element = document.querySelector(destination);
+      if (element && window.innerWidth <= 1016) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    },
   },
 };
 </script>

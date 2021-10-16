@@ -399,7 +399,7 @@ footer {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
   footer {
     padding: 50px 20px;
 

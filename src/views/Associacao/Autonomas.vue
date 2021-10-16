@@ -4,14 +4,14 @@
       <div>
         <h1>Secção Autónoma da Comunicação</h1>
         <li v-for="setor in SAComunicacao" :key="setor.id">
-          <a @click="currentSetor = setor">
+          <a @click="(currentSetor = setor) && scrollToElement('.setor')">
             <i :class="setor.icon"></i>
             <p>{{ setor.nome }}</p>
           </a>
         </li>
         <h1>Secção Autónoma Desportiva</h1>
         <li v-for="setorSAD in SADesportiva" :key="setorSAD.id">
-          <a @click="currentSetor = setorSAD">
+          <a @click="(currentSetor = setorSAD) && scrollToElement('.setor')">
             <i :class="setorSAD.icon"></i>
             <p>{{ setorSAD.nome }}</p>
           </a>
@@ -43,6 +43,12 @@ export default {
   },
   methods: {
     getImgURL,
+    scrollToElement(destination) {
+      const element = document.querySelector(destination);
+      if (element && window.innerWidth <= 1016) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    },
   },
 };
 </script>
