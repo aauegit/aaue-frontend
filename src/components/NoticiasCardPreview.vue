@@ -131,7 +131,6 @@ export default {
 
 @media (max-width: 1016px) {
   .cardPreview {
-    max-width: 95vw;
     margin-right: 0;
   }
 }
@@ -139,9 +138,14 @@ export default {
 @media (max-width: 700px) {
   .cardPreview {
     flex-direction: column;
+    width: 95vw;
+
+    &:hover {
+      box-shadow: none;
+    }
 
     img {
-      width: 100%;
+      min-width: 90vw;
       height: auto;
       margin-right: 0;
     }

@@ -404,5 +404,10 @@ $specialColor: #2c3e50;
       }
     }
   }
+
+  .contacts .modal {
+    width: 90vw;
+    padding: 20px;
+  }
 }
 </style>

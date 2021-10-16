@@ -2,7 +2,7 @@
   <footer>
     <ul class="ulContainer">
       <div class="aaue">
-        <img src="@/assets/aaueLogoBranco.png" alt="" />
+        <img class="footerLogo" src="@/assets/aaueLogoBranco.png" alt="" />
         <p>
           A Associação Académica da Universidade de Évora é responsável por
           potenciar o teu envolvimento e desenvolvimento académicos. Podes
@@ -173,6 +173,7 @@ footer {
   color: $textColor;
   background-color: $backgroundColor;
   padding: 50px;
+  padding-top: 20px;
 
   .ulContainer {
     display: flex;
@@ -200,6 +201,7 @@ footer {
     .contactInfo {
       display: flex;
       flex-direction: column;
+      margin-top: 50px;
 
       .title {
         color: $textColor;
@@ -243,6 +245,7 @@ footer {
   .plataformas {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 
     .title {
       font-size: 30px;
@@ -343,7 +346,25 @@ footer {
     margin-bottom: 0;
   }
 }
-@media (max-width: 700px) {
+
+@media (max-width: 1300px) {
+  footer {
+    .footerLogo {
+      display: none;
+    }
+    .aaue {
+      margin-top: 55px;
+      padding-right: 40px;
+      border-right: 1px solid #ececec41;
+    }
+
+    .contactInfo {
+      padding-left: 40px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
   footer {
     padding: 80px 60px;
 
@@ -353,6 +374,16 @@ footer {
 
       .aaue {
         width: 100%;
+        border-right: none;
+        padding-right: 0;
+
+        .footerLogo {
+          display: block;
+        }
+      }
+
+      .contactInfo {
+        padding-left: 0;
       }
 
       .contactInfo,

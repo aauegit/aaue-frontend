@@ -101,4 +101,10 @@ export default {
     padding-top: 0vh;
   }
 }
+
+@media (max-width: 700px) {
+  .noticias {
+    padding: 30px;
+  }
+}
 </style>

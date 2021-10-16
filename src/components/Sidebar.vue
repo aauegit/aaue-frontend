@@ -100,6 +100,9 @@ export default {
 }
 
 @media (max-width: 1016px) {
+  .sidebar input {
+    width: 100%;
+  }
   .sidebar .artigos li {
     max-width: 600px;
   }
