@@ -25,11 +25,6 @@ import HeaderTitle from "@/components/HeaderTitle.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import { getImgURL } from "@/functions/globals.js";
 export default {
-  data() {
-    return {
-      imgURL: "nothehe",
-    };
-  },
   setup() {
     const route = useRoute();
 
@@ -93,6 +88,23 @@ export default {
       margin-top: 25px;
       hyphens: auto;
     }
+  }
+}
+@media (max-width: 1016px) {
+  .noticia {
+    display: flex;
+    flex-direction: column;
+    padding: 75px 47px;
+    border: 2px solid red;
+
+    .noticiaPost {
+      border-right: none;
+      margin-bottom: 50px;
+    }
+  }
+
+  .pageContent {
+    padding-top: 0vh;
   }
 }
 </style>

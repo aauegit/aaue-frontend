@@ -130,6 +130,12 @@ hr {
 }
 
 .pageContent {
-  padding-top: 15vh;
+  padding-top: 130px;
+}
+
+@media (max-width: 1016px) {
+  .pageContent {
+    padding-top: 30px;
+  }
 }
 </style>

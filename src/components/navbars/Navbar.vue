@@ -171,7 +171,7 @@ export default {
   align-items: center;
   z-index: 10;
   width: 100%;
-  height: 15vh;
+  height: 130px;
   opacity: 1;
   color: #fff;
   padding: 0vh 75px;
@@ -202,7 +202,7 @@ export default {
       justify-content: space-around;
 
       li {
-        padding: 10px;
+        padding: 20px 10px 10px 10px;
         font-size: 22px;
 
         a {
@@ -286,7 +286,7 @@ export default {
 @media all and (min-width: 1000px) and (max-width: 1350px) {
   .header {
     padding: 0px 20px 0px 20px;
-    height: 15vh;
+    height: 130px;
   }
 
   .header #nav .logo img {
@@ -300,7 +300,7 @@ export default {
 }
 
 .isScrolled {
-  height: 10vh;
+  height: 90px;
 
   #nav .logo img {
     width: 120px;

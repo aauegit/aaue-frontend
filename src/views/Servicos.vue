@@ -131,4 +131,9 @@ export default {
     }
   }
 }
+@media (max-width: 1016px) {
+  .servicos {
+    padding-top: 150px;
+  }
+}
 </style>

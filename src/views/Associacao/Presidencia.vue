@@ -66,4 +66,16 @@ export default {
     flex: 0 0 45%;
   }
 }
+
+@media (max-width: 1016px) {
+  .presidencia {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 710px) {
+  .presidencia {
+    padding: 100px 10px 10px 10px;
+  }
+}
 </style>

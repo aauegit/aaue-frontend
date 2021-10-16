@@ -364,10 +364,14 @@ footer {
   }
 }
 
+@media (max-width: 1016px) {
+  footer {
+    padding: 0px 60px 50px 60px;
+  }
+}
+
 @media (max-width: 900px) {
   footer {
-    padding: 80px 60px;
-
     .ulContainer {
       justify-content: center;
       flex-direction: column;
@@ -397,7 +401,7 @@ footer {
 
 @media (max-width: 450px) {
   footer {
-    padding: 50px 30px;
+    padding: 50px 20px;
 
     .ulContainer .aaue {
       img {

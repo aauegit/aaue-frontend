@@ -86,4 +86,33 @@ export default {
     width: 80%;
   }
 }
+
+@media (max-width: 1306px) {
+  .mainContent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: auto;
+      width: 50vw;
+    }
+
+    p {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .mainContent {
+    padding: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .mainContent {
+    padding: 20px;
+  }
+}
 </style>

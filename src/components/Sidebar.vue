@@ -100,6 +100,9 @@ export default {
 }
 
 @media (max-width: 1016px) {
+  .sidebar {
+    min-height: 80vh;
+  }
   .sidebar input {
     width: 100%;
   }

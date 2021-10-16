@@ -529,6 +529,9 @@ section {
 }
 
 @media (max-width: 1016px) {
+  .heroContent {
+    height: 100vh;
+  }
   .heroContent .textArea .heroText {
     width: 80%;
   }

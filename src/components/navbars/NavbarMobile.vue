@@ -38,7 +38,7 @@ export default {
     const navLinks = [
       { id: 0, routeName: "Home", routeText: "Home" },
       { id: 1, routeName: "Noticias", routeText: "Noticias" },
-      { id: 2, routeName: "Discursos", routeText: "Discursos" },
+      /* { id: 2, routeName: "Discursos", routeText: "Discursos" }, */
       { id: 5, routeName: "Servicos", routeText: "Serviços" },
       { id: 6, routeName: "Contactos", routeText: "Contactos" },
     ];
@@ -80,18 +80,20 @@ body {
   overflow-x: hidden;
 }
 .mobileNav {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100%;
   opacity: 1;
   color: #000;
-  padding: 35px 100px 0;
+  padding: 35px 100px;
+  background-color: #f7f8fc;
+  box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.164);
   .navLinks {
     position: absolute;
     right: 0px;
     height: 100vh;
     top: 0vh;
-    background-color: #6d1112;
+    background-color: #000000;
     display: none;
     flex-direction: column;
     align-items: center;

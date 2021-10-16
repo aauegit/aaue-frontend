@@ -60,4 +60,36 @@ export default {
     font-size: 20px;
   }
 }
+
+@media (max-width: 1430px) {
+  .membro {
+    padding: 0 15px 15px 15px;
+    max-width: 240px;
+
+    img {
+      max-width: 240px;
+    }
+  }
+}
+@media (max-width: 710px) {
+  .membro {
+    padding: 0 10px 10px 10px;
+    max-width: 180px;
+
+    img {
+      max-width: 180px;
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  .membro {
+    padding: 0 10px 10px 10px;
+    max-width: 250px;
+
+    img {
+      max-width: 250px;
+    }
+  }
+}
 </style>
