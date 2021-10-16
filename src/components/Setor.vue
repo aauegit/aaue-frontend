@@ -108,4 +108,21 @@ $specialColor: #155781;
     }
   }
 }
+
+@media (max-width: 1016px) {
+  .setor {
+    .infoSetor .textSetor {
+      margin-right: 0;
+      width: 100%;
+
+      h1 {
+        text-align: left;
+      }
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>

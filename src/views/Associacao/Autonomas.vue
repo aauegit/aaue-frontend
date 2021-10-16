@@ -118,4 +118,18 @@ $specialColor: #155781;
   margin-top: 75px;
   height: auto;
 }
+
+@media (max-width: 1016px) {
+  .setores .indice {
+    margin-left: 0;
+
+    li a {
+      padding-left: 0;
+    }
+  }
+  .setores {
+    padding: 20px;
+    flex-direction: column;
+  }
+}
 </style>
