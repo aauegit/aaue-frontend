@@ -19,27 +19,27 @@ export default {
       estatutos: [
         {
           id: 0,
-          nome: "Estatutos da AAUE",
+          nome: "Estatutos e Regulamentos",
           icon: "fas fa-landmark",
-          ficheiro: "Estatutos-AAUE-2020.pdf",
+          ficheiro: "estatutos/Estatutos-AAUE-2020.pdf",
         },
         {
           id: 1,
-          nome: "Estatutos da Secção de Comunicação da AAUE",
+          nome: "Estatutos da Secção de Comunicação",
           icon: "fas fa-mail-bulk",
-          ficheiro: "Estatutos-Comunicacao.pdf",
+          ficheiro: "estatutos/Estatutos-Comunicacao.pdf",
         },
         {
           id: 2,
-          nome: "Estatutos da Secção Desportiva da AAUE",
+          nome: "Estatutos da Secção Desportiva",
           icon: "fas fa-running",
-          ficheiro: "Estatutos-Desportiva.pdf",
+          ficheiro: "estatutos/Estatutos-Desportiva.pdf",
         },
         {
           id: 3,
-          nome: "Regulamento eleitoral da AAUE",
+          nome: "Regulamento eleitoral",
           icon: "fas fa-handshake",
-          ficheiro: "Regulamento-Eleitoral-AAUE.pdf",
+          ficheiro: "estatutos/Regulamento_Eleitoral_AAUE.pdf",
         },
       ],
     };
@@ -52,9 +52,11 @@ export default {
 
 <style lang="scss" scoped>
 .estatutos {
-  min-height: 100vh;
+  min-height: 80vh;
+  padding: 100px;
   display: grid;
-  grid-template-columns: 2;
-  border: 2px solid red;
+  gap: 1rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 </style>

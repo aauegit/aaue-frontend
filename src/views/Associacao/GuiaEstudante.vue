@@ -21,19 +21,19 @@ export default {
           id: 0,
           nome: "Guia do Estudante",
           icon: "fas fa-landmark",
-          ficheiro: "Estatutos-AAUE-2020.pdf",
+          ficheiro: "guias/Guia-do-Estudante.pdf",
         },
         {
           id: 1,
-          nome: "Student's Guide",
+          nome: "Student's Guide (EN)",
           icon: "fas fa-mail-bulk",
-          ficheiro: "Estatutos-Comunicacao.pdf",
+          ficheiro: "guias/Guia-de-Bolsas.pdf",
         },
         {
           id: 2,
           nome: "Guia de bolsas e apoios de estudo",
           icon: "fas fa-running",
-          ficheiro: "Estatutos-Desportiva.pdf",
+          ficheiro: "guias/Guia-de-Bolsas.pdf",
         },
       ],
     };
@@ -46,9 +46,11 @@ export default {
 
 <style lang="scss" scoped>
 .estatutos {
-  min-height: 100vh;
+  min-height: 80vh;
+  padding: 100px;
   display: grid;
-  grid-template-columns: 2;
-  border: 2px solid red;
+  gap: 1rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 </style>

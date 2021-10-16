@@ -84,6 +84,14 @@ const routes = [
       ),
   },
   {
+    path: "/guia-estudante",
+    name: "GuiaEstudante",
+    component: () =>
+      import(
+        /* webpackChunkName: "GuiaEstudante" */ "../views/Associacao/GuiaEstudante.vue"
+      ),
+  },
+  {
     path: "/protocolos-e-parcerias",
     name: "Protocolos",
     component: () =>

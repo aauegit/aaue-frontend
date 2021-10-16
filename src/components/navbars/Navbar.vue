@@ -92,6 +92,11 @@
               @click="snapToElement('body')"
               >Estatutos</router-link
             >
+            <router-link
+              :to="{ name: 'GuiaEstudante' }"
+              @click="snapToElement('body')"
+              >Guia do Estudante</router-link
+            >
           </div>
         </li>
         <li

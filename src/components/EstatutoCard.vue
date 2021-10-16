@@ -2,20 +2,19 @@
   <div class="estatutoCard">
     <i class="topIcon" :class="icon"></i>
     <h2>{{ nome }}</h2>
-    <Button>
-      <!--  <a :href="getImgURL(ficheiro)" download></a> -->
+    <DownloadButton :link="getPdfURL(ficheiro)">
       <i class="fas fa-download"></i>
       <span>Download</span>
-    </Button>
+    </DownloadButton>
   </div>
 </template>
 
 <script>
-import Button from "@/components/Button.vue";
-import { getImgURL } from "@/functions/globals.js";
+import DownloadButton from "@/components/DownloadButton.vue";
+import { getPdfURL } from "@/functions/globals.js";
 export default {
   components: {
-    Button,
+    DownloadButton,
   },
   props: {
     nome: {
@@ -30,14 +29,15 @@ export default {
   },
 
   methods: {
-    getImgURL,
+    getPdfURL,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .estatutoCard {
-  width: 400px;
+  position: relative;
+  max-height: 300px;
   padding: 20px;
   border-radius: 18px;
   display: flex;
@@ -61,6 +61,12 @@ export default {
 
   .fa-download {
     margin-right: 10px;
+  }
+
+  .ficheiro {
+    position: absolute;
+    max-width: 100%;
+    border: 2px solid red;
   }
 }
 </style>

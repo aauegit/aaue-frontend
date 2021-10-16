@@ -13,7 +13,11 @@ const snapToElement = (destination) => {
 const getImgURL = (imageName) => {
   return require("@/assets/" + imageName);
 };
+const getPdfURL = (fileName) => {
+  return require("@/assets/" + fileName).default;
+};
 
 module.exports.scrollToElement = scrollToElement;
 module.exports.snapToElement = snapToElement;
 module.exports.getImgURL = getImgURL;
+module.exports.getPdfURL = getPdfURL;
