@@ -120,11 +120,13 @@
       </form>
     </div>
   </section>
-  <div class="postCreated" v-if="formSent">
-    <h1>Notícia criada com sucesso!</h1>
-    <i class="far fa-check-circle"></i>
-    <Button class="button" buttonText="Voltar" @click="formSent = false" />
-  </div>
+  <section class="sucesspost">
+    <div class="postCreated" v-if="formSent">
+      <h1>Notícia criada com sucesso!</h1>
+      <i class="far fa-check-circle"></i>
+      <Button class="button" buttonText="Voltar" @click="formSent = false" />
+    </div>
+  </section>
 </template>
 
 <script>
@@ -630,6 +632,11 @@ section {
       }
     }
   }
+}
+
+.sucesspost {
+  height: 100vh;
+  padding: 10px;
 }
 
 .postCreated {

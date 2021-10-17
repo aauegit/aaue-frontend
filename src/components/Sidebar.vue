@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <form class="search" method="get" @submit.prevent>
+    <form class="search" method="get" @submit.prevent v-if="isComplete">
       <i class="fas fa-search"></i>
       <input class="searchBar" type="search" placeholder="Pesquisar ..." />
     </form>
@@ -16,9 +16,9 @@
         </router-link>
       </li>
     </ul>
-    <h1>Categorias</h1>
-    <hr />
-    <ul class="categorias">
+    <h1 v-if="isComplete">Categorias</h1>
+    <hr v-if="isComplete" />
+    <ul class="categorias" v-if="isComplete">
       <li><router-link to="/">Comunicados</router-link></li>
       <li><router-link to="/">Desporto</router-link></li>
       <li><router-link to="/">Discursos</router-link></li>
@@ -33,6 +33,11 @@
 import { snapToElement } from "@/functions/globals";
 export default {
   name: "Sidebar",
+  data() {
+    return {
+      isComplete: false,
+    };
+  },
   computed: {
     noticias() {
       return this.$store.getters.getAllNoticias;
