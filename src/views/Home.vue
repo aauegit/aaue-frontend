@@ -2,18 +2,18 @@
   <section class="hero">
     <div class="heroContent">
       <div class="textArea">
-        <transition name="fade" type="transition" mode="out-in" appear>
-          <h1 class="slogan">De estudantes,<br />para estudantes</h1>
-        </transition>
-        <transition name="fadeText" type="transition" mode="out-in" appear>
-          <p class="heroText">
-            A Associação Académica da Universidade de Évora é responsável por
+        <h1 class="slogan">
+          <span>De estudantes,<br />para estudantes</span>
+        </h1>
+        <p class="heroText">
+          <span
+            >A Associação Académica da Universidade de Évora é responsável por
             potenciar o teu envolvimento e desenvolvimento académicos. Podes
             contar com a AAUE para o teu desenvolvimento pessoal e profissional,
             contando com eventos culturais, desportivos, lúdicos, cívicos,
-            sociais, pedagógicos e muitos outros.
-          </p>
-        </transition>
+            sociais, pedagógicos e muitos outros.</span
+          >
+        </p>
         <div class="buttons">
           <button class="vantagens">
             <router-link :to="{ name: 'Protocolos' }"
@@ -52,7 +52,6 @@
   </section>
   <section class="recrutamento">
     <div class="aboutUs">
-      <img src="@/assets/aaue.png" alt="" />
       <div class="text">
         <h1>O que é a AAUE?</h1>
         <p>
@@ -86,6 +85,7 @@
           </router-link>
         </div>
       </div>
+      <img src="@/assets/aaue.png" alt="" />
     </div>
   </section>
   <section class="plataformas">
@@ -128,27 +128,31 @@
         <a class="leftArrow" @click="decrementIndexes"
           ><i class="fas fa-chevron-left"></i
         ></a>
-        <transition-group
+        <transition
           @before-enter="beforeEnter"
           @enter="enter"
           @leave="leave"
+          mode="out-in"
           :css="false"
-          tag="div"
-          class="newsCards"
         >
-          <NoticiaCard
-            v-for="(noticia, index) in noticias.slice(initialIndex, finalIndex)"
-            :key="noticia._id"
-            :data-index="index"
-            :postID="noticia._id"
-            :categoryColor="noticia.categoryColor"
-            :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
-            :titulo="noticia.title"
-            :data="noticia.date"
-            :textPreview="noticia.paragraphs[0]"
-            @click="setNoticia(noticia)"
-          />
-        </transition-group>
+          <div class="newsCards">
+            <NoticiaCard
+              v-for="(noticia, index) in noticias.slice(
+                initialIndex,
+                finalIndex
+              )"
+              :key="noticia._id"
+              :data-index="index"
+              :postID="noticia._id"
+              :categoryColor="noticia.categoryColor"
+              :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
+              :titulo="noticia.title"
+              :data="noticia.date"
+              :textPreview="noticia.paragraphs[0]"
+              @click="setNoticia(noticia)"
+            />
+          </div>
+        </transition>
         <a class="rightArrow" @click="incrementIndexes"
           ><i class="fas fa-chevron-right"></i
         ></a>
@@ -168,27 +172,35 @@ import gsap from "gsap";
 export default {
   name: "Home",
   setup() {
-    const beforeEnter = (el) => {
-      el.style.transform = "translateX(-1800px)";
+    const beforeEnter = (el, done) => {
+      el.style.transform = "translateX(-2000px)";
+      console.log("beforeEnter");
+    };
+    const beforeLeave = (el) => {
+      el.style.transform = "translateX(1800px)";
     };
     const leave = (el, done) => {
       gsap.to(el, {
-        x: 2000,
+        x: 1000,
+        opacity: 0,
         duration: 2,
         onComplete: done,
         delay: 1,
       });
+      console.log("leave");
     };
     const enter = (el, done) => {
       gsap.to(el, {
         x: 0,
         duration: 2,
+        opacity: 1,
         onComplete: done,
         delay: 1,
         /* delay: el.dataset.index * 1, */
       });
+      console.log("enter");
     };
-    return { beforeEnter, enter, leave };
+    return { beforeEnter, enter, leave, beforeLeave };
   },
   data() {
     return {
@@ -280,6 +292,15 @@ export default {
 $textColor: #f7f8fc;
 $easing: ease-in;
 
+@keyframes fadeIn {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 section {
   padding: 100px 75px;
 }
@@ -303,21 +324,40 @@ section {
     justify-content: center;
     align-items: left;
     flex-direction: column;
-    overflow: none;
+    overflow: hidden;
 
     .slogan {
       font-size: 70px;
       font-weight: bold;
       margin: 0px 25px 25px 0px;
       text-transform: uppercase;
-      overflow: none;
+      overflow: hidden;
+
+      span {
+        display: block;
+        transform: translate3d(0, -400px, 0);
+        animation: fadeIn 1s 0.3s forwards;
+      }
     }
 
     .heroText {
       width: 45%;
       font-size: 18px;
       margin: 0;
+      overflow: hidden;
+
+      span {
+        display: block;
+        transform: translate3d(0, -400px, 0);
+        animation: fadeIn 1s 0.5s forwards;
+      }
     }
+  }
+
+  .buttons {
+    display: block;
+    transform: translate3d(0, -400px, 0);
+    animation: fadeIn 1s 0.7s forwards;
   }
 
   button {
@@ -347,8 +387,6 @@ section {
 }
 
 .ourWork {
-  min-height: 100vh;
-
   .work {
     display: flex;
 
@@ -379,17 +417,22 @@ section {
 }
 
 .recrutamento {
-  min-height: 100vh;
+  display: flex;
+  padding-top: 0;
 
   .aboutUs {
     display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
 
     img {
       height: 400px;
+      margin-left: 150px;
     }
     .text {
       display: flex;
       flex-direction: column;
+      width: 50%;
 
       h1 {
         text-transform: uppercase;

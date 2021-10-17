@@ -48,7 +48,7 @@ export default {
   text-transform: uppercase;
 
   h1 {
-    font-size: 100px;
+    font-size: 80px;
     border-radius: 2px;
     margin-bottom: 20px;
     border-bottom: 5px solid white;
@@ -57,7 +57,7 @@ export default {
 
   p {
     margin: 0;
-    font-size: 30px;
+    font-size: 25px;
 
     &:nth-child(3) {
       margin-bottom: 2vh;

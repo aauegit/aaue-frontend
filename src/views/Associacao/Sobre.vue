@@ -81,7 +81,7 @@ export default {
 
 .aboutText {
   p {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 18px;
     width: 80%;
   }

@@ -57,10 +57,11 @@ export default {
 $specialColor: #155781;
 .setores {
   display: flex;
+  margin-top: 75px;
   padding-bottom: 100px;
 
   .indice {
-    margin: 75px 0 0 30px;
+    margin: 0px 0 0 75px;
     display: flex;
     flex-direction: row;
     text-align: left;
@@ -79,7 +80,7 @@ $specialColor: #155781;
       align-items: center;
       font-size: 10px;
       color: #555;
-      padding: 0px 10px 20px 10px;
+      padding: 0px 10px 20px 0px;
 
       i {
         font-size: 20px;
@@ -118,11 +119,6 @@ $specialColor: #155781;
       }
     }
   }
-}
-
-.setor {
-  margin-top: 75px;
-  height: auto;
 }
 
 @media (max-width: 1016px) {

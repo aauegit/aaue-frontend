@@ -1,140 +1,129 @@
 <template>
-  <div class="pageContent">
-    <section class="login" v-if="!loggedIn">
+  <section class="login" v-if="!loggedIn">
+    <form @submit.prevent>
+      <img src="@/assets/aaueLogo.png" alt="" />
+      <label for="Username">Username</label>
+      <input
+        type="text"
+        v-model="username"
+        name="Username"
+        placeholder="Username"
+        required
+      />
+      <span v-if="wrongUserError">O usuário não existe</span>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        v-model="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+      <span v-if="wrongPasswordError">A password está errada</span>
+      <div class="buttons" :class="{ isActive: isLoginFormFilled }">
+        <Button class="button" buttonText="Iniciar sessão" @click="logIn" />
+      </div>
+    </form>
+  </section>
+  <div class="sidebarAPI" v-if="loggedIn && !formSent">
+    <ul>
+      <li @click="createNews">
+        <i class="fas fa-pen"></i>
+        <span>Criar notícia</span>
+      </li>
+      <li @click="editNews">
+        <i class="fas fa-edit"></i>
+        <span>Editar notícia</span>
+      </li>
+      <li @click="deleteNews">
+        <i class="fas fa-trash-alt"></i>
+        <span>Apagar notícia</span>
+      </li>
+    </ul>
+  </div>
+  <section class="postBlog" v-if="loggedIn && !formSent">
+    <h1>{{ headerText }}</h1>
+    <div class="getNoticia">
+      <select
+        name="selectnoticia"
+        id="selectnoticia"
+        v-model="selectedNoticia"
+        v-if="
+          headerText == 'Editar notícia' || headerText == 'Eliminar notícia'
+        "
+      >
+        <option v-for="titulo in titulos" :key="titulo.id">{{
+          titulo.title
+        }}</option>
+      </select>
+    </div>
+    <div class="forms" v-if="headerText == 'Criar nova notícia'">
       <form @submit.prevent>
-        <img src="@/assets/aaueLogo.png" alt="" />
-        <label for="Username">Username</label>
+        <label for="titulo">Título</label>
         <input
           type="text"
-          v-model="username"
-          name="Username"
-          placeholder="Username"
+          id="titulo"
+          v-model="titulo"
+          placeholder="Episódio V: O Império Contra-Ataca"
           required
         />
-        <span v-if="wrongUserError">O usuário não existe</span>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          v-model="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <span v-if="wrongPasswordError">A password está errada</span>
-        <div class="buttons" :class="{ isActive: isLoginFormFilled }">
-          <Button class="button" buttonText="Iniciar sessão" @click="logIn"
-            >Iniciar sessão
-          </Button>
-        </div>
-      </form>
-    </section>
-    <div class="sidebarAPI" v-if="loggedIn && !formSent">
-      <ul>
-        <li @click="createNews">
-          <i class="fas fa-pen"></i>
-          <span>Criar notícia</span>
-        </li>
-        <li @click="editNews">
-          <i class="fas fa-edit"></i>
-          <span>Editar notícia</span>
-        </li>
-        <li @click="deleteNews">
-          <i class="fas fa-trash-alt"></i>
-          <span>Apagar notícia</span>
-        </li>
-      </ul>
-    </div>
-    <section class="postBlog" v-if="loggedIn && !formSent">
-      <h1>{{ headerText }}</h1>
-      <div class="getNoticia">
-        <select
-          name="selectnoticia"
-          id="selectnoticia"
-          v-model="selectedNoticia"
-          v-if="
-            headerText == 'Editar notícia' || headerText == 'Eliminar notícia'
-          "
-        >
-          <option v-for="titulo in titulos" :key="titulo.id">{{
-            titulo.title
-          }}</option>
+        <label for="category">Categoria principal</label>
+        <select name="category" id="category" v-model="category" required>
+          <option value="Comunicados">Comunicados</option>
+          <option value="Desporto">Desporto</option>
+          <option value="Discursos">Discursos</option>
+          <option value="Ensino">Ensino</option>
+          <option value="Geral">Geral</option>
+          <option value="Politica">Politica</option>
         </select>
-      </div>
-      <div
-        class="forms"
-        v-if="headerText == 'Criar nova notícia' || selectedNoticia"
-      >
-        <form @submit.prevent>
-          <label for="titulo">Título</label>
-          <input
-            type="text"
-            id="titulo"
-            v-model="titulo"
-            placeholder="Episódio V: O Império Contra-Ataca"
-            required
-          />
-          <label for="category">Categoria principal</label>
-          <select name="category" id="category" v-model="category" required>
-            <option value="Comunicados">Comunicados</option>
-            <option value="Desporto">Desporto</option>
-            <option value="Discursos">Discursos</option>
-            <option value="Ensino">Ensino</option>
-            <option value="Geral">Geral</option>
-            <option value="Politica">Politica</option>
-          </select>
-          <!-- <label for="outrasCategorias">Outras Categorias:</label>
+        <!-- <label for="outrasCategorias">Outras Categorias:</label>
           <div class="outrasCategorias">
             <div class="catComunicados" v-if="category != 'Comunicados'">
               <input type="checkbox" />
               <label for="catComunicados">Comunicados</label>
             </div>
           </div> -->
-          <label for="data"
-            >Data: {{ diaDeHoje }} de {{ mesDeHoje }}, {{ anoDeHoje }}</label
-          >
-          <label for="foto">Foto:</label>
-          <Dropzone @drop.prevent="drop" @change="selectedFile" />
-          <span>Ficheiro: {{ dropzoneFile.name }}</span>
-          <label for="assinatura">Assinatura</label>
-          <input
-            type="text"
-            id="assinatura"
-            v-model="assinatura"
-            placeholder="Mestre Yoda"
-          />
-          <div class="buttons" :class="{ isActive: isFormFilled }">
-            <Button buttonText="Publicar" @click="publishNews" />
+        <label for="data"
+          >Data: {{ diaDeHoje }} de {{ mesDeHoje }}, {{ anoDeHoje }}</label
+        >
+        <label for="foto">Foto:</label>
+        <Dropzone @drop.prevent="drop" @change="selectedFile" />
+        <span>Ficheiro: {{ dropzoneFile.name }}</span>
+        <label for="assinatura">Assinatura</label>
+        <input
+          type="text"
+          id="assinatura"
+          v-model="assinatura"
+          placeholder="Mestre Yoda"
+        />
+        <div class="buttons" :class="{ isActive: isFormFilled }">
+          <Button buttonText="Publicar" @click="publishNews" />
+        </div>
+      </form>
+      <form class="formDeParagrafos">
+        <div class="paragraph" v-for="index in numberOfParagraphs" :key="index">
+          <div class="inputs">
+            <label for="paragrafo">{{ index }}º Parágrafo</label>
+            <textarea
+              type="text"
+              id="paragrafo"
+              v-model="paragrafo[index - 1]"
+              placeholder="Há muito tempo, em uma galáxia muito, muito distante..."
+              required
+            />
           </div>
-        </form>
-        <form class="formDeParagrafos">
-          <div
-            class="paragraph"
-            v-for="index in numberOfParagraphs"
-            :key="index"
-          >
-            <div class="inputs">
-              <label for="paragrafo">{{ index }}º Parágrafo</label>
-              <textarea
-                type="text"
-                id="paragrafo"
-                v-model="paragrafo[index - 1]"
-                placeholder="Há muito tempo, em uma galáxia muito, muito distante..."
-                required
-              />
-            </div>
-          </div>
-          <div class="buttonsParagraphs">
-            <i class="fas fa-plus" @click="incrementNumberOfParagraphs"></i>
-            <i class="fas fa-times" @click="decrementNumberOfParagraphs"></i>
-          </div>
-        </form>
-      </div>
-    </section>
-    <div class="postCreated" v-if="formSent">
-      <h1>Notícia criada com sucesso!</h1>
-      <i class="far fa-check-circle"></i>
-      <Button class="button" buttonText="Voltar" @click="formSent = false" />
+        </div>
+        <div class="buttonsParagraphs">
+          <i class="fas fa-plus" @click="incrementNumberOfParagraphs"></i>
+          <i class="fas fa-times" @click="decrementNumberOfParagraphs"></i>
+        </div>
+      </form>
     </div>
+  </section>
+  <div class="postCreated" v-if="formSent">
+    <h1>Notícia criada com sucesso!</h1>
+    <i class="far fa-check-circle"></i>
+    <Button class="button" buttonText="Voltar" @click="formSent = false" />
   </div>
 </template>
 
@@ -507,7 +496,7 @@ section {
 }
 
 .login {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -548,8 +537,7 @@ section {
 }
 
 .postBlog {
-  padding-top: 17vh;
-  min-height: 100vh;
+  min-height: 80vh;
   margin-left: 1.5rem;
 
   .forms {

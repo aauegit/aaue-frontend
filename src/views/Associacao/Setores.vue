@@ -10,7 +10,7 @@
         </li>
       </div>
     </ul>
-    <Setor v-if="currentSetor" :setor="currentSetor" />
+    <Setor v-if="currentSetor" :setor="currentSetor" :key="currentSetor.nome" />
   </div>
 </template>
 
@@ -46,9 +46,11 @@ export default {
 $specialColor: #155781;
 .setores {
   display: flex;
+  margin-top: 75px;
+  padding-bottom: 100px;
 
   .indice {
-    margin: 75px 0 0 30px;
+    margin: 0px 0 0 75px;
     display: flex;
     flex-direction: row;
     text-align: left;
@@ -112,10 +114,6 @@ $specialColor: #155781;
       }
     }
   }
-}
-
-.setor {
-  margin-top: 75px;
 }
 
 @media (max-width: 1016px) {

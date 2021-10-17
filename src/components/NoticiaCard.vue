@@ -77,7 +77,6 @@ export default {
   border-radius: 12px;
 
   img {
-    transition: all 0.3s cubic-bezier(0.79, 0.21, 0.06, 0.81);
     width: 350px;
     height: 200px;
     border-radius: 12px 12px 0 0;
@@ -91,7 +90,6 @@ export default {
     max-width: 350px;
     height: 100%;
     color: black;
-    transition: all 0.3s cubic-bezier(0.79, 0.21, 0.06, 0.81);
 
     h1 {
       font-size: 20px;

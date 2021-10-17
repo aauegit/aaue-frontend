@@ -35,7 +35,7 @@ $specialColor: #155781;
   align-items: center;
 
   img {
-    width: 270px;
+    width: 250px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 5px;
