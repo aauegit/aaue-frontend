@@ -57,29 +57,6 @@ export default {
   padding-top: 15vh;
   padding-bottom: 100px;
 
-  .searchMobile {
-    position: relative;
-    margin-bottom: 20px;
-
-    input {
-      width: 90%;
-      padding: 15px;
-      margin: 0 30px;
-      border-radius: 25px;
-    }
-
-    i {
-      background-color: black;
-      color: white;
-      padding: 17px 20px 17px 20px;
-      border-radius: 0px 25px 25px 0px;
-      position: absolute;
-      right: 5%;
-      cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-  }
-
   .newsColumn {
     display: flex;
     flex-direction: column;

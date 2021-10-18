@@ -95,7 +95,7 @@ export default {
 
     img {
       height: auto;
-      width: 50vw;
+      width: 400px;
     }
 
     p {
@@ -113,6 +113,11 @@ export default {
 @media (max-width: 500px) {
   .mainContent {
     padding: 20px;
+
+    img {
+      height: auto;
+      width: 270px;
+    }
   }
 }
 </style>

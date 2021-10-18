@@ -37,7 +37,9 @@ export default {
 <style lang="scss" scoped>
 .estatutoCard {
   position: relative;
-  max-height: 300px;
+  flex: 0 0 40%;
+  height: 300px;
+  width: 350px;
   padding: 20px;
   border-radius: 18px;
   display: flex;
@@ -67,6 +69,12 @@ export default {
     position: absolute;
     max-width: 100%;
     border: 2px solid red;
+  }
+}
+
+@media (max-width: 500px) {
+  .estatutoCard {
+    flex: 0 0 95%;
   }
 }
 </style>

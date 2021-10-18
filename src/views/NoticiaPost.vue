@@ -6,7 +6,11 @@
         <h1>{{ noticia.title }}</h1>
         <hr :style="{ borderColor: noticia.categoryColor }" />
         <h2>Publicado a {{ noticia.date }}</h2>
-        <img :src="getImgURL(`noticias/${noticia.imageLink}`)" alt="" />
+        <img
+          v-if="noticia.imageLink"
+          :src="getImgURL(`noticias/${noticia.imageLink}`)"
+          alt=""
+        />
         <p v-for="paragraph in noticia.paragraphs" :key="paragraph">
           {{ paragraph }}
         </p>
@@ -94,11 +98,12 @@ export default {
   .noticia {
     display: flex;
     flex-direction: column;
-    padding: 75px 0px;
+    padding: 40px 0px 75px 0;
 
     .noticiaPost {
       border-right: none;
       flex-direction: column;
+      padding: 20px;
 
       .noticiaText {
         padding-right: 0;
@@ -116,12 +121,6 @@ export default {
 
   .pageContent {
     padding-top: 0vh;
-  }
-}
-
-@media (max-width: 1016px) {
-  .noticia .noticiaPost {
-    padding: 20px;
   }
 }
 </style>

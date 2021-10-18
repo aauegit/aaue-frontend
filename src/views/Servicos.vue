@@ -14,6 +14,7 @@
           <li>- Encadernações</li>
           <li>- Venda de material escolar</li>
           <li>- Venda de emblemas académicos</li>
+          <li>- 10% de descontos para sócios AAUE</li>
         </ul>
         <p class="horario">
           <span>Horário: </span>9:00 – 13:00 | 14:00 – 19:00 (fechado: Sábado e

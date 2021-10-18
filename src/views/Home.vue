@@ -61,15 +61,6 @@
           Democraticidade, Unicidade, Apartidarismo e Arreligiosidade.
         </p>
         <p>
-          A 29 de Maio de 1978 é fundada com o nome de Associação de Estudantes
-          do Instituto Universitário de Évora a organização representativa dos
-          estudantes da Academia Eborense. Após a passagem de Instituto
-          Universitário de Évora para Universidade de Évora em 1980 a associação
-          assume a denominação de Associação de Estudantes da Universidade de
-          Évora mantendo-se esta até 2010, altura em que passa a denominar- se
-          Associação Académica da Universidade de Évora (AAUE).
-        </p>
-        <p>
           Atualmente, a Associação Académica da Universidade de Évora
           encontra-se organizada em diversos grupos, passando a sua
           operacionalização pela Direção e Secções Autónomas, sendo que a
@@ -356,7 +347,7 @@ section {
 
   .buttons {
     display: block;
-    transform: translate3d(0, -400px, 0);
+    transform: translate3d(0, 400px, 0);
     animation: fadeIn 1s 0.7s forwards;
   }
 
@@ -514,8 +505,8 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 1200px;
-        overflow: hidden;
+        max-width: 1200px;
+        padding: 20px 0;
       }
 
       .leftArrow,
@@ -562,6 +553,23 @@ section {
   .ourWork .work .text h1 {
     font-size: 45px;
   }
+
+  .recrutamento .aboutUs .text h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .noticias .noticiasPreview .carrossel {
+    .newsCards {
+      flex-wrap: wrap;
+    }
+
+    .leftArrow,
+    .rightArrow {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 1250px) {
@@ -592,6 +600,15 @@ section {
 
     .text {
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .noticias .noticiasPreview .carrossel {
+    width: 100%;
+    .newsCards {
+      flex-direction: column;
     }
   }
 }

@@ -58,28 +58,11 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  min-height: 80vh;
+  height: 400px;
   padding-left: 20px;
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 15vh;
-
-  .search {
-    position: relative;
-
-    i {
-      position: absolute;
-      font-size: 20px;
-      top: 15%;
-      left: 10px;
-      opacity: 0.5;
-    }
-  }
-
-  .searchBar {
-    padding: 10px 10px 10px 40px;
-    margin-bottom: 30px;
-  }
+  top: 12vh;
 
   hr {
     width: 100px;

@@ -89,7 +89,7 @@ export default {
     padding-right: 20px;
 
     h1 {
-      font-size: 45px;
+      font-size: 37px;
     }
 
     p {

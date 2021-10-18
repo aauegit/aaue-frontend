@@ -54,9 +54,20 @@ export default {
 .estatutos {
   min-height: 80vh;
   padding: 100px;
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .estatutos {
+    padding: 100px 50px;
+  }
+}
+@media (max-width: 500px) {
+  .estatutos {
+    padding: 100px 20px;
+  }
 }
 </style>

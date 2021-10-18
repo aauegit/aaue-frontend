@@ -411,9 +411,12 @@ footer {
 
     .socialMedia {
       flex-wrap: wrap;
+      align-items: center;
 
       li {
-        flex: 0 0 30%;
+        flex: 0 0 40%;
+        display: flex;
+        justify-content: center;
       }
     }
   }
