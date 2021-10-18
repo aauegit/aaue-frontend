@@ -636,7 +636,8 @@ section {
   }
 
   .heroContent .textArea .slogan {
-    font-size: 40px;
+    font-size: 38px;
+    margin-right: 0;
   }
 
   .ourWork .work .text .team {
@@ -657,7 +658,7 @@ section {
 
   .heroContent .textArea {
     .slogan {
-      font-size: 40px;
+      font-size: 38px;
     }
 
     .heroText {
