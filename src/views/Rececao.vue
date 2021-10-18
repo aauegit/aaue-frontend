@@ -101,13 +101,12 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 5vw;
+  padding: 100px 75px;
 
   .titulo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 55%;
     margin-bottom: 30px;
 
     i {
@@ -174,6 +173,16 @@ export default {
   .googleMaps {
     width: 80vw;
     height: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .rececao {
+    padding: 20px;
+
+    .cartaz {
+      flex-direction: column;
+    }
   }
 }
 </style>

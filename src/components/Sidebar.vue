@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  height: 80vh;
+  min-height: 80vh;
   padding-left: 20px;
   position: -webkit-sticky; /* Safari */
   position: sticky;

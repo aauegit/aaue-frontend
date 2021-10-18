@@ -1,26 +1,120 @@
 <template>
   <nav class="mobileNav">
-    <transition-group
-      v-if="isActive"
-      appear
-      tag="ul"
-      @before-enter="beforeEnter"
-      @enter="enter"
-      class="navLinks"
-      :class="isActive"
-    >
-      <li
-        v-for="(navlink, index) in navLinks"
-        :key="navlink.id"
-        :data-index="index"
-      >
-        <router-link :to="{ name: navlink.routeName }">
-          {{ navlink.routeText }}</router-link
-        >
+    <ul class="navLinks" :class="isActive">
+      <li @click="toggleClass">
+        <router-link :to="{ name: 'Home' }"> Home</router-link>
       </li>
-    </transition-group>
+      <li @click="toggleClass">
+        <router-link :to="{ name: 'Noticias' }"> Notícias</router-link>
+      </li>
+      <li class="dropdown" @click="openEventos = !openEventos">
+        <a
+          >Eventos
+          <i class="fas fa-chevron-down" :class="{ activated: openEventos }"></i
+        ></a>
+        <div class="subMenu" v-if="openEventos">
+          <router-link
+            :to="{ name: 'Rececao' }"
+            @click="snapToElement('body') && toggleClass"
+            >Receção ao Caloiro</router-link
+          >
+          <a
+            href="https://expoestudante.aaue.pt/#/"
+            @click="snapToElement('body') && toggleClass"
+            >Expo Estudante</a
+          >
+          >
+          <a
+            href="http://queima.aaue.pt/"
+            @click="snapToElement('body') && toggleClass"
+            >Queima das Fitas</a
+          >
+          >
+        </div>
+      </li>
+      <li class="dropdown" @click="openAssociacao = !openAssociacao">
+        <a
+          >Associação
+          <i
+            class="fas fa-chevron-down"
+            :class="{ activated: openAssociacao }"
+          ></i
+        ></a>
+        <div class="subMenu" v-if="openAssociacao">
+          <router-link
+            :to="{ name: 'Presidencia' }"
+            @click="snapToElement('body') && toggleClass"
+            >Presidência</router-link
+          >
+          <router-link
+            :to="{ name: 'Assembleia' }"
+            @click="snapToElement('body') && toggleClass"
+            >Assembleia Magna</router-link
+          >
+          <router-link
+            :to="{ name: 'Fiscal' }"
+            @click="snapToElement('body') && toggleClass"
+            >Conselho Fiscal</router-link
+          >
+          <router-link
+            :to="{ name: 'Setores' }"
+            @click="snapToElement('body') && toggleClass"
+            >Setores</router-link
+          >
+          <router-link
+            :to="{ name: 'Autonomas' }"
+            @click="snapToElement('body') && toggleClass"
+            >Secções Autónomas</router-link
+          >
+          <router-link
+            :to="{ name: 'Sobre' }"
+            @click="snapToElement('body') && toggleClass"
+            >Sobre nós</router-link
+          >
+          <router-link
+            :to="{ name: 'Estatutos' }"
+            @click="snapToElement('body') && toggleClass"
+            >Estatutos</router-link
+          >
+          <router-link
+            :to="{ name: 'GuiaEstudante' }"
+            @click="snapToElement('body') && toggleClass"
+            >Guia do Estudante</router-link
+          >
+        </div>
+      </li>
+      <li class="dropdown" @click="openPlataformas = !openPlataformas">
+        <a
+          >Plataformas
+          <i
+            class="fas fa-chevron-down"
+            :class="{ activated: openPlataformas }"
+          ></i
+        ></a>
+        <div class="subMenu" v-if="openPlataformas">
+          <a
+            href="https://alojamento.aaue.pt/"
+            @click="snapToElement('body') && toggleClass"
+            >Portal do Alojamento</a
+          >
+          >
+          <a
+            href="http://torneioreitor.aaue.pt/"
+            @click="snapToElement('body') && toggleClass"
+            >Desporto</a
+          >
+          >
+        </div>
+      </li>
+      <li @click="toggleClass">
+        <router-link :to="{ name: 'Servicos' }"> Serviços</router-link>
+      </li>
+      <li @click="toggleClass">
+        <router-link :to="{ name: 'Contactos' }"> Contactos</router-link>
+      </li>
+    </ul>
 
-    <div class="burger" @click="toggleClass()">
+    <div class="burger" @click="toggleClass">
       <div v-if="!isActive" class="burgerText">MENU</div>
       <div class="drawing" :class="newClass">
         <div class="line1"></div>
@@ -32,40 +126,21 @@
 </template>
 
 <script>
-import gsap from "gsap";
+import { snapToElement } from "@/functions/globals.js";
 export default {
-  setup() {
-    const navLinks = [
-      { id: 0, routeName: "Home", routeText: "Home" },
-      { id: 1, routeName: "Noticias", routeText: "Noticias" },
-      /* { id: 2, routeName: "Discursos", routeText: "Discursos" }, */
-      { id: 5, routeName: "Servicos", routeText: "Serviços" },
-      { id: 6, routeName: "Contactos", routeText: "Contactos" },
-    ];
-    const beforeEnter = (el) => {
-      el.style.opacity = 0;
-      el.style.transform = "translateX(-100px)";
-    };
-    const enter = (el, done) => {
-      gsap.to(el, {
-        opacity: 1,
-        x: 0,
-        duration: 0.2,
-        onComplete: done,
-        delay: el.dataset.index * 0.05,
-      });
-    };
-    return { navLinks, beforeEnter, enter };
-  },
   name: "MobileNav",
   data() {
     return {
       toggle: false,
       newClass: "",
       isActive: "",
+      openEventos: false,
+      openAssociacao: false,
+      openPlataformas: false,
     };
   },
   methods: {
+    snapToElement,
     toggleClass() {
       this.toggle = !this.toggle;
       this.toggle ? (this.newClass = "toggle") : (this.newClass = "");
@@ -80,7 +155,7 @@ body {
   overflow-x: hidden;
 }
 .mobileNav {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   width: 100%;
   opacity: 1;
@@ -88,11 +163,12 @@ body {
   padding: 35px 100px;
   background-color: #f7f8fc;
   box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.164);
+
   .navLinks {
     position: absolute;
-    right: 0px;
-    height: 100vh;
-    top: 0vh;
+    right: 0;
+    min-height: 100vh;
+    top: 0;
     background-color: #000000;
     display: none;
     flex-direction: column;
@@ -104,6 +180,8 @@ body {
     li {
       opacity: 1;
       letter-spacing: 5px;
+      padding: 10px;
+      margin: 10px 0;
       font-size: 20px;
       text-transform: uppercase;
 
@@ -111,10 +189,45 @@ body {
         color: white;
       }
     }
+
+    .dropdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      i {
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .activated {
+        transform: rotateX(180deg) !important;
+      }
+
+      .subMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+
+        a {
+          font-size: 14px;
+          flex: 0 0 40%;
+          text-align: center;
+          margin-left: 20px;
+          color: white;
+          padding: 15px;
+          margin: 10px;
+          background: black;
+          min-width: 80vw;
+        }
+      }
+    }
   }
 
   .isActive {
-    position: fixed;
+    position: absolute;
     transform: translateX(0%);
     display: flex;
     opacity: 1;
@@ -123,7 +236,7 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     .burgerText {

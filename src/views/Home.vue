@@ -514,7 +514,6 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 2px solid red;
         width: 1200px;
         overflow: hidden;
       }

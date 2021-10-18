@@ -94,17 +94,34 @@ export default {
   .noticia {
     display: flex;
     flex-direction: column;
-    padding: 75px 47px;
-    border: 2px solid red;
+    padding: 75px 0px;
 
     .noticiaPost {
       border-right: none;
-      margin-bottom: 50px;
+      flex-direction: column;
+
+      .noticiaText {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      .sidebar {
+        margin-top: 50px;
+        padding-left: 0;
+        width: 100%;
+        min-height: 10vh;
+      }
     }
   }
 
   .pageContent {
     padding-top: 0vh;
+  }
+}
+
+@media (max-width: 1016px) {
+  .noticia .noticiaPost {
+    padding: 20px;
   }
 }
 </style>
