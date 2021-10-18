@@ -1,21 +1,28 @@
 <template>
   <nav class="mobileNav">
     <ul class="navLinks" :class="isActive">
-      <img class="logoInside" src="@/assets/aaueLogoBranco.png" alt="" />
+      <img
+        @click="clickTest = !clickTest"
+        class="logoInside"
+        src="@/assets/aaueLogoBranco.png"
+        alt=""
+      />
 
       <li @click="toggleClass">
         <router-link :to="{ name: 'Home' }"
-          ><i class="fas fa-home"></i> Home</router-link
+          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          Home</router-link
         >
       </li>
       <li @click="toggleClass">
         <router-link :to="{ name: 'Noticias' }"
-          ><i class="fas fa-home"></i> Notícias</router-link
+          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          Notícias</router-link
         >
       </li>
       <li class="dropdown" @click="openEventos = !openEventos">
         <a>
-          <i class="fas fa-home"></i>
+          <i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
           Eventos
           <i class="fas fa-chevron-down" :class="{ activated: openEventos }"></i
         ></a>
@@ -35,7 +42,8 @@
       </li>
       <li class="dropdown" @click="openAssociacao = !openAssociacao">
         <a
-          ><i class="fas fa-home"></i> Associação
+          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          Associação
           <i
             class="fas fa-chevron-down"
             :class="{ activated: openAssociacao }"
@@ -70,7 +78,8 @@
       </li>
       <li class="dropdown" @click="openPlataformas = !openPlataformas">
         <a
-          ><i class="fas fa-home"></i> Plataformas
+          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          Plataformas
           <i
             class="fas fa-chevron-down"
             :class="{ activated: openPlataformas }"
@@ -89,12 +98,14 @@
       </li>
       <li @click="toggleClass">
         <router-link :to="{ name: 'Servicos' }"
-          ><i class="fas fa-home"></i> Serviços</router-link
+          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          Serviços</router-link
         >
       </li>
       <li @click="toggleClass">
         <router-link :to="{ name: 'Contactos' }"
-          ><i class="fas fa-home"></i> Contactos</router-link
+          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          Contactos</router-link
         >
       </li>
     </ul>
@@ -123,6 +134,7 @@ export default {
       openEventos: false,
       openAssociacao: false,
       openPlataformas: false,
+      clickTest: false,
     };
   },
   methods: {
@@ -159,7 +171,7 @@ body {
     min-height: 100vh;
     top: 0;
     /* background-color: #000000f4; */
-    background-color: #010105f4;
+    background-color: #010105f6;
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -175,6 +187,17 @@ body {
       margin: 10px 0;
       font-size: 20px;
       text-transform: uppercase;
+
+      .fa-home {
+        padding: 7px 8px;
+        background-color: darkblue;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      .clickTest {
+        display: none;
+      }
 
       a {
         color: white;
