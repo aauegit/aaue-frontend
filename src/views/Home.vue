@@ -581,6 +581,19 @@ section {
   .pageContent {
     padding-top: 0vh;
   }
+
+  .recrutamento .aboutUs {
+    flex-direction: column;
+    padding-bottom: 50px;
+
+    img {
+      display: none;
+    }
+
+    .text {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 790px) {
