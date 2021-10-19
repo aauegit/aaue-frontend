@@ -178,10 +178,16 @@ export default {
 
 @media (max-width: 900px) {
   .rececao {
-    padding: 20px;
+    padding: 100px 20px;
 
     .cartaz {
       flex-direction: column;
+
+      img {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

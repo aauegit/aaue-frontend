@@ -1,28 +1,26 @@
 <template>
   <nav class="mobileNav">
     <ul class="navLinks" :class="isActive">
-      <img
-        @click="clickTest = !clickTest"
-        class="logoInside"
-        src="@/assets/aaueLogoBranco.png"
-        alt=""
-      />
-
+        <img
+          class="logoInside"
+          src="@/assets/aaueLogoBranco.png"
+          alt=""
+        />
       <li @click="toggleClass">
         <router-link :to="{ name: 'Home' }"
-          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          >
           Home</router-link
         >
       </li>
       <li @click="toggleClass">
         <router-link :to="{ name: 'Noticias' }"
-          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          >
           Notícias</router-link
         >
       </li>
       <li class="dropdown" @click="openEventos = !openEventos">
         <a>
-          <i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          
           Eventos
           <i class="fas fa-chevron-down" :class="{ activated: openEventos }"></i
         ></a>
@@ -42,7 +40,7 @@
       </li>
       <li class="dropdown" @click="openAssociacao = !openAssociacao">
         <a
-          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          >
           Associação
           <i
             class="fas fa-chevron-down"
@@ -78,7 +76,7 @@
       </li>
       <li class="dropdown" @click="openPlataformas = !openPlataformas">
         <a
-          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          >
           Plataformas
           <i
             class="fas fa-chevron-down"
@@ -98,18 +96,21 @@
       </li>
       <li @click="toggleClass">
         <router-link :to="{ name: 'Servicos' }"
-          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          >
           Serviços</router-link
         >
       </li>
       <li @click="toggleClass">
         <router-link :to="{ name: 'Contactos' }"
-          ><i class="fas fa-home" :class="{ clickTest: clickTest }"></i>
+          >
           Contactos</router-link
         >
       </li>
     </ul>
+          <router-link class="logoLink" :to="{name: 'Home'}">
+
     <img v-if="!isActive" class="logo" src="@/assets/aaue.png" alt="" />
+          </router-link>
 
     <div class="burger" @click="toggleClass">
       <div v-if="!isActive" class="burgerText">MENU</div>
@@ -134,18 +135,23 @@ export default {
       openEventos: false,
       openAssociacao: false,
       openPlataformas: false,
-      clickTest: false,
     };
   },
   methods: {
     snapToElement,
     toggleClass() {
+      const body = document.querySelector('body');
       this.toggle = !this.toggle;
       this.toggle ? (this.newClass = "toggle") : (this.newClass = "");
       this.toggle ? (this.isActive = "isActive") : (this.isActive = "");
-      if (!this.toggle) {
-        snapToElement("body");
+      if (this.toggle) {
+        body.style.overflow = 'hidden';
       }
+      else if (!this.toggle) {
+        snapToElement("body");
+        body.style.overflow = 'auto';
+      }
+
     },
   },
 };
@@ -166,11 +172,11 @@ body {
   box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.164);
 
   .navLinks {
-    position: absolute;
+    position: fixed;
     right: 0;
     min-height: 100vh;
+    height: 100%;
     top: 0;
-    /* background-color: #000000f4; */
     background-color: #010105f6;
     display: none;
     flex-direction: column;
@@ -179,6 +185,8 @@ body {
     opacity: 0;
     width: 100%;
     transition: all 0.4s ease-in;
+    overflow: auto;
+
     li {
       opacity: 1;
       letter-spacing: 2px;
@@ -187,17 +195,6 @@ body {
       margin: 10px 0;
       font-size: 20px;
       text-transform: uppercase;
-
-      .fa-home {
-        padding: 7px 8px;
-        background-color: darkblue;
-        border-radius: 50%;
-        margin-right: 5px;
-      }
-
-      .clickTest {
-        display: none;
-      }
 
       a {
         color: white;
@@ -237,18 +234,24 @@ body {
   }
 
   .isActive {
-    position: absolute;
-    transform: translateX(0%);
+    position: fixed;
     display: flex;
     opacity: 1;
   }
 
-  .logo {
+    .logoLink {
     position: absolute;
     width: 50px;
     height: auto;
     top: 10px;
-    left: 20px;
+    left: 45px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .logo {
+    position: relative;
+    width: 100%;
   }
 
   .logoInside {
@@ -290,6 +293,12 @@ body {
         transform: rotate(45deg) translate(-5px, -6px);
       }
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .mobileNav .logoLink {
+    left: 15px;
   }
 }
 </style>
