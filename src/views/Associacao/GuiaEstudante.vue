@@ -1,6 +1,6 @@
 <template>
   <section class="estatutos">
-    <EstatutoCard
+    <EstatutoCard class="estatuto1"
       v-for="estatuto in estatutos"
       :key="estatuto.id"
       :nome="estatuto.nome"
@@ -48,9 +48,24 @@ export default {
 .estatutos {
   min-height: 80vh;
   padding: 100px;
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .estatuto1 {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .estatutos {
+    padding: 100px 50px;
+  }
+}
+@media (max-width: 500px) {
+  .estatutos {
+    padding: 100px 20px;
+  }
 }
 </style>
