@@ -2,17 +2,22 @@
   <div class="presidencia">
     <h1>Conselho Fiscal</h1>
     <hr />
-    <div class="membros">
+    <transition-group appear          
+            @before-enter="beforeEnter"
+            @enter="enter" 
+            tag="div" 
+     class="membros">
       <MembroDirecao
         id="membro"
-        v-for="membro in membros"
+        v-for="(membro, index) in membros"
         :key="membro.id"
+        :data-index="index"
         :img="getImgURL(membro.img)"
         :nome="membro.nome"
         :cargo="membro.cargo"
         :fb="membro.fb"
       />
-    </div>
+    </transition-group>
   </div>
 </template>
 
@@ -20,9 +25,26 @@
 import MembroDirecao from "@/components/MembroDirecao.vue";
 import { getImgURL } from "@/functions/globals.js";
 import fiscal from "@/static/fiscal.json";
+import gsap from 'gsap';
 
 export default {
   name: "Fiscal",
+  setup() {
+    const beforeEnter = (el) => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateX(-50px)';
+    }
+    const enter = (el, done) => {
+        gsap.to(el, {
+            opacity: 1,
+            x: 0,
+            duration: 0.2,
+            onComplete: done,
+            delay: el.dataset.index * 0.1,
+        });
+    }
+        return { beforeEnter, enter }
+  },
   data() {
     return {
       membros: fiscal,
