@@ -116,6 +116,11 @@ const routes = [
     name: "Api",
     component: () => import(/* webpackChunkName: "Api" */ "../views/Api.vue"),
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import(/* webpackChunkName: "NotFound" */ "../views/NotFound.vue"),
+  },
 ];
 
 const router = createRouter({

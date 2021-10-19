@@ -102,10 +102,11 @@
       />
       <PlataformaCard
         link="https://expoestudante.aaue.pt/"
-        icon="fas fa-futbol"
         titulo="Expo Estudante"
         text="Queres participar num evento de futuro, programado a pensar apenas em ti e no teu sucesso? Descobre tudo!"
-      />
+      >
+      <img class="expoIconPlataforma" src="@/assets/expo1.svg" alt="">
+      </PlataformaCard>
     </div>
   </section>
   <section class="noticias">
@@ -703,5 +704,12 @@ section {
 .fadeText-leave-to {
   opacity: 0;
   transition: all 0.5s $easing;
+}
+
+.expoIconPlataforma {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 70px;
 }
 </style>
