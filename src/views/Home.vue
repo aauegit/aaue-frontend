@@ -105,7 +105,7 @@
         titulo="Expo Estudante"
         text="Queres participar num evento de futuro, programado a pensar apenas em ti e no teu sucesso? Descobre tudo!"
       >
-      <img class="expoIconPlataforma" src="@/assets/expo1.svg" alt="">
+        <img class="expoIconPlataforma" src="@/assets/expo1.svg" alt="" />
       </PlataformaCard>
     </div>
   </section>
@@ -240,6 +240,15 @@ export default {
 <style lang="scss" scoped>
 $textColor: #f7f8fc;
 $easing: ease-in;
+
+@keyframes fadeIn {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 
 section {
   padding: 100px 75px;
