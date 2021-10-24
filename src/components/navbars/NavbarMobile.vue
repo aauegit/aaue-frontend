@@ -14,9 +14,9 @@
           <i class="fas fa-chevron-down" :class="{ activated: openEventos }"></i
         ></a>
         <div class="subMenu" v-if="openEventos">
-          <router-link :to="{ name: 'Rececao' }" @click="toggleClass"
+          <!-- <router-link :to="{ name: 'Rececao' }" @click="toggleClass"
             >⚆ Receção ao Caloiro</router-link
-          >
+          > -->
           <a href="https://expoestudante.aaue.pt/#/" @click="toggleClass"
             >⚆ Expo Estudante</a
           >

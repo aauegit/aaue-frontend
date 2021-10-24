@@ -33,9 +33,9 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="subMenu" v-if="hoveredEventos">
-            <router-link :to="{ name: 'Rececao' }"
+            <!-- <router-link :to="{ name: 'Rececao' }"
               >Receção ao Caloiro</router-link
-            >
+            > -->
             <a
               href="https://expoestudante.aaue.pt/#/"
               target="_blank"
