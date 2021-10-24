@@ -1,12 +1,20 @@
 <template>
   <section class="estatutos">
-    <EstatutoCard
-      v-for="estatuto in estatutos"
-      :key="estatuto.id"
-      :nome="estatuto.nome"
-      :icon="estatuto.icon"
-      :ficheiro="estatuto.ficheiro"
-    />
+    <div class="pdf">
+      <object data="guia-do-estudante" type="application/pdf">
+        <embed src="guia-do-estudante" type="application/pdf" />
+      </object>
+    </div>
+    <div class="estatutosCards">
+      <EstatutoCard
+        class="estatutosEstudantes"
+        v-for="estatuto in estatutos"
+        :key="estatuto.id"
+        :nome="estatuto.nome"
+        :icon="estatuto.icon"
+        :ficheiro="estatuto.ficheiro"
+      />
+    </div>
   </section>
 </template>
 
@@ -48,9 +56,21 @@ export default {
 .estatutos {
   min-height: 80vh;
   padding: 100px;
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .estatutosCards {
+    display: flex;
+    flex-direction: column;
+
+    .estatutosEstudantes {
+      margin: 20px 0 !important;
+    }
+  }
+
+  .pdf {
+    margin-right: 20px;
+  }
 }
 </style>

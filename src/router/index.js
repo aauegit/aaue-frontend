@@ -92,6 +92,14 @@ const routes = [
       ),
   },
   {
+    path: "/guia-do-estudante",
+    name: "GuiaDoEstudante",
+    component: () =>
+      import(
+        /* webpackChunkName: "GuiaEstudante" */ "../assets/guias/Guia-do-Estudante.pdf"
+      ),
+  },
+  {
     path: "/protocolos-e-parcerias",
     name: "Protocolos",
     component: () =>

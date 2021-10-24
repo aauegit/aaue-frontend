@@ -116,37 +116,26 @@
     />
     <div class="noticiasPreview">
       <div class="carrossel">
-        <a class="leftArrow" @click="decrementIndexes"
+        <!-- <a class="leftArrow" @click="decrementIndexes"
           ><i class="fas fa-chevron-left"></i
-        ></a>
-        <transition
-          @before-enter="beforeEnter"
-          @enter="enter"
-          @leave="leave"
-          mode="out-in"
-          :css="false"
-        >
-          <div class="newsCards">
-            <NoticiaCard
-              v-for="(noticia, index) in noticias.slice(
-                initialIndex,
-                finalIndex
-              )"
-              :key="noticia._id"
-              :data-index="index"
-              :postID="noticia._id"
-              :categoryColor="noticia.categoryColor"
-              :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
-              :titulo="noticia.title"
-              :data="noticia.date"
-              :textPreview="noticia.paragraphs[0]"
-              @click="setNoticia(noticia)"
-            />
-          </div>
-        </transition>
-        <a class="rightArrow" @click="incrementIndexes"
+        ></a> -->
+        <div class="newsCards">
+          <NoticiaCard
+            v-for="(noticia, index) in noticias.slice(initialIndex, finalIndex)"
+            :key="noticia._id"
+            :data-index="index"
+            :postID="noticia._id"
+            :categoryColor="noticia.categoryColor"
+            :imgURL="getImgURL(`noticias/${noticia.imageLink}`)"
+            :titulo="noticia.title"
+            :data="noticia.date"
+            :textPreview="noticia.paragraphs[0]"
+            @click="setNoticia(noticia)"
+          />
+        </div>
+        <!-- <a class="rightArrow" @click="incrementIndexes"
           ><i class="fas fa-chevron-right"></i
-        ></a>
+        ></a> -->
       </div>
     </div>
   </section>
@@ -158,41 +147,9 @@ import PlataformaCard from "../components/PlataformaCard.vue";
 import EquipaCard from "../components/EquipaCard.vue";
 import HeaderTitle from "@/components/HeaderTitle.vue";
 import { getImgURL, snapToElement } from "@/functions/globals.js";
-import gsap from "gsap";
 
 export default {
   name: "Home",
-  setup() {
-    const beforeEnter = (el, done) => {
-      el.style.transform = "translateX(-2000px)";
-      console.log("beforeEnter");
-    };
-    const beforeLeave = (el) => {
-      el.style.transform = "translateX(1800px)";
-    };
-    const leave = (el, done) => {
-      gsap.to(el, {
-        x: 1000,
-        opacity: 0,
-        duration: 2,
-        onComplete: done,
-        delay: 1,
-      });
-      console.log("leave");
-    };
-    const enter = (el, done) => {
-      gsap.to(el, {
-        x: 0,
-        duration: 2,
-        opacity: 1,
-        onComplete: done,
-        delay: 1,
-        /* delay: el.dataset.index * 1, */
-      });
-      console.log("enter");
-    };
-    return { beforeEnter, enter, leave, beforeLeave };
-  },
   data() {
     return {
       initialIndex: 0,
@@ -282,15 +239,6 @@ export default {
 <style lang="scss" scoped>
 $textColor: #f7f8fc;
 $easing: ease-in;
-
-@keyframes fadeIn {
-  0% {
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
 
 section {
   padding: 100px 75px;
@@ -509,7 +457,7 @@ section {
         padding: 20px 0;
       }
 
-      .leftArrow,
+      /* .leftArrow,
       .rightArrow {
         display: flex;
         justify-content: center;
@@ -532,7 +480,7 @@ section {
 
       .rightArrow:hover i {
         transform: translateX(3px);
-      }
+      } */
     }
   }
 }

@@ -143,8 +143,13 @@ export default {
       this.toggle = !this.toggle;
       this.toggle ? (this.newClass = "toggle") : (this.newClass = "");
       this.toggle ? (this.isActive = "isActive") : (this.isActive = "");
-      if (!this.toggle) {
+      if (this.toggle) {
+        const body = document.querySelector("body");
+        body.style.overflow = hidden;
+      } else if (!this.toggle) {
         snapToElement("body");
+        const body = document.querySelector("body");
+        body.style.overflow = auto;
       }
     },
   },
@@ -168,7 +173,7 @@ body {
   .navLinks {
     position: absolute;
     right: 0;
-    min-height: 100vh;
+    min-height: 100%;
     top: 0;
     /* background-color: #000000f4; */
     background-color: #010105f6;
@@ -238,7 +243,6 @@ body {
 
   .isActive {
     position: absolute;
-    transform: translateX(0%);
     display: flex;
     opacity: 1;
   }
