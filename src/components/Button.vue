@@ -26,6 +26,7 @@ $fastEasing: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 button {
   padding: 15px 20px;
+  position: relative;
   border: 0;
   outline: 0;
   border-radius: 25px;

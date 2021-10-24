@@ -1,7 +1,7 @@
 <template>
   <a :href="link" target="_blank" class="plataformaCard">
     <i v-if="icon" :class="icon" alt=""></i>
-    <img v-if="image" :src="image" alt="" />
+    <slot></slot>
     <div class="contentPreview">
       <h1 class="title">{{ titulo }}</h1>
       <p class="textPreview">{{ text }}</p>
@@ -52,19 +52,24 @@ export default {
 
   i {
     position: absolute;
-    top: -30px;
+    top: 0px;
     left: 20px;
     padding: 10px;
-    border-radius: 50%;
-    background-color: #f7f8fc;
     font-size: 40px;
     color: #1b1b1b;
+  }
+
+  img {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    padding: 10px;
   }
 
   .contentPreview {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 30px;
     max-width: 300px;
     transition: all 0.2s cubic-bezier(0.79, 0.21, 0.06, 0.81);
 
