@@ -122,15 +122,15 @@ export default {
     toggleClass() {
       const body = document.querySelector("body");
       this.toggle = !this.toggle;
-      this.toggle ? (this.newClass = "toggle") : (this.newClass = "");
-      this.toggle ? (this.isActive = "isActive") : (this.isActive = "");
+      this.newClass = this.toggle ? "toggle" : "";
+      this.isActive = this.toggle ? "isActive" : "";
       if (this.toggle) {
         const body = document.querySelector("body");
-        body.style.overflow = hidden;
+        body.style.overflow = "hidden";
       } else if (!this.toggle) {
         snapToElement("body");
         const body = document.querySelector("body");
-        body.style.overflow = auto;
+        body.style.overflow = "auto";
       }
     },
   },
@@ -138,9 +138,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  overflow-x: hidden;
-}
 .mobileNav {
   position: absolute;
   z-index: 10;
@@ -155,12 +152,13 @@ body {
     position: fixed;
     right: 0;
     min-height: 100%;
+    height: 100%;
     top: 0;
     background-color: #010105f6;
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
+    /*     align-items: flex-start;
+    justify-content: space-around; */
     opacity: 0;
     width: 100%;
     transition: all 0.4s ease-in;
@@ -213,7 +211,7 @@ body {
   }
 
   .isActive {
-    position: absolute;
+    position: fixed;
     display: flex;
     opacity: 1;
   }
