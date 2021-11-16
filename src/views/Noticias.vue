@@ -1,7 +1,10 @@
 <template>
   <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
   <section class="noticias">
-    <div class="newsColumn">
+    <div class="newsColumn" v-if="noticiasAreLoading">
+      <NoticiasCardPreviewLoading v-for="index in 10" :key="index" />
+    </div>
+    <div class="newsColumn" v-else>
       <NoticiasCardPreview
         v-for="noticia in noticias"
         :key="noticia._id"
@@ -20,6 +23,7 @@
 
 <script>
 import NoticiasCardPreview from "../components/NoticiasCardPreview.vue";
+import NoticiasCardPreviewLoading from "../components/NoticiasCardPreviewLoading.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import HeaderTitle from "@/components/HeaderTitle.vue";
 import { getImgURL } from "@/functions/globals.js";
@@ -28,11 +32,13 @@ export default {
   name: "Noticias",
   data() {
     return {
+      noticiasAreLoading: true,
       activatedNavbar: false,
     };
   },
   components: {
     NoticiasCardPreview,
+    NoticiasCardPreviewLoading,
     HeaderTitle,
     Sidebar,
   },
@@ -40,6 +46,11 @@ export default {
     noticias() {
       return this.$store.getters.getAllNoticias;
     },
+  },
+  async created() {
+    setTimeout(() => {
+      this.noticiasAreLoading = false;
+    }, 1000);
   },
   methods: {
     getImgURL,
