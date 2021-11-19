@@ -30,9 +30,10 @@ export default {
     Footer,
   },
   async created() {
-    await this.$store.dispatch("setAllNoticias");
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
+    await this.$store.dispatch("setAllNoticias");
+    this.$store.dispatch("setNoticiasLoadingState");
   },
   unmounted() {
     window.removeEventListener("resize", this.handleResize);

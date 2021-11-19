@@ -47,10 +47,14 @@ export default {
       return this.$store.getters.getAllNoticias;
     },
   },
-  async created() {
-    setTimeout(() => {
-      this.noticiasAreLoading = false;
-    }, 1000);
+  created() {
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        if (this.noticiasAreLoading) {
+          this.noticiasAreLoading = this.$store.getters.getIsNoticiasLoading;
+        }
+      }, 1000);
+    }
   },
   methods: {
     getImgURL,

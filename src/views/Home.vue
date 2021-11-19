@@ -50,7 +50,7 @@
       </div>
     </div>
   </section>
-  <section class="recrutamento">
+  <section class="quemSomos">
     <div class="aboutUs">
       <div class="text">
         <h1>O que é a AAUE?</h1>
@@ -341,7 +341,7 @@ section {
 
     .team {
       display: flex;
-      width: 91.5vw;
+      width: 100%;
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 125px;
@@ -365,7 +365,7 @@ section {
   }
 }
 
-.recrutamento {
+.quemSomos {
   display: flex;
   padding-top: 0;
 
@@ -466,31 +466,6 @@ section {
         max-width: 1200px;
         padding: 20px 0;
       }
-
-      /* .leftArrow,
-      .rightArrow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #000000;
-
-        i {
-          font-size: 30px;
-          color: #ffffff;
-          transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-      }
-
-      .leftArrow:hover i {
-        transform: translateX(-3px);
-      }
-
-      .rightArrow:hover i {
-        transform: translateX(3px);
-      } */
     }
   }
 }
@@ -512,7 +487,7 @@ section {
     font-size: 45px;
   }
 
-  .recrutamento .aboutUs .text h1 {
+  .quemSomos .aboutUs .text h1 {
     font-size: 45px;
   }
 }
@@ -548,7 +523,7 @@ section {
     padding-top: 0vh;
   }
 
-  .recrutamento .aboutUs {
+  .quemSomos .aboutUs {
     flex-direction: column;
     padding-bottom: 50px;
 
@@ -564,7 +539,6 @@ section {
 
 @media (max-width: 900px) {
   .noticias .noticiasPreview .carrossel {
-    width: 100%;
     .newsCards {
       flex-direction: column;
     }
@@ -585,6 +559,12 @@ section {
     .plataformaCards {
       padding: 25px 0;
     }
+  }
+}
+
+@media (max-with: 610px) {
+  .ourWork .work .team {
+    width: 300px;
   }
 }
 @media (max-width: 500px) {

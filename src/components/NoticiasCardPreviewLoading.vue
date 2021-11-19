@@ -61,7 +61,7 @@ $loadingColor: #6d6d6d;
 
     .title {
       opacity: 1;
-      width: 55vw;
+      width: 63vw;
       height: 15px;
       border-radius: 25px;
       background-color: $loadingColor;
@@ -98,7 +98,7 @@ $loadingColor: #6d6d6d;
     }
 
     .textPreviewNoticia {
-      width: 55vw;
+      width: 63vw;
       height: 8px;
       border-radius: 25px;
       background-color: $loadingColor;

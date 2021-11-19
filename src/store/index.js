@@ -12,6 +12,7 @@ export default createStore({
   state: {
     noticias: [],
     currentNoticia: {},
+    isNoticiasLoading: true,
   },
 
   // Syncronous
@@ -21,6 +22,9 @@ export default createStore({
     },
     setAllNoticias(state, payload) {
       state.noticias = payload;
+    },
+    setNoticiasLoadingState(state, payload) {
+      state.isNoticiasLoading = payload;
     },
   },
   // Asyncronous
@@ -38,6 +42,9 @@ export default createStore({
       const currentNoticia = await noticia.json();
       state.commit("setCurrentNoticia", currentNoticia);
     },
+    setNoticiasLoadingState(state, payload) {
+      state.commit("setNoticiasLoadingState", false);
+    },
   },
   modules: {},
   getters: {
@@ -46,6 +53,9 @@ export default createStore({
     },
     getAllNoticias(state) {
       return state.noticias;
+    },
+    getIsNoticiasLoading(state) {
+      return state.isNoticiasLoading;
     },
   },
 });
