@@ -30,7 +30,7 @@
           <div>
             <img
               v-if="showingCartaz"
-              :src="getImgURL('rececao/rececaoCartazCompleto.png')"
+              :src="getImgURL('rececao/rececaoCartazCompleto.jpg')"
               alt=""
             />
           </div>
@@ -139,7 +139,6 @@ export default {
       align-items: center;
 
       cursor: pointer;
-      color: rgb(61, 181, 221);
       border-bottom: 1px solid #bebebe;
 
       .text {
@@ -168,7 +167,7 @@ export default {
   }
 
   .googleMaps {
-    width: 80vw;
+    width: 100%;
     height: 300px;
   }
 }
