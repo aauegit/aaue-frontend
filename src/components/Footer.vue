@@ -78,7 +78,7 @@
           <a
             class="icon"
             id="uevorasports"
-            href="http://torneioreitor.aaue.pt/"
+            href="https://desporto.aaue.pt/"
             target="_blank"
           >
             <UevoraSports color="#FFFFFF" color2="#FFFFFF" />
@@ -89,7 +89,7 @@
           <a
             class="icon"
             id="radio"
-            href="http://torneioreitor.aaue.pt/"
+            href="https://radioheclem.aaue.pt/"
             target="_blank"
           >
             <RadioIcon color="#FFFFFF" color2="#000000" />
