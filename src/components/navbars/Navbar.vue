@@ -15,14 +15,6 @@
             >Notícias</router-link
           >
         </li>
-        <!-- <li>
-          <router-link
-            class="navLinks"
-            :to="{ name: 'Discursos' }"
-            @click="snapToElement('body')"
-            >Discursos</router-link
-          >
-        </li> -->
         <li
           class="dropdown"
           @mouseover="hoveredEventos = true"

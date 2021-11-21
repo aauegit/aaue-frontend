@@ -6,7 +6,12 @@
     </form>
     <h1>Notícias recentes</h1>
     <hr />
-    <ul class="artigos">
+    <ul class="artigosLoading" v-if="isLoading">
+      <li>
+        <div></div>
+      </li>
+    </ul>
+    <ul class="artigos" v-else>
       <li v-for="noticia in noticias.slice(0, 5)" :key="noticia._id">
         <router-link
           :to="getRoute(noticia._id)"
@@ -36,6 +41,7 @@ export default {
   data() {
     return {
       isComplete: false,
+      isLoading: true,
     };
   },
   computed: {
