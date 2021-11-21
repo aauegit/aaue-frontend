@@ -112,9 +112,87 @@ $loadingColor: #6d6d6d;
   }
 }
 
+@media (max-width: 1750px) {
+  .cardPreviewLoading {
+    .contentPreview {
+      .title {
+        width: 55vw;
+      }
+
+      .textPreviewNoticia {
+        width: 55vw;
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  .cardPreviewLoading {
+    .contentPreview {
+      .title {
+        width: 50vw;
+      }
+
+      .textPreviewNoticia {
+        width: 50vw;
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  .cardPreviewLoading {
+    .contentPreview {
+      .title {
+        width: 45vw;
+      }
+
+      .textPreviewNoticia {
+        width: 45vw;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .cardPreviewLoading {
+    .contentPreview {
+      .title {
+        width: 40vw;
+      }
+
+      .textPreviewNoticia {
+        width: 40vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .cardPreviewLoading {
+    .contentPreview {
+      .title {
+        width: 36vw;
+      }
+
+      .textPreviewNoticia {
+        width: 36vw;
+      }
+    }
+  }
+}
+
 @media (max-width: 1016px) {
   .cardPreviewLoading {
     margin-right: 0;
+
+    .contentPreview {
+      .title {
+        display: block;
+        width: 100%;
+      }
+
+      .textPreviewNoticia {
+        width: 60vw;
+      }
+    }
   }
 }
 
@@ -128,7 +206,7 @@ $loadingColor: #6d6d6d;
     }
 
     img {
-      min-width: 90vw;
+      width: 70vw;
       height: auto;
       margin-right: 0;
     }

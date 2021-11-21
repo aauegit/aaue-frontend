@@ -1,4 +1,5 @@
 <template>
+  <button @click="noticiasAreLoading = !noticiasAreLoading">switch news</button>
   <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
   <section class="noticias">
     <div class="newsColumn" v-if="noticiasAreLoading">
@@ -48,12 +49,12 @@ export default {
     },
   },
   created() {
-    for (let i = 0; i < 10; i++) {
+    if (this.noticiasAreLoading) {
       setTimeout(() => {
         if (this.noticiasAreLoading) {
           this.noticiasAreLoading = this.$store.getters.getIsNoticiasLoading;
         }
-      }, 1000);
+      }, 400);
     }
   },
   methods: {

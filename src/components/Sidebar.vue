@@ -6,10 +6,8 @@
     </form>
     <h1>Notícias recentes</h1>
     <hr />
-    <ul class="artigosLoading" v-if="isLoading">
-      <li>
-        <div></div>
-      </li>
+    <ul class="artigosLoading" v-if="noticiasAreLoading">
+      <SidebarNewsTitleLoading v-for="index in 5" :key="index" />
     </ul>
     <ul class="artigos" v-else>
       <li v-for="noticia in noticias.slice(0, 5)" :key="noticia._id">
@@ -21,6 +19,7 @@
         </router-link>
       </li>
     </ul>
+    <button @click="noticiasAreLoading = !noticiasAreLoading">switch</button>
     <h1 v-if="isComplete">Categorias</h1>
     <hr v-if="isComplete" />
     <ul class="categorias" v-if="isComplete">
@@ -36,13 +35,26 @@
 
 <script>
 import { snapToElement } from "@/functions/globals";
+import SidebarNewsTitleLoading from "@/components/SidebarNewsTitleLoading.vue";
 export default {
   name: "Sidebar",
   data() {
     return {
       isComplete: false,
-      isLoading: true,
+      noticiasAreLoading: true,
     };
+  },
+  components: {
+    SidebarNewsTitleLoading,
+  },
+  created() {
+    if (this.noticiasAreLoading) {
+      setTimeout(() => {
+        if (this.noticiasAreLoading) {
+          this.noticiasAreLoading = this.$store.getters.getIsNoticiasLoading;
+        }
+      }, 400);
+    }
   },
   computed: {
     noticias() {
