@@ -55,8 +55,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.noticiaPost {
+.noticia {
   min-height: 100vh;
+}
+.noticiaPost {
   padding: 75px;
   display: flex;
   justify-content: center;
