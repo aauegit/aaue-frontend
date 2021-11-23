@@ -117,9 +117,6 @@
     />
     <div class="noticiasPreview">
       <div class="carrossel">
-        <!-- <a class="leftArrow" @click="decrementIndexes"
-          ><i class="fas fa-chevron-left"></i
-        ></a> -->
         <div class="newsCards">
           <NoticiaCard
             v-for="(noticia, index) in noticias.slice(initialIndex, finalIndex)"
@@ -134,9 +131,6 @@
             @click="setNoticia(noticia)"
           />
         </div>
-        <!-- <a class="rightArrow" @click="incrementIndexes"
-          ><i class="fas fa-chevron-right"></i
-        ></a> -->
       </div>
     </div>
   </section>
@@ -210,28 +204,6 @@ export default {
     snapToElement,
     setNoticia(noticia) {
       this.$store.commit("setCurrentNoticia", noticia);
-    },
-    incrementIndexes() {
-      this.initialIndex += 3;
-      this.finalIndex += 3;
-
-      //Falta mostrar as ultimas noticias
-
-      if (this.finalIndex >= this.noticias.length) {
-        this.finalIndex = 3;
-        this.initialIndex = 0;
-      }
-    },
-    decrementIndexes() {
-      // Falta mostrar as primeiras noticias após 1 volta
-
-      if (this.initialIndex - 2 <= 0) {
-        this.finalIndex = this.noticias.length - 1;
-        this.initialIndex = this.noticias.length - 4;
-      }
-
-      this.initialIndex -= 3;
-      this.finalIndex -= 3;
     },
   },
 };

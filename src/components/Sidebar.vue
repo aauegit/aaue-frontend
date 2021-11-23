@@ -19,7 +19,6 @@
         </router-link>
       </li>
     </ul>
-    <button @click="noticiasAreLoading = !noticiasAreLoading">switch</button>
     <h1 v-if="isComplete">Categorias</h1>
     <hr v-if="isComplete" />
     <ul class="categorias" v-if="isComplete">
@@ -107,7 +106,8 @@ export default {
 
 @media (max-width: 1016px) {
   .sidebar {
-    min-height: 80vh;
+    min-height: 40vh;
+    padding-left: 0;
   }
   .sidebar input {
     width: 100%;

@@ -1,5 +1,4 @@
 <template>
-  <button @click="noticiasAreLoading = !noticiasAreLoading">switch news</button>
   <HeaderTitle title="Notícias" :image="getImgURL('noticias.jpg')" />
   <section class="noticias">
     <div class="newsColumn" v-if="noticiasAreLoading">
@@ -98,6 +97,16 @@ export default {
 @media (max-width: 700px) {
   .noticias {
     padding: 30px;
+
+    .newsColumn {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .noticias {
+    padding: 20px;
   }
 }
 </style>

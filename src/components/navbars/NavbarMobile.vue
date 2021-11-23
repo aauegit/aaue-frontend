@@ -14,17 +14,15 @@
           <i class="fas fa-chevron-down" :class="{ activated: openEventos }"></i
         ></a>
         <div class="subMenu" v-if="openEventos">
-          <router-link :to="{ name: 'Rececao' }" @click="toggleClass"
-            >⚆ Receção ao Caloiro</router-link
-          >
-          <a href="https://expoestudante.aaue.pt/#/" @click="toggleClass"
-            >⚆ Expo Estudante</a
-          >
-          >
-          <a href="http://queima.aaue.pt/" @click="toggleClass"
-            >⚆ Queima das Fitas</a
-          >
-          >
+          <router-link :to="{ name: 'Rececao' }" @click="toggleClass">
+            ⚆ Receção ao Caloiro
+          </router-link>
+          <a href="https://expoestudante.aaue.pt/#/" @click="toggleClass">
+            ⚆ Expo Estudante
+          </a>
+          <a href="http://queima.aaue.pt/" @click="toggleClass">
+            ⚆ Queima das Fitas
+          </a>
         </div>
       </li>
       <li class="dropdown" @click="openAssociacao = !openAssociacao">
@@ -74,10 +72,8 @@
           <a href="https://alojamento.aaue.pt/" @click="toggleClass"
             >⚆ Portal do Alojamento</a
           >
-          >
           <a href="http://torneioreitor.aaue.pt/" @click="toggleClass"
             >⚆ Desporto</a
-          >
           >
         </div>
       </li>
@@ -157,12 +153,21 @@ export default {
     background-color: #010105f6;
     display: none;
     flex-direction: column;
-    /*     align-items: flex-start;
-    justify-content: space-around; */
     opacity: 0;
     width: 100%;
     transition: all 0.4s ease-in;
     overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f7f8fc;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #333333;
+      border-radius: 5px;
+    }
 
     li {
       opacity: 1;

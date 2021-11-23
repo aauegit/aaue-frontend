@@ -147,6 +147,8 @@ export default {
 }
 @media (max-width: 900px) {
   .noticiaCard {
+    margin-left: 0;
+    margin-right: 0;
     flex: 0 0 90%;
     max-width: 500px;
 

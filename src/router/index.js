@@ -19,12 +19,6 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "NoticiaPost" */ "../views/NoticiaPost.vue"),
   },
-  /*  {
-    path: "/discursos",
-    name: "Discursos",
-    component: () =>
-      import(/* webpackChunkName: "Discursos" /* "../views/Discursos.vue"),
-  }, */
   {
     path: "/rececao-ao-caloiro",
     name: "Rececao",
@@ -127,7 +121,8 @@ const routes = [
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: () => import(/* webpackChunkName: "NotFound" */ "../views/NotFound.vue"),
+    component: () =>
+      import(/* webpackChunkName: "NotFound" */ "../views/NotFound.vue"),
   },
 ];
 

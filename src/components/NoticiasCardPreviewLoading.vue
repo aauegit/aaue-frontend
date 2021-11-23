@@ -199,16 +199,52 @@ $loadingColor: #6d6d6d;
 @media (max-width: 700px) {
   .cardPreviewLoading {
     flex-direction: column;
-    width: 95vw;
+    min-width: 100%;
 
     &:hover {
       box-shadow: none;
     }
 
-    img {
-      width: 70vw;
-      height: auto;
+    .imageLoading {
+      min-width: 80%;
       margin-right: 0;
+    }
+
+    .contentPreview {
+      width: 80%;
+
+      .textPreviewNoticia {
+        width: 100%;
+      }
+      .textPreviewNoticia2 {
+        width: 70%;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .cardPreviewLoading {
+    flex-direction: column;
+    min-width: 100%;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    .imageLoading {
+      min-width: 100%;
+      margin-right: 0;
+    }
+
+    .contentPreview {
+      width: 100%;
+
+      .textPreviewNoticia {
+        width: 100%;
+      }
+      .textPreviewNoticia2 {
+        width: 70%;
+      }
     }
   }
 }
