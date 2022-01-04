@@ -1,10 +1,5 @@
 <template>
   <section class="estatutos">
-    <div class="pdf">
-      <object data="guia-do-estudante" type="application/pdf">
-        <embed src="guia-do-estudante" type="application/pdf" />
-      </object>
-    </div>
     <div class="estatutosCards">
       <EstatutoCard
         class="estatutosEstudantes"

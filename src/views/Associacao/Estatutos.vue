@@ -21,7 +21,7 @@ export default {
           id: 0,
           nome: "Estatutos e Regulamentos",
           icon: "fas fa-landmark",
-          ficheiro: "estatutos/Estatutos-AAUE-2020.pdf",
+          ficheiro: "estatutos/Estatutos-AAUE.pdf",
         },
         {
           id: 1,

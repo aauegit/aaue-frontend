@@ -123,7 +123,13 @@ export default {
     let isFormFilled = ref(false);
 
     watch([name, email, assunto, mensagem], () => {
-      if (name.value && email.value && assunto.value && mensagem.value) {
+      if (
+        name.value &&
+        email.value.includes("@") &&
+        email.value.includes(".") &&
+        assunto.value &&
+        mensagem.value
+      ) {
         isFormFilled.value = true;
       } else {
         isFormFilled.value = false;

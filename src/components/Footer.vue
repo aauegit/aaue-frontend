@@ -74,7 +74,7 @@
             <p>Portal do Alojamento</p>
           </a>
         </li>
-        <li>
+        <li v-if="areLive">
           <a
             class="icon"
             id="uevorasports"
@@ -85,7 +85,7 @@
             <p>UévoraSports</p>
           </a>
         </li>
-        <li>
+        <li v-if="areLive">
           <a
             class="icon"
             id="radio"
@@ -153,6 +153,11 @@ import ExpoIcon from "@/components/Icons/ExpoIcon.vue";
 
 export default {
   name: "Footer",
+  data() {
+    return {
+      areLive: false,
+    };
+  },
   components: {
     QueimaIcon,
     RadioIcon,
@@ -341,6 +346,7 @@ footer {
 
   .rights {
     text-align: center;
+    text-transform: uppercase;
     font-size: 12px;
     opacity: 0.7;
     margin-bottom: 0;

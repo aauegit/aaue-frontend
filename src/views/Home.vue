@@ -15,7 +15,7 @@
           >
         </p>
         <div class="buttons">
-          <button class="vantagens">
+          <button class="vantagens" v-if="isProtocolosFinished">
             <router-link :to="{ name: 'Protocolos' }"
               >Descobre as vantagens</router-link
             >
@@ -147,6 +147,7 @@ export default {
   name: "Home",
   data() {
     return {
+      isProcolosFinished: false,
       initialIndex: 0,
       finalIndex: 3,
       equipa: [
@@ -262,6 +263,7 @@ section {
     }
 
     .heroText {
+      padding-top: 2px;
       width: 45%;
       font-size: 18px;
       margin: 0;
