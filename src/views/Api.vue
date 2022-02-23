@@ -345,13 +345,17 @@ export default {
         return;
       }
 
+      const todaysDate = new Date();
+
       const news = {
         title: this.titulo,
         category: this.category,
         categoryColor: this.getCategoryColor(this.category),
-        date: "data",
+        date: `${todaysDate.getDate()} de ${this.getMes(
+          todaysDate.getMonth + 1
+        )}, ${todaysDate.getFullYear}`,
         paragraphs: this.paragrafo,
-        imageLink: "linkfixeya",
+        imageLink: "40anos.jpg",
         signature: this.assinatura,
         token: this.authToken,
       };

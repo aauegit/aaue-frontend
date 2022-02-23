@@ -230,7 +230,7 @@ section {
 .hero {
   background: url("../assets/home.jpg") no-repeat center center;
   padding: 0px 75px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .heroContent {
