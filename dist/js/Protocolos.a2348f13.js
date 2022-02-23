@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Protocolos"],{b224:function(o,n,r){"use strict";r.r(n);var c=r("7a23");function e(o,n,r,e,t,s){return Object(c["w"])(),Object(c["h"])("h1",null,"Protocolos e parcerias")}var t={name:"Protocolos"},s=r("6b0d"),a=r.n(s);const u=a()(t,[["render",e]]);n["default"]=u}}]);
+//# sourceMappingURL=Protocolos.a2348f13.js.map
