@@ -89,6 +89,8 @@
         <label for="foto">Foto:</label>
         <Dropzone @drop.prevent="drop" @change="selectedFile" />
         <span>Ficheiro: {{ dropzoneFile.name }}</span>
+        <label for="nomeDoficheiro">Nome do ficheiro</label>
+        <input type="text" v-model="nomeDoFicheiro" placeholder="40anos.jpg" />
         <label for="assinatura">Assinatura</label>
         <input
           type="text"
@@ -155,6 +157,7 @@ export default {
       category: "",
       paragrafo: [],
       isFormFilled: false,
+      nomeDoFicheiro: "",
       assinatura: "",
       mesDeHoje: "",
       numberOfParagraphs: 1,
@@ -355,7 +358,7 @@ export default {
           todaysDate.getMonth + 1
         )}, ${todaysDate.getFullYear}`,
         paragraphs: this.paragrafo,
-        imageLink: "40anos.jpg",
+        imageLink: this.nomeDoFicheiro,
         signature: this.assinatura,
         token: this.authToken,
       };
