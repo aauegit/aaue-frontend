@@ -156,7 +156,7 @@ export default {
       this.sendingEmail = true;
 
       const formData = {
-        sendTo: "informatica@aaue.pt",
+        sendTo: "geral@aaue.pt",
         subject: this.assunto,
         message: {
           origem: "AAUE.pt",
