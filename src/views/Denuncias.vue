@@ -9,7 +9,7 @@
           Contacta-nos!</p>
         <div class="contactIcons">
           <ul>
-            <a href="mailto:informatica@aaue.pt">
+            <a href="mailto:gape@aaue.pt">
               <i class="fas fa-envelope" aria-hidden="true"
                 ><span>Email</span></i
               >
@@ -121,7 +121,7 @@ export default {
       this.sendingEmail = true;
 
       const formData = {
-        sendTo: "informática@aaue.pt",
+        sendTo: "informatica@aaue.pt",
         subject: "Denúncias",
         message: {
           origem: "AAUE.pt",
