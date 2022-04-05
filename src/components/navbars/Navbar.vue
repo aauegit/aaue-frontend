@@ -124,6 +124,14 @@
           >
         </li>
         <li>
+          <router-link 
+            class="navLinks"
+            :to="{ name: 'Denuncias' }"
+            @click="snapToElement('body')"
+            >Denúncias</router-link
+          >
+        </li>
+        <li>
           <router-link
             class="navLinks"
             :to="{ name: 'Contactos' }"

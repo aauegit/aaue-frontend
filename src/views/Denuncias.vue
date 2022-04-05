@@ -1,0 +1,387 @@
+<template>
+  <section class="denuncias">
+    <div class="contactForm" v-if="!sendingEmail">
+      <div class="contactInfo">
+        <h2>
+          Queres denunciar alguma situação?
+        </h2>
+        <p> Não te preocupes não estás sozinho/a! Escreve-nos uma mensagem a explicar o caso para que te possamos ajudar a ti ou aos teus amigos. <br />
+          Contacta-nos!</p>
+        <div class="contactIcons">
+          <ul>
+            <a href="mailto:informatica@aaue.pt">
+              <i class="fas fa-envelope" aria-hidden="true"
+                ><span>Email</span></i
+              >
+              <li>gape@aaue.pt</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <form action="POST" @submit.prevent="sendFormData">
+        <label for="Contacto">Nome / Contacto <span>(Não é obrigatório)</span></label>
+        <input
+          type="text"
+          placeholder="Nome"
+          id="name"
+          v-model="name"
+        />
+        <label for="mensagem">Mensagem <span>*</span></label>
+        <textarea
+          class="mensagem"
+          placeholder="Mensagem"
+          id="mensagem"
+          v-model="mensagem"
+          required
+        />
+        <div class="buttons" :class="{ isActive: isFormFilled }">
+          <Button
+            buttonText="Enviar mensagem"
+            class="g-recaptcha"
+            data-sitekey="6LcQvp4cAAAAAGNx5TXt5zWBQ1lHd_mhHyit-Plq"
+            data-callback="onSubmit"
+            data-action="submit"
+          />
+        </div>
+      </form>
+    </div>
+    <div class="modal" v-else>
+      <img
+        v-if="!emailSent && !emailFailed"
+        src="@/assets/api/spinning-circle.gif"
+        alt=""
+      />
+      <div v-else-if="emailSent" class="sucess">
+        <h1>Mensagem enviada</h1>
+        <i class="far fa-check-circle sucessIcon"></i>
+        <Button buttonText="Voltar" @click="resetEmailSendingValues" />
+      </div>
+      <div v-else-if="emailFailed" class="failure">
+        <h1>Ocorreu um erro</h1>
+        <i class="fas fa-exclamation-circle errorIcon"></i>
+        <p>
+          Por favor volte a tentar mais tarde ou envie uma mensagem para
+          gape@aaue.pt
+        </p>
+        <Button buttonText="Voltar" @click="resetEmailSendingValues" />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+import { ref, watch } from "vue";
+import Button from "../components/Button.vue";
+
+export default {
+  name: "Denuncias",
+  data() {
+    return {
+      emailSent: false,
+      emailFailed: false,
+      sendingEmail: false,
+      name: "",
+      email: "",
+      mensagem: "",
+      isFormFilled: false,
+    };
+  },
+  setup() {
+    let name = ref("");
+    let mensagem = ref("");
+    let email = ref("");
+    let isFormFilled = ref(false);
+
+    watch([name, mensagem], () => {
+      if (
+        mensagem.value
+      ) {
+        isFormFilled.value = true;
+      } else {
+        isFormFilled.value = false;
+      }
+    });
+
+    return {
+      isFormFilled: isFormFilled,
+      name: name,
+      email: email,
+      mensagem: mensagem,
+    };
+  },
+  components: {
+    Button,
+  },
+  methods: {
+    async sendFormData() {
+      if (!this.isFormFilled) {
+        return;
+      }
+
+      this.sendingEmail = true;
+
+      const formData = {
+        sendTo: "informática@aaue.pt",
+        subject: "Denúncias",
+        message: {
+          origem: "AAUE.pt",
+          name: this.name ? this.name: 'Anónimo',
+          email: "Anónimo",
+          text: this.mensagem,
+        },
+      };
+
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      };
+
+      await fetch(
+        "https://blogposting-api.herokuapp.com/api/sendEmail",
+        requestOptions
+      )
+        .then(async (data) => {
+          if (data.ok) {
+            this.emailSent = true;
+            this.clearFormInfo();
+          }
+        })
+        .catch((error) => {
+          this.emailFailed = true;
+          console.log(error.message);
+        });
+    },
+    clearFormInfo() {
+      this.name = "";
+      this.mensagem = "";
+    },
+    resetEmailSendingValues() {
+      this.sendingEmail = false;
+      this.emailSent = false;
+      this.emailFailed = false;
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+$specialColor: #2c3e50;
+
+.denuncias {
+  display: flex;
+  min-height: 75vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  background-color: #f7f8fc;
+
+  .contactForm {
+    position: relative;
+    display: flex;
+    background: white;
+    width: 80vw;
+    padding: 50px;
+    border-radius: 50px;
+    margin: 100px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .contactInfo {
+      width: 50%;
+      border-right: 1px solid #bebebe;
+      padding-right: 30px;
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      p {
+          font-size: 18px;
+          margin: 20px 0px 20px 0px;
+      }
+
+      .contactIcons {
+        display: flex;
+
+        ul a {
+          font-size: 20px;
+          font-family: "Roboto", sans-serif;
+
+          i {
+            margin-right: 10px;
+            color: $specialColor;
+
+            span {
+              font-family: "Roboto", sans-serif;
+              font-weight: 500;
+              padding-left: 10px;
+            }
+          }
+
+          li {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 30px 0 30px 30px;
+
+      label {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $specialColor;
+      }
+
+      input {
+        height: 40px;
+        padding-left: 5px;
+        border: 0;
+        outline: 0;
+        border-bottom: 1px solid #bebebe;
+        margin-bottom: 20px;
+
+        &::placeholder {
+          font-family: "Roboto", sans-serif;
+        }
+
+        &::-moz-placeholder {
+          font-family: "Roboto", sans-serif;
+        }
+      }
+
+      span {
+        opacity: 0.5;
+      }
+
+      .mensagem {
+        padding: 5px 5px 0 5px;
+        height: 40px;
+        resize: none;
+        border: 0;
+        outline: 0;
+        border-bottom: 1px solid #bebebe;
+        margin-bottom: 40px;
+
+        &::placeholder {
+          font-family: "Roboto", sans-serif;
+        }
+
+        &::-moz-placeholder {
+          font-family: "Roboto", sans-serif;
+        }
+      }
+
+      .buttons {
+        display: flex;
+
+        .button {
+          cursor: not-allowed;
+          opacity: 0.4;
+          border-radius: 0;
+          margin-left: 0;
+
+          &:hover {
+            transform: translateY(0px);
+          }
+        }
+      }
+
+      .isActive {
+        .button {
+          cursor: pointer;
+          opacity: 1;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+
+  .modal {
+    width: 500px;
+    min-height: 300px;
+    padding: 20px 50px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .sucess,
+    .failure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .errorIcon {
+        margin: 20px 0 0 0;
+        font-size: 100px;
+        color: #992c2c;
+      }
+
+      .sucessIcon {
+        margin: 35px 0;
+        font-size: 100px;
+        color: #4bb543;
+      }
+
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .denuncias .contactForm form {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .denuncias .contactForm {
+    flex-direction: column;
+    width: 90vw;
+    margin: 100px 0;
+    padding: 50px 30px;
+
+    .contactInfo {
+      border-right: none;
+      width: 100%;
+    }
+
+    form {
+      padding-left: 0;
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .denuncias .modal {
+    width: 90vw;
+    padding: 20px;
+  }
+}
+</style>

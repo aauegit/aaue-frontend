@@ -81,6 +81,9 @@
         <router-link :to="{ name: 'Servicos' }"> Serviços</router-link>
       </li>
       <li @click="toggleClass">
+        <router-link :to="{ name: 'Denuncias' }"> Denúncias</router-link>
+        </li>
+      <li @click="toggleClass">
         <router-link :to="{ name: 'Contactos' }"> Contactos</router-link>
       </li>
     </ul>
