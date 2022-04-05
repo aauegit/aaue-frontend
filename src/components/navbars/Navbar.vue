@@ -108,7 +108,7 @@
               >Portal do Alojamento</a
             >
             <a
-              href="http://desporto.aaue.pt/"
+              href="https://desporto.aaue.pt/"
               target="_blank"
               rel="noopener noreferrer"
               >Desporto</a
