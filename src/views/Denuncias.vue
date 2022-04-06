@@ -5,7 +5,7 @@
         <h2>
           Tens algo a denunciar?
         </h2>
-        <p> Não te preocupes não estás sozinho/a, estamos aqui para te ouvir e ajudar. Tudo o que nos contares será mantido em anonimato! <br />
+        <p> Não te preocupes, porque não estás sozinh@. Estamos aqui para te ajudar!. Toda a informação que nos for transmitida será mantida em anonimato! <br />
             Não fiques em silêncio, contacta-nos!</p>
         <div class="contactIcons">
           <ul>
