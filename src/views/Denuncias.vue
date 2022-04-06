@@ -3,10 +3,10 @@
     <div class="contactForm" v-if="!sendingEmail">
       <div class="contactInfo">
         <h2>
-          Queres denunciar alguma situação?
+          Tens algo a denunciar?
         </h2>
-        <p> Não te preocupes não estás sozinho/a! Escreve-nos uma mensagem a explicar o caso para que te possamos ajudar a ti ou aos teus amigos. <br />
-          Contacta-nos!</p>
+        <p> Não te preocupes não estás sozinho/a, estamos aqui para te ouvir e ajudar. Tudo o que nos contares será mantido em anonimato! <br />
+            Não fiques em silêncio, contacta-nos!</p>
         <div class="contactIcons">
           <ul>
             <a href="mailto:gape@aaue.pt">
@@ -200,6 +200,7 @@ $specialColor: #2c3e50;
 
       p {
           font-size: 18px;
+          line-height: 1.45;
           margin: 20px 0px 20px 0px;
       }
 
