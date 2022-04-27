@@ -6,14 +6,17 @@
     "coordenadores": [
       {
         "nome": "Cláudia Farófia",
+        "cargo": "Vice-Presidente",
         "img": "membros/SAC/AAUE_TV/Claúdia_Farófia.png"
       },
       {
         "nome": "Francisco Santos",
+        "cargo": "Secretário",
         "img": "membros/SAC/AAUE_TV/Francisco_Santos.png"
       },
       {
         "nome": "José Guerrinha",
+        "cargo": "Secretário",
         "img": "membros/SAC/AAUE_TV/José_Guerrinha.png"
       }
     ],
@@ -27,10 +30,12 @@
     "coordenadores": [
       {
         "nome": "Ana Catarina Assencadas",
+        "cargo": "Vice-Presidente",
         "img": "membros/SAC/Divulgação/Ana_Catarina_Assencadas.png"
       },
       {
         "nome": "Inês Pisco",
+        "cargo": "Secretária",
         "img": "membros/SAC/Divulgação/Inês_Pisco.png"
       }
     ],
@@ -44,14 +49,17 @@
     "coordenadores": [
       {
         "nome": "Beatriz Vizeu",
+        "cargo": "Vice-Presidente",
         "img": "membros/SAC/Imagem/Beatriz_Vizeu.png"
       },
       {
         "nome": "Carolina Damaso",
+        "cargo": "Secretária",
         "img": "membros/SAC/Imagem/Carolina_Damaso.png"
       },
       {
         "nome": "Filipa Serrano",
+        "cargo": "Secretária",
         "img": "membros/SAC/Imagem/Filipa_Serrano.png"
       }
     ],
@@ -66,10 +74,12 @@
     "coordenadores": [
       {
         "nome": "Francisca Ruivo",
+        "cargo": "Vice-Presidente",
         "img": "membros/SAC/GAPE/Francisca_Ruivo.png"
       },
       {
         "nome": "Judite Lopes",
+        "cargo": "Secretária",
         "img": "membros/SAC/GAPE/Judite_Lopes.png"
       }
     ],

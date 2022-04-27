@@ -6,22 +6,27 @@
     "coordenadores": [
       {
         "nome": "Miguel Báia",
+        "cargo": "Vice-Presidente",
         "img": "membros/SAD/Miguel_Báia.png"
       },
       {
         "nome": "Débora Gomes",
+        "cargo": "Secretária",
         "img": "membros/SAD/Débora_Gomes.png"
       },
       {
         "nome": "Sofia Candeias",
+        "cargo": "Coordenadora da Comunicação",
         "img": "membros/SAD/Sofia_Candeias.png"
       },
       {
         "nome": "Gonçalo Pais",
+        "cargo": "Secretário",
         "img": "membros/SAD/Gonçalo_Pais.png"
       },
       {
         "nome": "Sofia Carrapeta",
+        "cargo": "Tesoureira",
         "img": "membros/SAD/Sofia_Carrapeta.png"
       }
     ],
