@@ -5,7 +5,7 @@
         <h2>
           Tens algo a denunciar?
         </h2>
-        <p> Não te preocupes, porque não estás sozinh@. Estamos aqui para te ajudar!. <br /> Toda a informação que nos for transmitida será mantida em anonimato! <br />
+        <p> Não te preocupes, porque não estás sozinh@. Estamos aqui para te ajudar. <br /> Toda a informação que nos for transmitida será mantida em anonimato! <br />
             Não fiques em silêncio, contacta-nos!</p>
         <div class="contactIcons">
           <ul>
@@ -121,7 +121,7 @@ export default {
       this.sendingEmail = true;
 
       const formData = {
-        sendTo: "informatica@aaue.pt",
+        sendTo: "denuncias@aaue.pt",
         subject: "Denúncias",
         message: {
           origem: "AAUE.pt",

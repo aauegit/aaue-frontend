@@ -1,0 +1,14 @@
+[
+    {
+      "id": 0,
+      "nome": "Luís Roma",
+      "cargo": "Administrador",
+      "img": "membros/Administradores/Luís_Roma.png"
+    },
+    {
+      "id": 1,
+      "nome": "Vicente Correia",
+      "cargo": "Administrador-Adjunto",
+      "img": "membros/Administradores/Vicente_Correia.png"
+    }
+  ]  

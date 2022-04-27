@@ -3,9 +3,6 @@
     <img :src="img" alt="" />
     <h1>{{ nome }}</h1>
     <h2>{{ cargo }}</h2>
-    <a :href="fb" target="_blank" rel="noopenner noreferrer"
-      ><i class="fab fa-facebook-square"></i
-    ></a>
   </div>
 </template>
 
@@ -15,7 +12,6 @@ export default {
     img: String,
     nome: String,
     cargo: String,
-    fb: String,
   },
 };
 </script>

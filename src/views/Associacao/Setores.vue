@@ -4,13 +4,12 @@
       <div>
         <li v-for="setor in setores" :key="setor.id">
           <a @click="(currentSetor = setor) && scrollToElement('.setor')">
-            <!-- <i :class="setor.icon"></i> -->
             <p>⚆ {{ setor.nome }}</p>
           </a>
         </li>
       </div>
     </ul>
-    <Setor v-if="currentSetor" :setor="currentSetor" :key="currentSetor.nome" />
+    <Setor v-if="currentSetor" :setor="currentSetor" :key="currentSetor.nome"/>
   </div>
 </template>
 

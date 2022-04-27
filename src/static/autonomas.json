@@ -5,19 +5,16 @@
     "icon": "fas fa-tv",
     "coordenadores": [
       {
-        "nome": "Alexandra Gomes",
-        "fb": "https://www.facebook.com/alexandra.gomes.1654",
-        "img": "membros/SAComunicacao/aauetv/alexandragomes.webp"
+        "nome": "Cláudia Farófia",
+        "img": "membros/SAC/AAUE_TV/Claúdia_Farófia.png"
       },
       {
-        "nome": "Beatriz Ferreira",
-        "fb": "https://www.facebook.com/profile.php?id=100009935898406",
-        "img": "membros/SAComunicacao/aauetv/beatrizferreira.webp"
+        "nome": "Francisco Santos",
+        "img": "membros/SAC/AAUE_TV/Francisco_Santos.png"
       },
       {
-        "nome": "Inês Marcos",
-        "fb": "https://www.facebook.com/ines.marcos.18",
-        "img": "membros/SAComunicacao/aauetv/inesmarcos.webp"
+        "nome": "José Guerrinha",
+        "img": "membros/SAC/AAUE_TV/José_Guerrinha.png"
       }
     ],
     "descricao": "A AAUE TV, enquanto membro integrante da Secção Autónoma de Comunicação, é responsável pela cobertura das atividades realizadas pela AAUE. O registo fotográfico e videográfico é fundamental no papel da vida académica pois, posteriormente, poder-se-á recordar todos os momentos. Para além de documentar os eventos, realiza material para promoção e divulga os eventos através da multimédia.",
@@ -25,61 +22,37 @@
   },
   {
     "id": 2,
-    "nome": "Comunicação",
-    "icon": "fas fa-mail-bulk",
-    "coordenadores": [
-      {
-        "nome": "Carolina Tapada",
-        "fb": "https://www.facebook.com/carolina.tapada",
-        "img": "membros/SAComunicacao/comunicacao/carolinatapada.webp"
-      },
-      {
-        "nome": "Catarina Costa",
-        "fb": "https://www.facebook.com/profile.php?id=100002069906938",
-        "img": "membros/SAComunicacao/comunicacao/catarinacosta.webp"
-      },
-      {
-        "nome": "Filipa Serrano",
-        "fb": "https://www.facebook.com/profile.php?id=100011631603712",
-        "img": "membros/SAComunicacao/comunicacao/filipaserrano.webp"
-      }
-    ],
-    "descricao": "A Comunicação desempenha um papel fundamental na ligação dos estudantes da Academia com a AAUE, primando pela partilha de toda a informação à Associação. Compromete-se a equipa a trabalhar em prol da sua organização e produtividade, estabelecendo ligações cruciais com os restantes setores por meio de facilitar o acesso à informação e interligação entre a AAUE, a Academia e a cidade de Évora, divulgando os acontecimentos relacionados com a AAUE e o Mundo.",
-    "contacto": "comunicacao@aaue.pt"
-  },
-  {
-    "id": 3,
     "nome": "Divulgação",
     "icon": "fas fa-newspaper",
     "coordenadores": [
       {
-        "nome": "Bárbara Santos",
-        "fb": "https://www.facebook.com/barbara.santos.7923",
-        "img": "membros/SAComunicacao/divulgacao/barbarasantos.webp"
+        "nome": "Ana Catarina Assencadas",
+        "img": "membros/SAC/Divulgação/Ana_Catarina_Assencadas.png"
       },
       {
-        "nome": "Joana Lachica",
-        "fb": "https://www.facebook.com/joana.lachica",
-        "img": "membros/SAComunicacao/divulgacao/joanalachica.webp"
+        "nome": "Inês Pisco",
+        "img": "membros/SAC/Divulgação/Inês_Pisco.png"
       }
     ],
     "descricao": "A Divulgação executa uma das tarefas fundamentais na operacionalização da AAUE, sendo-lhe incumbida toda a publicação de conteúdo essencial, de modo, a inteirar toda a comunidade estudantil da atividade da AAUE. Numa visão geral desta equipa, o poder de interação, transparência e interajuda são palavras-chave para o sucesso e, por isso, terá o compromisso de usufruir das redes sociais - Facebook, Instagram e Twitter.",
     "contacto": "divulgacao@aaue.pt"
   },
   {
-    "id": 4,
+    "id": 3,
     "nome": "Imagem",
     "icon": "fas fa-images",
     "coordenadores": [
       {
-        "nome": "Andreia Adoa",
-        "fb": "https://www.facebook.com/andreiaadoa",
-        "img": "membros/SAComunicacao/imagem/andreiaadoa.webp"
+        "nome": "Beatriz Vizeu",
+        "img": "membros/SAC/Imagem/Beatriz_Vizeu.png"
       },
       {
-        "nome": "Sara Condeça",
-        "fb": "https://www.facebook.com/sara.condeca.22",
-        "img": "membros/SAComunicacao/imagem/saracondeca.webp"
+        "nome": "Carolina Damaso",
+        "img": "membros/SAC/Imagem/Carolina_Damaso.png"
+      },
+      {
+        "nome": "Filipa Serrano",
+        "img": "membros/SAC/Imagem/Filipa_Serrano.png"
       }
     ],
 
@@ -87,19 +60,17 @@
     "contacto": "imagem@aaue.pt"
   },
   {
-    "id": 5,
+    "id": 4,
     "nome": "GAPE",
     "icon": "fas fa-user-shield",
     "coordenadores": [
       {
-        "nome": "Joana Nogueira",
-        "fb": "https://www.facebook.com/joananogueira715",
-        "img": "membros/SAComunicacao/gape/joananogueira.webp"
+        "nome": "Francisca Ruivo",
+        "img": "membros/SAC/GAPE/Francisca_Ruivo.png"
       },
       {
-        "nome": "Patrícia Casanova",
-        "fb": "https://www.facebook.com/tita.casanova2",
-        "img": "membros/SAComunicacao/gape/patriciacasanova.webp"
+        "nome": "Judite Lopes",
+        "img": "membros/SAC/GAPE/Judite_Lopes.png"
       }
     ],
     "descricao": "O Gabinete de Apoio ao Estudante nasce da necessidade de resposta imediata, assertiva e de confiança a todas as questões dos estudantes. É função do GAPE apoiar e auxiliar os estudantes nesse sentido, através das redes sociais da AAUE.",

@@ -59,6 +59,21 @@
               >Presidência</router-link
             >
             <router-link
+              :to="{ name: 'Tesouraria' }"
+              @click="snapToElement('body')"
+              >Tesouraria</router-link
+            >
+            <router-link
+              :to="{ name: 'Administradores' }"
+              @click="snapToElement('body')"
+              >Administradores</router-link
+            >
+            <router-link
+              :to="{ name: 'Secretarios' }"
+              @click="snapToElement('body')"
+              >Secretários</router-link
+            >
+            <router-link
               :to="{ name: 'Assembleia' }"
               @click="snapToElement('body')"
               >Assembleia Magna</router-link

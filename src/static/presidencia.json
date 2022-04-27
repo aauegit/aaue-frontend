@@ -3,28 +3,18 @@
     "id": 0,
     "nome": "Henrique Gil",
     "cargo": "Presidente",
-    "fb": "https://www.facebook.com/henriquemsgil",
-    "img": "membros/presidencia/henriqueGil.webp"
+    "img": "membros/Presidência/Henrique_Gil.png"
   },
   {
     "id": 1,
     "nome": "Ana Ventinhas",
-    "cargo": "Vice-Presidente",
-    "fb": "https://www.facebook.com/ana.ventinhas",
-    "img": "membros/presidencia/anaVentinhas.webp"
+    "cargo": "Vice-Presidente Externa",
+    "img": "membros/Presidência/Ana_Ventinhas.png"
   },
   {
     "id": 2,
-    "nome": "Raquel Alexandre",
-    "cargo": "Vice-Presidente",
-    "fb": "https://www.facebook.com/raquel.alexandre.942",
-    "img": "membros/presidencia/raquelAlexandre.webp"
-  },
-  {
-    "id": 3,
-    "nome": "André Cruz",
-    "cargo": "Tesoureiro",
-    "fb": "https://www.facebook.com/andre.cruz.9279807",
-    "img": "membros/presidencia/andreCruz.webp"
+    "nome": "Beatriz Calado",
+    "cargo": "Vice-Presidente Interna",
+    "img": "membros/Presidência/Ana_Beatriz_Calado.png"
   }
 ]

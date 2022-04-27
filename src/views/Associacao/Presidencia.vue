@@ -17,7 +17,6 @@
         :img="getImgURL(membro.img)"
         :nome="membro.nome"
         :cargo="membro.cargo"
-        :fb="membro.fb"
       />
     </transition-group>
   </div>

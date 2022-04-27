@@ -1,37 +1,32 @@
 [
   {
     "id": 0,
-    "nome": "Miguel Lopes",
+    "nome": "Gonçalo Passinhas",
     "cargo": "Presidente",
-    "fb": "https://www.facebook.com/miguel.lopes.1272",
-    "img": "membros/magna/miguelLopes.webp"
+    "img": "membros/Mesa_da_Assembleia_Magna/Gonçalo_Passinhas.png"
   },
   {
     "id": 1,
-    "nome": "Cristiana Tomaz",
+    "nome": "Gonçalo Vedor",
     "cargo": "Vice-Presidente",
-    "fb": "https://www.facebook.com/cristiana.tomaz.33",
-    "img": "membros/magna/cristianaTomaz.webp"
+    "img": "membros/Mesa_da_Assembleia_Magna/Gonçalo_Vedor.png"
   },
   {
     "id": 2,
-    "nome": "António Lourenço",
-    "cargo": "Secretário",
-    "fb": "https://www.facebook.com/antonio.lourenco.5283",
-    "img": "membros/magna/antonioLourenco.webp"
+    "nome": "Constança Solipa",
+    "cargo": "Secretária",
+    "img": "membros/Mesa_da_Assembleia_Magna/Constança_Solipa.png"
   },
   {
     "id": 3,
-    "nome": "Gonçalo Passinhas",
-    "cargo": "Secretário",
-    "fb": "https://www.facebook.com/am.i.a.jerry",
-    "img": "membros/magna/goncaloPassinhas.webp"
+    "nome": "Flávia Pinto",
+    "cargo": "Secretária",
+    "img": "membros/Mesa_da_Assembleia_Magna/Flávia_Pinto.png"
   },
   {
     "id": 4,
-    "nome": "Joana Amaro",
-    "cargo": "Secretária",
-    "fb": "https://www.facebook.com/joana.amaro98",
-    "img": "membros/magna/joanaAmaro.webp"
+    "nome": "Diogo Nunes",
+    "cargo": "Secretário",
+    "img": "membros/Mesa_da_Assembleia_Magna/Diogo_Nunes.png"
   }
 ]

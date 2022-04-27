@@ -14,8 +14,8 @@
             :key="coordenador.nome"
             :data-index="5 + index"
             :coordenadorImg="getImgURL(coordenador.img)"
-            :fb="coordenador.fb"
             :coordenadorNome="coordenador.nome"
+            :coordenadorCargo="coordenador.cargo"
           />
         </div>
         <p>

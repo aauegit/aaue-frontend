@@ -1,23 +1,20 @@
 [
   {
     "id": 0,
-    "nome": "Mariana Sequeira",
+    "nome": "José Gonçalves",
     "cargo": "Presidente",
-    "fb": "https://www.facebook.com/mariana.sequeira00",
-    "img": "membros/fiscal/marianaSequeira.webp"
+    "img": "membros/Conselho_Fiscal/José_Gonçalves.png"
   },
   {
     "id": 1,
-    "nome": "Ana Marta Figueiredo",
+    "nome": "António Lourenço",
     "cargo": "Vice-Presidente",
-    "fb": "https://www.facebook.com/marta.figueiredo.336717",
-    "img": "membros/fiscal/anamartafigueiredo.webp"
+    "img": "membros/Conselho_Fiscal/António_Lourenço.png"
   },
   {
     "id": 2,
-    "nome": "José Gonçalves",
+    "nome": "Francisco Frade",
     "cargo": "Secretário",
-    "fb": "https://www.facebook.com/jose.pedro.goncalves.4",
-    "img": "membros/fiscal/josegoncalves.webp"
+    "img": "membros/Conselho_Fiscal/Francisco_Frade.png"
   }
 ]
