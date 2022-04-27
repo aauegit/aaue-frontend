@@ -1,6 +1,6 @@
 <template>
-  <div class="tesouraria">
-    <h1>Tesouraria</h1>
+  <div class="gapa">
+    <h1>Gabinete de Apoio à Presidência</h1>
     <hr />
     <transition-group appear          
             @before-enter="beforeEnter"
@@ -23,11 +23,11 @@
 <script>
 import MembroDirecao from "@/components/MembroDirecao.vue";
 import { getImgURL } from "@/functions/globals.js";
-import tesouraria from "@/static/tesouraria.json";
+import gapa from "@/static/administradores.json";
 import gsap from 'gsap';
 
 export default {
-  name: "Tesouraria",
+  name: "Gapa",
   setup() {
     const beforeEnter = (el) => {
         el.style.opacity = 0;
@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      membros: tesouraria,
+      membros: gapa,
     };
   },
   components: {
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tesouraria {
+.gapa {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -89,12 +89,12 @@ export default {
 }
 
 @media (max-width: 1016px) {
-  .tesouraria {
+  .gapa {
     padding-top: 100px;
   }
 }
 @media (max-width: 710px) {
-  .tesouraria {
+  .gapa {
     padding: 100px 10px 10px 10px;
   }
 }

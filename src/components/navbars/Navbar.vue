@@ -52,12 +52,30 @@
             <a class="navLinks dropdownName">Associação</a>
             <i class="fas fa-chevron-down"></i>
           </div>
+          
           <div class="subMenu" v-if="hoveredAssociacao">
             <router-link
               :to="{ name: 'Presidencia' }"
               @click="snapToElement('body')"
               >Presidência</router-link
             >
+          <li
+            class="dropdown"
+            @mouseover="hoveredGapa = true"
+            @mouseleave="hoveredGapa = false"
+          >
+            <div class="text">
+              <a class="navLinks dropdownName">Gabinete de Apoio à Presidência</a>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <div class="subMenu" v-if="hoveredGapa">
+              <router-link
+                :to="{ name: 'Gapa' }"
+                @click="snapToElement('body')"
+                >Gapa</router-link>
+          </div>
+          </li>
             <router-link
               :to="{ name: 'Tesouraria' }"
               @click="snapToElement('body')"
@@ -168,6 +186,7 @@ export default {
       hoveredAssociacao: false,
       hoveredEventos: false,
       hoveredPlataformas: false,
+      hoveredGapa: false,
       isAtTop: true,
       headerPosition: "relative",
     };
