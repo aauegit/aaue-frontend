@@ -13,6 +13,12 @@
   },
   {
     "id": 2,
+    "nome": "Bruno Simões",
+    "cargo": "Tesoureiro",
+    "img": "membros/Presidência/Bruno_Simões.png"
+  },
+  {
+    "id": 3,
     "nome": "Beatriz Calado",
     "cargo": "Vice-Presidente Interna",
     "img": "membros/Presidência/Ana_Beatriz_Calado.png"

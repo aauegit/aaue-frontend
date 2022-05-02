@@ -50,27 +50,11 @@ const routes = [
       ),
   },
   {
-    path: "/tesouraria",
-    name: "Tesouraria",
+    path: "/gap",
+    name: "Gap",
     component: () =>
       import(
-        /* webpackChunkName: "Presidencia" */ "../views/Associacao/Tesouraria.vue"
-      ),
-  },
-  {
-    path: "/administradores",
-    name: "Administradores",
-    component: () =>
-      import(
-        /* webpackChunkName: "Presidencia" */ "../views/Associacao/Administradores.vue"
-      ),
-  },
-  {
-    path: "/secretarios",
-    name: "Secretarios",
-    component: () =>
-      import(
-        /* webpackChunkName: "Presidencia" */ "../views/Associacao/Secretarios.vue"
+        /* webpackChunkName: "Presidencia" */ "../views/Associacao/Gap.vue"
       ),
   },
   {

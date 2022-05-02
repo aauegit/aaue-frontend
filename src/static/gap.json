@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "nome": "Luís Roma",
+        "cargo": "Administrador",
+        "img": "membros/Gap/Luís_Roma.png"
+    },
+    {
+        "id": 1,
+        "nome": "Vicente Correia",
+        "cargo": "Administrador-Adjunto",
+        "img": "membros/Gap/Vicente_Correia.png"
+    },
+    {
+        "id": 2,
+        "nome": "Ana Peneque",
+        "cargo": "Tesoureira-Adjunta",
+        "img": "membros/Gap/Ana_Peneque.png"
+    },
+    {
+        "id": 3,
+        "nome": "Catarina Ferreira",
+        "cargo": "Secretária",
+        "img": "membros/Gap/Catarina_Ferreira.png"
+    },
+    {
+        "id": 4,
+        "nome": "Rodrigo Silva",
+        "cargo": "Secretário-Adjunto",
+        "img": "membros/Gap/Rodrigo_Silva.png"
+    }    
+]

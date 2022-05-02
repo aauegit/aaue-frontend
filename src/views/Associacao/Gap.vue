@@ -1,6 +1,6 @@
 <template>
-  <div class="secretarios">
-    <h1>Secretários</h1>
+  <div class="gap">
+    <h1>Gap</h1>
     <hr />
     <transition-group appear          
             @before-enter="beforeEnter"
@@ -23,11 +23,11 @@
 <script>
 import MembroDirecao from "@/components/MembroDirecao.vue";
 import { getImgURL } from "@/functions/globals.js";
-import assembleiaMagna from "@/static/secretarios.json";
+import gap from "@/static/gap.json";
 import gsap from 'gsap';
 
 export default {
-  name: "Assembleia",
+  name: "Gap",
   setup() {
     const beforeEnter = (el) => {
         el.style.opacity = 0;
@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      membros: assembleiaMagna,
+      membros: gap,
     };
   },
   components: {
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.secretarios {
+.gap {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -89,12 +89,12 @@ export default {
 }
 
 @media (max-width: 1016px) {
-  .secretarios {
+  .gap {
     padding-top: 100px;
   }
 }
 @media (max-width: 710px) {
-  .secretarios {
+  .gap {
     padding: 100px 10px 10px 10px;
   }
 }

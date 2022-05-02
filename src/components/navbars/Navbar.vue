@@ -59,45 +59,10 @@
               @click="snapToElement('body')"
               >Presidência</router-link
             >
-          <li
-            class="dropdown"
-            @mouseover="hoveredGapa = true"
-            @mouseleave="hoveredGapa = false"
-          >
-            <div class="text">
-              <a class="navLinks dropdownName">Gabinete de Apoio à Presidência</a>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-
-            <div class="subMenu" v-if="hoveredGapa">
-              <router-link
-                :to="{ name: 'Gapa' }"
-                @click="snapToElement('body')"
-                >Gapa</router-link>
-          </div>
-          </li>
             <router-link
-              :to="{ name: 'Tesouraria' }"
+              :to="{ name: 'Gap' }"
               @click="snapToElement('body')"
-              >Tesouraria</router-link
-            >
-            <router-link
-              :to="{ name: 'Administradores' }"
-              @click="snapToElement('body')"
-              >Administradores</router-link
-            >
-            <router-link
-              :to="{ name: 'Secretarios' }"
-              @click="snapToElement('body')"
-              >Secretários</router-link
-            >
-            <router-link
-              :to="{ name: 'Assembleia' }"
-              @click="snapToElement('body')"
-              >Assembleia Magna</router-link
-            >
-            <router-link :to="{ name: 'Fiscal' }" @click="snapToElement('body')"
-              >Conselho Fiscal</router-link
+              >Gabinete de Apoio à Presidencia</router-link
             >
             <router-link
               :to="{ name: 'Setores' }"
@@ -109,6 +74,15 @@
               @click="snapToElement('body')"
               >Secções Autónomas</router-link
             >
+            <router-link
+              :to="{ name: 'Assembleia' }"
+              @click="snapToElement('body')"
+              >Assembleia Magna</router-link
+            >
+            <router-link :to="{ name: 'Fiscal' }" @click="snapToElement('body')"
+              >Conselho Fiscal</router-link
+            >
+          
             <router-link :to="{ name: 'Sobre' }" @click="snapToElement('body')"
               >Sobre nós</router-link
             >
