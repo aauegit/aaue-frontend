@@ -222,7 +222,7 @@
       },
       {
         "nome": "João Bacalhau",
-        "cargo": "Vice-Coordenadora",
+        "cargo": "Vice-Coordenador",
         "img": "membros/SAFA/João_Bacalhau.png"
       }
     ],
@@ -255,10 +255,12 @@
       },
       {
         "nome": "Beatriz Barreiro",
+        "cargo": "Vice-Coordenadora",
         "img": "membros/SOL/Beatriz_Barreiro.png"
       },
       {
         "nome": "Mariana Rodrigues",
+        "cargo": "Vice-Coordenadora",
         "img": "membros/SOL/Mariana_Rodrigues.png"
       }
     ],
