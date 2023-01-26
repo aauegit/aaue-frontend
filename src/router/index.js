@@ -98,7 +98,7 @@ const routes = [
     name: "GuiaDoEstudante",
     component: () =>
       import(
-        /* webpackChunkName: "GuiaEstudante" */ "../assets/guias/Guia-do-Estudante.pdf"
+        /* webpackChunkName: "GuiaEstudante" */ "../assets/guias/guia-do-estudante-2022.pdf"
       ),
   },
   {

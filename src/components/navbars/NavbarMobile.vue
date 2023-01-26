@@ -34,30 +34,48 @@
           ></i
         ></a>
         <div class="subMenu" v-if="openAssociacao">
-          <router-link :to="{ name: 'Presidencia' }" @click="toggleClass"
-            >⚆ Presidência</router-link
-          >
-          <router-link :to="{ name: 'Assembleia' }" @click="toggleClass"
-            >⚆ Assembleia Magna</router-link
-          >
-          <router-link :to="{ name: 'Fiscal' }" @click="toggleClass"
-            >⚆ Conselho Fiscal</router-link
-          >
-          <router-link :to="{ name: 'Setores' }" @click="toggleClass"
-            >⚆ Setores</router-link
-          >
-          <router-link :to="{ name: 'Autonomas' }" @click="toggleClass"
-            >⚆ Secções Autónomas</router-link
-          >
-          <router-link :to="{ name: 'Sobre' }" @click="toggleClass"
-            >⚆ Sobre nós</router-link
-          >
-          <router-link :to="{ name: 'Estatutos' }" @click="toggleClass"
-            >⚆ Estatutos</router-link
-          >
-          <router-link :to="{ name: 'GuiaEstudante' }" @click="toggleClass"
-            >⚆ Guia do Estudante</router-link
-          >
+          <router-link
+              :to="{ name: 'Presidencia' }"
+              @click="toggleClass"
+              >⚆ Presidência</router-link
+            >
+            <router-link
+              :to="{ name: 'Gap' }"
+              @click="toggleClass"
+              >⚆ Gabinete de Apoio à Presidencia</router-link
+            >
+            <router-link
+              :to="{ name: 'Setores' }"
+              @click="toggleClass"
+              >⚆ Setores</router-link
+            >
+            <router-link
+              :to="{ name: 'Autonomas' }"
+              @click="toggleClass"
+              >⚆ Secções Autónomas</router-link
+            >
+            <router-link
+              :to="{ name: 'Assembleia' }"
+              @click="toggleClass"
+              >⚆ Assembleia Magna</router-link
+            >
+            <router-link :to="{ name: 'Fiscal' }" @click="toggleClass"
+              >⚆ Conselho Fiscal</router-link
+            >
+          
+            <router-link :to="{ name: 'Sobre' }" @click="toggleClass"
+              >⚆ Sobre nós</router-link
+            >
+            <router-link
+              :to="{ name: 'Estatutos' }"
+              @click="toggleClass"
+              >⚆ Estatutos</router-link
+            >
+            <router-link
+              :to="{ name: 'GuiaEstudante' }"
+              @click="toggleClass"
+              >⚆ Guia do Estudante</router-link
+            >
         </div>
       </li>
       <li class="dropdown" @click="openPlataformas = !openPlataformas">

@@ -293,7 +293,7 @@ export default {
       };
 
       fetch(
-        "https://blogposting-api.herokuapp.com/api/user/login",
+        "https://aaue-blogs.onrender.com/api/user/login",
         requestOptions
       )
         .then(async (response) => {
@@ -373,7 +373,7 @@ export default {
         };
 
         await fetch(
-          "https://blogposting-api.herokuapp.com/api/admin/createBlogpost",
+          "https://aaue-blogs.onrender.com/api/admin/createBlogpost",
           requestOptions
         )
           .then((data) => {
@@ -429,7 +429,7 @@ export default {
       };
 
       await fetch(
-        `https://blogposting-api.herokuapp.com/api/getAllBlogpostTitles`,
+        `https://aaue-blogs.onrender.com/api/getAllBlogpostTitles`,
         requestOptions
       ).then(async (response) => {
         this.titulos = await response.json();
@@ -451,7 +451,7 @@ export default {
         },
       };
 
-      const url = `https://blogposting-api.herokuapp.com/api/getBlogpost/${destination}`;
+      const url = `https://aaue-blogs.onrender.com/api/getBlogpost/${destination}`;
 
       await fetch(url, requestOptions).then(async (response) => {
         let data = await response.json();

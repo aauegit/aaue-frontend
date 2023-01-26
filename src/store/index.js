@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 
-const URL = "https://blogposting-api.herokuapp.com/api/getAllBlogposts";
+const URL = "https://aaue-blogs.onrender.com/api/getAllBlogposts";
 const requestOptions = {
   method: "GET",
   headers: {
@@ -36,7 +36,7 @@ export default createStore({
     },
     async setCurrentNoticia(state, payload) {
       const noticia = await fetch(
-        `https://blogposting-api.herokuapp.com/api/getBlogpost/${payload}`,
+        `https://aaue-blogs.onrender.com/api/getBlogpost/${payload}`,
         requestOptions
       );
       const currentNoticia = await noticia.json();

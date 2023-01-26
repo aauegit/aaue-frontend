@@ -24,19 +24,13 @@ export default {
           id: 0,
           nome: "Guia do Estudante",
           icon: "fas fa-landmark",
-          ficheiro: "guias/Guia-do-Estudante.pdf",
+          ficheiro: "guias/guia-do-estudante-2022.pdf",
         },
         {
           id: 1,
-          nome: "Student's Guide (EN)",
-          icon: "fas fa-mail-bulk",
-          ficheiro: "guias/Guia-de-Bolsas.pdf",
-        },
-        {
-          id: 2,
           nome: "Guia de bolsas e apoios de estudo",
           icon: "fas fa-running",
-          ficheiro: "guias/Guia-de-Bolsas.pdf",
+          ficheiro: "guias/guia-bolsas-de-estudo-2022.pdf",
         },
       ],
     };

@@ -95,7 +95,7 @@
       />
       <PlataformaCard
         class="reitorCard"
-        link="http://torneioreitor.aaue.pt/"
+        link="http://desporto.aaue.pt/"
         icon="fas fa-futbol"
         titulo="Torneio do Reitor"
         text="A AAUE é responsável pelo desporto, dinamizando atividades como torneios internos, ou potenciando a prática federada, através das competições da Federação Académica do Desporto Universitário."

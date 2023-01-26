@@ -1,6 +1,6 @@
 <template>
   <div class="gap">
-    <h1>Gap</h1>
+    <h1>Gabinete de Apoio à Presidência</h1>
     <hr />
     <transition-group appear          
             @before-enter="beforeEnter"
