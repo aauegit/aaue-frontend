@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkaauevora"]=self["webpackChunkaauevora"]||[]).push([[54],{3538:function(r,a,e){e.r(a),e.d(a,{default:function(){return s}});var n=e(6252);function o(r,a,e,o,u,t){return(0,n.wg)(),(0,n.iD)("h1",null,"Protocolos e parcerias")}var u={name:"Protocolos"},t=e(3744);const c=(0,t.Z)(u,[["render",o]]);var s=c}}]);
+//# sourceMappingURL=Protocolos.ec24f13b.js.map

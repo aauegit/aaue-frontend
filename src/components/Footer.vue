@@ -36,6 +36,8 @@
           </a>
         </li>
       </div>
+
+      <!--
       <div class="socials">
         <li class="title">Eventos</li>
         <li>
@@ -61,7 +63,11 @@
           </a>
         </li>
       </div>
+      -->
+
+
       <ul class="plataformas">
+        <!--
         <li class="title">Plataformas</li>
         <li>
           <a
@@ -74,6 +80,8 @@
             <p>Portal do Alojamento</p>
           </a>
         </li>
+        -->
+
         <li v-if="areLive">
           <a
             class="icon"
@@ -97,6 +105,8 @@
           </a>
         </li>
       </ul>
+
+
     </ul>
     <ul class="socialMedia">
       <li>
@@ -140,7 +150,7 @@
         </a>
       </li>
     </ul>
-    <p class="rights">© AAUE 2021 | TODOS OS DIREITOS RESERVADOS</p>
+    <p class="rights">© AAUE 2023 | TODOS OS DIREITOS RESERVADOS</p>
   </footer>
 </template>
 

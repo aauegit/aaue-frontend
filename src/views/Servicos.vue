@@ -1,7 +1,7 @@
 <template>
   <section class="servicos">
     <div class="copiaki">
-      <img src="@/assets/servicos/copiaki.png" alt="" />
+      <img src="@/assets/servicos/copiaki_novo.png" alt="" />
       <div class="serviceContent">
         <p class="morada">
           <span>Morada: </span>Rua Romão Ramalho, Nº 59, 7000-631 Évora
@@ -81,7 +81,7 @@ export default {
     height: 100%;
 
     img {
-      width: 300px;
+      width: 500px;
       margin-bottom: 0px;
     }
 

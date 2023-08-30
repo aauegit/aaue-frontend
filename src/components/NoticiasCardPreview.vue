@@ -88,8 +88,8 @@ export default {
   img {
     border-radius: 12px;
     height: 200px;
-    min-width: 250px;
-    max-width: 250px;
+    /*min-width: 250px;
+    max-width: 250px;*/
     margin-right: 25px;
     transition: all 0.2s ease-in;
     float: left;

@@ -15,6 +15,9 @@
             >Notícias</router-link
           >
         </li>
+
+
+        <!--
         <li
           class="dropdown"
           @mouseover="hoveredEventos = true"
@@ -43,6 +46,9 @@
             >
           </div>
         </li>
+        -->
+
+
         <li
           class="dropdown"
           @mouseover="hoveredAssociacao = true"

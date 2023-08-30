@@ -5,19 +5,14 @@
     "icon": "fas fa-users",
     "coordenadores": [
       {
-        "nome": "Marco Andrade",
-        "cargo": "Coordenador",
-        "img": "membros/Ação_Social_e_Integração/Marco_Andrade.png"
+        "nome": "Jéssica Figueira",
+        "cargo": "Coordenadora",
+        "img": "membros/Ação_Social_e_Integração/jessica figueira.jpg"
       },
       {
-        "nome": "Soraia Carvalho",
+        "nome": "Lara Bernardino",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/Ação_Social_e_Integração/Soraia_Carvalho.png"
-      },
-      {
-        "nome": "Antónia Borba",
-        "cargo": "Vice-Coordenadora",
-        "img": "membros/Ação_Social_e_Integração/Antónia_Borba.png"
+        "img": "membros/Ação_Social_e_Integração/lara bernardino.jpg"
       }
     ],
     "descricao": "Este setor é de importância extrema devido à sua ligação de proximidade tanto com a Academia tanto com a comunidade eborense. Dada a situação pandémica atual, que atinge todos, mas que a sua problemática é ainda mais acentuada nos mais vulneráveis, o seu papel tornou-se ainda mais relevante devido às dimensões que engloba como é o caso da solidariedade, inclusão e a integração. Assim, a prioridade deste setor é atenuar as desigualdades sociais sentidas pelos estudantes, promovendo a sua integração não só no meio académico como dentro da comunidade eborense.",
@@ -29,19 +24,19 @@
     "icon": "fas fa-users-cog",
     "coordenadores": [
       {
-        "nome": "Manuela Reis",
-        "cargo": "Coordenadora",
-        "img": "membros/Administração/Manuela_Reis.png"
+        "nome": "André Marreiros",
+        "cargo": "Coordenador",
+        "img": "membros/Administração/andre marreiros.jpg"
       },
       {
-        "nome": "Fábio Santos",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Administração/Fábio_Santos.png"
-      },
-      {
-        "nome": "Patrícia Silva",
+        "nome": "Alexandra Cabral",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/Administração/Patrícia_Silva.png"
+        "img": "membros/Administração/alexandra cabral.jpg"
+      },
+      {
+        "nome": "Marta Mendes",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Administração/marta mendes.jpg"
       }
     ],
     "descricao": "Este setor tem como responsabilidades a organização e gestão de todo o património móvel e imóvel da AAUE. Compromete-se com a organização e manutenção de estruturas que apoiam o bom funcionamento desta Associação Académica como é o caso do arquivo, do Cordovil e da Sala dos Núcleos. Ainda, coopera de forma próxima e permanente com a presidência e os restantes membros/setores da AAUE.",
@@ -53,19 +48,19 @@
     "icon": "fas fa-ticket-alt",
     "coordenadores": [
       {
-        "nome": "Rute Afonso",
-        "cargo": "Coordenadora",
-        "img": "membros/Apoio_aos_Núcleos/Rute_Afonso.png"
+        "nome": "Danilo Jorge",
+        "cargo": "Coordenador",
+        "img": "membros/Apoio_aos_Núcleos/danilo jorge.jpg"
       },
       {
-        "nome": "Ricardo Oliveira",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Apoio_aos_Núcleos/Ricardo_Oliveira.png"
-      },
-      {
-        "nome": "Rita Consulado",
+        "nome": "Ana Maria",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/Apoio_aos_Núcleos/Rita_Consulado.png"
+        "img": "membros/Apoio_aos_Núcleos/ana maria.jpg"
+      },
+      {
+        "nome": "Cristina Carvalho",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Apoio_aos_Núcleos/cristina carvalho.jpg"
       }
     ],
     "descricao": "Este setor visa articular a comunicação entre a AAUE, os núcleos de estudantes, as tunas, os grupos académicos e a Universidade de Évora. Assim, o seu principal objetivo é responder às necessidades dos núcleos assim como dos seus projetos, procurando ir ao encontro das necessidades e interesses específicos dos estudantes do curso ou cursos que representam. Finalmente, procura dar continuidade à atividades relacionadas com a formação de gestão de um núcleo para garantir assim o seu bom funcionamento, manutenção e inovação.",
@@ -77,19 +72,14 @@
     "icon": "fas fa-school",
     "coordenadores": [
       {
-        "nome": "André Oliveira",
-        "cargo": "Coordenador",
-        "img": "membros/Cidadania,_Sust_e_Empreend/André_Oliveira.png"
+        "nome": "Mariana Silva",
+        "cargo": "Coordenadora",
+        "img": "membros/Cidadania,_Sust_e_Empreend/mariana silva.jpg"
       },
       {
-        "nome": "Patrícia Louzeiro",
+        "nome": "Margarida Catarino",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/Cidadania,_Sust_e_Empreend/Patrícia_Louzeiro.png"
-      },
-      {
-        "nome": "Luís Carvalho",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Cidadania,_Sust_e_Empreend/Luís_Carvalho.png"
+        "img": "membros/Cidadania,_Sust_e_Empreend/margarida catarino.jpg"
       }
     ],
     "descricao": "Nasceu de uma crescente necessidade de complementar a oferta local para garantir aos estudantes da Academia uma maior aptidão que facilita a sua entrada no mercado de trabalho, tanto por via profissional como via empreendedora. Tem o intuito de trabalhar em prol do desenvolvimento e aquisição de novas competências associadas às três referidas áreas ao nível local devido a estas se encontrarem pouco exploradas. ",
@@ -101,14 +91,19 @@
     "icon": "fas fa-calendar-alt",
     "coordenadores": [
       {
-        "nome": "Ricardo Batista",
+        "nome": "Ricardo Baptista",
         "cargo": "Coordenador",
-        "img": "membros/Cultural/Ricardo_Baptista.png"
+        "img": "membros/Cultural/ricardo baptista.jpg"
       },
       {
-        "nome": "Guilherme Mota",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Cultural/Guilherme_Mota.png"
+        "nome": "Carolina Braz",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Cultural/carolina braz.jpg"
+      },
+      {
+        "nome": "Elsa Vitorino",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Cultural/elsa vitorino.jpg"
       }
     ],
     "descricao": "O setor Cultural considera a cultura uma parte fundamental da identidade de um país, ainda mais na situação pandémica vigente. Assim, este setor procura o seu enriquecimento através da dinamização e realização de atividades dentro deste âmbito, naturalmente adaptadas à situação corrente. Ainda, pretende uma difusão da diversidade cultural abrangida pela Academia, de forma a criar uma ligação entre os estudantes e a comunidade. ",
@@ -120,19 +115,14 @@
     "icon": "fas fa-euro-sign",
     "coordenadores": [
       {
-        "nome": "Sara Faria",
-        "cargo": "Coordenadora",
-        "img": "membros/Financeiro/Sara_Faria.png"
+        "nome": "Duarte Francisco",
+        "cargo": "Coordenador",
+        "img": "membros/Financeiro/duarte francisco.jpg"
       },
       {
-        "nome": "Pedro Dias",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Financeiro/Pedro_Dias.png"
-      },
-      {
-        "nome": "Maria Vila Viçosa",
+        "nome": "Joana Marques",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/Financeiro/Maria_Vila_Viçosa.png"
+        "img": "membros/Financeiro/joana marques.jpg"
       }
     ],
     "descricao": "Desempenha um papel fulcral na estrutura da AAUE, tendo como ocupação o registo e análise dos processos monetários da Associação, de forma a garantir transparência e eficiência. Pretende dar continuidade ao forte investimento na organização e controlo dos recursos económicos da AAUE de forma a assegurar uma maior articulação e colaboração para com os restantes membros/setores a que dizem respeito a organização logística e financeira.",
@@ -144,23 +134,18 @@
     "icon": "fas fa-laptop-code",
     "coordenadores": [
       {
-        "nome": "Diogo Solipa",
+        "nome": "José João",
         "cargo": "Coordenador",
-        "img": "membros/Informática/Diogo_Solipa.png"
+        "img": "membros/Informática/jose joao.jpg"
       },
       {
-        "nome": "Francisco Rodrigues",
+        "nome": "Henrique Rosa",
         "cargo": "Vice-Coordenador",
-        "img": "membros/Informática/Francisco_Rodrigues.png"
-      },
-      {
-        "nome": "Ion Chirica",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Informática/Ion_Chirica.png"
+        "img": "membros/Informática/henrique rosa.jpg"
       }
     ],
     "descricao": "O Setor de Informática tem como objetivo o bom funcionamento na gestão de informação e no domínio do conteúdo em formato digital, de forma a facilitar as tarefas dos recursos humanos, proporcionando-se assim formas de trabalho mais eficientes. Cabe ao setor o papel de administração e manutenção dos websites da AAUE, que pode ser visitado por todos os utilizadores que pretendam tirar proveito dos serviços do mesmo, facilitando o acesso a toda a informação disponibilizada.",
-    "contacto": "informativa@aaue.pt"
+    "contacto": "informatica@aaue.pt"
   },
   {
     "id": 8,
@@ -168,19 +153,9 @@
     "icon": "fas fa-balance-scale",
     "coordenadores": [
       {
-        "nome": "Pedro Moreira",
+        "nome": "Gil Mata",
         "cargo": "Coordenador",
-        "img": "membros/Política_Educativa/Pedro_Moreira.png"
-      },
-      {
-        "nome": "Ana Martins",
-        "cargo": "Vice-Coordenadora",
-        "img": "membros/Política_Educativa/Ana_Martins.png"
-      },
-      {
-        "nome": "Miguel Toscano",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Política_Educativa/Miguel_Toscano.png"
+        "img": "membros/Política_Educativa/gil mata.jpg"
       }
     ],
     "descricao": "O Setor da Política Educativa tem como seu crucial objetivo a defesa dos interesses dos Estudantes da Academia, assim como, a promoção de novos direitos para os mesmos, procurando corresponder às suas reais necessidades. Pretende-se também fortalecer a proximidade com os Estudantes, de forma a que possam apresentar as suas sugestões e reivindicações, de forma direta com o setor. Tendo ainda como foco o desenvolvimento e a possibilidade de aquisição de novas ferramentas nas mais diversas áreas, por partes dos Estudantes, tenciona-se dinamizar diversas atividades, em cooperação com outros membros/setores da AAUE, em prol do enriquecimento da Academia.",
@@ -192,19 +167,19 @@
     "icon": "fas fa-handshake",
     "coordenadores": [
       {
-        "nome": "Beatriz Santiago",
-        "cargo": "Coordenadora",
-        "img": "membros/Protocolos_e_Parcerias/Beatriz_Santiago.png"
+        "nome": "Diogo Carvalho",
+        "cargo": "Coordenador",
+        "img": "membros/Protocolos_e_Parcerias/diogo carvalho.jpg"
       },
       {
-        "nome": "João Vinagre",
-        "cargo": "Vice-Coordenador",
-        "img": "membros/Protocolos_e_Parcerias/João_Vinagre.png"
-      },
-      {
-        "nome": "Matilde Campelo",
+        "nome": "Beatriz Moreno",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/Protocolos_e_Parcerias/Matilde_Campelo.png"
+        "img": "membros/Protocolos_e_Parcerias/beatriz moreno.jpg"
+      },
+      {
+        "nome": "Inês Fernandes",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Protocolos_e_Parcerias/ines fernandes.jpg"
       }
     ],
     "descricao": "O Setor dos Protocolos e Parcerias tem como principal objetivo criar e renovar protocolos e parcerias com empresas e estabelecimentos locais em prol de benefícios para os estudantes, através de acordos de mútua vantagem. Garantindo o acesso a descontos, ofertas e vantagens exclusivas para os estudantes que se tornem sócios da AAUE. Durante o ano, a equipa marca presença em todos os polos da Universidade para a renovação de quotas e inscrição de novos sócios, servindo de igual modo para dar a conhecer a AAUE e os seus parceiros aos estudantes da Academia.",
@@ -216,14 +191,19 @@
     "icon": "fas fa-truck-moving",
     "coordenadores": [
       {
-        "nome": "Bernardo Cachão",
+        "nome": "Bruno Pedroso",
         "cargo": "Coordenador",
-        "img": "membros/SAFA/Bernardo_Cachão.png"
+        "img": "membros/SAFA/bruno pedroso.jpg"
       },
       {
-        "nome": "João Bacalhau",
+        "nome": "Ricardo Oliveira",
         "cargo": "Vice-Coordenador",
-        "img": "membros/SAFA/João_Bacalhau.png"
+        "img": "membros/SAFA/ricardo oliveira.jpg"
+      },
+      {
+        "nome": "Ricardo Quaresma",
+        "cargo": "Vice-Coordenador",
+        "img": "membros/SAFA/ricardo quaresma.jpg"
       }
     ],
     "descricao": "O Setor das Atividades e Festividades Académicas responsabiliza-se pela logística de todos os eventos realizados pela AAUE, além de auxiliar a gestão de manutenção do património e de espaços da mesma, pretendendo manter o bom funcionamento e a segurança nos eventos a realizar pela AAUE. Além disso, em função da sua transversalidade, o SAFA está sempre disponível a colaborar com os restantes membros/setores, núcleos, tunas e grupos académicos nas suas atividades, sempre que requisitado.",
@@ -235,9 +215,19 @@
     "icon": "fas fa-heartbeat",
     "coordenadores": [
       {
-        "nome": "Maria Dourado",
+        "nome": "Mariana Parente",
         "cargo": "Coordenadora",
-        "img": "membros/Saúde/Maria_Dourado.png"
+        "img": "membros/Saúde/mariana parente.jpg"
+      },
+      {
+        "nome": "Daniela Tomé",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Saúde/daniela tome.jpg"
+      },
+      {
+        "nome": "Raquel Veloso",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/Saúde/raquel veloso.jpg"
       }
     ],
     "descricao": "A comunidade universitária tem um enorme nível de prevalência de comportamentos de risco relacionados com alcoolismo, sexualidade, tabagismo e consumo de drogas, acompanhado por hábitos de vida desadaptativos como alimentação desequilibrada, más rotinas de sono, stress e ansiedade inerentes à má gestão de tempo. Deste modo, o Setor da Saúde foca-se em atividades de sensibilização, prevenção de doenças e/ou comportamentos de risco junto da comunidade académica e cidadãos eborenses, em articulação com várias entidades como a Universidade de Évora, o Hospital do Espírito Santo, o IPDJ, entre outras. Procurando também desmistificar preconceitos associados à saúde mental e dinamizar hábitos que promovam o bem-estar físico e psicológico.",
@@ -249,19 +239,19 @@
     "icon": "fas fa-box",
     "coordenadores": [
       {
-        "nome": "Ana Lúcia",
-        "cargo": "Coordenadora",
-        "img": "membros/SOL/Ana_Lúcia.png"
-      },
-      {
         "nome": "Beatriz Barreiro",
-        "cargo": "Vice-Coordenadora",
-        "img": "membros/SOL/Beatriz_Barreiro.png"
+        "cargo": "Coordenadora",
+        "img": "membros/SOL/beatriz barreiro.jpg"
       },
       {
-        "nome": "Mariana Rodrigues",
+        "nome": "Carolina Lourenço",
         "cargo": "Vice-Coordenadora",
-        "img": "membros/SOL/Mariana_Rodrigues.png"
+        "img": "membros/SOL/carolina lourenço.jpg"
+      },
+      {
+        "nome": "Sara Horta",
+        "cargo": "Vice-Coordenadora",
+        "img": "membros/SOL/sara horta.jpg"
       }
     ],
     "descricao": "O Setor de Organização e Logística tem como principal objetivo o incentivo e suporte aos mais variados eventos organizados pela AAUE, visando, de igual forma, o apoio logístico aos eventos realizados pela Academia, prestando auxílio também às equipas técnicas, produção e entidades, bem como aos voluntários. Pretende-se, igualmente, garantir a eficiência da administração, procurando boa comunicação entre os elementos da equipa, de forma a tornar bem-sucedida a coordenação entre membros/setores. Com a finalidade de agilizar o desenvolvimento deste trabalho, mostra-se crucial a coparticipação de outros membros/setores, entre os quais se destaca o SAFA e o setor Cultural, cuja colaboração é essencial para o bom funcionamento dos respetivos eventos.",

@@ -1,20 +1,20 @@
 [
   {
     "id": 0,
-    "nome": "José Gonçalves",
+    "nome": "Maria Leonor Vila Viçosa",
     "cargo": "Presidente",
-    "img": "membros/Conselho_Fiscal/José_Gonçalves.png"
+    "img": "membros/Conselho_Fiscal/maria leonor vila viçosa.jpg"
   },
   {
     "id": 1,
-    "nome": "António Lourenço",
+    "nome": "Sofia Carrapeta",
     "cargo": "Vice-Presidente",
-    "img": "membros/Conselho_Fiscal/António_Lourenço.png"
+    "img": "membros/Conselho_Fiscal/sofia carrapeta.jpg"
   },
   {
     "id": 2,
-    "nome": "Francisco Frade",
-    "cargo": "Secretário",
-    "img": "membros/Conselho_Fiscal/Francisco_Frade.png"
+    "nome": "Sara Faria",
+    "cargo": "Secretária",
+    "img": "membros/Conselho_Fiscal/sara faria.jpg"
   }
 ]

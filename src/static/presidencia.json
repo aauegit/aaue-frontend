@@ -3,24 +3,24 @@
     "id": 0,
     "nome": "Henrique Gil",
     "cargo": "Presidente",
-    "img": "membros/Presidência/Henrique_Gil.png"
+    "img": "membros/Presidência/henrique gil.jpg"
   },
   {
     "id": 1,
-    "nome": "Ana Ventinhas",
-    "cargo": "Vice-Presidente Externa",
-    "img": "membros/Presidência/Ana_Ventinhas.png"
+    "nome": "Diogo Solipa",
+    "cargo": "Vice-Presidente Externo",
+    "img": "membros/Presidência/diogo solipa.jpg"
   },
   {
     "id": 2,
     "nome": "Bruno Simões",
     "cargo": "Tesoureiro",
-    "img": "membros/Presidência/Bruno_Simões.png"
+    "img": "membros/Presidência/bruno simoes.jpg"
   },
   {
     "id": 3,
-    "nome": "Beatriz Calado",
+    "nome": "Francisca Ruivo",
     "cargo": "Vice-Presidente Interna",
-    "img": "membros/Presidência/Ana_Beatriz_Calado.png"
+    "img": "membros/Presidência/francisca ruivo.jpg"
   }
 ]

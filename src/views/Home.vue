@@ -79,6 +79,9 @@
       <img src="@/assets/aaue.png" alt="" />
     </div>
   </section>
+
+
+  <!--
   <section class="plataformas">
     <HeaderTitle
       title="Plataformas"
@@ -109,6 +112,9 @@
       </PlataformaCard>
     </div>
   </section>
+  -->
+
+
   <section class="noticias">
     <HeaderTitle
       title="Notícias"
@@ -437,7 +443,7 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 1200px;
+        /*max-width: 1200px;*/
         padding: 20px 0;
       }
     }

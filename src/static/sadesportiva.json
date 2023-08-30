@@ -5,29 +5,29 @@
     "icon": "fas fa-futbol",
     "coordenadores": [
       {
-        "nome": "Miguel Báia",
+        "nome": "João Félix",
         "cargo": "Vice-Presidente",
-        "img": "membros/SAD/Miguel_Báia.png"
+        "img": "membros/SAD/joao felix.jpg"
       },
       {
-        "nome": "Débora Gomes",
-        "cargo": "Secretária",
-        "img": "membros/SAD/Débora_Gomes.png"
-      },
-      {
-        "nome": "Sofia Candeias",
-        "cargo": "Coordenadora da Comunicação",
-        "img": "membros/SAD/Sofia_Candeias.png"
-      },
-      {
-        "nome": "Gonçalo Pais",
+        "nome": "Afonso Ruivo",
         "cargo": "Secretário",
-        "img": "membros/SAD/Gonçalo_Pais.png"
+        "img": "membros/SAD/afonso ruivo.jpg"
       },
       {
-        "nome": "Sofia Carrapeta",
+        "nome": "Leonor Pestana",
+        "cargo": "Secretária",
+        "img": "membros/SAD/leonor pestana.jpg"
+      },
+      {
+        "nome": "Maria Dourado",
         "cargo": "Tesoureira",
-        "img": "membros/SAD/Sofia_Carrapeta.png"
+        "img": "membros/SAD/maria dourado.jpg"
+      },
+      {
+        "nome": "Rodrigo Silva",
+        "cargo": "Coordenador da Comunicação",
+        "img": "membros/SAD/rodrigo silva.jpg"
       }
     ],
     "descricao": "O desporto é uma atividade de lazer e competição saudável, pela qual apela a boas práticas. Por estas razões, apresenta-se como desígnio da Secção Autónoma Desportiva que a Academia reúna todos os esforços em prol da promoção, da qualidade de vida e bem-estar, não só dos estudantes, como também dos habitantes da cidade de Évora. Considera-se fundamental promover momentos de atividade física, diversão, entretenimento e, ao mesmo tempo, o espírito de competição amigável entre os estudantes.",

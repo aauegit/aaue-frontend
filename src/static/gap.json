@@ -1,32 +1,32 @@
 [
     {
         "id": 0,
-        "nome": "Luís Roma",
-        "cargo": "Administrador",
-        "img": "membros/Gap/Luís_Roma.png"
+        "nome": "Débora Gomes",
+        "cargo": "Administradora",
+        "img": "membros/Administradores/debora gomes.jpg"
     },
     {
         "id": 1,
-        "nome": "Vicente Correia",
+        "nome": "Gonçalo Vedor",
         "cargo": "Administrador-Adjunto",
-        "img": "membros/Gap/Vicente_Correia.png"
+        "img": "membros/Administradores/gonçalo vedor.jpg"
     },
     {
         "id": 2,
-        "nome": "Ana Peneque",
+        "nome": "Constança Solipa",
         "cargo": "Tesoureira-Adjunta",
-        "img": "membros/Gap/Ana_Peneque.png"
+        "img": "membros/Tesoureiros/constança solipa.jpg"
     },
     {
         "id": 3,
         "nome": "Catarina Ferreira",
         "cargo": "Secretária",
-        "img": "membros/Gap/Catarina_Ferreira.png"
+        "img": "membros/Secretários/catarina ferreira.jpg"
     },
     {
         "id": 4,
-        "nome": "Rodrigo Silva",
-        "cargo": "Secretário-Adjunto",
-        "img": "membros/Gap/Rodrigo_Silva.png"
+        "nome": "Ana Peneque",
+        "cargo": "Secretária-Adjunta",
+        "img": "membros/Secretários/ana peneque.jpg"
     }    
 ]

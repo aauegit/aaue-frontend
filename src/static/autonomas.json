@@ -6,18 +6,18 @@
     "coordenadores": [
       {
         "nome": "Cláudia Farófia",
-        "cargo": "Vice-Presidente",
-        "img": "membros/SAC/AAUE_TV/Claúdia_Farófia.png"
+        "cargo": "Presidente",
+        "img": "membros/SAC/AAUE_TV/laudia farofia.jpg"
       },
       {
-        "nome": "Francisco Santos",
+        "nome": "Francisco Ribeiro",
         "cargo": "Secretário",
-        "img": "membros/SAC/AAUE_TV/Francisco_Santos.png"
+        "img": "membros/SAC/AAUE_TV/francisco ribeiro.jpg"
       },
       {
         "nome": "José Guerrinha",
         "cargo": "Secretário",
-        "img": "membros/SAC/AAUE_TV/José_Guerrinha.png"
+        "img": "membros/SAC/AAUE_TV/jose guerrinha.jpg"
       }
     ],
     "descricao": "A AAUE TV, enquanto membro integrante da Secção Autónoma de Comunicação, é responsável pela cobertura das atividades realizadas pela AAUE. O registo fotográfico e videográfico é fundamental no papel da vida académica pois, posteriormente, poder-se-á recordar todos os momentos. Para além de documentar os eventos, realiza material para promoção e divulga os eventos através da multimédia.",
@@ -29,14 +29,14 @@
     "icon": "fas fa-newspaper",
     "coordenadores": [
       {
-        "nome": "Ana Catarina Assencadas",
+        "nome": "Bárbara Loureiro",
         "cargo": "Vice-Presidente",
-        "img": "membros/SAC/Divulgação/Ana_Catarina_Assencadas.png"
+        "img": "membros/SAC/Divulgação/barbara loureiro.jpg"
       },
       {
-        "nome": "Inês Pisco",
+        "nome": "Ana Cardoso",
         "cargo": "Secretária",
-        "img": "membros/SAC/Divulgação/Inês_Pisco.png"
+        "img": "membros/SAC/Divulgação/ana cardoso.jpg"
       }
     ],
     "descricao": "A Divulgação executa uma das tarefas fundamentais na operacionalização da AAUE, sendo-lhe incumbida toda a publicação de conteúdo essencial, de modo, a inteirar toda a comunidade estudantil da atividade da AAUE. Numa visão geral desta equipa, o poder de interação, transparência e interajuda são palavras-chave para o sucesso e, por isso, terá o compromisso de usufruir das redes sociais - Facebook, Instagram e Twitter.",
@@ -48,19 +48,19 @@
     "icon": "fas fa-images",
     "coordenadores": [
       {
-        "nome": "Beatriz Vizeu",
+        "nome": "Sara Nunes",
         "cargo": "Vice-Presidente",
-        "img": "membros/SAC/Imagem/Beatriz_Vizeu.png"
+        "img": "membros/SAC/Imagem/sara nunes.jpg"
       },
       {
-        "nome": "Carolina Damaso",
+        "nome": "Inês Palma",
         "cargo": "Secretária",
-        "img": "membros/SAC/Imagem/Carolina_Damaso.png"
+        "img": "membros/SAC/Imagem/ines palma.jpg"
       },
       {
-        "nome": "Filipa Serrano",
+        "nome": "Maria Marques",
         "cargo": "Secretária",
-        "img": "membros/SAC/Imagem/Filipa_Serrano.png"
+        "img": "membros/SAC/Imagem/maria marques.jpg"
       }
     ],
 
@@ -73,17 +73,31 @@
     "icon": "fas fa-user-shield",
     "coordenadores": [
       {
-        "nome": "Francisca Ruivo",
+        "nome": "Marta Varela",
         "cargo": "Vice-Presidente",
-        "img": "membros/SAC/GAPE/Francisca_Ruivo.png"
+        "img": "membros/SAC/GAPE/marta varela.jpg"
       },
       {
-        "nome": "Judite Lopes",
+        "nome": "Margarida Neves",
         "cargo": "Secretária",
-        "img": "membros/SAC/GAPE/Judite_Lopes.png"
+        "img": "membros/SAC/GAPE/margarida neves.jpg"
       }
     ],
     "descricao": "O Gabinete de Apoio ao Estudante nasce da necessidade de resposta imediata, assertiva e de confiança a todas as questões dos estudantes. É função do GAPE apoiar e auxiliar os estudantes nesse sentido, através das redes sociais da AAUE.",
     "contacto": "gape@aaue.pt"
+  },
+  {
+    "id": 5,
+    "nome": "Vice-Presidente da Comunicação",
+    "icon": "fas fa-user-shield",
+    "coordenadores": [
+      {
+        "nome": "Beatriz Vizeu",
+        "cargo": "Vice-Presidente da Comunicação",
+        "img": "membros/SAC/beatriz vizeu.jpg"
+      }
+    ],
+    "descricao": "A Vice-Presidente da Secção Autónoma de Comunicação tem a seu cargo o funcionamento interno da secção autónoma. É responsável pela coordenação e organização, bem como fazer ponte, dos seus setores com o Vice-Presidente Externo da Direção. É um cargo fundamental no boa funcionamento de toda a comunicação da AAUE.",
+    "contacto": "vicepresidente.comunicacao@aaue.pt"
   }
 ]

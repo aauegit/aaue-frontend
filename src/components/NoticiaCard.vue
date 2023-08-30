@@ -72,14 +72,16 @@ export default {
   margin: 30px 10px 10px 30px;
   display: flex;
   flex-direction: column;
-  height: 550px;
+  height: 600px;
   box-shadow: 5px 5px 20px rgb(160, 168, 189);
   border-radius: 12px;
 
   img {
-    width: 350px;
+    width: 200px;
     height: 200px;
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px 12px 12px 12px;
+    margin: 20px 75px 0px;
+    display: block;
   }
 
   .contentPreview {
@@ -87,7 +89,7 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 15px 25px 35px 25px;
-    max-width: 350px;
+    /*max-*/width: 350px;
     height: 100%;
     color: black;
 
